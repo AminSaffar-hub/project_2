@@ -9,13 +9,16 @@ from tqdm import tqdm
 
 class ScrapingMG:
     def __init__(self) -> None:
-       self.urls ={"Alimentaire": "https://mg.tn/61-promotion", "Hygiène":"https://mg.tn/64-promotion","Marché frais":"https://mg.tn/67-promotion"}
-       self.html_file = "output.html"
+       self.urls ={"food": "https://mg.tn/61-promotion", "self-care":"https://mg.tn/64-promotion","appliances":"https://mg.tn/67-promotion"}
+       self.html_file = "output_mg.html"
        self.timer=10
        self.name=[]
        self.link=[]
        self.product_type=[]
+       self.description=[]
        self.price=[]
+       self.new_price=[]
+       self.old_price=[]
        self.url=[]
 
     def scroll_down(self,driver):
@@ -38,10 +41,12 @@ class ScrapingMG:
         print(len(self.name),len(self.link),len(self.product_type))
         data = {
         'name': self.name,
-        'link': self.link,
-        'product_type': self.product_type,
-        'price': self.price,
-        'link_image':self.url
+        'old_price': self.old_price,
+        'new_price': self.new_price,
+        'image_link':self.url,
+        'url': self.link,
+        'description': self.description,
+        'product_type': self.product_type
         }
         df = pd.DataFrame(data)
         csv_file = "output_mg.csv"
@@ -70,18 +75,37 @@ class ScrapingMG:
                 text_ = text_ + cleaned_text
         self.price.append(text_)
 
-        
+    def fix_info_df(self):
+        no_price_indices = [i for i, price in enumerate(self.price) if price == "no prices"]
+        for index in sorted(no_price_indices, reverse=True):
+            del self.name[index]
+            del self.link[index]
+            del self.price[index]
+            del self.url[index]
+            del self.product_type[index]
+        for element in self.price:
+            numbers_str = re.findall(r'\d+\s*,\s*\d+', element)
+            number1_str = numbers_str[0].replace(",", ".").replace(" ", "")
+            number2_str = numbers_str[1].replace(",", ".").replace(" ", "")
+            number1 = float(number1_str)
+            number2 = float(number2_str)
+            if number1 > number2:
+                self.new_price.append(number1)
+                self.old_price.append(number1+number2)
+            else:
+                self.new_price.append(number1)
+                self.old_price.append(number2)
+       
     def main(self):
             driver = webdriver.Chrome()
-            for sector_url in tqdm(self.urls.values()):
+            for sector_url,div in tqdm(zip(self.urls.values(),self.urls.keys())):
                 driver.get(sector_url)
                 self.scroll_down(driver)
                 html_content = driver.page_source                
                 soup = BeautifulSoup(html_content, 'html.parser')
                 product_titles = soup.find_all('h2', class_='h3 product-title')
-                product_type= soup.find_all('div',class_='product-category-name text-muted')
-                for title,div in zip(product_titles,product_type):
-                    self.product_type.append(div.text)
+                for title in product_titles:
+                    self.product_type.append(div)
                     link_tag = title.find('a')
                     if link_tag:
                         link = link_tag.get('href')
@@ -89,14 +113,18 @@ class ScrapingMG:
                         self.link.append(link)
                         self.extract_info_per_product(link,driver)
                         self.name.append(product_name)
+            driver.get(self.link[0])
+            html_content = driver.page_source
+            self.save_html(html_content)      
             driver.quit()
 
 
 if __name__ == "__main__":
     scraper = ScrapingMG()
     scraper.main()
+    scraper.fix_info_df()
     data_frame=scraper.save_data_frame()
-    print(data_frame)
+    print(data_frame.head())
 
 
         

@@ -25,13 +25,20 @@ class Scrapping:
         self.new_price = []
         self.url = []
 
-    def save_html(self, content):
-        with open(self.html_file, "w", encoding="utf-8") as f:
+    def save_html(self, content,i):
+        with open(self.html_file[:-5]+str(i)+".html", "w", encoding="utf-8") as f:
             f.write(
                 content,
             )
 
     def save_data_frame(self):
+        print(len(self.name))
+        print(len(self.old_price))
+        print(len(self.new_price))
+        print(len(self.image_link))
+        print(len(self.product_description))
+        print(len(self.url))
+
         data = {
             "name": self.name,
             "old_price": self.old_price,
@@ -89,7 +96,7 @@ class scrappingHammadiAbid(Scrapping):
             driver.get(sector_url)
             self.scroll_down(driver)
             html_content = driver.page_source
-            scraper.save_html(html_content)
+            scraper.save_html(html_content,self.urls.index(sector_url))
             soup = BeautifulSoup(html_content, "html.parser")
             for div in soup.find_all("div", class_="allinfoallprod leftinfoallprod"):
                 self.name.append(div.text.strip())
@@ -110,4 +117,5 @@ class scrappingHammadiAbid(Scrapping):
 if __name__ == "__main__":
     scraper = scrappingHammadiAbid()
     scraper.main()
-    data_frame = scraper.save_data_to_db()
+    data_frame = scraper.save_data_frame()
+    print(data_frame.head())

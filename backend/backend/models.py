@@ -37,6 +37,7 @@ class Article(models.Model):
         CLOTHES = "clothes"
         SELF_CARE = "self-care"
         APPLIANCES = "appliances"
+        COSMETICS = "cosmetics"
         OTHER = "other"
 
     sector = models.CharField(
