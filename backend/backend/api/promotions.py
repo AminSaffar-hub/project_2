@@ -1,5 +1,5 @@
 from datetime import datetime
-from ninja import NinjaAPI, Schema
+from ninja import Field, NinjaAPI, Schema
 from backend import models
 from django.contrib.admin.views.decorators import staff_member_required
 
@@ -7,20 +7,20 @@ api = NinjaAPI(docs_decorator=staff_member_required)
 
 
 class ArticleIn(Schema):
-    name: str
-    original_price: float
-    reduced_price: float
-    location: str
-    image: str
-    sector: str
-    ended_at: datetime
+    name: str = Field(default=None)
+    original_price: float = Field(default=None)
+    reduced_price: float = Field(default=None)
+    location: str = Field(default=None)
+    image: str = Field(default=None)
+    sector: str = Field(default=None)
+    ended_at: datetime = Field(default=None)
 
 
 class Message(Schema):
     message: str
 
 
-@api.post("/promotion", response=Message)
+@api.post("/promotions", response=Message)
 def add_article(request, body: ArticleIn):
     """
     posts a new article to the database
