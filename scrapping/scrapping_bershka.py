@@ -62,6 +62,13 @@ class ScrapingBershka:
             f.write(pretty_html)
 
 
+    def convert_rows_for_df(self):
+        for i, number in enumerate(self.old_price):
+            self.old_price[i] = float(number[:-3])
+        for i, number in enumerate(self.new_price):
+            self.new_price[i] = float(number[:-3]) 
+
+
 
     def main(self):
             driver = webdriver.Chrome()
@@ -69,7 +76,6 @@ class ScrapingBershka:
                 driver.get(url)
                 self.scroll_down(driver)
                 html_content = driver.page_source 
-                #self.save_html(html_content)
                 soup = BeautifulSoup(html_content, 'html.parser')
                 grid_items = soup.find_all('li', class_='grid-item normal')
                 for grid_item in grid_items:
@@ -98,5 +104,7 @@ class ScrapingBershka:
 if __name__ == "__main__":
      scrapper=ScrapingBershka()
      scrapper.main()
+     scrapper.convert_rows_for_df()
      df=scrapper.save_data_frame()
+     print(df)
 
