@@ -17,7 +17,7 @@ Usage:
     Run the script to scrape the data and save it to the "output.csv" file. The final DataFrame will
     also be printed to the console.
 """
-
+from scrapping_beauty_store import Scrappingbeautystore
 from scrapping_bershka import ScrapingBershka
 from scrapping_cosemetique import Scrapingcosme
 from scrapping_exist import ScrapingExist
@@ -41,6 +41,10 @@ def main():
     mg = ScrapingMG()
     exist = ScrapingExist()
     cosmetique = Scrapingcosme()
+    beautystore = Scrappingbeautystore()
+    dfbeautystore = beautystore.main()
+    sys.stdout.write("Finished running BeautyStore's main function.\n")
+    sys.stdout.flush()
     df_Bershka = Bershka.main()
     sys.stdout.write("Finished running Bershka's main function.\n")
     sys.stdout.flush()
@@ -57,7 +61,7 @@ def main():
     sys.stdout.write("Finished running Zara's main function.\n")
     sys.stdout.flush()
     result_df = pd.concat(
-        [df_mg, df_Bershka, df_zara, df_exist, df_cos], ignore_index=True
+        [df_mg, df_Bershka, df_zara, df_exist, df_cos, dfbeautystore], ignore_index=True
     )
     return result_df
 
