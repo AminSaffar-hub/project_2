@@ -1,7 +1,5 @@
 from bs4 import BeautifulSoup
 from selenium import webdriver
-from tqdm import tqdm
-import pandas as pd
 from scrapping import Scrapping
 
 
