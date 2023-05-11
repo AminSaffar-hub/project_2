@@ -36,33 +36,13 @@ def main():
     Returns:
         pd.DataFrame: The combined DataFrame containing the scraped data from all websites.
     """
-    zara = ScrapingZara()
-    Bershka = ScrapingBershka()
-    mg = ScrapingMG()
-    exist = ScrapingExist()
-    cosmetique = Scrapingcosme()
-    beautystore = Scrappingbeautystore()
-    dfbeautystore = beautystore.main()
-    sys.stdout.write("Finished running BeautyStore's main function.\n")
-    sys.stdout.flush()
-    df_Bershka = Bershka.main()
-    sys.stdout.write("Finished running Bershka's main function.\n")
-    sys.stdout.flush()
-    df_cos = cosmetique.main()
-    sys.stdout.write("Finished running Cosmetique's main function.\n")
-    sys.stdout.flush()
-    df_exist = exist.main()
-    sys.stdout.write("Finished running Exist's main function.\n")
-    sys.stdout.flush()
-    df_mg = mg.main()
-    sys.stdout.write("Finished running Mg's main function.\n")
-    sys.stdout.flush()
-    df_zara = zara.main()
-    sys.stdout.write("Finished running Zara's main function.\n")
-    sys.stdout.flush()
-    result_df = pd.concat(
-        [df_mg, df_Bershka, df_zara, df_exist, df_cos, dfbeautystore], ignore_index=True
-    )
+    scrapped_articles = []
+    for klass in [ScrapingZara(), ScrapingBershka(), ScrapingMG(), ScrapingExist(), Scrapingcosme(), Scrappingbeautystore()]:
+        scrapped_articles.append(klass.main())
+        klass.save_data_to_db()
+        sys.stdout.write(f"Finished running {klass.__class__.__name__}'s main function.\n")
+        sys.stdout.flush()
+    result_df = pd.concat(scrapped_articles, ignore_index=True)
     return result_df
 
 
