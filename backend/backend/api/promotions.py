@@ -8,12 +8,12 @@ api = NinjaAPI(docs_decorator=staff_member_required)
 
 class ArticleIn(Schema):
     name: str = Field(default=None)
-    original_price: float = Field(default=None)
-    reduced_price: float = Field(default=None)
-    location: str = Field(default=None)
-    image: str = Field(default=None)
-    sector: str = Field(default=None)
-    ended_at: datetime = Field(default=None)
+    old_price: float = Field(default=None)
+    new_price: float = Field(default=None)
+    url: str = Field(default=None)
+    image_link: str = Field(default=None)
+    type: str = Field(default=None)
+    description: str = Field(default=None)
 
 
 class Message(Schema):
