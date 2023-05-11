@@ -6,7 +6,7 @@ import pandas as pd
 import time
 import re 
 from tqdm import tqdm
-class ScrapingAz:
+class ScrapingAziza:
     def __init__(self) -> None:
        self.urls ="https://aziza.tn/fr/home"
        self.html_file = "output_azziza.html"
@@ -28,6 +28,6 @@ class ScrapingAz:
 
     
 if __name__ == "__main__":
-    scraper = ScrapingAz()
+    scraper = ScrapingAziza()
     scraper.main()
 
