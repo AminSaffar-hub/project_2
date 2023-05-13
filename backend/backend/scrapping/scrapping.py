@@ -1,8 +1,7 @@
 import pandas as pd
 import time
 from bs4 import BeautifulSoup
-import requests
-import json
+from backend.models import Article
 
 
 class Scrapping:
@@ -41,7 +40,7 @@ class Scrapping:
         self._scrappers = []
         self._data_frame = pd.DataFrame()
         self._html_file = "output.html"
-        self._api_url = "http://localhost:8000/api/promotions" 
+        self._api_url = "http://localhost:8000/api/promotions"
 
     def save_html(self, content):
         """
@@ -96,15 +95,21 @@ class Scrapping:
         """
         Saves data to database by posting to the /api/promotions endpoint
         """
-        for name, original_price, reduced_price, location, image, type in zip(
-            self.name, self.old_price, self.new_price, self.url, self.image_link, self.product_type
+        for name, old_price, new_price, url, image_link, product_type, description in zip(
+            self.name,
+            self.old_price,
+            self.new_price,
+            self.url,
+            self.image_link,
+            self.product_type,
+            self.product_description
         ):
-            promotion_data = {
-                "name": name,
-                "original_price": original_price,
-                "reduced_price": reduced_price,
-                "location": location,
-                "image": image,
-                "sector": type,
-            }
-            requests.post(url=self._api_url, data=json.dumps(promotion_data))
+            Article.objects.create(
+                name=name,
+                old_price=old_price,
+                new_price=new_price,
+                url=url,
+                image_link=image_link,
+                description=description,
+                type=product_type,
+            )

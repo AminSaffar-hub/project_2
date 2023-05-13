@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 import time
 from urllib.parse import urlsplit, urlunsplit
-from scrapping import Scrapping
+from backend.scrapping.scrapping import Scrapping
 
 
 class ScrapingBershka(Scrapping):

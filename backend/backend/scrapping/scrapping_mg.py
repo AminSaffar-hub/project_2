@@ -3,7 +3,7 @@ from selenium import webdriver
 from tqdm import tqdm
 import re
 from tqdm import tqdm
-from scrapping import Scrapping
+from backend.scrapping.scrapping import Scrapping
 
 
 class ScrapingMG(Scrapping):

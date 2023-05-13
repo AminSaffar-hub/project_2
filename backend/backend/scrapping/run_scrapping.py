@@ -17,18 +17,18 @@ Usage:
     Run the script to scrape the data and save it to the "output.csv" file. The final DataFrame will
     also be printed to the console.
 """
-from scrapping_beauty_store import Scrappingbeautystore
-from scrapping_bershka import ScrapingBershka
-from scrapping_cosemetique import Scrapingcosme
-from scrapping_exist import ScrapingExist
-from scrapping_mg import ScrapingMG
-from scrapping_zara import ScrapingZara
+from backend.scrapping.scrapping_beauty_store import Scrappingbeautystore
+from backend.scrapping.scrapping_bershka import ScrapingBershka
+from backend.scrapping.scrapping_cosemetique import Scrapingcosme
+from backend.scrapping.scrapping_exist import ScrapingExist
+from backend.scrapping.scrapping_mg import ScrapingMG
+from backend.scrapping.scrapping_zara import ScrapingZara
 import pandas as pd
 import time
 import sys
 
 
-def main():
+def run_scrapping():
     """
     Scrapes data from Bershka, Cosmetique, Exist, MG, and Zara websites using their respective
     scraping classes. Combines the resulting DataFrames into a single DataFrame.
@@ -48,7 +48,7 @@ def main():
 
 if __name__ == "__main__":
     start_time = time.time()
-    final_df = main()
+    final_df = run_scrapping()
     elapsed_time = time.time() - start_time
     final_df.to_csv("output.csv", index=False, encoding="utf-8")
     sys.stdout.write("Data successfully saved to output.csv\n")

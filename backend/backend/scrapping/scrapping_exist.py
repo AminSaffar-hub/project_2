@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 from tqdm import tqdm
 import re
-from scrapping import Scrapping
+from backend.scrapping.scrapping import Scrapping
 
 
 class ScrapingExist(Scrapping):
