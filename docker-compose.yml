@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  web: &django-base
+    build: .
+    network_mode: "host"
+    depends_on:
+      - migration
+
+  migration:
+    build: .
+    command: >
+      sh -c 'poetry run python manage.py migrate --noinput || exit 1'
+

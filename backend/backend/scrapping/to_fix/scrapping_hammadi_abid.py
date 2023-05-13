@@ -56,7 +56,6 @@ class Scrapping:
         for name, original_price, reduced_price, location, image in zip(
             self.name, self.old_price, self.new_price, self.url, self.image_link
         ):
-            print(name, original_price, reduced_price, location, image)
             promotion_data = {
                 "name": name,
                 "original_price": 0,
@@ -65,8 +64,6 @@ class Scrapping:
                 "image": image,
                 "sector": "clothes"
             }
-            headers = {'content-type': 'application/json'}
-
             requests.post(url=promotion_api_url, data=json.dumps(promotion_data))
 
     def scroll_down(self, driver):
