@@ -3,6 +3,7 @@ from selenium import webdriver
 from tqdm import tqdm
 import json
 from backend.scrapping.scrapping import Scrapping
+import requests
 
 
 class ScrapingZara(Scrapping):
@@ -21,21 +22,20 @@ class ScrapingZara(Scrapping):
             "bebe-garcon": "https://www.zara.com/tn/fr/enfants-bebe-garcon-prix-speciaux-l69.html?v1=2194908",
             "bebe fille": "https://www.zara.com/tn/fr/enfants-bebe-fille-prix-speciaux-l152.html?v1=2196579",
             "garcon": "https://www.zara.com/tn/fr/enfants-garcon-prix-speciaux-l263.html?v1=2190481",
-            "fille": "https://www.zara.com/tn/fr/enfants-fille-prix-speciaux-l427.html?v1=2189631"
+            "fille": "https://www.zara.com/tn/fr/enfants-fille-prix-speciaux-l427.html?v1=2189631",
         }
         self._timer = 10
         self._intermidiate_url = []
 
-    def extract_info_per_url(self, url, driver):
+    def extract_info_per_url(self, url):
         """
         Extracts product information for a given URL using the provided WebDriver.
 
         :param url: The product URL to scrape.
         :param driver: The WebDriver instance to use for scraping.
         """
-        driver.get(url)
-        html_content = driver.page_source
-        soup = BeautifulSoup(html_content, "html.parser")
+        response = requests.get(url)
+        soup = BeautifulSoup(response.text, "html.parser")
         script_tag = soup.find("script", {"type": "application/ld+json"})
         data = json.loads(script_tag.string)
         description = data[0]["description"]
@@ -73,7 +73,7 @@ class ScrapingZara(Scrapping):
         driver = webdriver.Chrome()
         for key, value in self.urls.items():
             driver.get(value)
-            self.scroll_down(driver,self._timer)
+            self.scroll_down(driver, self._timer)
             html_content = driver.page_source
             soup = BeautifulSoup(html_content, "html.parser")
             products = soup.find_all(
@@ -84,7 +84,7 @@ class ScrapingZara(Scrapping):
                 self._intermidiate_url.append(link)
         for url in tqdm(self._intermidiate_url):
             try:
-                self.extract_info_per_url(url, driver)
+                self.extract_info_per_url(url)
 
             except Exception:
                 continue
