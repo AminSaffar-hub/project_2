@@ -18,6 +18,8 @@ services:
       sh -c 'poetry run python manage.py runserver 0.0.0.0:8000'
     environment:
       - APP_ENV=prod
+    volumes:
+      - static_volume:/www/
     depends_on:
       - migration
       - db
@@ -34,12 +36,27 @@ services:
     build: .
     environment:
       - APP_ENV=prod
+    # based on https://github.com/alesandroLang/docker-django/issues/4
+    volumes:
+      - static_volume:/www/
     command: >
-      sh -c 'poetry run python manage.py migrate --noinput || exit 1'
+      sh -c 'poetry run python manage.py collectstatic --no-input --clear || exit 1
+
+      poetry run python manage.py migrate --noinput || exit 1'
     depends_on:
       - db
+
+  nginx:
+    build: ./nginx
+    volumes:
+      - static_volume:/www/
+    ports:
+      - 80:80
+    depends_on:
+      - web
 
 
 volumes:
   postgres_data:
+  static_volume:
 
