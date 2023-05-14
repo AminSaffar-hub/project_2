@@ -1,14 +1,45 @@
 version: '3.7'
 
 services:
-  web: &django-base
+  db:
+  # based https://github.com/synaptic-cl/django-postgres-docker-compose
+    image: postgres:14-alpine
+    environment:
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - '5400:5400'
+    command: -p 5400
+
+  web:
     build: .
-    network_mode: "host"
+    command: >
+      sh -c 'poetry run python manage.py runserver 0.0.0.0:8000'
+    environment:
+      - APP_ENV=prod
     depends_on:
       - migration
+      - db
+    ports:
+      - '8000:8000'
+
+  # scrapping:
+  #   build: .
+  #   command: >
+  #     sh -c 'echo "1 * * * * echo hello world!" | crontab - &&
+  #            cron -f'
 
   migration:
     build: .
+    environment:
+      - APP_ENV=prod
     command: >
       sh -c 'poetry run python manage.py migrate --noinput || exit 1'
+    depends_on:
+      - db
+
+
+volumes:
+  postgres_data:
 
