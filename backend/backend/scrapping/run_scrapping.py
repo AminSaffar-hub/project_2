@@ -23,7 +23,6 @@ from backend.scrapping.scrapping_cosemetique import Scrapingcosme
 from backend.scrapping.scrapping_exist import ScrapingExist
 from backend.scrapping.scrapping_mg import ScrapingMG
 from backend.scrapping.scrapping_zara import ScrapingZara
-import pandas as pd
 import time
 import sys
 
@@ -37,21 +36,11 @@ def run_scrapping():
         pd.DataFrame: The combined DataFrame containing the scraped data from all websites.
     """
     scrapped_articles = []
+    start_time = time.time()
     for klass in [ScrapingZara(), ScrapingBershka(), ScrapingMG(), ScrapingExist(), Scrapingcosme(), Scrappingbeautystore()]:
         scrapped_articles.append(klass.main())
         klass.save_data_to_db()
         sys.stdout.write(f"Finished running {klass.__class__.__name__}'s main function.\n")
         sys.stdout.flush()
-    result_df = pd.concat(scrapped_articles, ignore_index=True)
-    return result_df
-
-
-if __name__ == "__main__":
-    start_time = time.time()
-    final_df = run_scrapping()
     elapsed_time = time.time() - start_time
-    final_df.to_csv("output.csv", index=False, encoding="utf-8")
-    sys.stdout.write("Data successfully saved to output.csv\n")
-    sys.stdout.flush()
     print(f"Execution time: {elapsed_time:.2f} seconds")
-    print(final_df)
