@@ -1,7 +1,7 @@
 import pandas as pd
 import time
 from bs4 import BeautifulSoup
-import pandas as pd
+from backend.models import Article
 
 
 class Scrapping:
@@ -40,6 +40,7 @@ class Scrapping:
         self._scrappers = []
         self._data_frame = pd.DataFrame()
         self._html_file = "output.html"
+        self._api_url = "http://localhost:8000/api/promotions"
 
     def save_html(self, content):
         """
@@ -89,3 +90,26 @@ class Scrapping:
             if new_height == last_height:
                 break
             last_height = new_height
+
+    def save_data_to_db(self):
+        """
+        Saves data to database by posting to the /api/promotions endpoint
+        """
+        for name, old_price, new_price, url, image_link, product_type, description in zip(
+            self.name,
+            self.old_price,
+            self.new_price,
+            self.url,
+            self.image_link,
+            self.product_type,
+            self.product_description
+        ):
+            Article.objects.create(
+                name=name,
+                old_price=old_price,
+                new_price=new_price,
+                url=url,
+                image_link=image_link,
+                description=description,
+                type=product_type,
+            )

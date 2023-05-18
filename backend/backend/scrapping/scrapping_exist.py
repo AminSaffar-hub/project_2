@@ -2,7 +2,8 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 from tqdm import tqdm
 import re
-from scrapping import Scrapping
+from backend.scrapping.scrapping import Scrapping
+import requests
 
 
 class ScrapingExist(Scrapping):
@@ -31,9 +32,13 @@ class ScrapingExist(Scrapping):
         :param url: The product URL to scrape.
         :param driver: The WebDriver instance to use for scraping.
         """
-        driver.get(url)
-        html_content = driver.page_source
-        soup = BeautifulSoup(html_content, "html.parser")
+        try:
+            html_content = requests.get(url)
+            soup = BeautifulSoup(html_content.text, "html.parser")
+        except Exception:
+            driver.get(url)
+            html_content = driver.page_source
+            soup = BeautifulSoup(html_content, "html.parser")
         div_element = soup.find("div", class_="current-price")
         price_element = div_element.find("span", itemprop="price")
         price = float(price_element["content"])

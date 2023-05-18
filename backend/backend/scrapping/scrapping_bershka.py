@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 import time
 from urllib.parse import urlsplit, urlunsplit
-from scrapping import Scrapping
+from backend.scrapping.scrapping import Scrapping
 
 
 class ScrapingBershka(Scrapping):
@@ -15,12 +15,12 @@ class ScrapingBershka(Scrapping):
         Initialize the ScrapingBershka object with the Bershka product URLs.
         """
         Scrapping.__init__(self)
-        
+
         self.urls = {
             "femme": "https://www.bershka.com/tn/femme/promotion-jusqu'%C3%A0--30%25-c1010473002.html",
             "homme": "https://www.bershka.com/tn/homme/promotion-jusqu'%C3%A0--30%25-c1010477501.html",
         }
-        self._timer = 20
+        self._timer = 10
 
     def convert_rows_for_df(self):
         """

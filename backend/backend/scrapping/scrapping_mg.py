@@ -3,7 +3,8 @@ from selenium import webdriver
 from tqdm import tqdm
 import re
 from tqdm import tqdm
-from scrapping import Scrapping
+from backend.scrapping.scrapping import Scrapping
+import requests
 
 
 class ScrapingMG(Scrapping):
@@ -26,16 +27,14 @@ class ScrapingMG(Scrapping):
         self._price = []
         self._timer = 10
 
-    def extract_info_per_product(self, link, driver):
+    def extract_info_per_product(self, link):
         """
         Extracts product information for a given product URL using the provided WebDriver.
 
         :param link: The product URL to scrape.
-        :param driver: The WebDriver instance to use for scraping.
         """
-        driver.get(link)
-        html_content = driver.page_source
-        soup = BeautifulSoup(html_content, "html.parser")
+        html_content = requests.get(link)
+        soup = BeautifulSoup(html_content.text, "html.parser")
         has_discount_divs = soup.find_all("div", class_="has-discount")
         meta_tag = soup.find("meta", property="og:image")
 
@@ -112,7 +111,7 @@ class ScrapingMG(Scrapping):
                     link = link_tag.get("href")
                     product_name = link_tag.text
                     self.url.append(link)
-                    self.extract_info_per_product(link, driver)
+                    self.extract_info_per_product(link)
                     self.name.append(product_name)
         driver.quit()
         self.fix_info_df()
