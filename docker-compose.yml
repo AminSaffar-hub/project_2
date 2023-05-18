@@ -4,8 +4,8 @@ services:
   db:
   # based https://github.com/synaptic-cl/django-postgres-docker-compose
     image: postgres:14-alpine
-    environment:
-      - POSTGRES_PASSWORD=password
+    env_file:
+      - ./.env
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     ports:
@@ -16,8 +16,8 @@ services:
     build: .
     command: >
       sh -c 'poetry run python manage.py runserver 0.0.0.0:8000'
-    environment:
-      - APP_ENV=prod
+    env_file:
+      - ./.env
     volumes:
       - static_volume:/www/
     depends_on:
@@ -26,16 +26,10 @@ services:
     ports:
       - '8000:8000'
 
-  # scrapping:
-  #   build: .
-  #   command: >
-  #     sh -c 'echo "1 * * * * echo hello world!" | crontab - &&
-  #            cron -f'
-
   migration:
     build: .
-    environment:
-      - APP_ENV=prod
+    env_file:
+      - ./.env
     # based on https://github.com/alesandroLang/docker-django/issues/4
     volumes:
       - static_volume:/www/
