@@ -4,6 +4,8 @@ from tqdm import tqdm
 import json
 from backend.scrapping.scrapping import Scrapping
 import requests
+from selenium.webdriver.chrome.options import Options
+
 
 
 class ScrapingZara(Scrapping):
@@ -70,7 +72,9 @@ class ScrapingZara(Scrapping):
 
         :return: The DataFrame containing the scraped product information.
         """
-        driver = webdriver.Chrome()
+        chrome_options = Options()
+        chrome_options.add_argument("--headless")
+        driver = webdriver.Chrome(options=chrome_options)
         for key, value in self.urls.items():
             driver.get(value)
             self.scroll_down(driver, self._timer)

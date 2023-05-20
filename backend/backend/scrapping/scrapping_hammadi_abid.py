@@ -3,6 +3,8 @@ from selenium import webdriver
 from tqdm import tqdm
 from backend.scrapping.scrapping import Scrapping
 import requests
+from selenium.webdriver.chrome.options import Options
+
 
 
 class scrappingHammadiAbid(Scrapping):
@@ -58,7 +60,9 @@ class scrappingHammadiAbid(Scrapping):
 
         :return: The DataFrame containing the scraped product information.
         """
-        driver = webdriver.Chrome()
+        chrome_options = Options()
+        chrome_options.add_argument("--headless")
+        driver = webdriver.Chrome(option = chrome_options)
         for sector_url in list(self.urls.values()):
             driver.get(sector_url)
             self.scroll_down(driver, self._timer)

@@ -3,6 +3,8 @@ from selenium import webdriver
 import time
 from urllib.parse import urlsplit, urlunsplit
 from backend.scrapping.scrapping import Scrapping
+from selenium.webdriver.chrome.options import Options
+
 
 
 class ScrapingBershka(Scrapping):
@@ -56,7 +58,9 @@ class ScrapingBershka(Scrapping):
 
         :return: The DataFrame containing the scraped product information.
         """
-        driver = webdriver.Chrome()
+        chrome_options = Options()
+        chrome_options.add_argument("--headless")
+        driver = webdriver.Chrome(option = chrome_options)
         for url in list(self.urls.values()):
             driver.get(url)
             self.scroll_down_Bershka(driver, self._timer)

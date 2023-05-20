@@ -2,6 +2,8 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 import re
 from backend.scrapping.scrapping import Scrapping
+from selenium.webdriver.chrome.options import Options
+
 
 
 class Scrapingcosme(Scrapping):
@@ -34,7 +36,9 @@ class Scrapingcosme(Scrapping):
         """
         Scrapes the promotional product information from the Cosmetique website using a WebDriver.
         """
-        driver = webdriver.Chrome()
+        chrome_options = Options()
+        chrome_options.add_argument("--headless")
+        driver = webdriver.Chrome(option = chrome_options)
         driver.get("https://cosmetique.tn/promotions")
         html_content = driver.page_source
         soup = BeautifulSoup(html_content, "html.parser")

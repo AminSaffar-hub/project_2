@@ -5,6 +5,8 @@ import re
 from tqdm import tqdm
 from backend.scrapping.scrapping import Scrapping
 import requests
+from selenium.webdriver.chrome.options import Options
+
 
 
 class ScrapingMG(Scrapping):
@@ -97,7 +99,9 @@ class ScrapingMG(Scrapping):
 
         :return: The DataFrame containing the scraped product information.
         """
-        driver = webdriver.Chrome()
+        chrome_options = Options()
+        chrome_options.add_argument("--headless")
+        driver = webdriver.Chrome(option = chrome_options)
         for sector_url, div in tqdm(zip(self.urls.values(), self.urls.keys())):
             driver.get(sector_url)
             self.scroll_down(driver, self._timer)

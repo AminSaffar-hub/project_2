@@ -4,6 +4,8 @@ from tqdm import tqdm
 import re
 from backend.scrapping.scrapping import Scrapping
 import requests
+from selenium.webdriver.chrome.options import Options
+
 
 
 class ScrapingExist(Scrapping):
@@ -64,7 +66,9 @@ class ScrapingExist(Scrapping):
 
         :return: The DataFrame containing the scraped product information.
         """
-        driver = webdriver.Chrome()
+        chrome_options = Options()
+        chrome_options.add_argument("--headless")
+        driver = webdriver.Chrome(option = chrome_options)
         driver.get(self.urls["clothes"])
         html_content = driver.page_source
         soup = BeautifulSoup(html_content, "html.parser")
