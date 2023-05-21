@@ -1,3 +1,17 @@
 body {
     background: #ececec !important;
 }
+
+div.article-card {
+    border-radius: 5%;
+    width: 50vw;
+    margin: 10px auto;
+}
+
+img.article-img {
+    margin: 10px;
+}
+
+a.article-a {
+    margin: 10px;
+}

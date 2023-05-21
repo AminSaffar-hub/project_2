@@ -1,3 +1,30 @@
 body {
     background: #ececec !important;
 }
+
+div.article-card {
+    border-radius: 10px;
+    width: 40vw;
+    margin: 10px auto;
+}
+
+img.article-img {
+    margin: 10px;
+    border-radius: 10px;
+}
+
+a.article-a {
+    margin: 10px;
+}
+
+a.navbar-brand {
+    background-color: white;
+}
+
+a.navbar-brand span {
+    color: black;
+}
+
+nav.navbar {
+    background-color: #35373b
+}

@@ -1,10 +1,10 @@
 {% extends 'frontend/base.html' %}
 {% block 'body' %}
     {% for article in articles %}
-        <div class="card" style="width: 50vw; margin: 10px auto;">
+        <div class="card article-card">
             <div class="row no-gutters">
                 <div class="col-2">
-                    <img src="{{ article.image_link }}" class="card-img" alt="Image" style="margin: 10px">
+                    <img src="{{ article.image_link }}" class="card-img article-img" alt="Image">
                 </div>
                 <div class="col-10">
                     <div class="card-body">
@@ -15,11 +15,12 @@
                             {{ article.percentage }}%
                         </p>
                         <p class="card-text">{{ article.description }}</p>
-                        <a href="{{ article.url }}" style="margin: 10px;" class="btn btn-secondary float-right ">visiter l'article</a>
+                        <a href="{{ article.url }}"  class="btn btn-secondary float-right article-a">visiter l'article</a>
                     </div>
                 </div>
-                
             </div>
         </div>
+    {% empty %}
+        <p> Winhoum manedrouch, arja3 ghodwa </p>
     {% endfor %}
 {% endblock %}
