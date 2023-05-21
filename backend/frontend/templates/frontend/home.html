@@ -1,24 +1,25 @@
 {% extends 'frontend/base.html' %}
 {% block 'body' %}
-    <div class="d-flex flex-wrap">
-        {% for article in articles %}
-            {% if forloop.counter0|divisibleby:5 %}
-                </div><br><div class="d-flex flex-wrap">
-            {% endif %}
-            <div class="col mb-4">
-                <div class="card">
-                    <img src="{{ article.image_link }}" class="card-img-top" alt="Image" width="300" height="400">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Ancien prix: {{article.old_price}} TND</li>
-                        <li class="list-group-item">Nouveau prix: {{article.new_price}} TND</li>
-                    </ul>
+    {% for article in articles %}
+        <div class="card" style="width: 50vw; margin: 10px auto;">
+            <div class="row no-gutters">
+                <div class="col-2">
+                    <img src="{{ article.image_link }}" class="card-img" alt="Image" style="margin: 10px">
+                </div>
+                <div class="col-10">
                     <div class="card-body">
                         <h5 class="card-title">{{ article.name }}</h5>
+                        <p>
+                            <span style="color: red;">{{ article.new_price }} TND</span> 
+                            <span style="color: rgb(126, 126, 126); text-decoration: line-through;">{{ article.old_price }} TND</span> 
+                            {{ article.percentage }}%
+                        </p>
                         <p class="card-text">{{ article.description }}</p>
-                        <a href="{{ article.url }}" class="btn btn-primary">visiter l'article</a>
+                        <a href="{{ article.url }}" style="margin: 10px;" class="btn btn-secondary float-right ">visiter l'article</a>
                     </div>
                 </div>
+                
             </div>
-        {% endfor %}
-    </div>
+        </div>
+    {% endfor %}
 {% endblock %}

@@ -12,15 +12,15 @@
 
     <title>Promos ala ajla</title>
 </head>
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #238a44">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #35373b">
     <div class="container">
         <img src="{% static 'images/logo.png' %}" width="100px" height="100px">
         <a class="navbar-brand" href="{% url 'home' %}">Promos ala ajla</a>
     </div>
 </nav>
-{% block 'body' %}
-{% endblock %}
 <body>
+    {% block 'body' %}
+    {% endblock %}
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>

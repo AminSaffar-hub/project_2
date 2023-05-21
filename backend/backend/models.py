@@ -1,3 +1,5 @@
+import math
+
 from django.db import models
 
 # Create your models here.
@@ -57,8 +59,7 @@ class Article(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
 
-    description = models.CharField(
-        max_length=1000,
+    description = models.TextField(
         null=True,
         blank=True,
         help_text="details about the article and the promotion",
@@ -71,3 +72,7 @@ class Article(models.Model):
     )
 
     objects = ArticleManager()
+
+    @property
+    def percentage(self):
+        return math.floor(((self.old_price - self.new_price) / self.old_price) * 100)
