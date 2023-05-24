@@ -2,7 +2,11 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 import pandas as pd
 
-pre_process_prices = lambda a: float(a.replace("TND", "").replace(",", "."))
+
+def pre_process_prices(scrapped_price):
+    return scrapped_price.replace("TND", "").replace(",", ".")
+
+
 class Scrappingfatales:
     def __init__(self):
         self.urls = "https://www.fatales.tn/promotions"
@@ -25,22 +29,22 @@ class Scrappingfatales:
         print(len(self.product_description))
         print(len(self.product_type))
         data = {
-        'name': self.name,
-        'old_price': self.old_price,
-        'new_price': self.new_price,
-        'image_link':self.image_link,
-        'url': self.url,
-        'description': self.product_description,
-        'product_type': self.product_type
+            "name": self.name,
+            "old_price": self.old_price,
+            "new_price": self.new_price,
+            "image_link": self.image_link,
+            "url": self.url,
+            "description": self.product_description,
+            "product_type": self.product_type,
         }
         df = pd.DataFrame(data)
-        return(df)   
-        
+        return df
+
     def get_product_description(self, product_url, driver):
         driver.get(product_url)
         html_content = driver.page_source
         soup = BeautifulSoup(html_content, "html.parser")
-        self.product_description.append(soup.find("div", itemprop= "description").text)
+        self.product_description.append(soup.find("div", itemprop="description").text)
 
     def main(self):
         driver = webdriver.Chrome()
@@ -62,23 +66,36 @@ class Scrappingfatales:
                 html_content = driver.page_source
                 soup = BeautifulSoup(html_content, "html.parser")
                 for article in soup.find_all("article", class_="product-miniature"):
-                    self.image_link.append(article.find("img", class_="img-responsive")["src"])
+                    self.image_link.append(
+                        article.find("img", class_="img-responsive")["src"]
+                    )
                     self.name.append(article.find("a", class_="product-name").text)
                     try:
-                        self.old_price.append(pre_process_prices(article.find("span", class_="regular-price").text))
+                        self.old_price.append(
+                            pre_process_prices(
+                                article.find("span", class_="regular-price").text
+                            )
+                        )
                     except Exception:
                         self.old_price = None
-                    self.new_price.append(pre_process_prices(article.find("span", class_="price product-price").text))
-                    self.get_product_description(article.find("a", class_="product_img_link")['href'], driver=driver)
+                    self.new_price.append(
+                        pre_process_prices(
+                            article.find("span", class_="price product-price").text
+                        )
+                    )
+                    self.get_product_description(
+                        article.find("a", class_="product_img_link")["href"],
+                        driver=driver,
+                    )
             except Exception:
                 driver = webdriver.Chrome()
                 continue
         driver.quit()
-        df=self.save_data_frame()
-        return(df)
+        df = self.save_data_frame()
+        return df
 
 
 if __name__ == "__main__":
     scrapper = Scrappingfatales()
-    df=scrapper.main()
+    df = scrapper.main()
     print(df.head())

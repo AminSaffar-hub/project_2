@@ -6,7 +6,6 @@ import requests
 from selenium.webdriver.chrome.options import Options
 
 
-
 class scrappingHammadiAbid(Scrapping):
     """
     A class to scrape Hammadi Abid product information by extending the Scrapping base class.
@@ -14,7 +13,8 @@ class scrappingHammadiAbid(Scrapping):
 
     def __init__(self) -> None:
         """
-        Initialize the scrappingHammadiAbid object with the Hammadi Abid product URLs and other settings.
+        Initialize the scrappingHammadiAbid object with the Hammadi Abid product URLs
+        and other settings.
         """
         Scrapping.__init__(self)
         self.urls = {
@@ -56,13 +56,14 @@ class scrappingHammadiAbid(Scrapping):
 
     def main(self):
         """
-        The main method that drives the scraping process, extracts the product information, and saves it to a DataFrame.
+        The main method that drives the scraping process, extracts the product information,
+        and saves it to a DataFrame.
 
         :return: The DataFrame containing the scraped product information.
         """
         chrome_options = Options()
         chrome_options.add_argument("--headless")
-        driver = webdriver.Chrome(option = chrome_options)
+        driver = webdriver.Chrome(option=chrome_options)
         for sector_url in list(self.urls.values()):
             driver.get(sector_url)
             self.scroll_down(driver, self._timer)

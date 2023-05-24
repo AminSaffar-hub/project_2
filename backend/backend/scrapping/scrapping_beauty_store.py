@@ -7,7 +7,8 @@ from selenium.webdriver.chrome.options import Options
 class Scrappingbeautystore(Scrapping):
     def __init__(self) -> None:
         """
-        A class to scrape product information from the Beautystore website by extending the Scrapping base class.
+        A class to scrape product information from the Beautystore website by extending
+        the Scrapping base class.
         """
         Scrapping.__init__(self)
         """
@@ -26,13 +27,14 @@ class Scrappingbeautystore(Scrapping):
 
     def main(self):
         """
-        The main method that drives the scraping process, extracts the product information, and saves it to a DataFrame.
+        The main method that drives the scraping process, extracts the product information,
+        and saves it to a DataFrame.
 
         :return: The DataFrame containing the scraped product information.
         """
         chrome_options = Options()
         chrome_options.add_argument("--headless")
-        driver = webdriver.Chrome(option = chrome_options)
+        driver = webdriver.Chrome(option=chrome_options)
         driver.get(self.urls["promotion"])
         html_content = driver.page_source
         promotions_sections = BeautifulSoup(html_content, "html.parser")

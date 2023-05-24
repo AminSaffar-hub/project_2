@@ -5,10 +5,10 @@ from backend.scrapping.scrapping import Scrapping
 from selenium.webdriver.chrome.options import Options
 
 
-
 class Scrapingcosme(Scrapping):
     """
-    A class to scrape product information from the Cosmetique website by extending the Scrapping base class.
+    A class to scrape product information from the Cosmetique website by extending
+    the Scrapping base class.
     """
 
     def __init__(self) -> None:
@@ -38,7 +38,7 @@ class Scrapingcosme(Scrapping):
         """
         chrome_options = Options()
         chrome_options.add_argument("--headless")
-        driver = webdriver.Chrome(option = chrome_options)
+        driver = webdriver.Chrome(option=chrome_options)
         driver.get("https://cosmetique.tn/promotions")
         html_content = driver.page_source
         soup = BeautifulSoup(html_content, "html.parser")
@@ -81,7 +81,8 @@ class Scrapingcosme(Scrapping):
 
     def main(self):
         """
-        The main method that drives the scraping process, extracts the product information, and saves it to a DataFrame.
+        The main method that drives the scraping process, extracts the product information,
+        and saves it to a DataFrame.
 
         :return: The DataFrame containing the scraped product information.
         """

@@ -7,10 +7,10 @@ import requests
 from selenium.webdriver.chrome.options import Options
 
 
-
 class ScrapingExist(Scrapping):
     """
-    A class to scrape product information from the Exist website by extending the Scrapping base class.
+    A class to scrape product information from the Exist website by extending
+    the Scrapping base class.
     """
 
     def __init__(self) -> None:
@@ -62,13 +62,14 @@ class ScrapingExist(Scrapping):
 
     def main(self):
         """
-        The main method that drives the scraping process, extracts the product information, and saves it to a DataFrame.
+        The main method that drives the scraping process, extracts the product information,
+        and saves it to a DataFrame.
 
         :return: The DataFrame containing the scraped product information.
         """
         chrome_options = Options()
         chrome_options.add_argument("--headless")
-        driver = webdriver.Chrome(option = chrome_options)
+        driver = webdriver.Chrome(option=chrome_options)
         driver.get(self.urls["clothes"])
         html_content = driver.page_source
         soup = BeautifulSoup(html_content, "html.parser")
