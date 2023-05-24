@@ -1,0 +1,26 @@
+name: lint-code
+run-name: lint code uploaded by ${{ github.actor }}
+on: [push, pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9  # Adjust the Python version as needed
+
+      - name: Install dependencies
+        run: |
+          pip3 install flake8==6.0.0
+          pip3 install black==23.3.0
+
+      - name: Run Black
+        run: black . --check
+
+      - name: Run Flake8
+        run: flake8

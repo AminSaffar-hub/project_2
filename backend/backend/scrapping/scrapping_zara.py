@@ -7,7 +7,6 @@ import requests
 from selenium.webdriver.chrome.options import Options
 
 
-
 class ScrapingZara(Scrapping):
     """
     A class to scrape Zara product information by extending the Scrapping base class.
@@ -21,9 +20,9 @@ class ScrapingZara(Scrapping):
         self.urls = {
             "femme": "https://www.zara.com/tn/fr/femme-prix-speciaux-l1314.html?v1=2185209",
             "homme": "https://www.zara.com/tn/fr/homme-prix-speciaux-l806.html?v1=2203954",
-            "bebe-garcon": "https://www.zara.com/tn/fr/enfants-bebe-garcon-prix-speciaux-l69.html?v1=2194908",
-            "bebe fille": "https://www.zara.com/tn/fr/enfants-bebe-fille-prix-speciaux-l152.html?v1=2196579",
-            "garcon": "https://www.zara.com/tn/fr/enfants-garcon-prix-speciaux-l263.html?v1=2190481",
+            "bebe-garcon": "https://www.zara.com/tn/fr/enfants-bebe-garcon-prix-speciaux-l69.html?v1=2194908",  # noqa
+            "bebe fille": "https://www.zara.com/tn/fr/enfants-bebe-fille-prix-speciaux-l152.html?v1=2196579",  # noqa
+            "garcon": "https://www.zara.com/tn/fr/enfants-garcon-prix-speciaux-l263.html?v1=2190481",  # noqa
             "fille": "https://www.zara.com/tn/fr/enfants-fille-prix-speciaux-l427.html?v1=2189631",
         }
         self._timer = 10
@@ -68,7 +67,8 @@ class ScrapingZara(Scrapping):
 
     def main(self):
         """
-        The main method that drives the scraping process, extracts the product information, and saves it to a DataFrame.
+        The main method that drives the scraping process, extracts the product information,
+        and saves it to a DataFrame.
 
         :return: The DataFrame containing the scraped product information.
         """

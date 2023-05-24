@@ -1,7 +1,7 @@
 """
-This script imports the scraping classes for various websites (Bershka, Cosmetique, Exist, MG, and Zara)
-and combines the scraped data into a single pandas DataFrame. The resulting DataFrame is saved to a
-CSV file named "output.csv" and printed to the console.
+This script imports the scraping classes for various websites (Bershka, Cosmetique, Exist,
+MG, and Zara) and combines the scraped data into a single pandas DataFrame. The resulting
+DataFrame is saved to a CSV file named "output.csv" and printed to the console.
 
 Classes Imported:
     ScrapingBershka: Scraper for the Bershka website.
@@ -14,8 +14,8 @@ Functions:
     main(): Scrapes data from all the websites and combines the results into a single DataFrame.
 
 Usage:
-    Run the script to scrape the data and save it to the "output.csv" file. The final DataFrame will
-    also be printed to the console.
+    Run the script to scrape the data and save it to the "output.csv" file. The final DataFrame
+    will also be printed to the console.
 """
 from backend.scrapping.scrapping_beauty_store import Scrappingbeautystore
 from backend.scrapping.scrapping_bershka import ScrapingBershka
@@ -37,10 +37,19 @@ def run_scrapping():
     """
     scrapped_articles = []
     start_time = time.time()
-    for klass in [ScrapingZara(), ScrapingBershka(), ScrapingMG(), ScrapingExist(), Scrapingcosme(), Scrappingbeautystore()]:
+    for klass in [
+        ScrapingZara(),
+        ScrapingBershka(),
+        ScrapingMG(),
+        ScrapingExist(),
+        Scrapingcosme(),
+        Scrappingbeautystore(),
+    ]:
         scrapped_articles.append(klass.main())
         klass.save_data_to_db()
-        sys.stdout.write(f"Finished running {klass.__class__.__name__}'s main function.\n")
+        sys.stdout.write(
+            f"Finished running {klass.__class__.__name__}'s main function.\n"
+        )
         sys.stdout.flush()
     elapsed_time = time.time() - start_time
     print(f"Execution time: {elapsed_time:.2f} seconds")

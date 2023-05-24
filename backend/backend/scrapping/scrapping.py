@@ -95,14 +95,22 @@ class Scrapping:
         """
         Saves data to database by posting to the /api/promotions endpoint
         """
-        for name, old_price, new_price, url, image_link, product_type, description in zip(
+        for (
+            name,
+            old_price,
+            new_price,
+            url,
+            image_link,
+            product_type,
+            description,
+        ) in zip(
             self.name,
             self.old_price,
             self.new_price,
             self.url,
             self.image_link,
             self.product_type,
-            self.product_description
+            self.product_description,
         ):
             Article.objects.create(
                 name=name,

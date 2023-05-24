@@ -2,16 +2,16 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 from tqdm import tqdm
 import re
-from tqdm import tqdm
-from backend.scrapping.scrapping import Scrapping
 import requests
 from selenium.webdriver.chrome.options import Options
 
+from backend.scrapping.scrapping import Scrapping
 
 
 class ScrapingMG(Scrapping):
     """
-    A class to scrape product information from the MG website by extending the Scrapping base class.
+    A class to scrape product information from the MG website by extending
+    the Scrapping base class.
     """
 
     def __init__(self) -> None:
@@ -95,13 +95,14 @@ class ScrapingMG(Scrapping):
 
     def main(self):
         """
-        The main method that drives the scraping process, extracts the product information, and saves it to a DataFrame.
+        The main method that drives the scraping process, extracts the product information,
+        and saves it to a DataFrame.
 
         :return: The DataFrame containing the scraped product information.
         """
         chrome_options = Options()
         chrome_options.add_argument("--headless")
-        driver = webdriver.Chrome(option = chrome_options)
+        driver = webdriver.Chrome(option=chrome_options)
         for sector_url, div in tqdm(zip(self.urls.values(), self.urls.keys())):
             driver.get(sector_url)
             self.scroll_down(driver, self._timer)

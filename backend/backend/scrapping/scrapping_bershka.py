@@ -6,10 +6,10 @@ from backend.scrapping.scrapping import Scrapping
 from selenium.webdriver.chrome.options import Options
 
 
-
 class ScrapingBershka(Scrapping):
     """
-    A class to scrape product information from the Bershka website by extending the Scrapping base class.
+    A class to scrape product information from the Bershka website by extending the Scrapping
+    base class.
     """
 
     def __init__(self) -> None:
@@ -19,8 +19,8 @@ class ScrapingBershka(Scrapping):
         Scrapping.__init__(self)
 
         self.urls = {
-            "femme": "https://www.bershka.com/tn/femme/promotion-jusqu'%C3%A0--30%25-c1010473002.html",
-            "homme": "https://www.bershka.com/tn/homme/promotion-jusqu'%C3%A0--30%25-c1010477501.html",
+            "femme": "https://www.bershka.com/tn/femme/promotion-jusqu'%C3%A0--30%25-c1010473002.html",  # noqa
+            "homme": "https://www.bershka.com/tn/homme/promotion-jusqu'%C3%A0--30%25-c1010477501.html",  # noqa
         }
         self._timer = 10
 
@@ -54,13 +54,14 @@ class ScrapingBershka(Scrapping):
 
     def main(self):
         """
-        The main method that drives the scraping process, extracts the product information, and saves it to a DataFrame.
+        The main method that drives the scraping process, extracts the product information, and
+        saves it to a DataFrame.
 
         :return: The DataFrame containing the scraped product information.
         """
         chrome_options = Options()
         chrome_options.add_argument("--headless")
-        driver = webdriver.Chrome(option = chrome_options)
+        driver = webdriver.Chrome(option=chrome_options)
         for url in list(self.urls.values()):
             driver.get(url)
             self.scroll_down_Bershka(driver, self._timer)
