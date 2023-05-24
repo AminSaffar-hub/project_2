@@ -10,6 +10,10 @@ div.article-card {
     margin: 10px auto;
 }
 
+ul.pagination {
+    justify-content: center;
+}
+
 div.searched-article {
     height: 20%;
     background: white;
@@ -39,4 +43,9 @@ a.navbar-brand span {
 
 nav.navbar {
     background-color: #35373b
+}
+
+footer {
+    background: #35373b !important;
+    color: white;
 }

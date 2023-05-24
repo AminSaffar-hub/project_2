@@ -28,6 +28,7 @@
     {% empty %}
         <p> Winhoum manedrouch, arja3 ghodwa </p>
     {% endfor %}
+    
     <ul class="pagination">
         {% for page_number in articles.adjusted_elided_pages %}
             {% if page_number == articles.paginator.ELLIPSIS %}
