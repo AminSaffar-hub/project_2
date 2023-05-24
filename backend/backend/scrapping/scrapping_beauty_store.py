@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from backend.scrapping.scrapping import Scrapping
+from selenium.webdriver.chrome.options import Options
 
 
 class Scrappingbeautystore(Scrapping):
@@ -29,7 +30,9 @@ class Scrappingbeautystore(Scrapping):
 
         :return: The DataFrame containing the scraped product information.
         """
-        driver = webdriver.Chrome()
+        chrome_options = Options()
+        chrome_options.add_argument("--headless")
+        driver = webdriver.Chrome(option = chrome_options)
         driver.get(self.urls["promotion"])
         html_content = driver.page_source
         promotions_sections = BeautifulSoup(html_content, "html.parser")

@@ -1,0 +1,48 @@
+{% extends 'frontend/base.html' %}
+{% block 'body' %}
+    {% if search_post %}
+        <div class="searched-article">
+            <p>Résultats pour "{{search_post}}"</p>
+        </div>
+    {% endif %}
+    {% for article in articles %}
+        <div class="card article-card">
+            <div class="row no-gutters">
+                <div class="col-2">
+                    <img src="{{ article.image_link }}" class="card-img article-img" alt="Image">
+                </div>
+                <div class="col-10">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ article.name }}</h5>
+                        <p>
+                            <span style="color: red;">{{ article.new_price }} TND</span> 
+                            <span style="color: rgb(126, 126, 126); text-decoration: line-through;">{{ article.old_price }} TND</span> 
+                            {{ article.percentage }}%
+                        </p>
+                        <p class="card-text">{{ article.description | truncatechars:150 }}</p>
+                        <a href="{{ article.url }}"  class="btn btn-secondary float-right article-a">visiter l'article</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% empty %}
+        <p> Winhoum manedrouch, arja3 ghodwa </p>
+    {% endfor %}
+    
+    <ul class="pagination">
+        {% for page_number in articles.adjusted_elided_pages %}
+            {% if page_number == articles.paginator.ELLIPSIS %}
+                {{page_number}}
+            {% else %}
+                <li class="page-item">
+                    <a
+                    class="page-link {% if page_number == articles.number %}current{% endif %}" 
+                    href="{% url 'pages' page_number %}"
+                    >
+                        {{page_number}}
+                    </a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endblock %}
