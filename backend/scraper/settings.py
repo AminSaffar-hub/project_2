@@ -45,7 +45,10 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 SPIDER_MIDDLEWARES = {
-    "scraper.middlewares.ScraperSpiderMiddleware": 100,
+    "scraper.middlewares.PreProcessItemName": 100,
+    "scraper.middlewares.PreProcessDescription": 200,
+    "scraper.middlewares.PreProcessPrice": 300,
+    "scraper.middlewares.SaveItemPipeline": 400,
 }
 
 # Enable or disable downloader middlewares
