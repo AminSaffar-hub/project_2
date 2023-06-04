@@ -1,42 +1,34 @@
 import re
-
+from asgiref.sync import sync_to_async
 
 class SaveItemPipeline:
+    @sync_to_async
     def process_item(self, item, spider):
         item.save()
         return item
 
 
-class PreProcessItemName:
+class PreProcessPipeline:
     def process_item(self, item, spider):
-        name = item.get("name")
-        if isinstance(name, list):
-            name = "".join(name)
-
-        name = name.strip()
-        name = re.sub(r"\s+", " ", name)
-        name = re.sub(r"[^\w\s]", "", name)
-        item["name"] = name
+        item["name"] = self._preprocess_value(item.get("name"))
+        item["description"] = self._preprocess_value(item.get("description"))
+        item["old_price"] = self._clean_price(item.get("old_price"))
+        item["new_price"] = self._clean_price(item.get("new_price"))
         return item
 
+    @staticmethod
+    def _preprocess_value(value):
+        if isinstance(value, list):
+            value = "".join(value)
+        if value:
+            value = value.strip()
+            value = re.sub(r"\s+", " ", value)
+            value = re.sub(r"[^\w\s]", "", value)
+        return value
 
-class PreProcessDescription:
-    def process_item(self, item, spider):
-        description = item.get("description")
-        if isinstance(description, list):
-            description = "".join(description)
-
-        description = description.strip()
-        description = re.sub(r"\s+", " ", description)
-        description = re.sub(r"[^\w\s]", "", description)
-        item["description"] = description
-        return item
-
-
-class PreProcessPrice:
-    def process_item(self, item, spider):
-        old_price = item.get("old_price")
-        new_price = item.get("new_price")
-        item["old_price"] = float(old_price.replace("\xa0", "").replace(",", "."))
-        item["new_price"] = float(new_price.replace("\xa0", "").replace(",", "."))
-        return item
+    @staticmethod
+    def _clean_price(price):
+        if price:
+            price = price.replace("\xa0", "").replace(",", ".")
+            return float(price)
+        return None

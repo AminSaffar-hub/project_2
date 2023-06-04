@@ -44,12 +44,10 @@ ROBOTSTXT_OBEY = True
 
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
-SPIDER_MIDDLEWARES = {
-    "scraper.middlewares.PreProcessItemName": 100,
-    "scraper.middlewares.PreProcessDescription": 200,
-    "scraper.middlewares.PreProcessPrice": 300,
-    "scraper.middlewares.SaveItemPipeline": 400,
-}
+# SPIDER_MIDDLEWARES = {
+#     "scraper.middlewares.PreProcessPipeline": 100,
+#     "scraper.middlewares.SaveItemPipeline": 200,
+# }
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
@@ -65,9 +63,10 @@ SPIDER_MIDDLEWARES = {
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-# ITEM_PIPELINES = {
-#    "scraper.pipelines.ScraperPipeline": 300,
-# }
+ITEM_PIPELINES = {
+   "scraper.pipelines.PreProcessPipeline": 300,
+   "scraper.pipelines.SaveItemPipeline": 800,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
