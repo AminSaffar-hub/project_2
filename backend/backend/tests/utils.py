@@ -39,8 +39,8 @@ class TestCaseWithDataMixin:
         for i in range(10):
             Article.objects.create(
                 name=f"Article {i+1}",
-                old_price=i+1 * 5,
-                new_price=i+1 * 4,
+                old_price=i + 1 * 5,
+                new_price=i + 1 * 4,
                 url=f"http://url/to/Article {i+1}",
                 image_link=f"http://url/to/Article {i+1}.png",
                 description=f"best Article {i+1} machine in the world",

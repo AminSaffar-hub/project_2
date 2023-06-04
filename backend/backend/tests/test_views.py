@@ -1,5 +1,4 @@
 from django.test import TestCase, RequestFactory
-from backend.models import Article
 
 from backend.tests.utils import TestCaseWithDataMixin
 from frontend.views import home
@@ -44,4 +43,3 @@ class ViewsTests(TestCaseWithDataMixin, TestCase):
         self.assertNotContains(response, "Article 1")
         self.assertNotContains(response, "Article 7")
         self.assertNotContains(response, "shoe")
-
