@@ -7,8 +7,8 @@ class TestCaseWithDataMixin:
 
         self.article1 = Article.objects.create(
             name="shoe",
-            old_price="150",
-            new_price="100",
+            old_price=150,
+            new_price=100,
             url="http://url/to/shoe",
             image_link="http://url/to/shoe.png",
             description="best shoe in the world",
@@ -17,8 +17,8 @@ class TestCaseWithDataMixin:
 
         self.article2 = Article.objects.create(
             name="makeup",
-            old_price="20",
-            new_price="10",
+            old_price=20,
+            new_price=10,
             url="http://url/to/makeup",
             image_link="http://url/to/makeup.png",
             description="best makeup in the world",
@@ -27,8 +27,8 @@ class TestCaseWithDataMixin:
 
         self.article2 = Article.objects.create(
             name="panini machine",
-            old_price="20",
-            new_price="10",
+            old_price=20,
+            new_price=10,
             url="http://url/to/panini_machine",
             image_link="http://url/to/panini_machine.png",
             description="best panini machine in the world",
@@ -37,4 +37,12 @@ class TestCaseWithDataMixin:
 
         # Create 10 test articles
         for i in range(10):
-            Article.objects.create(name=f"Article {i+1}")
+            Article.objects.create(
+                name=f"Article {i+1}",
+                old_price=i+1 * 5,
+                new_price=i+1 * 4,
+                url=f"http://url/to/Article {i+1}",
+                image_link=f"http://url/to/Article {i+1}.png",
+                description=f"best Article {i+1} machine in the world",
+                type=Article.ProductType.OTHER,
+            )
