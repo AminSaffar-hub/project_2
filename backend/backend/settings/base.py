@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "backend",
     "frontend",
+    "scraper",
 ]
 
 MIDDLEWARE = [

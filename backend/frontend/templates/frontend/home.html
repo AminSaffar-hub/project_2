@@ -1,8 +1,8 @@
 {% extends 'frontend/base.html' %}
 {% block 'body' %}
-    {% if search_post %}
+    {% if searched_article %}
         <div class="searched-article">
-            <p>Résultats pour "{{search_post}}"</p>
+            <p>Résultats pour "{{searched_article}}"</p>
         </div>
     {% endif %}
     {% for article in articles %}
@@ -28,7 +28,7 @@
     {% empty %}
         <p> Winhoum manedrouch, arja3 ghodwa </p>
     {% endfor %}
-    
+
     <ul class="pagination">
         {% for page_number in articles.adjusted_elided_pages %}
             {% if page_number == articles.paginator.ELLIPSIS %}
@@ -36,8 +36,8 @@
             {% else %}
                 <li class="page-item">
                     <a
-                    class="page-link {% if page_number == articles.number %}current{% endif %}" 
-                    href="{% url 'pages' page_number %}"
+                    class="page-link {% if page_number == articles.number %}current{% endif %}"
+                    href="?page={{page_number}}{% if searched_article %}&search={{searched_article}}{% endif %}"
                     >
                         {{page_number}}
                     </a>

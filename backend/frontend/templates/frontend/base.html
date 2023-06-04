@@ -8,6 +8,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link
+          href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"
+          rel="stylesheet"  type='text/css'>
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link href="https://fonts.cdnfonts.com/css/averta-standard" rel="stylesheet">
 
@@ -18,8 +21,16 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}"><span>E R R A D A R</span></a>
             <form action="{% url 'home' %}">
-                <input type="text" name="search" placeholder="Recherche.." value="{{request.GET.title}}">
-                <input type="submit" value="Search">
+                <div class="row no-gutters mt-3 align-items-center">
+                    <div class="col-auto">
+                        <input type="text" name="search" class="form-control border-secondary rounded-pill pr-5" placeholder="Recherche.." value="{{request.GET.title}}">
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-outline-light text-dark border-0 rounded-pill ml-n5" type="search">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
             </form>
         </div>
     </nav>
