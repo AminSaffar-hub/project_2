@@ -64,8 +64,8 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   "scraper.pipelines.PreProcessPipeline": 300,
-   "scraper.pipelines.SaveItemPipeline": 800,
+    "scraper.pipelines.PreProcessPipeline": 300,
+    "scraper.pipelines.SaveItemPipeline": 800,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

@@ -1,6 +1,7 @@
 import re
 from asgiref.sync import sync_to_async
 
+
 class SaveItemPipeline:
     @sync_to_async
     def process_item(self, item, spider):
