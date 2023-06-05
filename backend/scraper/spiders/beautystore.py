@@ -2,7 +2,6 @@ import scrapy
 from scraper.items import ArticleItem
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import Rule, CrawlSpider
-from scrapy.exceptions import CloseSpider
 
 
 class BeautyStoreSpider(CrawlSpider):
@@ -35,12 +34,12 @@ class BeautyStoreSpider(CrawlSpider):
 
     def fetch_item(self, response):
         if response.status == 404:
-            raise CloseSpider("No more pages, quitting !!")
+            return
 
         articles = response.css("article.product-miniature div a::attr(href)").getall()
 
         if not len(articles):
-            raise CloseSpider(f"Empty page {self.page_number}, quitting !!")
+            return
 
         for article_url in articles:
             yield scrapy.Request(

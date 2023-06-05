@@ -31,5 +31,7 @@ class PreProcessPipeline:
     def _clean_price(price):
         if price:
             price = price.replace("\xa0", "").replace(",", ".")
+            if price.find("TND") != -1:
+                price = price.replace("TND", "")
             return float(price)
         return None
