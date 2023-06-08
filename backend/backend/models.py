@@ -75,4 +75,6 @@ class Article(models.Model):
 
     @property
     def percentage(self):
+        if not self.old_price or not self.new_price:
+            return 0
         return math.floor(((self.old_price - self.new_price) / self.old_price) * 100)
