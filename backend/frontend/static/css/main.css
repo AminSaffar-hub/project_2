@@ -41,6 +41,10 @@ a.navbar-brand span {
     color: black;
 }
 
+a.page-link {
+    color: black;
+}
+
 nav.navbar {
     background-color: #35373b
 }
