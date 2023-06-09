@@ -6,7 +6,7 @@
         </div>
     {% endif %}
     {% for article in articles %}
-        <div class="card article-card">
+        <div class="card article-card mx-auto">
             <div class="row no-gutters">
                 <div class="col-2">
                     <img src="{{ article.image_link }}" class="card-img article-img" alt="Image">
@@ -16,8 +16,11 @@
                         <h5 class="card-title">{{ article.name }}</h5>
                         <p>
                             <span style="color: red;">{{ article.new_price }} TND</span>
-                            {% if article.old_price %}<span style="color: rgb(126, 126, 126); text-decoration: line-through;">{{
-                                article.old_price }} TND</span>{% endif %}
+                            {% if article.old_price %}
+                                <span style="color: rgb(126, 126, 126); text-decoration: line-through;">
+                                    {{article.old_price }} TND
+                                </span>
+                            {% endif %}
                             {% if article.percentage %}{{ article.percentage }}%{% endif %}
                         </p>
                         <p class="card-text">{{ article.description | truncatechars:150 }}</p>

@@ -6,8 +6,8 @@ body {
 
 div.article-card {
     border-radius: 10px;
-    width: 40vw;
-    margin: 10px auto;
+    width: 60%;
+    margin-top: 10px;
 }
 
 ul.pagination {
