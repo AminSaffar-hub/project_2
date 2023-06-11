@@ -30,6 +30,7 @@ def home(request):
         {"articles": articles_in_page, "searched_article": searched_article},
     )
 
+
 class ProductDetails(DetailView):
     model = Article
     template_name = "frontend/product_details.html"

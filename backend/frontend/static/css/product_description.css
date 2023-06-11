@@ -12,12 +12,10 @@ h1 {
     background-color: rgb(137, 182, 255);
 }
 
-/* btns */
 .carts a {
     margin-right: 10px;
 }
 
-/* image */
 .product_image {
     padding: 1.5rem!important;
 }
