@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.core.paginator import Paginator
+from django.views.generic import DetailView
 from backend.models import Article
+
 
 NUMBER_OF_ARTICLES_IN_PAGE = 8
 
@@ -27,3 +29,8 @@ def home(request):
         "frontend/home.html",
         {"articles": articles_in_page, "searched_article": searched_article},
     )
+
+
+class ProductDetails(DetailView):
+    model = Article
+    template_name = "frontend/product_details.html"

@@ -1,0 +1,21 @@
+/* title */
+h1 {
+    padding-bottom: 10px;
+}
+
+/* carousel */
+.swiper-pagination-bullet {
+    transition: .3s;
+}
+.swiper-pagination-bullet:hover {
+    transition: .3s;
+    background-color: rgb(137, 182, 255);
+}
+
+.carts a {
+    margin-right: 10px;
+}
+
+.product_image {
+    padding: 1.5rem!important;
+}

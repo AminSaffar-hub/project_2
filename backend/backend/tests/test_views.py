@@ -43,3 +43,14 @@ class ViewsTests(TestCaseWithDataMixin, TestCase):
         self.assertNotContains(response, "Article 1")
         self.assertNotContains(response, "Article 7")
         self.assertNotContains(response, "shoe")
+
+    def test_product_description(self):
+        response = self.client.get(f"/{self.article1.pk}")
+
+        self.assertContains(response, self.article1.name)
+        self.assertContains(response, self.article1.url)
+        self.assertContains(response, self.article1.old_price)
+        self.assertContains(response, self.article1.new_price)
+        self.assertContains(response, self.article1.description)
+
+        self.assertTemplateUsed(response, "frontend/product_details.html")

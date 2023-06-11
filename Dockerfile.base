@@ -1,26 +1,5 @@
 FROM python:3.9.16-slim
 
-
-# Install wget and unzip
-RUN apt-get update && apt-get install -y \
-  wget \
-  unzip \
-  gnupg2
-
-# install google chrome
-RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
-RUN sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-RUN apt-get update -qqy --no-install-recommends && apt-get install -qqy --no-install-recommends google-chrome-stable
-
-# install chromedriver
-RUN apt-get install -yqq unzip
-RUN wget -O /tmp/chromedriver.zip http://chromedriver.storage.googleapis.com/`curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE`/chromedriver_linux64.zip
-RUN unzip /tmp/chromedriver.zip chromedriver -d /usr/local/bin/
-
-# based on https://stackoverflow.com/a/54763270
-
-ARG DEV
-
 ENV YOUR_ENV=PYTHONFAULTHANDLER=1 \
   PYTHONUNBUFFERED=1 \
   PYTHONHASHSEED=random \

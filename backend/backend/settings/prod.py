@@ -4,7 +4,7 @@ import os
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    "192.168.1.56",
+    "192.168.16.1",
     "localhost",
     "host.docker.internal",
     "ec2-52-47-128-70.eu-west-3.compute.amazonaws.com",

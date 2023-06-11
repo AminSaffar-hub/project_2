@@ -23,6 +23,8 @@ services:
     depends_on:
       - migration
       - db
+    links:
+      - db:db
     ports:
       - '8000:8000'
 

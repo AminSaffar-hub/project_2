@@ -6,8 +6,8 @@ body {
 
 div.article-card {
     border-radius: 10px;
-    width: 40vw;
-    margin: 10px auto;
+    width: 60%;
+    margin-top: 10px;
 }
 
 ul.pagination {
@@ -38,6 +38,10 @@ a.navbar-brand {
 }
 
 a.navbar-brand span {
+    color: black;
+}
+
+a.page-link {
     color: black;
 }
 
