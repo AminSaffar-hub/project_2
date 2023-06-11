@@ -23,8 +23,7 @@
                             {% endif %}
                             {% if article.percentage %}{{ article.percentage }}%{% endif %}
                         </p>
-                        <p class="card-text">{{ article.description | truncatechars:150 }}</p>
-                        <a href="{{ article.url }}" class="btn btn-secondary float-right article-a">visiter l'article</a>
+                        <a href="{% url 'product_details' pk=article.pk %}" class="btn btn-secondary float-right article-a">Voir l'article</a>
                     </div>
                 </div>
             </div>

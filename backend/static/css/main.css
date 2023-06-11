@@ -1,17 +1,27 @@
 body {
+    font-family: 'Averta Standard',Helvetica Helvetica,Arial,Lucida sans-serif;
+    font-size: 16px;
     background: #ececec !important;
 }
 
 div.article-card {
     border-radius: 10px;
-    width: 40vw;
-    margin: 10px auto;
+    width: 60%;
+    margin-top: 10px;
+}
+
+ul.pagination {
+    justify-content: center;
 }
 
 div.searched-article {
     height: 20%;
     background: white;
-    font-size: 5em;
+}
+
+div.searched-article p {
+    text-align: center;
+    font-size: xx-large;
 }
 
 img.article-img {
@@ -31,6 +41,15 @@ a.navbar-brand span {
     color: black;
 }
 
+a.page-link {
+    color: black;
+}
+
 nav.navbar {
     background-color: #35373b
+}
+
+footer {
+    background: #35373b !important;
+    color: white;
 }

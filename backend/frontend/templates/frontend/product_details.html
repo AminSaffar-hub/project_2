@@ -1,0 +1,33 @@
+{% extends 'frontend/base.html' %}
+{% block 'body' %}
+<div class="container dark-grey-text mt-5">
+    <h1> {{ object.name }} </h1>
+    <div class="row wow fadeIn">
+        <!-- product image -->
+        <div class="col-md-6 mb-4 product_image">
+            <img src="{{ object.image_link }}" class="img-fluid" alt="">
+        </div>
+        <div class="col-md-6 mb-4">
+        <div class="p-4 item-description">
+            <!-- product item badge -->
+            <div class="mb-3">
+                <a href="">
+                    <span class="badge badge-secondary">{{ item.type }}</span>
+                </a>
+            </div>
+            <!-- product item price -->
+            <p class="lead">
+                <span class="mr-1">
+                    <del>{{ object.old_price }} TND</del>
+                    <span>{{ object.new_price }} TND</span>
+                </span>
+            </p>
+            <!-- item descriptions -->
+            <p class="lead font-weight-bold">Description</p>
+            <p>{{ object.description }}</p>
+            <br>
+            <a href="{{object.url}}" class="btn btn-secondary article-a">Visiter l'article</a>
+        </div>
+        </div>
+    </div>
+{% endblock %}
