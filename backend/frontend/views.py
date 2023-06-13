@@ -16,9 +16,7 @@ def home(request):
     else:
         items = Item.objects.all()
 
-    paginator = Paginator(
-        items.order_by("title"), per_page=NUMBER_OF_ITEMS_IN_PAGE
-    )
+    paginator = Paginator(items.order_by("title"), per_page=NUMBER_OF_ITEMS_IN_PAGE)
     items_in_page = paginator.get_page(page_number)
     items_in_page.adjusted_elided_pages = paginator.get_elided_page_range(
         page_number, on_each_side=2, on_ends=2

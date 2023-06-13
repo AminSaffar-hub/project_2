@@ -2,6 +2,7 @@ import math
 
 from django.db import models
 
+
 class Item(models.Model):
     title = models.CharField(max_length=100)
 
@@ -12,25 +13,27 @@ class Item(models.Model):
         APPLIANCES = "appliances"
         COSMETICS = "cosmetics"
         OTHER = "other"
-    category = models.CharField(choices=ItemCategories.choices, max_length=50)            
-    description = models.TextField(max_length=2500)                            
-    
-    price = models.DecimalField(max_digits=6, decimal_places=2, default=10)   
-    discounted_price = models.DecimalField(max_digits=6, decimal_places=2, blank=True, null=True)
 
-    started_at = models.DateTimeField(        
+    category = models.CharField(choices=ItemCategories.choices, max_length=50)
+    description = models.TextField(max_length=2500)
+
+    price = models.DecimalField(max_digits=6, decimal_places=2, default=10)
+    discounted_price = models.DecimalField(
+        max_digits=6, decimal_places=2, blank=True, null=True
+    )
+
+    started_at = models.DateTimeField(
         null=True,
         blank=True,
-        help_text=("Date and time when the item promotion started."),)
+        help_text=("Date and time when the item promotion started."),
+    )
     ended_at = models.DateTimeField(
         null=True,
         blank=True,
         help_text=("Date and time when the item promotion ended."),
     )
 
-    provider =  models.URLField(
-        null=True, blank=True, help_text="Url of item provider"
-    )
+    provider = models.URLField(null=True, blank=True, help_text="Url of item provider")
     link_to_post = models.URLField(
         null=True, blank=True, help_text="Url of the item in the provider website"
     )
@@ -39,7 +42,6 @@ class Item(models.Model):
         blank=True,
         help_text="url to the product image, found in the provider website.",
     )
-
 
     @property
     def sale_percentage(self):
