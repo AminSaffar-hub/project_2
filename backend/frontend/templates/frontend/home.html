@@ -1,29 +1,29 @@
 {% extends 'frontend/base.html' %}
 {% block 'body' %}
-    {% if searched_article %}
-        <div class="searched-article">
-            <p>Résultats pour "{{searched_article}}"</p>
+    {% if searched_item %}
+        <div class="searched-item">
+            <p>Résultats pour "{{searched_item}}"</p>
         </div>
     {% endif %}
-    {% for article in articles %}
-        <div class="card article-card mx-auto">
+    {% for item in items %}
+        <div class="card item-card mx-auto">
             <div class="row no-gutters">
                 <div class="col-2">
-                    <img src="{{ article.image_link }}" class="card-img article-img" alt="Image">
+                    <img src="{{ item.link_to_image }}" class="card-img item-img" alt="Image">
                 </div>
                 <div class="col-10">
                     <div class="card-body">
-                        <h5 class="card-title">{{ article.name }}</h5>
+                        <h5 class="card-title">{{ item.title }}</h5>
                         <p>
-                            <span style="color: red;">{{ article.new_price }} TND</span>
-                            {% if article.old_price %}
+                            <span style="color: red;">{{ item.discounted_price }} TND</span>
+                            {% if item.price %}
                                 <span style="color: rgb(126, 126, 126); text-decoration: line-through;">
-                                    {{article.old_price }} TND
+                                    {{item.price }} TND
                                 </span>
                             {% endif %}
-                            {% if article.percentage %}{{ article.percentage }}%{% endif %}
+                            {% if item.sale_percentage %}{{ item.sale_percentage }}%{% endif %}
                         </p>
-                        <a href="{% url 'product_details' pk=article.pk %}" class="btn btn-secondary float-right article-a">Voir l'article</a>
+                        <a href="{% url 'product_details' pk=item.pk %}" class="btn btn-secondary float-right item-a">Voir l'item</a>
                     </div>
                 </div>
             </div>
@@ -33,14 +33,14 @@
     {% endfor %}
 
     <ul class="pagination">
-        {% for page_number in articles.adjusted_elided_pages %}
-            {% if page_number == articles.paginator.ELLIPSIS %}
+        {% for page_number in items.adjusted_elided_pages %}
+            {% if page_number == items.paginator.ELLIPSIS %}
                 {{page_number}}
             {% else %}
                 <li class="page-item">
                     <a
-                    class="page-link {% if page_number == articles.number %}current{% endif %}"
-                    href="?page={{page_number}}{% if searched_article %}&search={{searched_article}}{% endif %}"
+                    class="page-link {% if page_number == items.number %}current{% endif %}"
+                    href="?page={{page_number}}{% if searched_item %}&search={{searched_item}}{% endif %}"
                     >
                         {{page_number}}
                     </a>

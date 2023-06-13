@@ -4,7 +4,7 @@ body {
     background: #ececec !important;
 }
 
-div.article-card {
+div.item-card {
     border-radius: 10px;
     width: 60%;
     margin-top: 10px;
@@ -14,22 +14,22 @@ ul.pagination {
     justify-content: center;
 }
 
-div.searched-article {
+div.searched-item {
     height: 20%;
     background: white;
 }
 
-div.searched-article p {
+div.searched-item p {
     text-align: center;
     font-size: xx-large;
 }
 
-img.article-img {
+img.item-img {
     margin: 10px;
     border-radius: 10px;
 }
 
-a.article-a {
+a.item-a {
     margin: 10px;
 }
 
