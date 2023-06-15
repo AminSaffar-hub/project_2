@@ -31,6 +31,8 @@ class BeautyStoreSpider(CrawlSpider):
         item["description"] = response.css(
             '[id^="product-description-"] p::text'
         ).extract()
+        item["provider_name"] = "beautystore"
+        item["link_to_provider"] = "https://beautystore.tn"
         yield item
 
     def fetch_item(self, response):

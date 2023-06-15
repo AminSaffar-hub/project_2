@@ -33,7 +33,12 @@ class Item(models.Model):
         help_text=("Date and time when the item promotion ended."),
     )
 
-    provider = models.URLField(null=True, blank=True, help_text="Url of item provider")
+    provider_name = models.CharField(
+        null=True, max_length=20, blank=True, help_text="The item provider's name"
+    )
+    link_to_provider = models.URLField(
+        null=True, blank=True, help_text="Url of item provider"
+    )
     link_to_post = models.URLField(
         null=True, blank=True, help_text="Url of the item in the provider website"
     )

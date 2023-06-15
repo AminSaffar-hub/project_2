@@ -31,6 +31,8 @@ class ExistSpider(CrawlSpider):
         item["description"] = response.css(
             '[id^="product-description-"] *::text'
         ).extract()
+        item["provider_name"] = "exist"
+        item["link_to_provider"] = "https://www.exist.com.tn"
         yield item
 
     def fetch_items(self, response):

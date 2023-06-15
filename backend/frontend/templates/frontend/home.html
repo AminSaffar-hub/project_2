@@ -13,17 +13,27 @@
                 </div>
                 <div class="col-10">
                     <div class="card-body">
-                        <h5 class="card-title">{{ item.title }}</h5>
-                        <p>
-                            <span style="color: red;">{{ item.discounted_price }} TND</span>
-                            {% if item.price %}
-                                <span style="color: rgb(126, 126, 126); text-decoration: line-through;">
-                                    {{item.price }} TND
-                                </span>
-                            {% endif %}
-                            {% if item.sale_percentage %}{{ item.sale_percentage }}%{% endif %}
-                        </p>
-                        <a href="{% url 'product_details' pk=item.pk %}" class="btn btn-secondary float-right item-a">Voir l'item</a>
+                        <div class="row no-gutters">
+                            <div class="col-10">
+                                <h5 class="card-title">{{ item.title }}</h5>
+                                <p>
+                                    <span style="color: red;">{{ item.discounted_price }} TND</span>
+                                    {% if item.price %}
+                                        <span style="color: rgb(126, 126, 126); text-decoration: line-through;">
+                                            {{item.price }} TND
+                                        </span>
+                                    {% endif %}
+                                    {% if item.sale_percentage %}{{ item.sale_percentage }}%{% endif %}
+                                </p>
+                                <p>
+                                    Bon plan <a href="{{ item.link_to_provider }}">{{ item.provider_name }}</a>
+                                </p>
+                                <p class="card-text">{{ item.description | truncatechars:100 }}</p>
+                            </div>
+                            <div class="col-2 d-flex flex-column-reverse">
+                                <a href="{% url 'product_details' pk=item.pk %}" class="btn btn-secondary item-a">Voir l'item</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
