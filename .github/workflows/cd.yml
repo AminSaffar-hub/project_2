@@ -26,5 +26,5 @@ jobs:
             git fetch --all &&
             git reset --hard origin/main &&
             git pull origin main &&
-            ./deploy.sh
+            bash deploy.sh
           '
