@@ -5,57 +5,69 @@
             <p>Résultats pour "{{searched_item}}"</p>
         </div>
     {% endif %}
-    {% for item in items %}
-        <div class="card item-card mx-auto">
-            <div class="row no-gutters">
-                <div class="col-2">
-                    <img src="{{ item.link_to_image }}" class="card-img item-img" alt="Image">
-                </div>
-                <div class="col-10">
-                    <div class="card-body">
-                        <div class="row no-gutters">
-                            <div class="col-10">
-                                <h5 class="card-title">{{ item.title }}</h5>
-                                <p>
-                                    <span style="color: red;">{{ item.discounted_price }} TND</span>
-                                    {% if item.price %}
-                                        <span style="color: rgb(126, 126, 126); text-decoration: line-through;">
-                                            {{item.price }} TND
-                                        </span>
-                                    {% endif %}
-                                    {% if item.sale_percentage %}{{ item.sale_percentage }}%{% endif %}
-                                </p>
-                                <p>
-                                    Bon plan <a href="{{ item.link_to_provider }}">{{ item.provider_name }}</a>
-                                </p>
-                                <p class="card-text">{{ item.description | truncatechars:100 }}</p>
-                            </div>
-                            <div class="col-2 d-flex flex-column-reverse">
-                                <a href="{% url 'product_details' pk=item.pk %}" class="btn btn-secondary item-a">Voir l'item</a>
+    <div class="row">
+        <div class="col-0 col-sm-0 col-md-2"></div>
+        <div class="col-12 col-sm-12 col-md-8">
+            {% for item in items %}
+                <div class="card item-card mx-auto">
+                    <div class="row no-gutters">
+                        <div class="col-2">
+                            <img src="{{ item.link_to_image }}" class="card-img item-img" alt="Image">
+                        </div>
+                        <div class="col-10">
+                            <div class="card-body">
+                                <div class="row no-gutters">
+                                    <div class="col-10">
+                                        <h5 class="card-title">{{ item.title }}</h5>
+                                        <p>
+                                            <span style="color: red;">{{ item.discounted_price }} TND</span>
+                                            {% if item.price %}
+                                                <span style="color: rgb(126, 126, 126); text-decoration: line-through;">
+                                                    {{item.price }} TND
+                                                </span>
+                                            {% endif %}
+                                            {% if item.sale_percentage %}{{ item.sale_percentage }}%{% endif %}
+                                        </p>
+                                        <p>
+                                            Bon plan <a href="{{ item.link_to_provider }}">{{ item.provider_name }}</a>
+                                        </p>
+                                        <p class="card-text">{{ item.description | truncatechars:100 }}</p>
+                                    </div>
+                                    <div class="col-2 d-flex flex-column-reverse">
+                                        <a href="{% url 'product_details' pk=item.pk %}" class="btn btn-secondary item-a">Voir l'item</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            {% empty %}
+                <p> Winhoum manedrouch, arja3 ghodwa </p>
+            {% endfor %}
         </div>
-    {% empty %}
-        <p> Winhoum manedrouch, arja3 ghodwa </p>
-    {% endfor %}
+        <div class="col-0 col-sm-0 col-md-2"></div>
 
-    <ul class="pagination">
-        {% for page_number in items.adjusted_elided_pages %}
-            {% if page_number == items.paginator.ELLIPSIS %}
-                {{page_number}}
-            {% else %}
-                <li class="page-item">
-                    <a
-                    class="page-link {% if page_number == items.number %}current{% endif %}"
-                    href="?page={{page_number}}{% if searched_item %}&search={{searched_item}}{% endif %}"
-                    >
-                        {{page_number}}
-                    </a>
-                </li>
-            {% endif %}
-        {% endfor %}
-    </ul>
+    </div>
+
+    <nav class="pagination-nav">
+        <ul class="pagination">
+            {% for page_number in items.adjusted_elided_pages %}
+                {% if page_number == items.paginator.ELLIPSIS %}
+                    {{page_number}}
+                {% else %}
+                    <li class="page-item  {% if page_number == items.number %}active{% endif %}">
+                        <a
+                        class="page-link"
+                        href="?page={{page_number}}{% if searched_item %}&search={{searched_item}}{% endif %}"
+                        >
+                            {{page_number}}
+                            {% if page_number == items.number %}
+                                <span class="sr-only">(current)</span>
+                            {% endif %}
+                        </a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </nav>
 {% endblock %}

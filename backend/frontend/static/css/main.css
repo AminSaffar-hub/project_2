@@ -6,7 +6,6 @@ body {
 
 div.item-card {
     border-radius: 10px;
-    width: 60%;
     margin-top: 10px;
 }
 
@@ -37,12 +36,12 @@ a.navbar-brand span {
     color: black;
 }
 
-a.page-link {
-    color: black;
-}
-
 nav.navbar {
     background-color: #35373b
+}
+
+nav.pagination-nav {
+    margin: 20px;
 }
 
 footer {
