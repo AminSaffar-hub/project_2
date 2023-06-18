@@ -33,6 +33,9 @@ class ExistSpider(CrawlSpider):
         ).extract()
         item["provider_name"] = "exist"
         item["link_to_provider"] = "https://www.exist.com.tn"
+        item["livraison"] = 'sous condition'
+        item["online_payment"] = True
+        
         yield item
 
     def fetch_items(self, response):
