@@ -32,7 +32,7 @@ class CosmetiqueSpider(CrawlSpider):
         ).extract()
         item["provider_name"] = "cosmetique"
         item["link_to_provider"] = "https://cosmetique.tn"
-        item["livraison"] = 'sous condition'
+        item["livraison"] = "sous condition"
         item["online_payment"] = True
 
     def fetch_items(self, response):
