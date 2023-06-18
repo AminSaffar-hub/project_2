@@ -1,0 +1,47 @@
+{% extends 'frontend/base.html' %}
+{% load static %}
+{% block 'body' %}
+<div class="container dark-grey-text mt-5">
+    <h1> {{ object.title }} </h1>
+    <div class="row wow fadeIn">
+        <!-- product image -->
+        <div class="col-md-6 mb-4 product_image">
+            <img src="{{ object.link_to_image }}" class="img-fluid" alt="">
+        </div>
+        <div class="col-md-6 mb-4">
+        <div class="p-4 item-description">
+            <!-- product item badge -->
+            <div class="mb-3">
+                <a href="">
+                    <span class="badge badge-secondary">{{ item.category }}</span>
+                </a>
+            </div>
+            <!-- product item price -->
+            <p class="lead">
+                <span class="mr-1">
+                    <del style="color: rgb(126, 126, 126)">{{ object.price }} TND</del>
+                    <span style="color: red">{{ object.discounted_price }} TND</span>
+                </span>
+            </p>
+            <!-- item descriptions -->
+            <p class="lead font-weight-bold">Description</p>
+            <p>{{ object.description }}</p>
+            <p>
+            {% if item.livraison %}
+                <span> 
+                    <img src="{% static 'images/truck.png'%}" class="img-fluid" style="width: 25px; ">
+                </span> {{ item.livraison }}
+                {% endif %}
+                {% if item.online_payment %} |
+                <span>
+                    <img src="{% static 'images/carte.png' %}" class="img-fluid" style="width: 25px;">
+                </span> 
+            {% endif %}
+            </p> 
+            <br>
+            <a href="{{object.link_to_post}}" class="btn btn-secondary item-a">Visiter l'item</a>
+        </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

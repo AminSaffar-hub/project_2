@@ -1,7 +1,7 @@
 import pandas as pd
 import time
 from bs4 import BeautifulSoup
-from backend.models import Article
+from backend.models import Item
 
 
 class Scrapping:
@@ -112,7 +112,7 @@ class Scrapping:
             self.product_type,
             self.product_description,
         ):
-            Article.objects.create(
+            Item.objects.create(
                 name=name,
                 old_price=old_price,
                 new_price=new_price,

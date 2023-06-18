@@ -2,47 +2,11 @@ import math
 
 from django.db import models
 
-# Create your models here.
 
+class Item(models.Model):
+    title = models.CharField(max_length=100)
 
-class ArticleManager(models.Manager):
-    def create_from_body(
-        self, name, old_price, new_price, url, image_link, type, description
-    ):
-        self.create(
-            name=name,
-            old_price=old_price,
-            new_price=new_price,
-            url=url,
-            image_link=image_link,
-            type=type,
-            description=description,
-        )
-
-
-class Article(models.Model):
-    name = models.CharField(
-        max_length=255,
-        null=True,
-        blank=True,
-        help_text="Name of the article as scrapped from the provider website.",
-    )
-    old_price = models.FloatField(
-        null=True, blank=True, help_text="Price of the article before reduction"
-    )
-    new_price = models.FloatField(
-        null=True, blank=True, help_text="Price of the article after reduction"
-    )
-    url = models.URLField(
-        null=True, blank=True, help_text="Url of the article in the provider website"
-    )
-    image_link = models.URLField(
-        null=True,
-        blank=True,
-        help_text="url to the product image, found in the provider website.",
-    )
-
-    class ProductType(models.Choices):
+    class ItemCategories(models.Choices):
         FOOD = "food"
         CLOTHES = "clothes"
         SELF_CARE = "self-care"
@@ -50,31 +14,48 @@ class Article(models.Model):
         COSMETICS = "cosmetics"
         OTHER = "other"
 
-    type = models.CharField(
-        default=None,
-        max_length=255,
-        choices=ProductType.choices,
-        help_text="Sector the product belongs to.",
+    category = models.CharField(choices=ItemCategories.choices, max_length=50)
+    description = models.TextField(max_length=2500)
+    livraison = models.CharField(
+        null=True,
+        max_length=20,
+        blank=True,
+        help_text="The item provider's delivery price",
+    )
+    price = models.DecimalField(max_digits=6, decimal_places=2, default=10)
+    online_payment = models.BooleanField(default=False)
+    discounted_price = models.DecimalField(
+        max_digits=6, decimal_places=2, blank=True, null=True
     )
 
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    description = models.TextField(
+    started_at = models.DateTimeField(
         null=True,
         blank=True,
-        help_text="details about the article and the promotion",
+        help_text=("Date and time when the item promotion started."),
     )
-
     ended_at = models.DateTimeField(
         null=True,
         blank=True,
-        help_text=("Date and time when the article promotion ended."),
+        help_text=("Date and time when the item promotion ended."),
     )
 
-    objects = ArticleManager()
+    provider_name = models.CharField(
+        null=True, max_length=20, blank=True, help_text="The item provider's name"
+    )
+    link_to_provider = models.URLField(
+        null=True, blank=True, help_text="Url of item provider"
+    )
+    link_to_post = models.URLField(
+        null=True, blank=True, help_text="Url of the item in the provider website"
+    )
+    link_to_image = models.URLField(
+        null=True,
+        blank=True,
+        help_text="url to the product image, found in the provider website.",
+    )
 
     @property
-    def percentage(self):
-        if not self.old_price or not self.new_price:
+    def sale_percentage(self):
+        if not self.price or not self.discounted_price:
             return 0
-        return math.floor(((self.old_price - self.new_price) / self.old_price) * 100)
+        return math.floor(((self.price - self.discounted_price) / self.price) * 100)

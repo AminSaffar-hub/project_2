@@ -1,5 +1,5 @@
 from django.contrib import admin
-from backend.models import Article
+from backend.models import Item
 
 # Register your models here.
-admin.site.register(Article)
+admin.site.register(Item)

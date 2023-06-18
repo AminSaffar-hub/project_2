@@ -4,9 +4,8 @@ body {
     background: #ececec !important;
 }
 
-div.article-card {
+div.item-card {
     border-radius: 10px;
-    width: 60%;
     margin-top: 10px;
 }
 
@@ -14,23 +13,19 @@ ul.pagination {
     justify-content: center;
 }
 
-div.searched-article {
+div.searched-item {
     height: 20%;
     background: white;
 }
 
-div.searched-article p {
+div.searched-item p {
     text-align: center;
     font-size: xx-large;
 }
 
-img.article-img {
+img.item-img {
     margin: 10px;
     border-radius: 10px;
-}
-
-a.article-a {
-    margin: 10px;
 }
 
 a.navbar-brand {
@@ -41,12 +36,16 @@ a.navbar-brand span {
     color: black;
 }
 
-a.page-link {
-    color: black;
-}
-
 nav.navbar {
     background-color: #35373b
+}
+
+nav.pagination-nav {
+    margin: 20px;
+}
+
+a.item-a {
+    margin-right: 20px;
 }
 
 footer {

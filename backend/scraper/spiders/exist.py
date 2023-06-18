@@ -21,28 +21,33 @@ class ExistSpider(CrawlSpider):
     page_number = 1
 
     def parse_item(self, response):
-        article = ArticleItem()
-        article["name"] = response.css(".h1-main::text").getall()
-        article["new_price"] = response.css(".current-price span::text").get()
-        article["old_price"] = response.css(".regular-price::text").get()
-        article["url"] = response.url
-        article["image_link"] = response.css(".js-qv-product-cover::attr(src)").get()
-        article["type"] = "clothes"
-        article["description"] = response.css(
+        item = ArticleItem()
+        item["title"] = response.css(".h1-main::text").getall()
+        item["discounted_price"] = response.css(".current-price span::text").get()
+        item["price"] = response.css(".regular-price::text").get()
+        item["link_to_post"] = response.url
+        item["link_to_image"] = response.css(".js-qv-product-cover::attr(src)").get()
+        item["category"] = "clothes"
+        item["description"] = response.css(
             '[id^="product-description-"] *::text'
         ).extract()
-        yield article
+        item["provider_name"] = "exist"
+        item["link_to_provider"] = "https://www.exist.com.tn"
+        item["livraison"] = "sous condition"
+        item["online_payment"] = True
+
+        yield item
 
     def fetch_items(self, response):
         if response.status == 404:
             raise CloseSpider("No more pages, quitting !!")
 
-        articles = response.css("li.product_item div div a::attr(href)").getall()
+        items = response.css("li.product_item div div a::attr(href)").getall()
 
-        if not len(articles):
+        if not len(items):
             raise CloseSpider(f"Empty page {self.page_number}, quitting !!")
 
-        for article_url in articles:
+        for article_url in items:
             yield scrapy.Request(
                 url=response.urljoin(article_url),
                 callback=self.parse_item,

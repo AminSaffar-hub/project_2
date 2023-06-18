@@ -11,10 +11,10 @@ class SaveItemPipeline:
 
 class PreProcessPipeline:
     def process_item(self, item, spider):
-        item["name"] = self._preprocess_value(item.get("name"))
+        item["title"] = self._preprocess_value(item.get("title"))
         item["description"] = self._preprocess_value(item.get("description"))
-        item["old_price"] = self._clean_price(item.get("old_price"))
-        item["new_price"] = self._clean_price(item.get("new_price"))
+        item["price"] = self._clean_price(item.get("price"))
+        item["discounted_price"] = self._clean_price(item.get("discounted_price"))
         return item
 
     @staticmethod

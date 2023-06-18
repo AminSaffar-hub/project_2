@@ -14,9 +14,9 @@ class ViewsTests(TestCaseWithDataMixin, TestCase):
         response = home(request)
 
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, "Article 1")
-        self.assertContains(response, "Article 2")
-        self.assertContains(response, "Article 3")
+        self.assertContains(response, "Item 1")
+        self.assertContains(response, "Item 2")
+        self.assertContains(response, "Item 3")
 
     def test_home_view_with_search(self):
         request = self.factory.get("/", {"search": "shoe"})
@@ -32,25 +32,25 @@ class ViewsTests(TestCaseWithDataMixin, TestCase):
         response = home(request)
 
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, "Article 9")
-        self.assertNotContains(response, "Article 1")
-        self.assertNotContains(response, "Article 2")
+        self.assertContains(response, "Item 9")
+        self.assertNotContains(response, "Item 1")
+        self.assertNotContains(response, "Item 2")
 
     def test_pagination_on_searched_items(self):
-        request = self.factory.get("/", {"page": 2, "search": "Article"})
+        request = self.factory.get("/", {"page": 2, "search": "Item"})
         response = home(request)
 
-        self.assertNotContains(response, "Article 1")
-        self.assertNotContains(response, "Article 7")
+        self.assertNotContains(response, "Item 1")
+        self.assertNotContains(response, "Item 7")
         self.assertNotContains(response, "shoe")
 
     def test_product_description(self):
-        response = self.client.get(f"/{self.article1.pk}")
+        response = self.client.get(f"/{self.item1.pk}")
 
-        self.assertContains(response, self.article1.name)
-        self.assertContains(response, self.article1.url)
-        self.assertContains(response, self.article1.old_price)
-        self.assertContains(response, self.article1.new_price)
-        self.assertContains(response, self.article1.description)
+        self.assertContains(response, self.item1.title)
+        self.assertContains(response, self.item1.link_to_post)
+        self.assertContains(response, self.item1.price)
+        self.assertContains(response, self.item1.discounted_price)
+        self.assertContains(response, self.item1.description)
 
-        self.assertTemplateUsed(response, "frontend/product_details.html")
+        self.assertTemplateUsed(response, "frontend/item_details.html")

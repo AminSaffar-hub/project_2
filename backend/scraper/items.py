@@ -1,6 +1,6 @@
 from scrapy_djangoitem import DjangoItem
-from backend.models import Article
+from backend.models import Item
 
 
 class ArticleItem(DjangoItem):
-    django_model = Article
+    django_model = Item
