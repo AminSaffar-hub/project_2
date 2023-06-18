@@ -35,7 +35,7 @@ class BeautyStoreSpider(CrawlSpider):
         item["link_to_provider"] = "https://beautystore.tn"
         item["livraison"] = "sous condition"
         item["online_payment"] = True
-        
+
         yield item
 
     def fetch_item(self, response):
