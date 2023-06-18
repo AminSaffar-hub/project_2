@@ -44,6 +44,10 @@ nav.pagination-nav {
     margin: 20px;
 }
 
+a.item-a {
+    margin-right: 20px;
+}
+
 footer {
     background: #35373b !important;
     color: white;

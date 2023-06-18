@@ -6,36 +6,32 @@
         </div>
     {% endif %}
     <div class="row">
-        <div class="col-0 col-sm-0 col-md-2"></div>
-        <div class="col-12 col-sm-12 col-md-8">
+        <div class="col-0 col-sm-0 col-md-3"></div>
+        <div class="col-12 col-sm-12 col-md-6">
             {% for item in items %}
                 <div class="card item-card mx-auto">
-                    <div class="row no-gutters">
-                        <div class="col-2">
+                    <div class="row">
+                        <div class="col-4 col-md-3">
                             <img src="{{ item.link_to_image }}" class="card-img item-img" alt="Image">
                         </div>
-                        <div class="col-10">
+                        <div class="col-8 col-md-9">
                             <div class="card-body">
-                                <div class="row no-gutters">
-                                    <div class="col-10">
-                                        <h5 class="card-title">{{ item.title }}</h5>
-                                        <p>
-                                            <span style="color: red;">{{ item.discounted_price }} TND</span>
-                                            {% if item.price %}
-                                                <span style="color: rgb(126, 126, 126); text-decoration: line-through;">
-                                                    {{item.price }} TND
-                                                </span>
-                                            {% endif %}
-                                            {% if item.sale_percentage %}{{ item.sale_percentage }}%{% endif %}
-                                        </p>
-                                        <p>
-                                            Bon plan <a href="{{ item.link_to_provider }}">{{ item.provider_name }}</a>
-                                        </p>
-                                        <p class="card-text">{{ item.description | truncatechars:100 }}</p>
-                                    </div>
-                                    <div class="col-2 d-flex flex-column-reverse">
-                                        <a href="{% url 'product_details' pk=item.pk %}" class="btn btn-secondary item-a">Voir l'item</a>
-                                    </div>
+                                <h5 class="card-title">{{ item.title }}</h5>
+                                <p>
+                                    <span style="color: red;">{{ item.discounted_price }} TND</span>
+                                    {% if item.price %}
+                                        <span style="color: rgb(126, 126, 126); text-decoration: line-through;">
+                                            {{item.price }} TND
+                                        </span>
+                                    {% endif %}
+                                    {% if item.sale_percentage %}{{ item.sale_percentage }}%{% endif %}
+                                </p>
+                                <p>
+                                    Bon plan <a href="{{ item.link_to_provider }}">{{ item.provider_name }}</a>
+                                </p>
+                                <p class="card-text">{{ item.description | truncatechars:100 }}</p>
+                                <div class="row justify-content-end">
+                                    <a href="{% url 'product_details' pk=item.pk %}" class="btn btn-secondary item-a">Voir l'item</a>
                                 </div>
                             </div>
                         </div>
@@ -45,7 +41,7 @@
                 <p> Winhoum manedrouch, arja3 ghodwa </p>
             {% endfor %}
         </div>
-        <div class="col-0 col-sm-0 col-md-2"></div>
+        <div class="col-0 col-sm-0 col-md-3"></div>
 
     </div>
 
