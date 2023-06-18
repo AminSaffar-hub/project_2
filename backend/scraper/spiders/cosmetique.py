@@ -34,6 +34,8 @@ class CosmetiqueSpider(CrawlSpider):
         item["link_to_provider"] = "https://cosmetique.tn"
         item["livraison"] = "sous condition"
         item["online_payment"] = True
+        
+        yield item
 
     def fetch_items(self, response):
         if response.status == 404:
@@ -53,4 +55,4 @@ class CosmetiqueSpider(CrawlSpider):
             )
         self.page_number += 1
         next_page = f"https://cosmetique.tn/promotions?page={self.page_number}"
-        yield response.follow(next_page, callback=self.fetch_item)
+        yield response.follow(next_page, callback=self.fetch_items)
