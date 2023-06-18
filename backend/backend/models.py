@@ -16,8 +16,9 @@ class Item(models.Model):
 
     category = models.CharField(choices=ItemCategories.choices, max_length=50)
     description = models.TextField(max_length=2500)
-
+    livraison = models.CharField(null=True, max_length=20, blank=True, help_text="The item provider's delivery price")
     price = models.DecimalField(max_digits=6, decimal_places=2, default=10)
+    online_payment = models.BooleanField(default=False)
     discounted_price = models.DecimalField(
         max_digits=6, decimal_places=2, blank=True, null=True
     )

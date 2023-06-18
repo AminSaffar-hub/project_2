@@ -1,4 +1,5 @@
 {% extends 'frontend/base.html' %}
+{% load static %}
 {% block 'body' %}
 <div class="container dark-grey-text mt-5">
     <h1> {{ object.title }} </h1>
@@ -25,6 +26,18 @@
             <!-- item descriptions -->
             <p class="lead font-weight-bold">Description</p>
             <p>{{ object.description }}</p>
+            <p>
+            {% if item.livraison %}
+                <span> 
+                    <img src="{% static 'images/truck.png'%}" class="img-fluid" style="width: 25px; ">
+                </span> {{ item.livraison }}
+                {% endif %}
+                {% if item.online_payment %} |
+                <span>
+                    <img src="{% static 'images/carte.png' %}" class="img-fluid" style="width: 25px;">
+                </span> 
+            {% endif %}
+            </p> 
             <br>
             <a href="{{object.link_to_post}}" class="btn btn-secondary item-a">Visiter l'item</a>
         </div>

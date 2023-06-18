@@ -33,7 +33,8 @@ class BeautyStoreSpider(CrawlSpider):
         ).extract()
         item["provider_name"] = "beautystore"
         item["link_to_provider"] = "https://beautystore.tn"
-        yield item
+        item["livraison"] = 'sous condition'
+        item["online_payment"] = True
 
     def fetch_item(self, response):
         if response.status == 404:
