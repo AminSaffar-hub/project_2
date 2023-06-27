@@ -26,10 +26,10 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="#">Top promos</a>
+              <a class="nav-link" href="{% url 'top-promos' %}">Top promos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Tous les promos</a>
+              <a class="nav-link" href="{% url 'home' %}">Tous les promos</a>
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0" action="{% url 'home' %}">

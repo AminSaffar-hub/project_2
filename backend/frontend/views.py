@@ -5,6 +5,7 @@ from backend.models import Item
 
 
 NUMBER_OF_ITEMS_IN_PAGE = 8
+NUMBER_OF_TOP_ITEMS = 24
 
 
 # Create your views here.
@@ -28,6 +29,19 @@ def home(request):
         {"items": items_in_page, "searched_item": searched_item},
     )
 
+def top_promos(request):
+    page_number = request.GET.get("page") or 1
+    items = sorted(Item.objects.all(), key=lambda t: t.sale_percentage, reverse=True)[:NUMBER_OF_TOP_ITEMS]
+    paginator = Paginator(items, per_page=NUMBER_OF_ITEMS_IN_PAGE)
+    items_in_page = paginator.get_page(page_number)
+    items_in_page.adjusted_elided_pages = paginator.get_elided_page_range(
+        page_number, on_each_side=2, on_ends=2
+    )
+    return render(
+        request,
+        "frontend/home.html",
+        {"items": items_in_page, "searched_item": None},
+    )
 
 class ProductDetails(DetailView):
     model = Item
