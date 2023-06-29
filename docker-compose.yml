@@ -15,7 +15,7 @@ services:
   web:
     build: .
     command: >
-      sh -c 'poetry run python manage.py runserver 0.0.0.0:8000'
+      sh -c 'poetry run gunicorn --bind 0.0.0.0:8000 wsgi'
     env_file:
       - ./.env
     volumes:
