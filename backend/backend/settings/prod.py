@@ -4,7 +4,7 @@ import os
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    "app.erradar.com",
+    "erradar.com",
     "localhost",
     "host.docker.internal",
     "13.38.188.241",
