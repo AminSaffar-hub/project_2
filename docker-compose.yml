@@ -44,12 +44,21 @@ services:
 
   nginx:
     build: ./nginx
-    volumes:
-      - static_volume:/www/
     ports:
       - 80:80
+      - 443:443
     depends_on:
       - web
+    volumes:
+      - static_volume:/www/
+      - ~/certbot/www:/var/www/certbot/:ro
+      - ~/certbot/conf/:/etc/nginx/ssl/:ro
+
+  certbot:
+    image: certbot/certbot:latest
+    volumes:
+      - ~/certbot/www/:/var/www/certbot/:rw
+      - ~/certbot/conf/:/etc/letsencrypt/:rw
 
 
 volumes:
