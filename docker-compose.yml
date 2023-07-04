@@ -27,6 +27,10 @@ services:
       - db:db
     ports:
       - '8000:8000'
+    labels:
+      ofelia.enabled: "true"
+      ofelia.job-exec.datecron.schedule: "0 1 * * *"
+      ofelia.job-exec.datecron.command: "poetry run python manage.py crawl"
 
   migration:
     build: .
@@ -59,6 +63,17 @@ services:
     volumes:
       - ~/certbot/www/:/var/www/certbot/:rw
       - ~/certbot/conf/:/etc/letsencrypt/:rw
+    labels:
+      ofelia.enabled: "true"
+      ofelia.job-exec.datecron.schedule: "@weekly"
+      ofelia.job-exec.datecron.command: "renew"
+
+  scheduler:
+    image: mcuadros/ofelia:latest
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      - backend
 
 
 volumes:
