@@ -65,7 +65,7 @@ services:
       - ~/certbot/conf/:/etc/letsencrypt/:rw
     labels:
       ofelia.enabled: "true"
-      ofelia.job-exec.datecron.schedule: "@weekly"
+      ofelia.job-exec.datecron.schedule: "0 0 * * 0"
       ofelia.job-exec.datecron.command: "renew"
 
   scheduler:
