@@ -29,8 +29,8 @@ services:
       - '8000:8000'
     labels:
       ofelia.enabled: "true"
-      ofelia.job-exec.datecron.schedule: "0 1 * * *"
-      ofelia.job-exec.datecron.command: "poetry run python manage.py crawl"
+      ofelia.job-exec.runscrappers.schedule: "0 1 * * *"
+      ofelia.job-exec.runscrappers.command: "poetry run python manage.py crawl"
 
   migration:
     build: .
@@ -65,8 +65,8 @@ services:
       - ~/certbot/conf/:/etc/letsencrypt/:rw
     labels:
       ofelia.enabled: "true"
-      ofelia.job-exec.datecron.schedule: "0 0 * * 0"
-      ofelia.job-exec.datecron.command: "renew"
+      ofelia.job-exec.renewcertificate.schedule: "0 0 * * 0"
+      ofelia.job-exec.renewcertificate.command: "renew"
 
   scheduler:
     image: mcuadros/ofelia:latest
