@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" href="{% static 'css/product_description.css' %}">
     <link href="https://fonts.cdnfonts.com/css/averta-standard" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
 
     <title>ERRADAR</title>
 </head>
@@ -48,7 +49,39 @@
     crossorigin="anonymous"></script>
 </body>
 <footer>
-    <p>ERRADAR</p>
-    <p>promos ala ajla</p>
+    <div class="container pt-5 border-bottom">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-3 col-sm-6 col-6 p-0 mb-3">
+                <h5 class="mb-4 font-weight-bold text-uppercase">Entreprise</h5>
+                <ul class="list-group">
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#qui_sommes_nous">Qui sommes-nous ?</a></li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#devenir_partenaire">Devenir partenaire</a></li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-6 mb-3 p-0">
+                <h5 class="mb-4 font-weight-bold text-uppercase">Connect</h5>
+                <ul class="list-group">
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                        <a href="https://www.Instagram.com/naologic"><i class="fa fa-instagram mr-1"></i> Instagram</a>
+                    </li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                        <a href="https://twitter.com/naologicerp"><i class="fa fa-twitter mr-1"></i> Twitter</a>       
+                    </li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                        <a href="https://www.facebook.com/naologic/" target="_blank"><i class="fa fa-facebook mr-1"></i> Facebook</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="col-md-3 col-sm-6 col-6 mb-3 p-0"> <!-- added new column -->
+                <div class="py-4 d-flex align-items-center">
+                    <a class="mr-4" href="{% url 'footer_info' %}#Confidentialité">Confidentialité & Conditions</a>
+                    <a href="{% url 'footer_info' %}#site_plan">Plan du site</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </footer>
 </html>

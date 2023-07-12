@@ -29,6 +29,10 @@ def home(request):
     )
 
 
+def footer_info(request):
+    return render(request, "frontend/footer_info.html")
+
+
 class ProductDetails(DetailView):
     model = Item
     template_name = "frontend/item_details.html"
