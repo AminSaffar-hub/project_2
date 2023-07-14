@@ -26,7 +26,7 @@ class PreProcessPipeline:
             value = re.sub(r"\s+", " ", value)
             value = re.sub(r"[^\w\s]", "", value)
         return value
-    
+
     @staticmethod
     def _preprocess_description(value):
         if isinstance(value, list):
