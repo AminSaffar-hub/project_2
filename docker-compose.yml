@@ -66,8 +66,8 @@ services:
       - ~/certbot/conf/:/etc/letsencrypt/:rw
     labels:
       ofelia.enabled: "true"
-      ofelia.job-exec.renewcertificate.schedule: "0 10 * * *"
-      ofelia.job-exec.renewcertificate.command: "renew"
+      ofelia.job-service-run.renewcertificate.schedule: "0 10 * * *"
+      ofelia.job-service-run.renewcertificate.command: "renew"
 
   scheduler:
     image: mcuadros/ofelia:latest
