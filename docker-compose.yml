@@ -74,7 +74,7 @@ services:
       - web
     labels:
       ofelia.enabled: "true"
-      ofelia.job-run.renewcertificate.schedule: "05 11 * * *"
+      ofelia.job-run.renewcertificate.schedule: "00 13 * * *"
       ofelia.job-run.renewcertificate.command: "renew"
       ofelia.job-run.renewcertificate.image: "certbot/certbot:latest"
       ofelia.job-run.renewcertificate.volume: "~/certbot/www/:/var/www/certbot/:rw"
