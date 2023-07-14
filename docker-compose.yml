@@ -15,7 +15,7 @@ services:
   web:
     build: .
     command: >
-      sh -c 'poetry run python manage.py runserver 0.0.0.0:8000'
+      sh -c 'poetry run gunicorn --bind 0.0.0.0:8000 wsgi'
     env_file:
       - ./.env
     volumes:
@@ -27,6 +27,10 @@ services:
       - db:db
     ports:
       - '8000:8000'
+    labels:
+      ofelia.enabled: "true"
+      ofelia.job-exec.runscrappers.schedule: "0 1 * * *"
+      ofelia.job-exec.runscrappers.command: "poetry run python manage.py crawl"
 
   migration:
     build: .
@@ -44,12 +48,35 @@ services:
 
   nginx:
     build: ./nginx
-    volumes:
-      - static_volume:/www/
     ports:
       - 80:80
+      - 443:443
     depends_on:
       - web
+    volumes:
+      - static_volume:/www/
+      - ~/certbot/www:/var/www/certbot/:ro
+      - ~/certbot/conf/:/etc/nginx/ssl/:ro
+
+  certbot:
+    image: certbot/certbot:latest
+    volumes:
+      - ~/certbot/www/:/var/www/certbot/:rw
+      - ~/certbot/conf/:/etc/letsencrypt/:rw
+
+  scheduler:
+    image: mcuadros/ofelia:latest
+    command: daemon --docker
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      - certbot
+      - web
+    labels:
+      ofelia.enabled: "true"
+      ofelia.job-run.renewcertificate.schedule: "30 10 * * *"
+      ofelia.job-run.renewcertificate.command: "renew"
+      ofelia.job-run.renewcertificate.container: "project_2_certbot_1"
 
 
 volumes:

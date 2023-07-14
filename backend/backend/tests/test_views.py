@@ -1,7 +1,8 @@
 from django.test import TestCase, RequestFactory
 
 from backend.tests.utils import TestCaseWithDataMixin
-from frontend.views import home
+from backend.models import Item
+from frontend.views import home, NUMBER_OF_ITEMS_IN_PAGE
 
 
 class ViewsTests(TestCaseWithDataMixin, TestCase):
@@ -54,3 +55,13 @@ class ViewsTests(TestCaseWithDataMixin, TestCase):
         self.assertContains(response, self.item1.description)
 
         self.assertTemplateUsed(response, "frontend/item_details.html")
+
+    def test_top_promos_page(self):
+        response = self.client.get("/top-promos")
+        ordered_items = sorted(
+            Item.objects.all(), key=lambda t: t.sale_percentage, reverse=True
+        )[:NUMBER_OF_ITEMS_IN_PAGE]
+
+        self.assertTemplateUsed(response, "frontend/home.html")
+        self.assertEqual(list(response.context["items"]), ordered_items)
+        self.assertEqual(response.context["items"].number, 1)

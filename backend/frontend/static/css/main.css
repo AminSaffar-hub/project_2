@@ -28,10 +28,6 @@ img.item-img {
     border-radius: 10px;
 }
 
-a.navbar-brand {
-    background-color: white;
-}
-
 a.navbar-brand span {
     color: black;
 }
