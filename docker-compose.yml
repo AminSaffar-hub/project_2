@@ -77,8 +77,8 @@ services:
       ofelia.job-run.renewcertificate.schedule: "00 13 * * *"
       ofelia.job-run.renewcertificate.command: "renew"
       ofelia.job-run.renewcertificate.image: "certbot/certbot:latest"
-      ofelia.job-run.renewcertificate.volume: "~/certbot/www/:/var/www/certbot/:rw"
-      ofelia.job-run.renewcertificate.volume: "~/certbot/conf/:/etc/letsencrypt/:rw"
+      ofelia.job-run.renewcertificate.volume: "/home/ec2-user/certbot/www/:/var/www/certbot/:rw"
+      ofelia.job-run.renewcertificate.volume: "/home/ec2-user/certbot/conf/:/etc/letsencrypt/:rw"
 
 
 volumes:
