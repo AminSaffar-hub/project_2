@@ -51,8 +51,8 @@
 <footer>
     <div class="container pt-5 border-bottom">
         <div class="row justify-content-center align-items-center">
-            <div class="col-md-3 col-sm-6 col-6 p-0 mb-3">
-                <h5 class="mb-4 font-weight-bold text-uppercase">Entreprise</h5>
+            <div class="col-md-4 col-sm-12 col-12">
+                <h5 class="mb-4 font-weight-bold text-uppercase footer-heading">Entreprise</h5>
                 <ul class="list-group">
                     <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#qui_sommes_nous">Qui sommes-nous ?</a></li>
                     <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#devenir_partenaire">Devenir partenaire</a></li>
@@ -60,8 +60,8 @@
                 </ul>
             </div>
 
-            <div class="col-md-3 col-sm-6 col-6 mb-3 p-0">
-                <h5 class="mb-4 font-weight-bold text-uppercase">Connect</h5>
+            <div class="col-md-4 col-sm-12 col-12">
+                <h5 class="mb-4 font-weight-bold text-uppercase footer-heading">Connect</h5>
                 <ul class="list-group">
                     <li class="list-group-item bg-transparent border-0 p-0 mb-2">
                         <a href="https://www.Instagram.com/naologic"><i class="fa fa-instagram mr-1"></i> Instagram</a>
@@ -75,11 +75,13 @@
                 </ul>
             </div>
             
-            <div class="col-md-3 col-sm-6 col-6 mb-3 p-0"> <!-- added new column -->
-                <div class="py-4 d-flex align-items-center">
-                    <a class="mr-4" href="{% url 'footer_info' %}#Confidentialité">Confidentialité & Conditions</a>
-                    <a href="{% url 'footer_info' %}#site_plan">Plan du site</a>
-                </div>
+            <div class="col-md-4 col-sm-12 col-12"> 
+                <h5 class="mb-4 font-weight-bold text-uppercase footer-heading">More Info</h5>
+                <ul class="list-group">
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#Confidentialité">Confidentialité & Conditions</a></li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#site_plan">Plan du site</a></li>
+                    <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#Legal_info">Information Legal</a></li>
+                </ul>
             </div>
         </div>
     </div>

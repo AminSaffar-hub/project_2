@@ -48,18 +48,40 @@ a.item-a {
     margin-right: 20px;
 }
 
+
 footer {
-    background: #35373b !important;
+    background: #35373b;
     color: white;
 }
 
-a {
-    color: inherit; 
-    text-decoration: none; 
+.section-title {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1em;
 }
 
-a:hover {
-    color: #888; 
+.footer-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-list li {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin-bottom: .5em;
+}
+
+.footer-list a {
+    color: inherit;
     text-decoration: none;
 }
+
+.footer-list a:hover {
+    color: #888;
+    text-decoration: none;
+}
+
+
+
 
