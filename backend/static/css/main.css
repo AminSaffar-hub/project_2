@@ -6,7 +6,6 @@ body {
 
 div.item-card {
     border-radius: 10px;
-    width: 60%;
     margin-top: 10px;
 }
 
@@ -29,19 +28,7 @@ img.item-img {
     border-radius: 10px;
 }
 
-a.item-a {
-    margin: 10px;
-}
-
-a.navbar-brand {
-    background-color: white;
-}
-
 a.navbar-brand span {
-    color: black;
-}
-
-a.page-link {
     color: black;
 }
 
@@ -49,7 +36,48 @@ nav.navbar {
     background-color: #35373b
 }
 
+nav.pagination-nav {
+    margin: 20px;
+}
+
+a.item-a {
+    margin-right: 20px;
+}
+
+
 footer {
-    background: #35373b !important;
+    background: #35373b;
     color: white;
 }
+
+.section-title {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+}
+
+.footer-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-list li {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin-bottom: .5em;
+}
+
+.footer-list a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer-list a:hover {
+    color: #888;
+    text-decoration: none;
+}
+
+
+
+
