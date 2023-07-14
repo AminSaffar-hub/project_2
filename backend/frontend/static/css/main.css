@@ -56,24 +56,25 @@ footer {
     margin-bottom: 1em;
 }
 
-.footer-list {
+.list-group {
     list-style: none;
     padding-left: 0;
+    margin-bottom: 50px;
 }
 
-.footer-list li {
+.list-group li {
     background: transparent;
     border: none;
     padding: 0;
     margin-bottom: .5em;
 }
 
-.footer-list a {
+.list-group a {
     color: inherit;
     text-decoration: none;
 }
 
-.footer-list a:hover {
+.list-group a:hover {
     color: #888;
     text-decoration: none;
 }
