@@ -37,6 +37,8 @@ def home(request):
 
 def footer_info(request):
     return render(request, "frontend/footer_info.html")
+
+
 def top_promos(request):
     page_number = request.GET.get("page") or 1
     ordered_items = sorted(
