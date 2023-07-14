@@ -63,10 +63,6 @@ services:
     volumes:
       - ~/certbot/www/:/var/www/certbot/:rw
       - ~/certbot/conf/:/etc/letsencrypt/:rw
-    labels:
-      ofelia.enabled: "true"
-      ofelia.job-service-run.renewcertificate.schedule: "0 10 * * *"
-      ofelia.job-service-run.renewcertificate.command: "renew"
 
   scheduler:
     image: mcuadros/ofelia:latest
@@ -76,6 +72,11 @@ services:
     depends_on:
       - certbot
       - web
+    labels:
+      ofelia.enabled: "true"
+      ofelia.job-service-run.renewcertificate.schedule: "0 10 * * *"
+      ofelia.job-service-run.renewcertificate.command: "renew"
+      ofelia.job-service-run.renewcertificate.container: "certbot"
 
 
 volumes:
