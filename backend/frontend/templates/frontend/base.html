@@ -33,7 +33,7 @@
               <a class="nav-link" href="{% url 'home' %}">Tous les promos</a>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0" action="{% url 'home' %}">
+          <form class="form-inline" action="{% url 'home' %}">
             <div class="row no-gutters align-items-center">
                 <div class="col-auto">
                     <input type="text" name="search" class="form-control border-secondary rounded-pill pr-5" placeholder="Recherche.." value="{{request.GET.title}}">
@@ -45,6 +45,21 @@
                 </div>
             </div>
           </form>
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            {% if user.is_authenticated %}
+            <!-- if user is authenticated, this part is shown -->
+            <li class="nav-item">
+                <a class="nav-link transition" href="{% url 'profile' %}">Mon profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link transition" href="{% url 'logout' %}">deconnexion</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+                <a class="nav-link transition" href="{% url 'login' %}">Connexion </a>
+            </li>
+            {% endif %}  
+          </ul>
         </div>
     </nav>
     {% block 'body' %}

@@ -20,9 +20,13 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "captcha",
+    "crispy_forms",
+    "crispy_bootstrap4",
     "backend",
     "frontend",
     "scraper",
+    "login",
 ]
 
 MIDDLEWARE = [
@@ -91,3 +95,16 @@ STATIC_URL = "/static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# added crispy module for forms
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+# recaptcha keys, generate a new one here-> https://www.google.com/recaptcha/admin/create (note, v2)
+RECAPTCHA_PUBLIC_KEY = "6Le-AisnAAAAAC1GSF5dZYEnujH-A-hSW3HpXLtV"
+RECAPTCHA_PRIVATE_KEY = "6Le-AisnAAAAADt01j7V0QNSf0qLDz8SADga40FP"
+
+
+# login url and its redirect
+LOGIN_URL = "/login/"
+
+LOGIN_REDIRECT_URL = "/"
