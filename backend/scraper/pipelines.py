@@ -1,12 +1,20 @@
 import re
 from asgiref.sync import sync_to_async
+from backend.models import Item
 
 
 class SaveItemPipeline:
     @sync_to_async
     def process_item(self, item, spider):
-        item.save()
-        return item
+        try:
+            item_in_database = Item.objects.get(title=item["title"], discounted_price=item["discounted_price"])        
+            item_in_database.description = item["description"]
+            item_in_database.link_to_post = item["link_to_post"]
+            item_in_database.link_to_image = item["link_to_image"]
+            item_in_database.save()
+        except Item.DoesNotExist:
+            item.save()
+            return item
 
 
 class PreProcessPipeline:
