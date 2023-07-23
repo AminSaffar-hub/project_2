@@ -13,5 +13,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         threshold_date = timezone.now() - timedelta(days=EXPIRATION_DATE_IN_DAYS)
-        expired_items = Item.objects.filter(last_updated_at__lt=threshold_date)
+        expired_items = Item.objects.filter(
+            last_updated_at__lt=threshold_date
+        ) | Item.objects.filter(last_updated_at=None)
         expired_items.delete()
