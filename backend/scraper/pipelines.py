@@ -65,12 +65,6 @@ class PreProcessPipeline:
         return value
 
     @staticmethod
-    def _preprocess_description(value):
-        if isinstance(value, list):
-            value = "\n".join(value)
-        return value
-
-    @staticmethod
     def _clean_price(price):
         if price:
             price = price.replace("\xa0", "").replace(",", ".")
