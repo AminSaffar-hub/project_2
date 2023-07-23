@@ -18,6 +18,7 @@ class SaveItemPipeline:
             item_in_database.link_to_image = item["link_to_image"]
             item_in_database.last_updated_at = timezone.now()
             item_in_database.save()
+            return
 
         except Item.DoesNotExist:
             item.save()
