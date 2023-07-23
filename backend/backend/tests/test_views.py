@@ -65,3 +65,20 @@ class ViewsTests(TestCaseWithDataMixin, TestCase):
         self.assertTemplateUsed(response, "frontend/home.html")
         self.assertEqual(list(response.context["items"]), ordered_items)
         self.assertEqual(response.context["items"].number, 1)
+
+    def test_products_catgeories(self):
+        item1 = Item.objects.create(title="Item 1", category=Item.ItemCategories.FOOD)
+        item2 = Item.objects.create(title="Item 2", category=Item.ItemCategories.FOOD)
+        item3 = Item.objects.create(
+            title="Item 3", category=Item.ItemCategories.CLOTHES
+        )
+        item4 = Item.objects.create(
+            title="Item 3", category=Item.ItemCategories.SELF_CARE
+        )
+        request = self.factory.get("/", {"category": Item.ItemCategories.FOOD})
+        response = home(request)
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, item1.title)
+        self.assertContains(response, item2.title)
+        self.assertNotContains(response, item3.title)
+        self.assertNotContains(response, item4.title)
