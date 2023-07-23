@@ -23,6 +23,20 @@ class SaveItemPipeline:
         except Item.DoesNotExist:
             item.save()
             return item
+        try:
+            item_in_database = Item.objects.get(
+                title=item["title"], discounted_price=item["discounted_price"]
+            )
+            item_in_database.description = item["description"]
+            item_in_database.link_to_post = item["link_to_post"]
+            item_in_database.link_to_image = item["link_to_image"]
+            item_in_database.last_updated_at = timezone.now()
+            item_in_database.save()
+            return
+
+        except Item.DoesNotExist:
+            item.save()
+            return item
 
 
 class PreProcessPipeline:
