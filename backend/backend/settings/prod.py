@@ -23,3 +23,6 @@ DATABASES = {
         "PORT": 5400,
     }
 }
+
+
+CSRF_TRUSTED_ORIGINS = ["https://erradar.com"]

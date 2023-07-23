@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="{% static 'css/product_description.css' %}">
     <link href="https://fonts.cdnfonts.com/css/averta-standard" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'css/expend_description.js' %}"></script>
 
     <title>ERRADAR</title>
 </head>
@@ -47,6 +49,24 @@
           </form>
         </div>
     </nav>
+    {% if categories %}
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <div class="collapse navbar-collapse" id="navbarNavDropdown3">
+                <ul class="navbar-nav">
+                    {% for value, name in categories %}
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-dark d-flex align-items-center">
+                            <img src="{% static 'images/'|add:value|add:'.png' %}" alt="{{ name }}" width="20" height="20" class="mr-2"> 
+                            <a class="nav-link" href="?category={{ value }}"><i class="icon-class"></i> {{ name }}</a>
+                        </button>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% endif %}
     {% block 'body' %}
     {% endblock %}
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

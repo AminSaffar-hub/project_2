@@ -21,17 +21,22 @@ def _generate_pages(ordered_items, page_number):
 def home(request):
     searched_item = request.GET.get("search")
     page_number = request.GET.get("page") or 1
+    category = request.GET.get("category")
+
     if searched_item:
         items = Item.objects.filter(title__icontains=searched_item)
+    elif category:
+        items = Item.objects.filter(category=category)
     else:
         items = Item.objects.all()
 
     items_in_page = _generate_pages(items.order_by("title"), page_number)
 
+    categories = Item.ItemCategories.choices
     return render(
         request,
         "frontend/home.html",
-        {"items": items_in_page, "searched_item": searched_item},
+        {"items": items_in_page, "searched_item": searched_item, "categories": categories, "category": category},
     )
 
 
