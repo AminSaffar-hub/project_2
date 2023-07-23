@@ -54,4 +54,4 @@ class ExistSpider(CrawlSpider):
             )
         self.page_number += 1
         next_page = f"https://www.exist.com.tn/promotions?page={self.page_number}"
-        yield response.follow(next_page, callback=self.fetch_item)
+        yield response.follow(next_page, callback=self.fetch_items)

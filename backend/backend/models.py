@@ -4,7 +4,7 @@ from django.db import models
 
 
 class Item(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=500)
 
     class ItemCategories(models.Choices):
         FOOD = "food"
@@ -22,7 +22,9 @@ class Item(models.Model):
         blank=True,
         help_text="The item provider's delivery price",
     )
-    price = models.DecimalField(max_digits=6, decimal_places=2, default=10)
+    price = models.DecimalField(
+        max_digits=6, decimal_places=2, default=10, blank=True, null=True
+    )
     online_payment = models.BooleanField(default=False)
     discounted_price = models.DecimalField(
         max_digits=6, decimal_places=2, blank=True, null=True
@@ -53,6 +55,7 @@ class Item(models.Model):
         blank=True,
         help_text="url to the product image, found in the provider website.",
     )
+    last_updated_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
 
     @property
     def sale_percentage(self):

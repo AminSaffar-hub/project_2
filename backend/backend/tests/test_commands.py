@@ -1,8 +1,11 @@
 from unittest.mock import patch
+from freezegun import freeze_time
 
 from django.core.management import call_command
 from django.test import TestCase
 from scrapy.settings import Settings
+from backend.tests.utils import TestCaseWithDataMixin
+from backend.models import Item
 
 from scraper import settings
 
@@ -22,3 +25,19 @@ class CrawlCommandTests(TestCase):
         mock_crawler_process.assert_called_with(settings=crawler_settings)
         mock_crawler_process().crawl.assert_called_with(mock_cosmetique_spider)
         mock_crawler_process().start.assert_called()
+
+
+@freeze_time("2023-07-19 12:00:00")
+class DeleteExpiredItemsTests(TestCaseWithDataMixin, TestCase):
+    @freeze_time("2023-07-23 12:00:00")
+    def test_delete_expired_items(self):
+        call_command("delete_expired_items")
+        self.assertEquals(Item.objects.all().count(), 0)
+
+    @freeze_time("2023-07-23 12:00:00")
+    def test_delete_items_with_none_update_time(self):
+        self.item1.last_updated_at = None
+        self.item1.save()
+
+        call_command("delete_expired_items")
+        self.assertEquals(Item.objects.all().count(), 0)
