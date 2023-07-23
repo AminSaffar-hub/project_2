@@ -53,6 +53,7 @@ class Item(models.Model):
         blank=True,
         help_text="url to the product image, found in the provider website.",
     )
+    last_updated_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
 
     @property
     def sale_percentage(self):
