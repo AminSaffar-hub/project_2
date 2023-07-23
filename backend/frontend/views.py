@@ -36,7 +36,12 @@ def home(request):
     return render(
         request,
         "frontend/home.html",
-        {"items": items_in_page, "searched_item": searched_item, "categories": categories, "category": category},
+        {
+            "items": items_in_page,
+            "searched_item": searched_item,
+            "categories": categories,
+            "category": category,
+        },
     )
 
 
