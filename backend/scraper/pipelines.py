@@ -10,7 +10,9 @@ class SaveItemPipeline:
     @sync_to_async
     def process_item(self, item, spider):
         try:
-            item_in_database = Item.objects.get(link_to_post=item["link_to_post"])
+            item_in_database = Item.objects.get(
+                link_to_post__iexact=item["link_to_post"]
+            )
             item_in_database.description = item["description"]
             item_in_database.link_to_image = item["link_to_image"]
             item_in_database.discounted_price = item["discounted_price"]
