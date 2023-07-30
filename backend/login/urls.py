@@ -1,12 +1,13 @@
 from django.urls import path
 from django.contrib.auth.views import (
     LoginView,
-    LogoutView,
     PasswordResetView,
     PasswordResetConfirmView,
     PasswordResetDoneView,
     PasswordResetCompleteView,
 )
+
+from . import views
 
 # import both app modules
 from login import views as user_views
@@ -22,7 +23,7 @@ urlpatterns = [
     ),
     path("register/", user_views.register, name="register"),
     # logout
-    path("logout/", LogoutView.as_view(next_page="/"), name="logout"),
+    path("logout/", views.logout_view, name="logout"),
     # user profile
     path("profile/", user_views.profile, name="profile"),
     path("profile/edit/", user_views.edit_profile, name="edit_profile"),

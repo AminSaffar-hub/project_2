@@ -1,10 +1,19 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import update_session_auth_hash
+from django.contrib import messages
+from django.contrib.auth import update_session_auth_hash, logout
 
 # django auth backend
 from django.contrib.auth.forms import PasswordChangeForm
 from login.forms import RegistrationForm, EditProfileForm
 from django.contrib.auth.decorators import login_required
+
+
+def logout_view(request):
+    logout(request)
+    messages.success(
+        request, "Logout: You have been successfully logged out."
+    )  # Add your desired message here.
+    return redirect("/")
 
 
 def register(request):
@@ -23,6 +32,9 @@ def register(request):
         if form.is_valid():
             # if it is valid, save and redirect to home
             form.save()
+            messages.success(
+                request, "Register: You have successfully created an account."
+            )
             return redirect("/")
         else:
             # form is not valid and return form with error
