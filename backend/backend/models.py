@@ -62,6 +62,6 @@ class Item(models.Model):
         if not self.price or not self.discounted_price:
             return 0
         return math.floor(((self.price - self.discounted_price) / self.price) * 100)
-    
+
     def __str__(self):
         return self.title + " - " + self.provider_name
