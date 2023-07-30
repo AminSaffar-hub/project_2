@@ -40,10 +40,44 @@ nav.pagination-nav {
     margin: 20px;
 }
 
+.navbar-light {
+    background-color: #1D1F20 !important; 
+    height: 55px; 
+}
+
+.navbar-container {
+    overflow: hidden;
+}
+
 a.item-a {
     margin-right: 20px;
 }
 
+.nav-item {
+    margin-right: 20px; 
+}
+
+.btn-dark {
+    color: white;
+    font-size: 0.8em;  
+    padding: .2px 6px;
+    transition: transform 0.3s;
+    white-space: nowrap;
+}
+
+.btn-dark:hover {
+    transform: scale(1.1);
+}
+
+.btn-dark img {
+    position: relative;
+    top: -2px; 
+    transition: transform 0.3s;
+}
+
+.btn-dark a {
+    color: white !important;  
+}
 
 footer {
     background: #35373b;
@@ -78,7 +112,3 @@ footer {
     color: #888;
     text-decoration: none;
 }
-
-
-
-
