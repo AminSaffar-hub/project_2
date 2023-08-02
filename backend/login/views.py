@@ -11,7 +11,7 @@ from django.contrib.auth.decorators import login_required
 def logout_view(request):
     logout(request)
     messages.success(
-        request, "Logout: You have been successfully logged out."
+        request, "Vous avez été déconnecté avec succès."
     )  # Add your desired message here.
     return redirect("/")
 
@@ -33,7 +33,7 @@ def register(request):
             # if it is valid, save and redirect to home
             form.save()
             messages.success(
-                request, "Register: You have successfully created an account."
+                request, "Votre compte a été créé avec succès."
             )
             return redirect("/")
         else:
