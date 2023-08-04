@@ -62,9 +62,9 @@
    			</li>
             {% else %}    
             <li class="nav-item">
-                <button type="button" class="btn btn-primary btn-sm rounded-pill">
-                    <a class="nav-link transition" href="{% url 'login' %}" style="color:white;">Connexion</a>
-                </button>
+                <a class="btn btn-primary rounded-pill d-flex align-items-center" href="{% url 'login' %}">
+                    Connexion
+                </a>
             </li>
             {% endif %}  
           </ul>
