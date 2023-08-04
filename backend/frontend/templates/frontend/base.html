@@ -101,8 +101,10 @@
             </div>
         {% endfor %}
     {% endif %}
-    {% block 'body' %}
-    {% endblock %}
+    <div class="main">
+        {% block 'body' %}
+        {% endblock %}
+    </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
@@ -114,43 +116,43 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
 
-</body>
-<footer>
-    <div class="container pt-5 border-bottom">
-        <div class="row justify-content-center align-items-center">
-            <div class="col-md-4 col-sm-12 col-12">
-                <h5 class="mb-4 font-weight-bold text-uppercase footer-heading">Entreprise</h5>
-                <ul class="list-group">
-                    <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#qui_sommes_nous">Qui sommes-nous ?</a></li>
-                    <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#devenir_partenaire">Devenir partenaire</a></li>
-                    <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#contact">Contact</a></li>
-                </ul>
-            </div>
-
-            <div class="col-md-4 col-sm-12 col-12">
-                <h5 class="mb-4 font-weight-bold text-uppercase footer-heading">Connect</h5>
-                <ul class="list-group">
-                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                        <a href="https://www.Instagram.com/naologic"><i class="fa fa-instagram mr-1"></i> Instagram</a>
-                    </li>
-                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                        <a href="https://twitter.com/naologicerp"><i class="fa fa-twitter mr-1"></i> Twitter</a>       
-                    </li>
-                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                        <a href="https://www.facebook.com/naologic/" target="_blank"><i class="fa fa-facebook mr-1"></i> Facebook</a>
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="col-md-4 col-sm-12 col-12"> 
-                <h5 class="mb-4 font-weight-bold text-uppercase footer-heading">More Info</h5>
-                <ul class="list-group">
-                    <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#Confidentialité">Confidentialité & Conditions</a></li>
-                    <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#site_plan">Plan du site</a></li>
-                    <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#Legal_info">Information Legal</a></li>
-                </ul>
+    <footer>
+        <div class="container pt-5 border-bottom">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-4 col-sm-12 col-12">
+                    <h5 class="mb-4 font-weight-bold text-uppercase footer-heading">Entreprise</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#qui_sommes_nous">Qui sommes-nous ?</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#devenir_partenaire">Devenir partenaire</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#contact">Contact</a></li>
+                    </ul>
+                </div>
+    
+                <div class="col-md-4 col-sm-12 col-12">
+                    <h5 class="mb-4 font-weight-bold text-uppercase footer-heading">Connect</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                            <a href="https://www.Instagram.com/naologic"><i class="fa fa-instagram mr-1"></i> Instagram</a>
+                        </li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                            <a href="https://twitter.com/naologicerp"><i class="fa fa-twitter mr-1"></i> Twitter</a>       
+                        </li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                            <a href="https://www.facebook.com/naologic/" target="_blank"><i class="fa fa-facebook mr-1"></i> Facebook</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-4 col-sm-12 col-12"> 
+                    <h5 class="mb-4 font-weight-bold text-uppercase footer-heading">More Info</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#Confidentialité">Confidentialité & Conditions</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#site_plan">Plan du site</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#Legal_info">Information Legal</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
+</body>
 </html>

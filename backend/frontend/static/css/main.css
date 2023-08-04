@@ -2,6 +2,15 @@ body {
     font-family: 'Averta Standard',Helvetica Helvetica,Arial,Lucida sans-serif;
     font-size: 16px;
     background: #ececec !important;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.main {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    flex-grow: 1;
 }
 
 div.item-card {
