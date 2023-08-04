@@ -51,12 +51,13 @@
           <ul class="nav navbar-nav mr-0 mt-2 mt-lg-0">
             {% if user.is_authenticated %}
             <!-- if user is authenticated, this part is shown -->
-   			<li class="nav-item dropdown">
-   				<button type="button" class="btn btn-primary dropdown-toggle rounded-pill" data-toggle="dropdown">
+   			<li class="dropdown">
+   				<a class="dropdown-toggle nav-link" data-toggle="dropdown">
                     Account <span class="caret"></span>
-                </button>
- 				<ul class="dropdown-menu" role="menu">
+                </a>
+ 				<ul class="dropdown-menu dropdown-menu-right" role="menu">
  					<a class="dropdown-item" href="{% url 'profile' %}">Mon profil</a>
+                     <div class="dropdown-divider"></div>
  					<a class="dropdown-item" href="{% url 'logout' %}">deconnexion</a>
  				</ul>
    			</li>
