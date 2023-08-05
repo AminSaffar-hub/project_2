@@ -30,7 +30,9 @@ services:
     labels:
       ofelia.enabled: "true"
       ofelia.job-exec.runscrappers.schedule: "0 1 * * *"
-      ofelia.job-exec.runscrappers.command: "poetry run python manage.py crawl; poetry run python manage.py delete_expired_items;"
+      ofelia.job-exec.runscrappers.command: "poetry run python manage.py crawl"
+      ofelia.job-exec.deleteolditems.schedule: "0 8 * * *"
+      ofelia.job-exec.deleteolditems.command: "poetry run python manage.py delete_expired_items"
 
   migration:
     build: .
