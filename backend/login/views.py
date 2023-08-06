@@ -32,9 +32,7 @@ def register(request):
         if form.is_valid():
             # if it is valid, save and redirect to home
             form.save()
-            messages.success(
-                request, "Votre compte a été créé avec succès."
-            )
+            messages.success(request, "Votre compte a été créé avec succès.")
             return redirect("/")
         else:
             # form is not valid and return form with error
