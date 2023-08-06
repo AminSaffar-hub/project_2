@@ -109,11 +109,3 @@ RECAPTCHA_PRIVATE_KEY = "6Le-AisnAAAAADt01j7V0QNSf0qLDz8SADga40FP"
 LOGIN_URL = "/login/"
 
 LOGIN_REDIRECT_URL = "/"
-
-# debug email server, run with => python -m smtpd -n -c DebuggingServer localhost:1025
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "smtp.gmail.com"
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.environ.get("EMAIL_NAME")
-EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASS")
