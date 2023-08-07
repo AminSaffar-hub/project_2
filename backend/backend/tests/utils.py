@@ -1,4 +1,5 @@
 from backend.models import Item
+from django.contrib.auth.models import User
 
 
 class TestCaseWithDataMixin:
@@ -46,3 +47,16 @@ class TestCaseWithDataMixin:
                 description=f"best Item {i+1} machine in the world",
                 category=Item.ItemCategories.OTHER,
             )
+
+        self.username = "Testuser"
+        self.password = "testpassword"
+        self.email = "testuse@example.com"
+        self.first_name = "test"
+        self.last_name = "user"
+        self.user = User.objects.create_user(
+            username=self.username,
+            password=self.password,
+            first_name=self.first_name,
+            last_name=self.last_name,
+            email=self.email,
+        )
