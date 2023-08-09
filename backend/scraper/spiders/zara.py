@@ -36,7 +36,6 @@ class ZaraSpider(scrapy.Spider):
         references = re.findall(pattern_reference, response.text)
         pattern_keyword = r'"keyword":"([^"]+)"'
         keywords = re.findall(pattern_keyword, response.text)
-
         for match, reference, keyword, id in zip(matches, references, keywords, ids):
             name, price, old_price, discount_percentage = match
             item_url = (
@@ -68,7 +67,6 @@ class ZaraSpider(scrapy.Spider):
         old_price = response.meta["old_price"]
         reference = response.meta["reference"]
         keyword = response.meta["keyword"]
-        id = response.meta["id"]
         description_pattern = r',"description":"([^"]*)"'
         description = (
             re.search(description_pattern, response.text).group(1)
@@ -98,5 +96,4 @@ class ZaraSpider(scrapy.Spider):
         item["link_to_provider"] = "https://www.zara.com/tn/"
         item["livraison"] = "sous condition"
         item["online_payment"] = True
-
         yield item
