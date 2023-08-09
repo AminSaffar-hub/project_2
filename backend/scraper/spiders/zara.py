@@ -25,7 +25,11 @@ class ZaraSpider(scrapy.Spider):
         }
     }
 
-    start_urls = ["https://www.zara.com/tn/fr/category/2291858/products?ajax=true"]
+    start_urls = [
+        "https://www.zara.com/tn/fr/category/2291858/products?ajax=true",
+        "https://www.zara.com/tn/fr/category/2299309/products?ajax=true",
+        "https://www.zara.com/tn/fr/category/2137886/products?ajax=true",
+    ]
 
     def parse(self, response):
         pattern = r'],"name":"(.*?)","description":".*?","price":(\d+),"oldPrice":(\d+),"displayDiscountPercentage":(\d+)'
@@ -47,7 +51,6 @@ class ZaraSpider(scrapy.Spider):
                 + id
                 + "&v2=2291858&ajax=true"
             )
-            print(item_url)
             yield Request(
                 url=item_url,
                 callback=self.parse_product,
