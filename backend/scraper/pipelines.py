@@ -52,6 +52,8 @@ class PreProcessPipeline:
 
     @staticmethod
     def _clean_price(price):
+        if isinstance(price, float):
+            return price
         if price:
             price = price.replace("\xa0", "").replace(",", ".")
             if price.find("TND") != -1:

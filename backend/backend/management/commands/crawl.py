@@ -5,6 +5,7 @@ from scrapy.crawler import CrawlerProcess
 from scraper.spiders.beautystore import BeautyStoreSpider
 from scraper.spiders.cosmetique import CosmetiqueSpider
 from scraper.spiders.exist import ExistSpider
+from scraper.spiders.zara import ZaraSpider
 from scraper import settings
 
 
@@ -15,6 +16,7 @@ class Command(BaseCommand):
         crawler_settings = Settings()
         crawler_settings.setmodule(settings)
         process = CrawlerProcess(settings=crawler_settings)
+        process.crawl(ZaraSpider)
         process.crawl(ExistSpider)
         process.crawl(BeautyStoreSpider)
         process.crawl(CosmetiqueSpider)
