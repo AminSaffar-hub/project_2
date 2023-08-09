@@ -1,11 +1,5 @@
 import scrapy
 from scrapy.http import Request
-
-from scrapy.linkextractors import LinkExtractor
-from scrapy.spiders import Rule, CrawlSpider
-from scrapy.exceptions import CloseSpider
-from decimal import Decimal
-
 from scraper.items import ArticleItem
 import re
 
@@ -34,8 +28,6 @@ class ZaraSpider(scrapy.Spider):
     start_urls = ["https://www.zara.com/tn/fr/category/2291858/products?ajax=true"]
 
     def parse(self, response):
-        with open("response.json", "wb") as f:
-            f.write(response.body)
         pattern = r'],"name":"(.*?)","description":".*?","price":(\d+),"oldPrice":(\d+),"displayDiscountPercentage":(\d+)'
         matches = re.findall(pattern, response.text)
         pattern_ids = r'"id":(\d+),"reference"'
