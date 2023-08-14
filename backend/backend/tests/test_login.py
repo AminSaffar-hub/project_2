@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 from django.core import mail
 from django.test import TestCase, override_settings
 from django.urls import reverse
+from freezegun import freeze_time
 
 from backend.tests.utils import TestCaseWithDataMixin
 
@@ -123,3 +124,30 @@ class LoginViewsTests(TestCaseWithDataMixin, TestCase):
 
         self.user.refresh_from_db()
         self.assertTrue(self.user.check_password("verylongpass1234"))
+
+        response = self.client.get(reset_password_reset_link)
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(
+            response,
+            "The password reset link is invalid, possibly because it has been used."
+            " Please request a new password reset.",
+        )
+
+    @override_settings(EMAIL_BACKEND="django.core.mail.backends.locmem.EmailBackend")
+    def test_reset_password_view_after_1_day(self):
+        with freeze_time("2023-07-19 12:00:00"):
+            reset_password_url = reverse("password_reset")
+            self.client.post(reset_password_url, {"email": self.email})
+
+        with freeze_time("2023-07-19 14:00:01"):
+            matches = re.search(
+                r"/reset_password/.*/[a-zA-Z0-9\-]+/", mail.outbox[0].body
+            )
+            reset_password_reset_link = matches.group(0)
+            response = self.client.get(reset_password_reset_link)
+            self.assertEqual(response.status_code, 200)
+            self.assertContains(
+                response,
+                "The password reset link is invalid, possibly because it has been used."
+                " Please request a new password reset.",
+            )
