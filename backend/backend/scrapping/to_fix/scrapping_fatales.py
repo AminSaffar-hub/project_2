@@ -1,6 +1,6 @@
+import pandas as pd
 from bs4 import BeautifulSoup
 from selenium import webdriver
-import pandas as pd
 
 
 def pre_process_prices(scrapped_price):

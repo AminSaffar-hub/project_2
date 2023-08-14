@@ -1,12 +1,12 @@
 from unittest.mock import patch
-from freezegun import freeze_time
 
 from django.core.management import call_command
 from django.test import TestCase
+from freezegun import freeze_time
 from scrapy.settings import Settings
-from backend.tests.utils import TestCaseWithDataMixin
-from backend.models import Item
 
+from backend.models import Item
+from backend.tests.utils import TestCaseWithDataMixin
 from scraper import settings
 
 

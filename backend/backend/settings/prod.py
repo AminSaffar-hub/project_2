@@ -1,5 +1,6 @@
-from backend.settings.base import *
 import os
+
+from backend.settings.base import *
 
 DEBUG = False
 
@@ -34,3 +35,8 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get("EMAIL_NAME")
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASS")
+
+
+# recaptcha keys, generate a new one here-> https://www.google.com/recaptcha/admin/create (note, v2)
+RECAPTCHA_PUBLIC_KEY = os.environ.get("RECAPTCHA_PUBLIC_KEY")
+RECAPTCHA_PRIVATE_KEY = os.environ.get("RECAPTCHA_PRIVATE_KEY")

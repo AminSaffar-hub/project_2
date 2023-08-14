@@ -1,7 +1,7 @@
 import scrapy
-from scrapy.linkextractors import LinkExtractor
-from scrapy.spiders import Rule, CrawlSpider
 from scrapy.exceptions import CloseSpider
+from scrapy.linkextractors import LinkExtractor
+from scrapy.spiders import CrawlSpider, Rule
 
 from scraper.items import ArticleItem
 

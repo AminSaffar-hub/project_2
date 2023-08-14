@@ -17,3 +17,7 @@ DATABASES = {
 # debug email server, run with => python -m smtpd -n -c DebuggingServer localhost:1025
 EMAIL_HOST = "localhost"
 EMAIL_PORT = 1025
+
+# recaptcha keys, generate a new one here-> https://www.google.com/recaptcha/admin/create (note, v2)
+RECAPTCHA_PUBLIC_KEY = "6Le-AisnAAAAAC1GSF5dZYEnujH-A-hSW3HpXLtV"
+RECAPTCHA_PRIVATE_KEY = "6Le-AisnAAAAADt01j7V0QNSf0qLDz8SADga40FP"

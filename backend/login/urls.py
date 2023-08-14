@@ -1,16 +1,15 @@
-from django.urls import path
 from django.contrib.auth.views import (
     LoginView,
-    PasswordResetView,
     PasswordResetConfirmView,
     PasswordResetDoneView,
-    PasswordResetCompleteView,
+    PasswordResetView,
 )
-
-from . import views
+from django.urls import path
 
 # import both app modules
 from login import views as user_views
+
+from . import views
 
 urlpatterns = [
     # login
@@ -50,7 +49,7 @@ urlpatterns = [
     # redirect to login
     path(
         "reset_password/complete/",
-        PasswordResetCompleteView.as_view(),
+        user_views.CustomPasswordResetCompleteView.as_view(),
         name="password_reset_complete",
     ),
 ]

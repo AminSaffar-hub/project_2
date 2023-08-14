@@ -1,5 +1,5 @@
-from pathlib import Path
 import os
+from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -100,12 +100,11 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # added crispy module for forms
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
-# recaptcha keys, generate a new one here-> https://www.google.com/recaptcha/admin/create (note, v2)
-RECAPTCHA_PUBLIC_KEY = "6Le-AisnAAAAAC1GSF5dZYEnujH-A-hSW3HpXLtV"
-RECAPTCHA_PRIVATE_KEY = "6Le-AisnAAAAADt01j7V0QNSf0qLDz8SADga40FP"
-
 
 # login url and its redirect
 LOGIN_URL = "/login/"
 
 LOGIN_REDIRECT_URL = "/"
+
+
+PASSWORD_RESET_TIMEOUT = 60 * 60 * 2

@@ -1,11 +1,12 @@
-from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.contrib.auth import update_session_auth_hash, logout
-
-# django auth backend
-from django.contrib.auth.forms import PasswordChangeForm
-from login.forms import RegistrationForm, EditProfileForm
+from django.contrib.auth import logout, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth.views import PasswordResetCompleteView
+from django.shortcuts import redirect, render
+from django.urls import reverse
+
+from login.forms import EditProfileForm, RegistrationForm
 
 
 def logout_view(request):
@@ -32,7 +33,7 @@ def register(request):
         if form.is_valid():
             # if it is valid, save and redirect to home
             form.save()
-            messages.success(request, "Votre compte a été créé avec succès.")
+            messages.success(request, "Votre compte a été créer avec succès.")
             return redirect("/")
         else:
             # form is not valid and return form with error
@@ -64,14 +65,8 @@ def edit_profile(request):
             form.save()
 
             # renders success message
-            extra_context = {
-                "extra_context": {
-                    "message": "True",
-                    "message_title": "Changed Profile: ",
-                    "message_text": "successful!",
-                }
-            }
-            return render(request, "login/profile.html", extra_context)
+            messages.success(request, "Votre profile a été modifier avec succès.")
+            return render(request, "login/profile.html")
         else:
             # form for in valid error
             args = {"form": form}
@@ -93,15 +88,8 @@ def change_password(request):
         if form.is_valid():
             form.save()
             update_session_auth_hash(request, form.user)
-
-            extra_context = {
-                "extra_context": {
-                    "message": "True",
-                    "message_title": "Changed Password: ",
-                    "message_text": "successful!",
-                }
-            }
-            return render(request, "login/profile.html", extra_context)
+            messages.success(request, "Votre mot de passe a été modifier avec succés.")
+            return render(request, "login/profile.html")
         else:
             # form for in valid error
             args = {"form": form}
@@ -112,6 +100,13 @@ def change_password(request):
         form = PasswordChangeForm(user=request.user)
         args = {"form": form}
         return render(request, "login/change_password.html", args)
+
+
+class CustomPasswordResetCompleteView(PasswordResetCompleteView):
+    def get(self, request, *args, **kwargs):
+        super().get(request, *args, **kwargs)
+        messages.success(self.request, "Votre mot de passe a été modifier avec succés.")
+        return redirect(reverse("login"))
 
 
 def redirect_to_home(request):
