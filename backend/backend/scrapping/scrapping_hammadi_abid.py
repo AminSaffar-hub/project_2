@@ -1,9 +1,10 @@
+import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
-from tqdm import tqdm
-from backend.scrapping.scrapping import Scrapping
-import requests
 from selenium.webdriver.chrome.options import Options
+from tqdm import tqdm
+
+from backend.scrapping.scrapping import Scrapping
 
 
 class scrappingHammadiAbid(Scrapping):

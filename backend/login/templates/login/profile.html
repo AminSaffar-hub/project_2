@@ -1,0 +1,48 @@
+{% extends 'frontend/base.html' %}
+{% load static %}
+{% block 'body' %}
+
+<style>
+    /* body */
+    .form-container {
+        padding-bottom: 180px;
+    }
+    
+    /* text */
+    h1 {
+        padding-top: 50px;
+        padding-bottom: 20px;
+    }
+    h2 {
+        padding-top: 50px;
+        padding-bottom: 20px;
+        font-size: 3em;
+    }
+    
+    /* forms */
+    .form-btn {
+        margin-top: 20px;
+    }
+</style>
+
+<!-- viewing user info -->
+<div class="container form-container shadow-lg">
+    <h1>Profile: {{ user|title }}</h1>
+    <p>Email: {{ user.email }}</p>
+    <p>First Name: {{ user.first_name }}</p>
+    <p>Last Name: {{ user.last_name }}</p>
+
+    <p><a href="{% url 'edit_profile' %}" class="btn form-btn btn-success">Edit profile</a></p>
+</div>
+<script>
+    // when document loads, slide alert down
+    $(document).ready(function() {
+        $(".alert").slideDown();
+    });
+
+    // once close is clicked, slide up the alert
+    $(".close").click(function(){
+        $(".alert").slideUp();
+    });
+</script>
+{% endblock %}

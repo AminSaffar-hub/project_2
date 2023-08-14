@@ -1,12 +1,12 @@
 from unittest.mock import patch
-from freezegun import freeze_time
 
 from django.core.management import call_command
 from django.test import TestCase
+from freezegun import freeze_time
 from scrapy.settings import Settings
-from backend.tests.utils import TestCaseWithDataMixin
-from backend.models import Item
 
+from backend.models import Item
+from backend.tests.utils import TestCaseWithDataMixin
 from scraper import settings
 
 
@@ -23,6 +23,7 @@ class CrawlCommandTests(TestCase):
         # Assertions
         self.assertTrue(mock_crawler_process.called)
         mock_crawler_process.assert_called_with(settings=crawler_settings)
+
         mock_crawler_process().crawl.assert_called_with(mock_cosmetique_spider)
         mock_crawler_process().start.assert_called()
 
