@@ -21,13 +21,13 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "captcha",
     "crispy_forms",
     "crispy_bootstrap4",
     "backend",
     "frontend",
     "scraper",
     "login",
+    "captcha",
 ]
 
 MIDDLEWARE = [
