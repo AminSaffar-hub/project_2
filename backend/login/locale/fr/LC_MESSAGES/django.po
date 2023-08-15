@@ -62,7 +62,7 @@ msgid ""
 "href=\"%(password_reset_url)s\">link</a> "
 msgstr ""
 " Vous avez oublié votre mot de passe? Clickez sur <a "
-"href=\"%(password_reset_url)s\">ce lien</a> "
+"href=\"%(password_reset_url)s\">ce lien</a>."
 
 #: login/templates/login/login.html:59
 #, python-format
@@ -125,15 +125,15 @@ msgstr "L'équipe d'Erradar"
 
 #: login/templates/login/resetpassword.html:39
 msgid "Reset Password"
-msgstr "Réinitialiser le mot de passe"
+msgstr "Réinitialiser votre mot de passe"
 
 #: login/templates/login/resetpassword.html:43
 msgid "Send Email"
-msgstr "Envoyer un courriel"
+msgstr "Envoyer"
 
 #: login/templates/login/text.html:40
 msgid "Password Reset Sent"
-msgstr "Réinitialisation du mot de passe envoyé"
+msgstr "Email de réinitialisation envoyé"
 
 #: login/templates/login/text.html:41
 msgid ""
@@ -141,4 +141,4 @@ msgid ""
 "you registered with, and check your spam folder."
 msgstr ""
 "Si vous ne recevez pas d'e-mail, vérifiez que vous avez bien saisi votre adresse email "
-"et vérifiez votre dossier de courrier indésirable."
+"et vérifiez le dossier de courrier indésirable."
