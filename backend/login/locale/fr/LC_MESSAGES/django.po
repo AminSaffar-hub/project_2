@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-15 10:33+0000\n"
+"POT-Creation-Date: 2023-08-15 14:13+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -57,6 +57,7 @@ msgid "Login"
 msgstr "Se connecter"
 
 #: login/templates/login/login.html:58
+#, python-format
 msgid ""
 " Did you forget your password? Click this <a "
 "href=\"%(password_reset_url)s\">link</a> "
@@ -67,7 +68,9 @@ msgstr ""
 #: login/templates/login/login.html:59
 #, python-format
 msgid " Not a member? <a href=\"%(register_url)s\">Register</a> for free now. "
-msgstr " Vous n'êtes pas encore membre ?  <a href=\"%(register_url)s\">Inscrivez-vous</a> gratuitement dès maintenant. "
+msgstr ""
+" Vous n'êtes pas encore membre ?  <a href=\"%(register_url)s\">Inscrivez-"
+"vous</a> gratuitement dès maintenant. "
 
 #: login/templates/login/profile.html:32
 msgid "Profile:"
@@ -100,16 +103,20 @@ msgid ""
 "You're receiving this email because you requested a password reset for your "
 "user account at %(site_name)s."
 msgstr ""
-"Vous recevez cet e-mail parce que vous avez demandé une réinitialisation de votre mot de passe pour le "
-"compte utilisateur avec l'adresse suivante %(site_name)s."
+"Vous recevez cet e-mail parce que vous avez demandé une réinitialisation de "
+"votre mot de passe pour le compte utilisateur avec l'adresse suivante "
+"%(site_name)s."
 
 #: login/templates/login/reset_password_email.html:6
 msgid "If you did not ask for a password reset, contact our support team."
-msgstr "Si vous n'avez pas demandé la réinitialisation de votre mot de passe, contactez notre équipe d'assistance."
+msgstr ""
+"Si vous n'avez pas demandé la réinitialisation de votre mot de passe, "
+"contactez notre équipe d'assistance."
 
 #: login/templates/login/reset_password_email.html:8
 msgid "Please go to the following page and choose a new password:"
-msgstr "Veuillez vous rendre à la page suivante et choisir un nouveau mot de passe :"
+msgstr ""
+"Veuillez vous rendre à la page suivante et choisir un nouveau mot de passe :"
 
 #: login/templates/login/reset_password_email.html:12
 msgid "Your username, in case you've forgotten:"
@@ -140,5 +147,5 @@ msgid ""
 "If you don't receive an email, please make sure you've entered the address "
 "you registered with, and check your spam folder."
 msgstr ""
-"Si vous ne recevez pas d'e-mail, vérifiez que vous avez bien saisi votre adresse email "
-"et vérifiez le dossier de courrier indésirable."
+"Si vous ne recevez pas d'e-mail, vérifiez que vous avez bien saisi votre "
+"adresse email et vérifiez le dossier de courrier indésirable."

@@ -1,9 +1,10 @@
 {% extends 'frontend/base.html' %}
 {% load static %}
+{% load i18n %}
 {% block 'body' %}
     {% if searched_item %}
         <div class="searched-item">
-            <p>Résultats pour "{{searched_item}}"</p>
+            <p>{% trans "Results for" %} "{{searched_item}}"</p>
         </div>
     {% endif %}
     <div class="row">
@@ -28,7 +29,7 @@
                                     {% if item.sale_percentage %}{{ item.sale_percentage }}%{% endif %}
                                 </p>
                                 <p>
-                                    Bon plan <a href="{{ item.link_to_provider }}">{{ item.provider_name }}</a> | 
+                                    {% trans "Good deal" %} <a href="{{ item.link_to_provider }}">{{ item.provider_name }}</a> | 
                                     {% if item.livraison %}
                                     <span> 
                                         <img src="{% static 'images/truck.png'%}" class="img-fluid" style="width: 25px; ">
@@ -42,7 +43,7 @@
                                 </p>
                                 <p class="card-text">{{ item.description | truncatechars:100 }}</p>
                                 <div class="row justify-content-end">
-                                    <a href="{% url 'product_details' pk=item.pk %}" class="btn btn-secondary item-a">Voir l'item</a>
+                                    <a href="{% url 'product_details' pk=item.pk %}" class="btn btn-secondary item-a">{% trans "See item" %}</a>
                                 </div>
                             </div>
                         </div>
