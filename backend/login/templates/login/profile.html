@@ -1,7 +1,9 @@
 {% extends 'frontend/base.html' %}
-{% load static %}
-{% block 'body' %}
 
+{% load static %}
+{% load i18n %}
+
+{% block 'body' %}
 <style>
     /* body */
     .form-container {
@@ -27,12 +29,12 @@
 
 <!-- viewing user info -->
 <div class="container form-container shadow-lg">
-    <h1>Profile: {{ user|title }}</h1>
-    <p>Email: {{ user.email }}</p>
-    <p>First Name: {{ user.first_name }}</p>
-    <p>Last Name: {{ user.last_name }}</p>
+    <h1>{% trans "Profile:" %} {{ user|title }}</h1>
+    <p>{% trans "Email:" %} {{ user.email }}</p>
+    <p>{% trans "First Name:" %} {{ user.first_name }}</p>
+    <p>{% trans "Last Name:" %} {{ user.last_name }}</p>
 
-    <p><a href="{% url 'edit_profile' %}" class="btn form-btn btn-success">Edit profile</a></p>
+    <p><a href="{% url 'edit_profile' %}" class="btn form-btn btn-success">{% trans "Edit profile" %}</a></p>
 </div>
 <script>
     // when document loads, slide alert down
