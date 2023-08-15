@@ -8,12 +8,12 @@ class Item(models.Model):
     title = models.CharField(max_length=500)
 
     class ItemCategories(models.TextChoices):
-        FOOD = "food", _('Food')
-        CLOTHES = "clothes", _('Clothes')
-        SELF_CARE = "self-care", _('Self-care')
-        APPLIANCES = "appliances", _('Appliances')
-        COSMETICS = "cosmetics", _('Cosmetics')
-        OTHER = "other", _('Other')
+        FOOD = "food", _("Food")
+        CLOTHES = "clothes", _("Clothes")
+        SELF_CARE = "self-care", _("Self-care")
+        APPLIANCES = "appliances", _("Appliances")
+        COSMETICS = "cosmetics", _("Cosmetics")
+        OTHER = "other", _("Other")
 
     category = models.CharField(choices=ItemCategories.choices, max_length=50)
     description = models.TextField(max_length=2500)
