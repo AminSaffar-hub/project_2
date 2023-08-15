@@ -1,0 +1,128 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-15 14:54+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: frontend/templates/frontend/base.html:33
+msgid "Top promos"
+msgstr ""
+
+#: frontend/templates/frontend/base.html:36
+msgid "All promos"
+msgstr ""
+
+#: frontend/templates/frontend/base.html:60
+msgid "My profile"
+msgstr ""
+
+#: frontend/templates/frontend/base.html:62
+msgid "Log out"
+msgstr ""
+
+#: frontend/templates/frontend/base.html:68
+msgid "Log in"
+msgstr ""
+
+#: frontend/templates/frontend/base.html:126
+#: frontend/templates/frontend/footer_info.html:7
+msgid "Who are we ?"
+msgstr ""
+
+#: frontend/templates/frontend/base.html:127
+#: frontend/templates/frontend/footer_info.html:14
+msgid "Become a partner"
+msgstr ""
+
+#: frontend/templates/frontend/base.html:128
+#: frontend/templates/frontend/footer_info.html:21
+msgid "Contact"
+msgstr ""
+
+#: frontend/templates/frontend/base.html:133
+msgid "Connect"
+msgstr ""
+
+#: frontend/templates/frontend/base.html:148
+msgid "More Info"
+msgstr ""
+
+#: frontend/templates/frontend/base.html:150
+#: frontend/templates/frontend/footer_info.html:28
+msgid "Confidentiality & Conditions"
+msgstr ""
+
+#: frontend/templates/frontend/base.html:151
+#: frontend/templates/frontend/footer_info.html:35
+msgid "Site organisation"
+msgstr ""
+
+#: frontend/templates/frontend/base.html:152
+#: frontend/templates/frontend/footer_info.html:42
+msgid "Legal information"
+msgstr ""
+
+#: frontend/templates/frontend/footer_info.html:8
+msgid ""
+"We are ERRADAR, an online platform that lists all the promotions from "
+"Tunisian websites. Founded in 2023, our mission is to help you save time and "
+"money by gathering all the promotions in one place. We saw an opportunity to "
+"simplify the process of searching for offers in Tunisia, and we are "
+"committed to providing our users with access to the best available deals."
+msgstr ""
+
+#: frontend/templates/frontend/footer_info.html:15
+msgid ""
+"ERRADAR offers partnership opportunities for Tunisian companies that wish to "
+"increase their visibility and reach a wider audience. If your company "
+"provides promotions and you are looking to boost your sales, we would like "
+"to hear from you. By becoming a partner with ERRADAR, you can access our "
+"extensive user base and promote your offers to a broader audience."
+msgstr ""
+
+#: frontend/templates/frontend/footer_info.html:22
+msgid ""
+"At ERRADAR, we are always delighted to hear from our users. If you have any "
+"questions, comments, or concerns, or if you would like to learn more about "
+"our partnership opportunities, please don't hesitate to contact us. You can "
+"send us an email at erradar-help@gmail.com or call us at +0699999999. Also, "
+"follow us on social media to stay updated on the latest deals and promotions."
+msgstr ""
+
+#: frontend/templates/frontend/home.html:7
+msgid "Results for"
+msgstr ""
+
+#: frontend/templates/frontend/home.html:32
+msgid "Good deal"
+msgstr ""
+
+#: frontend/templates/frontend/home.html:46
+msgid "See item"
+msgstr ""
+
+#: frontend/templates/frontend/item_details.html:38
+msgid "Visit item"
+msgstr ""
+
+#: frontend/templates/frontend/item_details.html:47
+msgid "Description"
+msgstr ""
+
+#: frontend/templates/frontend/item_details.html:51
+msgid "Display more"
+msgstr ""

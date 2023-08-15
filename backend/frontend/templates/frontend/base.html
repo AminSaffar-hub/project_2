@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -29,10 +30,10 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'top-promos' %}">Top promos</a>
+              <a class="nav-link" href="{% url 'top-promos' %}">{% trans "Top promos" %}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'home' %}">Tous les promos</a>
+              <a class="nav-link" href="{% url 'home' %}">{% trans "All promos" %}</a>
             </li>
           </ul>
           <form class="form-inline" style="margin: 0 auto;" action="{% url 'home' %}">
@@ -56,15 +57,15 @@
                     Compte <span class="caret"></span>
                 </a>
  				<ul class="dropdown-menu dropdown-menu-right" role="menu">
- 					<a class="dropdown-item" href="{% url 'profile' %}">Mon profil</a>
+ 					<a class="dropdown-item" href="{% url 'profile' %}">{% trans "My profile" %}</a>
                     <div class="dropdown-divider"></div>
- 					<a class="dropdown-item" href="{% url 'logout' %}">deconnexion</a>
+ 					<a class="dropdown-item" href="{% url 'logout' %}">{% trans "Log out" %}</a>
  				</ul>
    			</li>
             {% else %}    
             <li class="nav-item">
                 <a class="btn btn-primary rounded-pill d-flex align-items-center" href="{% url 'login' %}">
-                    Connexion
+                    {% trans "Log in" %}
                 </a>
             </li>
             {% endif %}  
@@ -81,7 +82,7 @@
                         <button type="button" class="btn btn-dark d-flex align-items-center">
                             <a class="nav-link d-flex align-items-center" href="?category={{ value }}">
                                 <img src="{% static 'images/'|add:value|add:'.png' %}" alt="{{ name }}" width="20" height="20" class="mr-2">
-                                <i class="icon-class"></i> {{ name }}
+                                <i class="icon-class"></i> {% trans name %}
                             </a>
                         </button>
                     </li>
@@ -122,17 +123,17 @@
                 <div class="col-md-4 col-sm-12 col-12">
                     <h5 class="mb-4 font-weight-bold text-uppercase footer-heading">Entreprise</h5>
                     <ul class="list-group">
-                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#qui_sommes_nous">Qui sommes-nous ?</a></li>
-                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#devenir_partenaire">Devenir partenaire</a></li>
-                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#contact">Contact</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#qui_sommes_nous">{% trans "Who are we ?" %}</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#devenir_partenaire">{% trans "Become a partner" %}</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#contact">{% trans "Contact" %}</a></li>
                     </ul>
                 </div>
     
                 <div class="col-md-4 col-sm-12 col-12">
-                    <h5 class="mb-4 font-weight-bold text-uppercase footer-heading">Connect</h5>
+                    <h5 class="mb-4 font-weight-bold text-uppercase footer-heading">{% trans "Connect" %}</h5>
                     <ul class="list-group">
                         <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                            <a href="https://www.Instagram.com/naologic"><i class="fa fa-instagram mr-1"></i> Instagram</a>
+                            <a href="https://www.Instagram.com/naologic"><i class="fa fa-instagram mr-1"></i>Instagram</a>
                         </li>
                         <li class="list-group-item bg-transparent border-0 p-0 mb-2">
                             <a href="https://twitter.com/naologicerp"><i class="fa fa-twitter mr-1"></i> Twitter</a>       
@@ -144,11 +145,11 @@
                 </div>
                 
                 <div class="col-md-4 col-sm-12 col-12"> 
-                    <h5 class="mb-4 font-weight-bold text-uppercase footer-heading">More Info</h5>
+                    <h5 class="mb-4 font-weight-bold text-uppercase footer-heading">{% trans "More Info" %}</h5>
                     <ul class="list-group">
-                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#Confidentialité">Confidentialité & Conditions</a></li>
-                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#site_plan">Plan du site</a></li>
-                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#Legal_info">Information Legal</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#Confidentialité">{% trans "Confidentiality & Conditions" %}</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#site_plan">{% trans "Site organisation" %}</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#Legal_info">{% trans "Legal information" %}</a></li>
                     </ul>
                 </div>
             </div>

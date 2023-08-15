@@ -1,8 +1,10 @@
 from django.test import RequestFactory, TestCase
+from django.urls import reverse
+from django.conf import settings
 
+from frontend.views import NUMBER_OF_ITEMS_IN_PAGE, home
 from backend.models import Item
 from backend.tests.utils import TestCaseWithDataMixin
-from frontend.views import NUMBER_OF_ITEMS_IN_PAGE, home
 
 
 class ViewsTests(TestCaseWithDataMixin, TestCase):
@@ -82,3 +84,17 @@ class ViewsTests(TestCaseWithDataMixin, TestCase):
         self.assertContains(response, item2.title)
         self.assertNotContains(response, item3.title)
         self.assertNotContains(response, item4.title)
+
+
+class InternationalizationTestCase(TestCaseWithDataMixin, TestCase):
+    def test_fr_translation(self):
+        self.client.cookies.load({settings.LANGUAGE_COOKIE_NAME: "fr"})
+        response = self.client.get(reverse("home"))
+        self.assertContains(response, "Bon plans")
+        self.assertContains(response, "Tous les promos")
+
+    def test_en_translation(self):
+        self.client.cookies.load({settings.LANGUAGE_COOKIE_NAME: "en"})
+        response = self.client.get(reverse("home"))
+        self.assertContains(response, "Top promos")
+        self.assertContains(response, "All promos")

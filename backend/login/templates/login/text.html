@@ -2,6 +2,7 @@
 
 {% load static %}
 {% load crispy_forms_tags %}
+{% load i18n %}
 
 {% block 'body' %}
 <style>
@@ -36,8 +37,8 @@
 
 
 <div class="form-container container shadow-lg">
-    <h2>Password Reset Sent<br></h2>
-    <p><br>If you don't receive an email, please make sure you've entered the address you registered with, and check your spam folder.</p>
+    <h2>{% trans "Password Reset Sent" %}<br></h2>
+    <p><br>{% trans "If you don't receive an email, please make sure you've entered the address you registered with, and check your spam folder." %}</p>
     </form>
 </div>
 {% endblock %}
