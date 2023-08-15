@@ -82,7 +82,7 @@
                         <button type="button" class="btn btn-dark d-flex align-items-center">
                             <a class="nav-link d-flex align-items-center" href="?category={{ value }}">
                                 <img src="{% static 'images/'|add:value|add:'.png' %}" alt="{{ name }}" width="20" height="20" class="mr-2">
-                                <i class="icon-class"></i> {{ name }}
+                                <i class="icon-class"></i> {% trans name %}
                             </a>
                         </button>
                     </li>
