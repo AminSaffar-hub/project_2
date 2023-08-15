@@ -1,8 +1,8 @@
 from django.test import RequestFactory, TestCase
+from frontend.views import NUMBER_OF_ITEMS_IN_PAGE, home
 
 from backend.models import Item
 from backend.tests.utils import TestCaseWithDataMixin
-from frontend.views import NUMBER_OF_ITEMS_IN_PAGE, home
 
 
 class ViewsTests(TestCaseWithDataMixin, TestCase):

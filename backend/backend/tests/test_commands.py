@@ -3,11 +3,11 @@ from unittest.mock import patch
 from django.core.management import call_command
 from django.test import TestCase
 from freezegun import freeze_time
+from scraper import settings
 from scrapy.settings import Settings
 
 from backend.models import Item
 from backend.tests.utils import TestCaseWithDataMixin
-from scraper import settings
 
 
 class CrawlCommandTests(TestCase):
