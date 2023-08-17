@@ -21,7 +21,11 @@ class ZaraSpider(scrapy.Spider):
             "Sec-Fetch-Dest": "empty",
             "Sec-Fetch-Mode": "cors",
             "Sec-Fetch-Site": "same-origin",
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36",
+            "User-Agent": (
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/115.0.0.0 Safari/537.36"
+            ),
         }
     }
 
@@ -32,7 +36,7 @@ class ZaraSpider(scrapy.Spider):
     ]
 
     def parse(self, response):
-        pattern = r'],"name":"(.*?)","description":".*?","price":(\d+),"oldPrice":(\d+),"displayDiscountPercentage":(\d+)'
+        pattern = r'],"name":"(.*?)","description":".*?","price":(\d+),"oldPrice":(\d+),"displayDiscountPercentage":(\d+)'  # noqa: E501
         matches = re.findall(pattern, response.text)
         pattern_ids = r'"id":(\d+),"reference"'
         ids = re.findall(pattern_ids, response.text)
@@ -71,12 +75,13 @@ class ZaraSpider(scrapy.Spider):
         reference = response.meta["reference"]
         keyword = response.meta["keyword"]
         description_pattern = r',"description":"([^"]*)"'
-        description = (
+        description_pre = (
             re.search(description_pattern, response.text).group(1)
             if re.search(description_pattern, response.text)
             else ""
         )
-        image_pattern = r',"path":"(/[^"]+)","name":"([^"]+)","width":\d+,"height":\d+,"timestamp":"(\d+)"'
+        description = description_pre.replace("\\n", " ").strip()
+        image_pattern = r',"path":"(/[^"]+)","name":"([^"]+)","width":\d+,"height":\d+,"timestamp":"(\d+)"'  # noqa: E501
         image = re.search(image_pattern, response.text)
         item = ArticleItem()
         item["title"] = name
