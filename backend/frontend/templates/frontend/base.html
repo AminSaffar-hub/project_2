@@ -36,15 +36,11 @@
                 </li>
             </ul>
             <form class="form-inline" style="margin: 0 auto;" action="{% url 'home' %}">
-                <div class="row no-gutters align-items-center">
-                    <div class="col-auto">
-                        <input type="text" name="search" class="form-control border-secondary rounded-pill pr-5" placeholder="Recherche.." value="{{request.GET.title}}">
-                    </div>
-                    <div class="col-auto">
+                <div class="d-flex g-0 bg-light rounded-pill">
+                        <input type="text" name="search" class="form-control shadow-none border-0 rounded-pill pr-5" placeholder="Recherche.." type="search" value="{{request.GET.title}}">
                         <button class="btn btn-outline-light text-dark border-0 rounded-pill ml-n5" type="search">
                             <i class="fa fa-search"></i>
                         </button>
-                    </div>
                 </div>
             </form>
 
