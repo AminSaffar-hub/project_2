@@ -42,8 +42,8 @@
                                 {% endif %}
                                 </p>
                                 <p class="card-text">{{ item.description | truncatechars:100 }}</p>
-                                <div class="row justify-content-end">
-                                    <a href="{% url 'product_details' pk=item.pk %}" class="btn btn-secondary item-a">{% trans "See item" %}</a>
+                                <div class="row justify-content-end ">
+                                    <a href="{% url 'product_details' pk=item.pk %}" class="col-auto btn btn-secondary item-a">{% trans "See item" %}</a>
                                 </div>
                             </div>
                         </div>
