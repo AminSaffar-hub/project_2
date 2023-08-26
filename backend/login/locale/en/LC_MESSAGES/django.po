@@ -1,0 +1,134 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-15 10:33+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: login/templates/login/change_password.html:40
+msgid "Edit Password"
+msgstr ""
+
+#: login/templates/login/change_password.html:47
+msgid "Password reset failed"
+msgstr ""
+
+#: login/templates/login/change_password.html:48
+msgid ""
+"The password reset link is invalid, possibly because it has been used. "
+"Please request a new password reset."
+msgstr ""
+
+#: login/templates/login/edit_profile.html:41
+msgid "Edit Profile"
+msgstr ""
+
+#: login/templates/login/edit_profile.html:45
+#, python-format
+msgid ""
+"You can change your password using <a href=\"%(change_password_url)s\">this "
+"form</a>."
+msgstr ""
+
+#: login/templates/login/edit_profile.html:46
+msgid "Save Edits"
+msgstr ""
+
+#: login/templates/login/login.html:51 login/templates/login/login.html:55
+msgid "Login"
+msgstr ""
+
+#: login/templates/login/login.html:58
+#, python-format
+msgid ""
+" Did you forget your password? Click this <a "
+"href=\"%(password_reset_url)s\">link</a> "
+msgstr ""
+
+#: login/templates/login/login.html:59
+#, python-format
+msgid " Not a member? <a href=\"%(register_url)s\">Register</a> for free now. "
+msgstr ""
+
+#: login/templates/login/profile.html:32
+msgid "Profile:"
+msgstr ""
+
+#: login/templates/login/profile.html:33
+msgid "Email:"
+msgstr ""
+
+#: login/templates/login/profile.html:34
+msgid "First Name:"
+msgstr ""
+
+#: login/templates/login/profile.html:35
+msgid "Last Name:"
+msgstr ""
+
+#: login/templates/login/profile.html:37
+msgid "Edit profile"
+msgstr ""
+
+#: login/templates/login/register.html:36
+#: login/templates/login/register.html:40
+msgid "Register"
+msgstr ""
+
+#: login/templates/login/reset_password_email.html:5
+#, python-format
+msgid ""
+"You're receiving this email because you requested a password reset for your "
+"user account at %(site_name)s."
+msgstr ""
+
+#: login/templates/login/reset_password_email.html:6
+msgid "If you did not ask for a password reset, contact our support team."
+msgstr ""
+
+#: login/templates/login/reset_password_email.html:8
+msgid "Please go to the following page and choose a new password:"
+msgstr ""
+
+#: login/templates/login/reset_password_email.html:12
+msgid "Your username, in case you've forgotten:"
+msgstr ""
+
+#: login/templates/login/reset_password_email.html:14
+msgid "Thanks for rolling with erradar, "
+msgstr ""
+
+#: login/templates/login/reset_password_email.html:16
+msgid "Erradar team"
+msgstr ""
+
+#: login/templates/login/resetpassword.html:39
+msgid "Reset Password"
+msgstr ""
+
+#: login/templates/login/resetpassword.html:43
+msgid "Send Email"
+msgstr ""
+
+#: login/templates/login/text.html:40
+msgid "Password Reset Sent"
+msgstr ""
+
+#: login/templates/login/text.html:41
+msgid ""
+"If you don't receive an email, please make sure you've entered the address "
+"you registered with, and check your spam folder."
+msgstr ""

@@ -2,6 +2,16 @@ body {
     font-family: 'Averta Standard',Helvetica Helvetica,Arial,Lucida sans-serif;
     font-size: 16px;
     background: #ececec !important;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.main {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    flex-grow: 1;
 }
 
 div.item-card {
@@ -101,6 +111,7 @@ footer {
     border: none;
     padding: 0;
     margin-bottom: .5em;
+    color: white;
 }
 
 .list-group a {

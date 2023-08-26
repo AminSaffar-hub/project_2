@@ -1,9 +1,11 @@
-from bs4 import BeautifulSoup
-from selenium import webdriver
 import time
 from urllib.parse import urlsplit, urlunsplit
-from backend.scrapping.scrapping import Scrapping
+
+from bs4 import BeautifulSoup
+from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+
+from backend.scrapping.scrapping import Scrapping
 
 
 class ScrapingBershka(Scrapping):

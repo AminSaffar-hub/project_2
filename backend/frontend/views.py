@@ -1,8 +1,8 @@
-from django.shortcuts import render
 from django.core.paginator import Paginator
+from django.shortcuts import render
 from django.views.generic import DetailView
-from backend.models import Item
 
+from backend.models import Item
 
 NUMBER_OF_ITEMS_IN_PAGE = 8
 NUMBER_OF_TOP_ITEMS = 24

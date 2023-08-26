@@ -1,7 +1,8 @@
 from bs4 import BeautifulSoup
 from selenium import webdriver
-from backend.scrapping.scrapping import Scrapping
 from selenium.webdriver.chrome.options import Options
+
+from backend.scrapping.scrapping import Scrapping
 
 
 class Scrappingbeautystore(Scrapping):

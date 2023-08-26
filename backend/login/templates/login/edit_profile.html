@@ -1,0 +1,49 @@
+{% extends 'frontend/base.html' %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+{% block 'body' %}
+
+<style>
+    /* body */
+    .form-container {
+        max-width: 960px;
+        background-color: #f7f7f7;
+        border-radius: 30px;
+        border: 1px solid #dadce0;
+        padding-bottom: 50px;
+    }
+    
+    /* text */
+    .form-container h2 {
+        padding-top: 50px;
+        padding-bottom: 20px;
+        font-size: 3em;
+    }
+    
+    /* forms */
+    .asteriskField {
+        display: none;
+    }
+    .requiredField {
+        font-weight: bold;
+    }
+    .django_form {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+</style>
+
+{% url 'change_password' as change_password_url %}
+<div class="container form-container shadow-lg">
+    <h2>{% trans "Edit Profile" %}<br></h2>
+    <form method="POST" class="django_form">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <small>{% blocktrans %}You can change your password using <a href="{{change_password_url}}">this form</a>.{% endblocktrans %}</small> <br><br>
+        <button type="submit" class="btn btn-success">{% trans "Save Edits" %}</button>
+    </form>
+</div>
+{% endblock %}

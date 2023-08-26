@@ -1,13 +1,12 @@
 {% load static %}
+{% load i18n %}
 <!doctype html>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"
           rel="stylesheet"  type='text/css'>
@@ -16,50 +15,70 @@
     <link href="https://fonts.cdnfonts.com/css/averta-standard" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="{% static 'css/expend_description.js' %}"></script>
+    <script src="{% static 'js/expend_description.js' %}"></script>
 
     <title>ERRADAR</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="{% url 'home' %}">E R R A D A R</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>        
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'top-promos' %}">Top promos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'home' %}">Tous les promos</a>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0" action="{% url 'home' %}">
-            <div class="row no-gutters align-items-center">
-                <div class="col-auto">
-                    <input type="text" name="search" class="form-control border-secondary rounded-pill pr-5" placeholder="Recherche.." value="{{request.GET.title}}">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'home' %}">E R R A D A R</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>        
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                <a class="nav-link" href="{% url 'top-promos' %}">{% trans "Top promos" %}</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="{% url 'home' %}">{% trans "All promos" %}</a>
+                </li>
+            </ul>
+            <form class="form-inline" style="margin: 0 auto;" action="{% url 'home' %}">
+                <div class="d-flex g-0 bg-light rounded-pill">
+                        <input type="text" name="search" class="form-control shadow-none border-0 rounded-pill pr-5" placeholder="Recherche.." type="search" value="{{request.GET.title}}">
+                        <button class="btn btn-outline-light text-dark border-0 rounded-pill ml-n5" type="search">
+                            <i class="fa fa-search"></i>
+                        </button>
                 </div>
-                <div class="col-auto">
-                    <button class="btn btn-outline-light text-dark border-0 rounded-pill ml-n5" type="search">
-                        <i class="fa fa-search"></i>
-                    </button>
-                </div>
+            </form>
+
+            <ul class="nav navbar-nav mr-0 mt-2 mt-lg-0">
+                {% if user.is_authenticated %}
+                <!-- if user is authenticated, this part is shown -->
+                <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown">
+                        Compte <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarScrollingDropdown">
+                        <a class="dropdown-item" href="{% url 'profile' %}">{% trans "My profile" %}</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{% url 'logout' %}">{% trans "Log out" %}</a>
+                    </ul>
+                </li>
+                {% else %}    
+                <li class="nav-item">
+                    <a class="btn btn-primary rounded-pill d-flex align-items-center" href="{% url 'login' %}">
+                        {% trans "Log in" %}
+                    </a>
+                </li>
+                {% endif %}  
+            </ul>
             </div>
-          </form>
         </div>
     </nav>
     {% if categories %}
     <nav class="navbar navbar-light bg-light">
-        <div class="container">
+        <div class="container justify-content-center">
             <div class="navbar-container d-flex" style="overflow-x: auto;">
                 <ul class="navbar-nav d-flex flex-row">
                     {% for value, name in categories %}
                     <li class="nav-item">
                         <button type="button" class="btn btn-dark d-flex align-items-center">
-                            <a class="nav-link d-flex align-items-center" href="?category={{ value }}">
+                            <a class="nav-link align-items-center" href="?category={{ value }}">
                                 <img src="{% static 'images/'|add:value|add:'.png' %}" alt="{{ name }}" width="20" height="20" class="mr-2">
-                                <i class="icon-class"></i> {{ name }}
+                                <i class="icon-class"></i> {% trans name %}
                             </a>
                         </button>
                     </li>
@@ -69,54 +88,72 @@
         </div>
     </nav>
     {% endif %}
-    {% block 'body' %}
-    {% endblock %}
+    {% if messages %}
+        {% for message in messages %}
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col">
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    {% endif %}
+    <div class="main">
+        {% block 'body' %}
+        {% endblock %}
+    </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
+		<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
     crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-</body>
-<footer>
-    <div class="container pt-5 border-bottom">
-        <div class="row justify-content-center align-items-center">
-            <div class="col-md-4 col-sm-12 col-12">
-                <h5 class="mb-4 font-weight-bold text-uppercase footer-heading">Entreprise</h5>
-                <ul class="list-group">
-                    <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#qui_sommes_nous">Qui sommes-nous ?</a></li>
-                    <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#devenir_partenaire">Devenir partenaire</a></li>
-                    <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#contact">Contact</a></li>
-                </ul>
-            </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-            <div class="col-md-4 col-sm-12 col-12">
-                <h5 class="mb-4 font-weight-bold text-uppercase footer-heading">Connect</h5>
-                <ul class="list-group">
-                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                        <a href="https://www.Instagram.com/naologic"><i class="fa fa-instagram mr-1"></i> Instagram</a>
-                    </li>
-                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                        <a href="https://twitter.com/naologicerp"><i class="fa fa-twitter mr-1"></i> Twitter</a>       
-                    </li>
-                    <li class="list-group-item bg-transparent border-0 p-0 mb-2">
-                        <a href="https://www.facebook.com/naologic/" target="_blank"><i class="fa fa-facebook mr-1"></i> Facebook</a>
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="col-md-4 col-sm-12 col-12"> 
-                <h5 class="mb-4 font-weight-bold text-uppercase footer-heading">More Info</h5>
-                <ul class="list-group">
-                    <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#Confidentialité">Confidentialité & Conditions</a></li>
-                    <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#site_plan">Plan du site</a></li>
-                    <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#Legal_info">Information Legal</a></li>
-                </ul>
+    <footer>
+        <div class="container pt-5 border-bottom">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-4 col-sm-12 col-12">
+                    <h5 class="mb-4 font-weight-bold text-uppercase footer-heading">Entreprise</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#qui_sommes_nous">{% trans "Who are we ?" %}</a></li>
+                        <li class="list-group-item border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#devenir_partenaire">{% trans "Become a partner" %}</a></li>
+                        <li class="list-group-item border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#contact">{% trans "Contact" %}</a></li>
+                    </ul>
+                </div>
+    
+                <div class="col-md-4 col-sm-12 col-12">
+                    <h5 class="mb-4 font-weight-bold text-uppercase footer-heading">{% trans "Connect" %}</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item border-0 p-0 mb-2">
+                            <a href="https://www.Instagram.com/naologic"><i class="fa fa-instagram mr-1"></i>Instagram</a>
+                        </li>
+                        <li class="list-group-item border-0 p-0 mb-2">
+                            <a href="https://twitter.com/naologicerp"><i class="fa fa-twitter mr-1"></i> Twitter</a>       
+                        </li>
+                        <li class="list-group-item border-0 p-0 mb-2">
+                            <a href="https://www.facebook.com/naologic/" target="_blank"><i class="fa fa-facebook mr-1"></i> Facebook</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-4 col-sm-12 col-12"> 
+                    <h5 class="mb-4 font-weight-bold text-uppercase footer-heading">{% trans "More Info" %}</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#Confidentialité">{% trans "Confidentiality & Conditions" %}</a></li>
+                        <li class="list-group-item border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#site_plan">{% trans "Site organisation" %}</a></li>
+                        <li class="list-group-item border-0 p-0 mb-2"><a href="{% url 'footer_info' %}#Legal_info">{% trans "Legal information" %}</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
+</body>
 </html>

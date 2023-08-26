@@ -1,6 +1,8 @@
-import pandas as pd
 import time
+
+import pandas as pd
 from bs4 import BeautifulSoup
+
 from backend.models import Item
 
 

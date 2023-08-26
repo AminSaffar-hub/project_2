@@ -1,15 +1,14 @@
 from django.core.management.base import BaseCommand
-from scrapy.settings import Settings
-from scrapy.crawler import CrawlerProcess
-
+from scraper import settings
 from scraper.spiders.beautystore import BeautyStoreSpider
 from scraper.spiders.cosmetique import CosmetiqueSpider
 from scraper.spiders.exist import ExistSpider
-from scraper.spiders.zara import ZaraSpider
 from scraper.spiders.mg import MgSpider
-from scraper.spiders.tunisianet import TunisiaNetSpider
 from scraper.spiders.tdiscount import TdiscountSpider
-from scraper import settings
+from scraper.spiders.tunisianet import TunisiaNetSpider
+from scraper.spiders.zara import ZaraSpider
+from scrapy.crawler import CrawlerProcess
+from scrapy.settings import Settings
 
 
 class Command(BaseCommand):

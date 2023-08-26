@@ -17,14 +17,15 @@ Usage:
     Run the script to scrape the data and save it to the "output.csv" file. The final DataFrame
     will also be printed to the console.
 """
+import sys
+import time
+
 from backend.scrapping.scrapping_beauty_store import Scrappingbeautystore
 from backend.scrapping.scrapping_bershka import ScrapingBershka
 from backend.scrapping.scrapping_cosemetique import Scrapingcosme
 from backend.scrapping.scrapping_exist import ScrapingExist
 from backend.scrapping.scrapping_mg import ScrapingMG
 from backend.scrapping.scrapping_zara import ScrapingZara
-import time
-import sys
 
 
 def run_scrapping():
