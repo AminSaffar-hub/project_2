@@ -1,8 +1,8 @@
+from django.conf import settings
 from django.test import RequestFactory, TestCase
 from django.urls import reverse
-from django.conf import settings
-
 from frontend.views import NUMBER_OF_ITEMS_IN_PAGE, home
+
 from backend.models import Item
 from backend.tests.utils import TestCaseWithDataMixin
 
