@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-15 14:54+0000\n"
+"POT-Creation-Date: 2023-08-29 22:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,23 +18,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: frontend/templates/frontend/base.html:33
+#: frontend/templates/frontend/base.html:32
 msgid "Top promos"
 msgstr "Bon plans"
 
-#: frontend/templates/frontend/base.html:36
+#: frontend/templates/frontend/base.html:35
 msgid "All promos"
 msgstr "Tous les promos"
 
-#: frontend/templates/frontend/base.html:60
+#: frontend/templates/frontend/base.html:55
 msgid "My profile"
 msgstr "Mon profil"
 
-#: frontend/templates/frontend/base.html:62
+#: frontend/templates/frontend/base.html:57
 msgid "Log out"
 msgstr "se déconnecter"
 
-#: frontend/templates/frontend/base.html:68
+#: frontend/templates/frontend/base.html:63
 msgid "Log in"
 msgstr "Connexion"
 
@@ -83,12 +83,13 @@ msgid ""
 "money by gathering all the promotions in one place. We saw an opportunity to "
 "simplify the process of searching for offers in Tunisia, and we are "
 "committed to providing our users with access to the best available deals."
-msgstr "Nous sommes ERRADAR, une plateforme en ligne qui répertorie toutes les "
-"promotions des sites tunisiens. Fondée en 2023, notre mission est de vous aider"
-" à économiser du temps et de l'argent en regroupant toutes les promotions en un"
-" seul endroit. Nous avons vu une opportunité de simplifier le processus de recherche"
-" d'offres en Tunisie, et nous nous sommes engagés à offrir à nos utilisateurs l'accès"
-" aux meilleures offres disponibles."
+msgstr ""
+"Nous sommes ERRADAR, une plateforme en ligne qui répertorie toutes les "
+"promotions des sites tunisiens. Fondée en 2023, notre mission est de vous "
+"aider à économiser du temps et de l'argent en regroupant toutes les "
+"promotions en un seul endroit. Nous avons vu une opportunité de simplifier "
+"le processus de recherche d'offres en Tunisie, et nous nous sommes engagés à "
+"offrir à nos utilisateurs l'accès aux meilleures offres disponibles."
 
 #: frontend/templates/frontend/footer_info.html:15
 msgid ""
@@ -97,11 +98,13 @@ msgid ""
 "provides promotions and you are looking to boost your sales, we would like "
 "to hear from you. By becoming a partner with ERRADAR, you can access our "
 "extensive user base and promote your offers to a broader audience."
-msgstr "ERRADAR offre des opportunités de partenariat pour les entreprises tunisiennes"
-" qui souhaitent augmenter leur visibilité et atteindre un public plus large. Si votre "
-"entreprise offre des promotions et que vous cherchez à augmenter vos ventes, nous aimerions "
-"entendre parler de vous. En devenant partenaire avec ERRADAR, vous pouvez accéder à notre large "
-"base d'utilisateurs et faire connaître vos offres à un public plus large."
+msgstr ""
+"ERRADAR offre des opportunités de partenariat pour les entreprises "
+"tunisiennes qui souhaitent augmenter leur visibilité et atteindre un public "
+"plus large. Si votre entreprise offre des promotions et que vous cherchez à "
+"augmenter vos ventes, nous aimerions entendre parler de vous. En devenant "
+"partenaire avec ERRADAR, vous pouvez accéder à notre large base "
+"d'utilisateurs et faire connaître vos offres à un public plus large."
 
 #: frontend/templates/frontend/footer_info.html:22
 msgid ""
@@ -110,22 +113,28 @@ msgid ""
 "our partnership opportunities, please don't hesitate to contact us. You can "
 "send us an email at erradar-help@gmail.com or call us at +0699999999. Also, "
 "follow us on social media to stay updated on the latest deals and promotions."
-msgstr "Chez ERRADAR, nous sommes toujours ravis d'entendre parler de nos utilisateurs. "
-"Si vous avez des questions, des commentaires ou des préoccupations, ou si vous souhaitez "
-"en savoir plus sur nos opportunités de partenariat, n'hésitez pas à nous contacter. Vous "
-"pouvez nous envoyer un courrier électronique à info@erradar.com ou nous appeler au +0699999999. "
-"Suivez-nous également sur les réseaux sociaux pour rester au courant des dernières offres et "
-"promotions."
+msgstr ""
+"Chez ERRADAR, nous sommes toujours ravis d'entendre parler de nos "
+"utilisateurs. Si vous avez des questions, des commentaires ou des "
+"préoccupations, ou si vous souhaitez en savoir plus sur nos opportunités de "
+"partenariat, n'hésitez pas à nous contacter. Vous pouvez nous envoyer un "
+"courrier électronique à info@erradar.com ou nous appeler au +0699999999. "
+"Suivez-nous également sur les réseaux sociaux pour rester au courant des "
+"dernières offres et promotions."
 
 #: frontend/templates/frontend/home.html:7
 msgid "Results for"
 msgstr "Résultats pour"
 
-#: frontend/templates/frontend/home.html:32
+#: frontend/templates/frontend/home.html:26
 msgid "Good deal"
 msgstr "Bon plan"
 
-#: frontend/templates/frontend/home.html:46
+#: frontend/templates/frontend/home.html:49
+msgid "available"
+msgstr "disponible"
+
+#: frontend/templates/frontend/home.html:53
 msgid "See item"
 msgstr "Voir l'item"
 

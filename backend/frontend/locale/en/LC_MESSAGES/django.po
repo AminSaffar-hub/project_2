@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-15 14:54+0000\n"
+"POT-Creation-Date: 2023-08-29 22:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,23 +18,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: frontend/templates/frontend/base.html:33
+#: frontend/templates/frontend/base.html:32
 msgid "Top promos"
 msgstr ""
 
-#: frontend/templates/frontend/base.html:36
+#: frontend/templates/frontend/base.html:35
 msgid "All promos"
 msgstr ""
 
-#: frontend/templates/frontend/base.html:60
+#: frontend/templates/frontend/base.html:55
 msgid "My profile"
 msgstr ""
 
-#: frontend/templates/frontend/base.html:62
+#: frontend/templates/frontend/base.html:57
 msgid "Log out"
 msgstr ""
 
-#: frontend/templates/frontend/base.html:68
+#: frontend/templates/frontend/base.html:63
 msgid "Log in"
 msgstr ""
 
@@ -107,11 +107,15 @@ msgstr ""
 msgid "Results for"
 msgstr ""
 
-#: frontend/templates/frontend/home.html:32
+#: frontend/templates/frontend/home.html:26
 msgid "Good deal"
 msgstr ""
 
-#: frontend/templates/frontend/home.html:46
+#: frontend/templates/frontend/home.html:49
+msgid "available"
+msgstr ""
+
+#: frontend/templates/frontend/home.html:53
 msgid "See item"
 msgstr ""
 

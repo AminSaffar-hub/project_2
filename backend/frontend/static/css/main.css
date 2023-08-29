@@ -9,8 +9,7 @@ body {
 }
 
 .main {
-    margin-top: 5vh;
-    margin-bottom: 5vh;
+    margin-top: 2vh;
     flex-grow: 1;
 }
 

@@ -4,11 +4,6 @@ body {
     background: #ececec !important;
 }
 
-div.item-card {
-    border-radius: 10px;
-    margin-top: 10px;
-}
-
 ul.pagination {
     justify-content: center;
 }
@@ -21,11 +16,6 @@ div.searched-item {
 div.searched-item p {
     text-align: center;
     font-size: xx-large;
-}
-
-img.item-img {
-    margin: 10px;
-    border-radius: 10px;
 }
 
 a.navbar-brand span {
