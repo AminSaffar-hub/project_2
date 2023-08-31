@@ -2,6 +2,7 @@ import math
 
 from django.db import models
 from django.utils.translation import gettext as _
+from django.contrib.auth.models import User
 
 
 class Item(models.Model):
@@ -66,3 +67,18 @@ class Item(models.Model):
 
     def __str__(self):
         return self.title + " - " + self.provider_name
+
+
+class ItemRating(models.Model):
+    item = models.ForeignKey(Item, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user_sentiment = models.BooleanField(
+        default=True,
+        help_text="Whether the user likes the item. True for like. False for dislike.",
+    )
+
+    def __str__(self):
+        return f"{self.item} {self.user_sentiment} {self.user}"
+
+    class Meta:
+        unique_together = ("item", "user")
