@@ -30,7 +30,7 @@ def home(request):
     else:
         items = Item.objects.all()
 
-    items_in_page = _generate_pages(items.order_by("last_updated_at"), page_number)
+    items_in_page = _generate_pages(items.order_by("title"), page_number)
 
     categories = Item.ItemCategories.choices
     return render(
