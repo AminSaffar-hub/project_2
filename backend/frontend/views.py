@@ -69,11 +69,12 @@ class ProductDetails(DetailView):
     model = Item
     template_name = "frontend/item_details.html"
 
+
 @require_POST
 def rate_item(request, item_id):
     try:
         item = Item.objects.get(pk=item_id)
-        is_like = request.POST.get('like') == 'true'
+        is_like = request.POST.get("like") == "true"
         user = request.user
 
         # Check if the user has already voted
@@ -88,10 +89,12 @@ def rate_item(request, item_id):
         like_count = item.votes.filter(like=True).count()
         dislike_count = item.votes.filter(like=False).count()
 
-        return JsonResponse({
-            'like_count': like_count,
-            'dislike_count': dislike_count,
-        })
+        return JsonResponse(
+            {
+                "like_count": like_count,
+                "dislike_count": dislike_count,
+            }
+        )
 
     except Item.DoesNotExist:
-        return JsonResponse({'error': 'Item not found'}, status=404)
+        return JsonResponse({"error": "Item not found"}, status=404)

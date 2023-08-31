@@ -1,6 +1,7 @@
 {% extends 'frontend/base.html' %}
 {% load static %}
 {% load i18n %}
+{% load item_tags %}
 {% block 'body' %}
     {% if searched_item %}
         <div class="searched-item">
@@ -21,7 +22,10 @@
                     </div>
                     <div class="col-md-6 col-lg-7 col-xl-7">
                     <h5>{{ item.title }}</h5>
-                    <br>
+                    <button id="like-button" data-item-id="{{ item.id }}" data-like="true">Like</button>
+                    <div id="like-count">{% count_likes item %}</div>
+                    <div id="dislike-count">{% count_dislikes item %}</div>
+                    <button id="dislike-button" data-item-id="{{ item.id }}" data-like="false">Dislike</button>
                     <div>
                         {% trans "Good deal" %} <a href="{{ item.link_to_provider }}">{{ item.provider_name }}</a>
                     </div>

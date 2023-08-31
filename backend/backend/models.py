@@ -70,7 +70,7 @@ class Item(models.Model):
 
 
 class ItemRating(models.Model):
-    item = models.ForeignKey(Item, on_delete=models.CASCADE, related_name='rating')
+    item = models.ForeignKey(Item, on_delete=models.CASCADE, related_name="rating")
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     user_sentiment = models.BooleanField(
         default=True,
