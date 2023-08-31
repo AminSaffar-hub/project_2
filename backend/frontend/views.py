@@ -1,8 +1,10 @@
 from django.core.paginator import Paginator
 from django.shortcuts import render
 from django.views.generic import DetailView
+from django.http import JsonResponse
+from django.views.decorators.http import require_POST
 
-from backend.models import Item
+from backend.models import Item, ItemRating
 
 NUMBER_OF_ITEMS_IN_PAGE = 8
 NUMBER_OF_TOP_ITEMS = 24
@@ -66,3 +68,30 @@ def top_promos(request):
 class ProductDetails(DetailView):
     model = Item
     template_name = "frontend/item_details.html"
+
+@require_POST
+def rate_item(request, item_id):
+    try:
+        item = Item.objects.get(pk=item_id)
+        is_like = request.POST.get('like') == 'true'
+        user = request.user
+
+        # Check if the user has already voted
+        existing_vote = ItemRating.objects.filter(item=item, user=user).first()
+        if existing_vote:
+            existing_vote.like = is_like
+            existing_vote.save()
+        else:
+            ItemRating.objects.create(item=item, user=user, user_sentiment=is_like)
+
+        # Calculate the updated vote counts
+        like_count = item.votes.filter(like=True).count()
+        dislike_count = item.votes.filter(like=False).count()
+
+        return JsonResponse({
+            'like_count': like_count,
+            'dislike_count': dislike_count,
+        })
+
+    except Item.DoesNotExist:
+        return JsonResponse({'error': 'Item not found'}, status=404)
