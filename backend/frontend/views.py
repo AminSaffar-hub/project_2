@@ -82,7 +82,7 @@ def rate_item(request, item_id):
         # Check if the user has already voted
         existing_vote = ItemRating.objects.filter(item=item, user=user).first()
         if existing_vote:
-            existing_vote.like = is_like
+            existing_vote.user_sentiment = is_like
             existing_vote.save()
         else:
             ItemRating.objects.create(item=item, user=user, user_sentiment=is_like)
@@ -90,7 +90,6 @@ def rate_item(request, item_id):
         # Calculate the updated vote counts
         like_count = item.rating.filter(user_sentiment=True).count()
         dislike_count = item.rating.filter(user_sentiment=False).count()
-
         return JsonResponse(
             {
                 "like_count": like_count,
