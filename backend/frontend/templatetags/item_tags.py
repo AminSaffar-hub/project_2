@@ -4,10 +4,7 @@ register = template.Library()
 
 
 @register.simple_tag
-def count_likes(item):
-    return item.rating.filter(user_sentiment=True).count()
-
-
-@register.simple_tag
-def count_dislikes(item):
-    return item.rating.filter(user_sentiment=False).count()
+def rating_count(item):
+    user_likes = item.rating.filter(user_sentiment=True).count()
+    user_dislikes = item.rating.filter(user_sentiment=False).count()
+    return user_likes - user_dislikes

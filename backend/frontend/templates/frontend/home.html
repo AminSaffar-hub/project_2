@@ -22,10 +22,11 @@
                     </div>
                     <div class="col-md-6 col-lg-7 col-xl-7">
                     <h5>{{ item.title }}</h5>
-                    <button id="like-button" data-item-id="{{ item.id }}" data-like="true">Like</button>
-                    <div id="like-count">{% count_likes item %}</div>
-                    <div id="dislike-count">{% count_dislikes item %}</div>
-                    <button id="dislike-button" data-item-id="{{ item.id }}" data-like="false">Dislike</button>
+                    <div class="d-flex">
+                        <button class="rating-button" data-item-id="{{ item.id }}" data-like="true">Like</button>
+                        <p id="rating-count-{{ item.id }}">{% rating_count item %}</p>
+                        <button class="rating-button" data-item-id="{{ item.id }}" data-like="false">Dislike</button>
+                    </div>
                     <div>
                         {% trans "Good deal" %} <a href="{{ item.link_to_provider }}">{{ item.provider_name }}</a>
                     </div>

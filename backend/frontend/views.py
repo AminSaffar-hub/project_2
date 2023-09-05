@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.views.generic import DetailView
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
+from django.views.decorators.csrf import csrf_exempt
 
 from backend.models import Item, ItemRating
 
@@ -71,6 +72,7 @@ class ProductDetails(DetailView):
 
 
 @require_POST
+@csrf_exempt
 def rate_item(request, item_id):
     try:
         item = Item.objects.get(pk=item_id)
@@ -86,8 +88,8 @@ def rate_item(request, item_id):
             ItemRating.objects.create(item=item, user=user, user_sentiment=is_like)
 
         # Calculate the updated vote counts
-        like_count = item.votes.filter(like=True).count()
-        dislike_count = item.votes.filter(like=False).count()
+        like_count = item.rating.filter(user_sentiment=True).count()
+        dislike_count = item.rating.filter(user_sentiment=False).count()
 
         return JsonResponse(
             {
