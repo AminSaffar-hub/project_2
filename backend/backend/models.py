@@ -73,7 +73,9 @@ class ItemRating(models.Model):
     item = models.ForeignKey(Item, on_delete=models.CASCADE, related_name="rating")
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     user_sentiment = models.BooleanField(
-        default=True,
+        default=None,
+        null=True,
+        blank=True,
         help_text="Whether the user likes the item. True for like. False for dislike.",
     )
 

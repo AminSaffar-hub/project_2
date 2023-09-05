@@ -82,7 +82,10 @@ def rate_item(request, item_id):
         # Check if the user has already voted
         existing_vote = ItemRating.objects.filter(item=item, user=user).first()
         if existing_vote:
-            existing_vote.user_sentiment = is_like
+            if existing_vote.user_sentiment == is_like:
+                existing_vote.user_sentiment = None
+            else:
+                existing_vote.user_sentiment = is_like
             existing_vote.save()
         else:
             ItemRating.objects.create(item=item, user=user, user_sentiment=is_like)

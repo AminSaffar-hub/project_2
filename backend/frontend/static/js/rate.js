@@ -43,7 +43,6 @@ $(document).ready(function () {
         const formData = new FormData();
         formData.append('like', isLike);
 
-        button.prop('disabled', true)
         $.ajax({
             url: `/rate/${itemId}/`,
             type: 'POST',
@@ -54,11 +53,9 @@ $(document).ready(function () {
             success: function (data) {
                 const ratingCountElement = $(`#rating-count-${itemId}`);
                 ratingCountElement.text(data.like_count - data.dislike_count);
-
             },
             error: function (error) {
                 console.error('Error:', error);
-                button.prop('disabled', false);
             }
         });
     });
