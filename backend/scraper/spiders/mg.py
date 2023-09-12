@@ -1,4 +1,5 @@
 import scrapy
+
 from scraper.items import ArticleItem
 
 

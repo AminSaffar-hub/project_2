@@ -1,4 +1,5 @@
 from django.core.paginator import Paginator
+from django.db.models import ExpressionWrapper, F, FloatField
 from django.shortcuts import render
 from django.views.generic import DetailView
 
@@ -23,14 +24,27 @@ def home(request):
     page_number = request.GET.get("page") or 1
     category = request.GET.get("category")
 
-    if searched_item:
-        items = Item.objects.filter(title__icontains=searched_item)
-    elif category:
-        items = Item.objects.filter(category=category)
-    else:
-        items = Item.objects.all()
+    items = Item.objects.annotate(
+        percentage=ExpressionWrapper(
+            100 * (F("price") - F("discounted_price")) / F("price"),
+            output_field=FloatField(),
+        )
+    )
 
-    items_in_page = _generate_pages(items.order_by("title"), page_number)
+    if searched_item:
+        items = items.filter(title__icontains=searched_item)
+    elif category:
+        items = items.filter(category=category)
+    else:
+        items = items.all()
+
+    current_promotions = items.filter(
+        price__isnull=False,
+        discounted_price__isnull=False,
+    )
+    sorted_items = current_promotions.order_by("-percentage")
+
+    items_in_page = _generate_pages(sorted_items, page_number)
 
     categories = Item.ItemCategories.choices
     return render(
@@ -47,20 +61,6 @@ def home(request):
 
 def footer_info(request):
     return render(request, "frontend/footer_info.html")
-
-
-def top_promos(request):
-    page_number = request.GET.get("page") or 1
-    ordered_items = sorted(
-        Item.objects.all(), key=lambda t: t.sale_percentage, reverse=True
-    )[:NUMBER_OF_TOP_ITEMS]
-    items_in_page = _generate_pages(ordered_items, page_number)
-
-    return render(
-        request,
-        "frontend/home.html",
-        {"items": items_in_page, "searched_item": None},
-    )
 
 
 class ProductDetails(DetailView):

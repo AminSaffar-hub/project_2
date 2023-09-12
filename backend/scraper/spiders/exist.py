@@ -1,8 +1,9 @@
 import scrapy
-from scraper.items import ArticleItem
 from scrapy.exceptions import CloseSpider
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
+
+from scraper.items import ArticleItem
 
 
 class ExistSpider(CrawlSpider):

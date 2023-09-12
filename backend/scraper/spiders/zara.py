@@ -1,8 +1,9 @@
 import re
 
 import scrapy
-from scraper.items import ArticleItem
 from scrapy.http import Request
+
+from scraper.items import ArticleItem
 
 
 class ZaraSpider(scrapy.Spider):

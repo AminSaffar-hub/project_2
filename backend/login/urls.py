@@ -1,9 +1,6 @@
-from django.contrib.auth.views import (
-    LoginView,
-    PasswordResetConfirmView,
-    PasswordResetDoneView,
-    PasswordResetView,
-)
+from django.contrib.auth.views import (LoginView, PasswordResetConfirmView,
+                                       PasswordResetDoneView,
+                                       PasswordResetView)
 from django.urls import path
 
 # import both app modules
