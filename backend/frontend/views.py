@@ -8,6 +8,9 @@ from backend.models import Item
 NUMBER_OF_ITEMS_IN_PAGE = 8
 NUMBER_OF_TOP_ITEMS = 24
 
+SALE_PERCENTAGE_WEIGHT = 0.8
+PRICE_WEIGHT = 0.2
+
 
 def _generate_pages(ordered_items, page_number):
     paginator = Paginator(ordered_items, per_page=NUMBER_OF_ITEMS_IN_PAGE)
@@ -31,6 +34,13 @@ def home(request):
         )
     )
 
+    items = items.annotate(
+        weighted_score=ExpressionWrapper(
+            (SALE_PERCENTAGE_WEIGHT * F("percentage")) + PRICE_WEIGHT * F("price"),
+            output_field=FloatField(),
+        )
+    )
+
     if searched_item:
         items = items.filter(title__icontains=searched_item)
     elif category:
@@ -42,7 +52,7 @@ def home(request):
         price__isnull=False,
         discounted_price__isnull=False,
     )
-    sorted_items = current_promotions.order_by("-percentage")
+    sorted_items = current_promotions.order_by("-weighted_score")
 
     items_in_page = _generate_pages(sorted_items, page_number)
 
