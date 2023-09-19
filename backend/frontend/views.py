@@ -1,4 +1,7 @@
+from itertools import zip_longest
+
 from django.core.paginator import Paginator
+from django.db.models import ExpressionWrapper, F, FloatField, Q
 from django.shortcuts import render
 from django.views.generic import DetailView
 
@@ -23,14 +26,37 @@ def home(request):
     page_number = request.GET.get("page") or 1
     category = request.GET.get("category")
 
-    if searched_item:
-        items = Item.objects.filter(title__icontains=searched_item)
-    elif category:
-        items = Item.objects.filter(category=category)
-    else:
-        items = Item.objects.all()
+    items = Item.objects.annotate(
+        percentage=ExpressionWrapper(
+            100 * (F("price") - F("discounted_price")) / F("price"),
+            output_field=FloatField(),
+        )
+    ).filter(
+        price__isnull=False,
+        discounted_price__isnull=False,
+    )
 
-    items_in_page = _generate_pages(items.order_by("title"), page_number)
+    sorted_items = items.order_by("-percentage")
+
+    if searched_item:
+        display_items = sorted_items.filter(title__icontains=searched_item)
+    elif category:
+        display_items = sorted_items.filter(category=category)
+    else:
+        category_names = [category for category in Item.ItemCategories.values]
+        items_by_category = sorted_items.filter(Q(category__in=category_names))
+        display_items = []
+        for items_in_category in zip_longest(
+            *[
+                items_by_category.filter(category=category)
+                for category in category_names
+            ]
+        ):
+            for item in items_in_category:
+                if item is not None:
+                    display_items.append(item)
+
+    items_in_page = _generate_pages(display_items, page_number)
 
     categories = Item.ItemCategories.choices
     return render(
@@ -47,20 +73,6 @@ def home(request):
 
 def footer_info(request):
     return render(request, "frontend/footer_info.html")
-
-
-def top_promos(request):
-    page_number = request.GET.get("page") or 1
-    ordered_items = sorted(
-        Item.objects.all(), key=lambda t: t.sale_percentage, reverse=True
-    )[:NUMBER_OF_TOP_ITEMS]
-    items_in_page = _generate_pages(ordered_items, page_number)
-
-    return render(
-        request,
-        "frontend/home.html",
-        {"items": items_in_page, "searched_item": None},
-    )
 
 
 class ProductDetails(DetailView):
