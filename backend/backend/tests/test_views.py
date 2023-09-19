@@ -18,6 +18,9 @@ class ViewsTests(TestCaseWithDataMixin, TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "Item 1")
+        self.assertContains(response, "shoe")
+        self.assertContains(response, "makeup")
+        self.assertContains(response, "panini machine")
         self.assertContains(response, "Item 2")
         self.assertContains(response, "Item 3")
 
