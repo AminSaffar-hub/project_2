@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-15 14:13+0000\n"
+"POT-Creation-Date: 2023-09-19 21:13+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -149,3 +149,19 @@ msgid ""
 msgstr ""
 "Si vous ne recevez pas d'e-mail, vérifiez que vous avez bien saisi votre "
 "adresse email et vérifiez le dossier de courrier indésirable."
+
+#: login/views.py:15
+msgid "Disconnected successfully."
+msgstr "Vous avez été déconnecté avec succès."
+
+#: login/views.py:36
+msgid "Account created successfully."
+msgstr "Votre compte a été créer avec succès."
+
+#: login/views.py:68
+msgid "Profile modified successfully."
+msgstr "Votre profile a été modifier avec succès."
+
+#: login/views.py:91 login/views.py:108
+msgid "Password modified successfully."
+msgstr "Votre mot de passe a été modifier avec succés."

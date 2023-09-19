@@ -5,13 +5,14 @@ from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth.views import PasswordResetCompleteView
 from django.shortcuts import redirect, render
 from django.urls import reverse
+from django.utils.translation import gettext as _
 from login.forms import EditProfileForm, RegistrationForm
 
 
 def logout_view(request):
     logout(request)
     messages.success(
-        request, "Vous avez été déconnecté avec succès."
+        request, _("Disconnected successfully.")
     )  # Add your desired message here.
     return redirect("/")
 
@@ -32,7 +33,7 @@ def register(request):
         if form.is_valid():
             # if it is valid, save and redirect to home
             form.save()
-            messages.success(request, "Votre compte a été créer avec succès.")
+            messages.success(request, _("Account created successfully."))
             return redirect("/")
         else:
             # form is not valid and return form with error
@@ -64,7 +65,7 @@ def edit_profile(request):
             form.save()
 
             # renders success message
-            messages.success(request, "Votre profile a été modifier avec succès.")
+            messages.success(request, _("Profile modified successfully."))
             return render(request, "login/profile.html")
         else:
             # form for in valid error
@@ -87,7 +88,7 @@ def change_password(request):
         if form.is_valid():
             form.save()
             update_session_auth_hash(request, form.user)
-            messages.success(request, "Votre mot de passe a été modifier avec succés.")
+            messages.success(request, _("Password modified successfully."))
             return render(request, "login/profile.html")
         else:
             # form for in valid error
@@ -104,7 +105,7 @@ def change_password(request):
 class CustomPasswordResetCompleteView(PasswordResetCompleteView):
     def get(self, request, *args, **kwargs):
         super().get(request, *args, **kwargs)
-        messages.success(self.request, "Votre mot de passe a été modifier avec succés.")
+        messages.success(self.request, _("Password modified successfully."))
         return redirect(reverse("login"))
 
 

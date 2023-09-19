@@ -51,7 +51,7 @@ class LoginViewsTests(TestCaseWithDataMixin, TestCase):
         }
         response = self.client.post(edit_profile_url, data)
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, "Votre profile a été modifier avec succès.")
+        self.assertContains(response, "Profile modified successfully.")
 
         self.user.refresh_from_db()
         self.assertEqual(self.user.first_name, "New")
@@ -68,7 +68,7 @@ class LoginViewsTests(TestCaseWithDataMixin, TestCase):
         response = self.client.post(change_password_url, data)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "login/profile.html")
-        self.assertContains(response, "Votre mot de passe a été modifier avec succés.")
+        self.assertContains(response, "Password modified successfully.")
         self.user.refresh_from_db()
         self.assertTrue(self.user.check_password("newpassword123"))
 

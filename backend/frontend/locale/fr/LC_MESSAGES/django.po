@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-29 22:04+0000\n"
+"POT-Creation-Date: 2023-09-19 21:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,60 +18,52 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: frontend/templates/frontend/base.html:32
-msgid "Top promos"
-msgstr "Bon plans"
-
-#: frontend/templates/frontend/base.html:35
-msgid "All promos"
-msgstr "Tous les promos"
-
-#: frontend/templates/frontend/base.html:55
+#: frontend/templates/frontend/base.html:47
 msgid "My profile"
 msgstr "Mon profil"
 
-#: frontend/templates/frontend/base.html:57
+#: frontend/templates/frontend/base.html:49
 msgid "Log out"
 msgstr "se déconnecter"
 
-#: frontend/templates/frontend/base.html:63
+#: frontend/templates/frontend/base.html:55
 msgid "Log in"
 msgstr "Connexion"
 
-#: frontend/templates/frontend/base.html:126
+#: frontend/templates/frontend/base.html:118
 #: frontend/templates/frontend/footer_info.html:7
 msgid "Who are we ?"
 msgstr "Qui sommes-nous ?"
 
-#: frontend/templates/frontend/base.html:127
+#: frontend/templates/frontend/base.html:119
 #: frontend/templates/frontend/footer_info.html:14
 msgid "Become a partner"
 msgstr "Devenir un partenaire"
 
-#: frontend/templates/frontend/base.html:128
+#: frontend/templates/frontend/base.html:120
 #: frontend/templates/frontend/footer_info.html:21
 msgid "Contact"
 msgstr ""
 
-#: frontend/templates/frontend/base.html:133
+#: frontend/templates/frontend/base.html:125
 msgid "Connect"
 msgstr ""
 
-#: frontend/templates/frontend/base.html:148
+#: frontend/templates/frontend/base.html:140
 msgid "More Info"
 msgstr "Plus d'information"
 
-#: frontend/templates/frontend/base.html:150
+#: frontend/templates/frontend/base.html:142
 #: frontend/templates/frontend/footer_info.html:28
 msgid "Confidentiality & Conditions"
 msgstr "Confidentiality & Conditions"
 
-#: frontend/templates/frontend/base.html:151
+#: frontend/templates/frontend/base.html:143
 #: frontend/templates/frontend/footer_info.html:35
 msgid "Site organisation"
 msgstr "Plan du site"
 
-#: frontend/templates/frontend/base.html:152
+#: frontend/templates/frontend/base.html:144
 #: frontend/templates/frontend/footer_info.html:42
 msgid "Legal information"
 msgstr "Mentions légales"
@@ -149,3 +141,9 @@ msgstr "Description"
 #: frontend/templates/frontend/item_details.html:51
 msgid "Display more"
 msgstr "Afficher plus"
+
+#~ msgid "Top promos"
+#~ msgstr "Bon plans"
+
+#~ msgid "All promos"
+#~ msgstr "Tous les promos"
