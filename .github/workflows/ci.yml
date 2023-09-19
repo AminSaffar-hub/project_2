@@ -1,6 +1,6 @@
-name: lint-test-code
-run-name: lint and test code uploaded by ${{ github.actor }}
-on: [push, pull_request]
+name: ci-cd-pipeline
+run-name: lint, test and deploy(only when merged to main) code uploaded by ${{ github.actor }}
+on: [push]
 
 jobs:
   lint:
@@ -25,7 +25,6 @@ jobs:
       - name: Run Flake8
         run: flake8
   test:
-    needs: lint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -67,3 +66,27 @@ jobs:
 
       - name: Run tests
         run: cd backend && poetry run python manage.py test
+  Deploy:
+    needs: [lint, test]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploy in EC2
+        env:
+            PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY  }}
+            HOSTNAME : ${{ secrets.HOST_DNS  }}
+            USER_NAME : ${{ secrets.USERNAME  }}
+            
+        run: |
+          echo "$PRIVATE_KEY" > private_key && chmod 400 private_key
+          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
+          
+            #Now we have got the access of EC2 and we will start the deploy .
+            cd ~/project_2 &&
+            git checkout main &&
+            git fetch --all &&
+            git reset --hard origin/main &&
+            git pull origin main &&
+            bash deploy.sh
+          '
