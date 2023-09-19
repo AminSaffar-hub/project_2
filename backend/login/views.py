@@ -5,7 +5,6 @@ from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth.views import PasswordResetCompleteView
 from django.shortcuts import redirect, render
 from django.urls import reverse
-
 from login.forms import EditProfileForm, RegistrationForm
 
 

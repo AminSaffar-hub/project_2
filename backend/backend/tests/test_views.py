@@ -1,10 +1,10 @@
 from django.conf import settings
 from django.test import RequestFactory, TestCase
 from django.urls import reverse
+from frontend.views import home
 
 from backend.models import Item
 from backend.tests.utils import TestCaseWithDataMixin
-from frontend.views import home
 
 
 class ViewsTests(TestCaseWithDataMixin, TestCase):
@@ -21,6 +21,14 @@ class ViewsTests(TestCaseWithDataMixin, TestCase):
         self.assertContains(response, "Item 2")
         self.assertContains(response, "Item 3")
 
+    def test_home_view_pagination(self):
+        request = self.factory.get("/", {"page": 2})
+        response = home(request)
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Item 9")
+        self.assertNotContains(response, "Item 3")
+        self.assertNotContains(response, "Item 2")
+
     def test_home_view_with_search(self):
         request = self.factory.get("/", {"search": "shoe"})
         response = home(request)
@@ -29,14 +37,6 @@ class ViewsTests(TestCaseWithDataMixin, TestCase):
         self.assertContains(response, "shoe")
         self.assertNotContains(response, "makeup")
         self.assertNotContains(response, "panini machine")
-
-    def test_home_view_pagination(self):
-        request = self.factory.get("/", {"page": 2})
-        response = home(request)
-        self.assertEqual(response.status_code, 200)
-        self.assertContains(response, "Item 9")
-        self.assertNotContains(response, "Item 3")
-        self.assertNotContains(response, "Item 2")
 
     def test_pagination_on_searched_items(self):
         request = self.factory.get("/", {"page": 2, "search": "Item"})

@@ -1,7 +1,6 @@
 import re
 
 import scrapy
-
 from scraper.items import ArticleItem
 
 

@@ -1,5 +1,7 @@
+from itertools import zip_longest
+
 from django.core.paginator import Paginator
-from django.db.models import ExpressionWrapper, F, FloatField
+from django.db.models import ExpressionWrapper, F, FloatField, Q
 from django.shortcuts import render
 from django.views.generic import DetailView
 
@@ -7,9 +9,6 @@ from backend.models import Item
 
 NUMBER_OF_ITEMS_IN_PAGE = 8
 NUMBER_OF_TOP_ITEMS = 24
-
-SALE_PERCENTAGE_WEIGHT = 0.8
-PRICE_WEIGHT = 0.2
 
 
 def _generate_pages(ordered_items, page_number):
@@ -32,29 +31,32 @@ def home(request):
             100 * (F("price") - F("discounted_price")) / F("price"),
             output_field=FloatField(),
         )
-    )
-
-    items = items.annotate(
-        weighted_score=ExpressionWrapper(
-            (SALE_PERCENTAGE_WEIGHT * F("percentage")) + PRICE_WEIGHT * F("price"),
-            output_field=FloatField(),
-        )
-    )
-
-    if searched_item:
-        items = items.filter(title__icontains=searched_item)
-    elif category:
-        items = items.filter(category=category)
-    else:
-        items = items.all()
-
-    current_promotions = items.filter(
+    ).filter(
         price__isnull=False,
         discounted_price__isnull=False,
     )
-    sorted_items = current_promotions.order_by("-weighted_score")
 
-    items_in_page = _generate_pages(sorted_items, page_number)
+    sorted_items = items.order_by("-percentage")
+
+    if searched_item:
+        display_items = sorted_items.filter(title__icontains=searched_item)
+    elif category:
+        display_items = sorted_items.filter(category=category)
+    else:
+        category_names = [category for category in Item.ItemCategories.values]
+        items_by_category = sorted_items.filter(Q(category__in=category_names))
+        display_items = []
+        for items_in_category in zip_longest(
+            *[
+                items_by_category.filter(category=category)
+                for category in category_names
+            ]
+        ):
+            for item in items_in_category:
+                if item is not None:
+                    display_items.append(item)
+
+    items_in_page = _generate_pages(display_items, page_number)
 
     categories = Item.ItemCategories.choices
     return render(
