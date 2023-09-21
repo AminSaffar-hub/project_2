@@ -23,13 +23,13 @@
                     <div class="col-md-6 col-lg-7 col-xl-7">
                     <h5>{{ item.title }}</h5>
                     <div class="d-flex">
-                        <button class="rating-button btn btn-outline-primary rounded-pill" data-item-id="{{ item.id }}" data-like="true">
-                            <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                        </button>
+                        <a class="rating-button" data-item-id="{{ item.id }}" data-like="true">
+                            <i class="fa fa-plus fa-beat" aria-hidden="true"></i>
+                        </a>
                         <p id="rating-count-{{ item.id }}">{% rating_count item %}</p>
-                        <button class="rating-button btn  btn-outline-primary rounded-pill" data-item-id="{{ item.id }}" data-like="false">
+                        <a class="rating-button" data-item-id="{{ item.id }}" data-like="false">
                             <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
-                        </button>
+                        </a>
                     </div>
                     <div>
                         {% trans "Good deal" %} <a href="{{ item.link_to_provider }}">{{ item.provider_name }}</a>
