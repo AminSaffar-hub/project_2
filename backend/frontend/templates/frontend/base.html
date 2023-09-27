@@ -23,11 +23,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}">E R R A D A R</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>        
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <form class="form-inline" style="margin: 0 auto;" action="{% url 'home' %}">
+            <form class="form-inline order-2 order-md-1 mt-3 mt-md-0" style="margin: 0 auto;" action="{% url 'home' %}">
                 <div class="d-flex g-0 bg-light rounded-pill">
                         <input type="text" name="search" class="form-control shadow-none border-0 rounded-pill pr-5" placeholder="Recherche.." type="search" value="{{request.GET.title}}">
                         <button class="btn btn-outline-light text-dark border-0 rounded-pill ml-n5" type="search">
@@ -35,8 +31,7 @@
                         </button>
                 </div>
             </form>
-
-            <ul class="nav navbar-nav mr-0 mt-2 mt-lg-0">
+            <ul class="nav navbar-nav mr-0 mt-2 mt-lg-0 order-1 order-md-2">
                 {% if user.is_authenticated %}
                 <!-- if user is authenticated, this part is shown -->
                 <li class="nav-item dropdown">
@@ -57,7 +52,6 @@
                 </li>
                 {% endif %}  
             </ul>
-            </div>
         </div>
     </nav>
     {% if categories %}
