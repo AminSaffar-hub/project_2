@@ -11,51 +11,51 @@
         <div class="row justify-content-center mb-3">
             <div class="col-1 col-sm-1 col-md-2"></div>
             <div class="col-10 col-sm-10 col-md-8">
-            <div class="card shadow-0 border rounded-3">
-                <div class="card-body">
-                <div class="row">
-                    <div class="col-md-12 col-lg-2 col-xl-2 mb-4 mb-lg-0">
-                        <div class="bg-image hover-zoom ripple rounded ripple-surface">
-                            <img src="{{ item.link_to_image }}" class="w-100" />
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-2 col-xl-2 mb-4 mb-lg-0">
+                                <div class="bg-image">
+                                    <img src="{{ item.link_to_image }}" class="mw-100" />
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-7 col-xl-7">
+                                <h5>{{ item.title }}</h5>
+                                <br>
+                                <div>
+                                    {% trans "Good deal" %} <a href="{{ item.link_to_provider }}">{{ item.provider_name }}</a>
+                                </div>
+                                <br>
+                                <p class="mb-4 mb-md-0">
+                                    {{ item.description | truncatechars:200 }}
+                                </p>
+                            </div>
+                            <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
+                                <div class="d-flex flex-row align-items-center mb-1">
+                                    <h4 class="mb-1 me-1">{{ item.discounted_price }} TND</h4>
+                                    {% if item.price %}<span class="text-danger"><s>{{item.price }} TND</s></span>{% endif %}
+                                </div>
+                                <h6>                       
+                                    {% if item.livraison %}
+                                        <span> 
+                                            <img src="{% static 'images/truck.png'%}" class="img-fluid" style="width: 25px; ">
+                                        </span> {{ item.livraison }}
+                                    {% endif %}
+                                </h6>
+                                <h6>                        
+                                    {% if item.online_payment %}
+                                        <span>
+                                            <img src="{% static 'images/carte.png' %}" class="img-fluid" style="width: 25px;">
+                                        </span> {% trans "available"%}
+                                    {% endif %}
+                                </h6>
+                                <div class="d-flex flex-column mt-4">
+                                    <a href="{% url 'product_details' pk=item.pk %}" class="col-auto btn btn-secondary item-a">{% trans "See item" %}</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-7 col-xl-7">
-                    <h5>{{ item.title }}</h5>
-                    <br>
-                    <div>
-                        {% trans "Good deal" %} <a href="{{ item.link_to_provider }}">{{ item.provider_name }}</a>
-                    </div>
-                    <br>
-                    <p class="mb-4 mb-md-0">
-                        {{ item.description | truncatechars:200 }}
-                    </p>
-                    </div>
-                    <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
-                    <div class="d-flex flex-row align-items-center mb-1">
-                        <h4 class="mb-1 me-1">{{ item.discounted_price }} TND</h4>
-                        {% if item.price %}<span class="text-danger"><s>{{item.price }} TND</s></span>{% endif %}
-                    </div>
-                    <h6>                       
-                        {% if item.livraison %}
-                            <span> 
-                                <img src="{% static 'images/truck.png'%}" class="img-fluid" style="width: 25px; ">
-                            </span> {{ item.livraison }}
-                        {% endif %}
-                    </h6>
-                    <h6>                        
-                        {% if item.online_payment %}
-                            <span>
-                                <img src="{% static 'images/carte.png' %}" class="img-fluid" style="width: 25px;">
-                            </span> {% trans "available"%}
-                        {% endif %}
-                    </h6>
-                    <div class="d-flex flex-column mt-4">
-                        <a href="{% url 'product_details' pk=item.pk %}" class="col-auto btn btn-secondary item-a">{% trans "See item" %}</a>
-                    </div>
-                    </div>
                 </div>
-                </div>
-            </div>
             </div>
             <div class="col-1 col-sm-1 col-md-2"></div>
         </div>
