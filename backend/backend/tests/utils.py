@@ -1,11 +1,17 @@
 from django.contrib.auth.models import User
 
-from backend.models import Item
+from backend.models import Item, Category
 
 
 class TestCaseWithDataMixin:
     def setUp(self):
         super().setUp()
+
+        self.clothes = Category.objects.create(name="clothes")
+        self.self_care = Category.objects.create(name="self-care")
+        self.appliances = Category.objects.create(name="appliances")
+        self.food = Category.objects.create(name="food")
+        self.other = Category.objects.create(name="other")
 
         self.item1 = Item.objects.create(
             title="shoe",
@@ -14,7 +20,7 @@ class TestCaseWithDataMixin:
             link_to_post="http://url/to/shoe",
             link_to_image="http://url/to/shoe.png",
             description="best shoe in the world",
-            category=Item.ItemCategories.CLOTHES,
+            category=self.clothes,
         )
 
         self.item2 = Item.objects.create(
@@ -24,7 +30,7 @@ class TestCaseWithDataMixin:
             link_to_post="http://url/to/makeup",
             link_to_image="http://url/to/makeup.png",
             description="best makeup in the world",
-            category=Item.ItemCategories.SELF_CARE,
+            category=self.self_care,
         )
 
         self.item2 = Item.objects.create(
@@ -34,7 +40,7 @@ class TestCaseWithDataMixin:
             link_to_post="http://url/to/panini_machine",
             link_to_image="http://url/to/panini_machine.png",
             description="best panini machine in the world",
-            category=Item.ItemCategories.APPLIANCES,
+            category=self.appliances,
         )
 
         # Create 10 test items
@@ -46,7 +52,7 @@ class TestCaseWithDataMixin:
                 link_to_post=f"http://url/to/Item {i+1}",
                 link_to_image=f"http://url/to/Item {i+1}.png",
                 description=f"best Item {i+1} machine in the world",
-                category=Item.ItemCategories.OTHER,
+                category=self.other,
             )
 
         self.username = "Testuser"
