@@ -1,21 +1,27 @@
 import math
 
 from django.db import models
-from django.utils.translation import gettext as _
+
+
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
 
 
 class Item(models.Model):
     title = models.CharField(max_length=500)
 
-    class ItemCategories(models.TextChoices):
-        FOOD = "food", _("Food")
-        CLOTHES = "clothes", _("Clothes")
-        SELF_CARE = "self-care", _("Self-care")
-        APPLIANCES = "appliances", _("Appliances")
-        COSMETICS = "cosmetics", _("Cosmetics")
-        OTHER = "other", _("Other")
+    category = models.ForeignKey(
+        Category,
+        on_delete=models.CASCADE,
+        related_name="items",
+        default=None,
+        blank=True,
+        null=True,
+    )
 
-    category = models.CharField(choices=ItemCategories.choices, max_length=50)
     description = models.TextField(max_length=2500)
     livraison = models.CharField(
         null=True,

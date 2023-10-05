@@ -1,0 +1,7 @@
+[
+    {"model": "backend.category", "pk": 1, "fields": {"name": "food"}},
+    {"model": "backend.category", "pk": 2, "fields": {"name": "clothes"}},
+    {"model": "backend.category", "pk": 3, "fields": {"name": "self-care"}},
+    {"model": "backend.category", "pk": 4, "fields": {"name": "appliances"}},
+    {"model": "backend.category", "pk": 5, "fields": {"name": "cosmetics"}}
+]

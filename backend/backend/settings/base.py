@@ -116,3 +116,5 @@ LOGIN_REDIRECT_URL = "/"
 
 
 PASSWORD_RESET_TIMEOUT = 60 * 60 * 2
+
+FIXTURES = ["backend/fixtures"]
