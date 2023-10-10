@@ -430,6 +430,21 @@ files = [
 django = ">=3.2"
 
 [[package]]
+name = "django-modeltranslation"
+version = "0.18.11"
+description = "Translates Django models using a registration approach."
+optional = false
+python-versions = "*"
+files = [
+    {file = "django-modeltranslation-0.18.11.tar.gz", hash = "sha256:a6e2c459e3b31852287d030bc6e29fa28576db97455dccd399fe08ac8e9223b9"},
+    {file = "django_modeltranslation-0.18.11-py3-none-any.whl", hash = "sha256:81b68e4dc806a3b779ac88babe1cbd99d5318d374a43b3737a65fb0f4c1cffe8"},
+]
+
+[package.dependencies]
+Django = ">=3.2"
+typing-extensions = "*"
+
+[[package]]
 name = "django-ninja"
 version = "0.21.0"
 description = "Django Ninja - Fast Django REST framework"
@@ -1762,4 +1777,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "2466f992a72db5ed7e4630351163c4dab0c64d66001c5298b35e2290c6d5317b"
+content-hash = "0dcfa49d8ba4d410975a638d4f4e73f0e99321bcd37e5b726b2e9b7d4907cec0"

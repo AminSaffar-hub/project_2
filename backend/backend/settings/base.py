@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     "scraper",
     "login",
     "captcha",
+    "modeltranslation",
 ]
 
 MIDDLEWARE = [

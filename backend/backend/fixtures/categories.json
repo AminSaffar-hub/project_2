@@ -1,7 +1,52 @@
 [
-    {"model": "backend.category", "pk": 1, "fields": {"name": "food", "image": "/static/images/food.png"}},
-    {"model": "backend.category", "pk": 2, "fields": {"name": "clothes", "image": "/static/images/clothes.png"}},
-    {"model": "backend.category", "pk": 3, "fields": {"name": "self-care", "image": "/static/images/self-care.png"}},
-    {"model": "backend.category", "pk": 4, "fields": {"name": "appliances", "image": "/static/images/appliances.png"}},
-    {"model": "backend.category", "pk": 5, "fields": {"name": "cosmetics", "image": "/static/images/cosmetics.png"}}
+    {
+        "model": "backend.category",
+        "pk": 1,
+        "fields": {
+            "name": "food",
+            "name_en": "food",
+            "name_fr": "alimentation",
+            "image": "/static/images/food.png"
+        }
+    },
+    {
+        "model": "backend.category",
+        "pk": 2,
+        "fields": {
+            "name": "clothes",
+            "name_en": "clothes",
+            "name_fr": "habillement",
+            "image": "/static/images/clothes.png"
+        }
+    },
+    {
+        "model": "backend.category",
+        "pk": 3,
+        "fields": {
+            "name": "self-care",
+            "name_en": "self-care",
+            "name_fr": "soins",
+            "image": "/static/images/self-care.png"
+        }
+    },
+    {
+        "model": "backend.category",
+        "pk": 4,
+        "fields": {
+            "name": "appliances",
+            "name_en": "appliances",
+            "name_fr": "appareils ménagers",
+            "image": "/static/images/appliances.png"
+        }
+    },
+    {
+        "model": "backend.category",
+        "pk": 5,
+        "fields": {
+            "name": "cosmetics",
+            "name_en": "cosmetics",
+            "name_fr": "cosmétiques",
+            "image": "/static/images/cosmetics.png"
+        }
+    }
 ]

@@ -43,8 +43,8 @@ services:
       - static_volume:/www/
     command: >
       sh -c 'poetry run python manage.py collectstatic --no-input --clear || exit 1
-
-      poetry run python manage.py migrate --noinput || exit 1'
+      poetry run python manage.py migrate --noinput || exit 1
+      poetry run python manage.py loaddata categories'
     depends_on:
       - db
 

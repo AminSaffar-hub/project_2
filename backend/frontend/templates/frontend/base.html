@@ -63,7 +63,9 @@
                     <li class="nav-item">
                         <button type="button" class="btn btn-dark d-flex align-items-center">
                             <a class="nav-link align-items-center" href="?category={{ category.name }}">
-                                <img src="{{ category.image.url }}" alt="{{ category.name }}" width="20" height="20" class="mr-2">
+                                {% if category.image %}
+                                    <img src="{{ category.image.url }}" alt="{{ category.name }}" width="20" height="20" class="mr-2">
+                                {% endif %}
                                 <i class="icon-class"></i> {{ category.name }}
                             </a>
                         </button>
