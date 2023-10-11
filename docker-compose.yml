@@ -44,7 +44,7 @@ services:
     command: >
       sh -c 'poetry run python manage.py collectstatic --no-input --clear || exit 1
       poetry run python manage.py migrate --noinput || exit 1
-      poetry run python manage.py loaddata categories'
+      poetry run python manage.py loaddata categories || exit 1'
     depends_on:
       - db
 
