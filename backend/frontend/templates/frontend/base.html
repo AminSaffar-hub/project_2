@@ -59,12 +59,14 @@
         <div class="container justify-content-center">
             <div class="navbar-container d-flex" style="overflow-x: auto;">
                 <ul class="navbar-nav d-flex flex-row">
-                    {% for value, name in categories %}
+                    {% for category in categories %}
                     <li class="nav-item">
                         <button type="button" class="btn btn-dark d-flex align-items-center">
-                            <a class="nav-link align-items-center" href="?category={{ value }}">
-                                <img src="{% static 'images/'|add:value|add:'.png' %}" alt="{{ name }}" width="20" height="20" class="mr-2">
-                                <i class="icon-class"></i> {% trans name %}
+                            <a class="nav-link align-items-center" href="?category={{ category.name }}">
+                                {% if category.image %}
+                                    <img src="{{ category.image.url }}" alt="{{ category.name }}" width="20" height="20" class="mr-2">
+                                {% endif %}
+                                <i class="icon-class"></i> {{ category.name }}
                             </a>
                         </button>
                     </li>

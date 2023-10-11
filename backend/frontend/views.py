@@ -5,7 +5,7 @@ from django.db.models import ExpressionWrapper, F, FloatField, Q
 from django.shortcuts import render
 from django.views.generic import DetailView
 
-from backend.models import Item
+from backend.models import Item, Category
 
 NUMBER_OF_ITEMS_IN_PAGE = 8
 NUMBER_OF_TOP_ITEMS = 24
@@ -41,24 +41,22 @@ def home(request):
     if searched_item:
         display_items = sorted_items.filter(title__icontains=searched_item)
     elif category:
-        display_items = sorted_items.filter(category=category)
+        display_items = sorted_items.filter(category__name=category)
     else:
-        category_names = [category for category in Item.ItemCategories.values]
-        items_by_category = sorted_items.filter(Q(category__in=category_names))
+        categories = Category.objects.all()
+        items_by_category = sorted_items.filter(Q(category__in=categories))
         display_items = []
         for items_in_category in zip_longest(
-            *[
-                items_by_category.filter(category=category)
-                for category in category_names
-            ]
+            *[items_by_category.filter(category=category) for category in categories]
         ):
             for item in items_in_category:
                 if item is not None:
                     display_items.append(item)
+        # display_items = sorted_items
 
     items_in_page = _generate_pages(display_items, page_number)
 
-    categories = Item.ItemCategories.choices
+    categories = Category.objects.all()
     return render(
         request,
         "frontend/home.html",

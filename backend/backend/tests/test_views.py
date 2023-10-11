@@ -65,21 +65,17 @@ class ViewsTests(TestCaseWithDataMixin, TestCase):
             title="Item 1",
             price=10,
             discounted_price=8,
-            category=Item.ItemCategories.FOOD,
+            category=self.food,
         )
         item2 = Item.objects.create(
             title="Item 2",
             price=15,
             discounted_price=10,
-            category=Item.ItemCategories.FOOD,
+            category=self.food,
         )
-        item3 = Item.objects.create(
-            title="Item 3", category=Item.ItemCategories.CLOTHES
-        )
-        item4 = Item.objects.create(
-            title="Item 3", category=Item.ItemCategories.SELF_CARE
-        )
-        request = self.factory.get("/", {"category": Item.ItemCategories.FOOD})
+        item3 = Item.objects.create(title="Item 3", category=self.clothes)
+        item4 = Item.objects.create(title="Item 3", category=self.self_care)
+        request = self.factory.get("/", {"category": self.food})
         response = home(request)
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, item1.title)
@@ -92,9 +88,9 @@ class InternationalizationTestCase(TestCaseWithDataMixin, TestCase):
     def test_fr_translation(self):
         self.client.cookies.load({settings.LANGUAGE_COOKIE_NAME: "fr"})
         response = self.client.get(reverse("home"))
-        self.assertContains(response, "Alimentation")
+        self.assertContains(response, "Connexion")
 
     def test_en_translation(self):
         self.client.cookies.load({settings.LANGUAGE_COOKIE_NAME: "en"})
         response = self.client.get(reverse("home"))
-        self.assertContains(response, "Food")
+        self.assertContains(response, "login")

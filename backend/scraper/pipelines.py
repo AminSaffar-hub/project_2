@@ -3,12 +3,13 @@ import re
 from asgiref.sync import sync_to_async
 from django.utils import timezone
 
-from backend.models import Item
+from backend.models import Item, Category
 
 
 class SaveItemPipeline:
     @sync_to_async
     def process_item(self, item, spider):
+        item["category"] = Category.objects.get(name=item["category"])
         try:
             item_in_database = Item.objects.get(
                 link_to_post__iexact=item["link_to_post"]

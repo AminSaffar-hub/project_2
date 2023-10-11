@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     "scraper",
     "login",
     "captcha",
+    "modeltranslation",
 ]
 
 MIDDLEWARE = [
@@ -116,3 +117,5 @@ LOGIN_REDIRECT_URL = "/"
 
 
 PASSWORD_RESET_TIMEOUT = 60 * 60 * 2
+
+FIXTURES = ["backend/fixtures"]
