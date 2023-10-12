@@ -3,6 +3,8 @@ import re
 import scrapy
 from scraper.items import ArticleItem
 
+from backend.models import Item
+
 
 class TdiscountSpider(scrapy.Spider):
     name = "tdiscount"
@@ -47,7 +49,7 @@ class TdiscountSpider(scrapy.Spider):
                 item["description"] = re.sub(r"<.*?>", "", product["description_short"])
                 item["provider_name"] = "tdiscount"
                 item["link_to_provider"] = "https://tdiscount.tn/"
-                item["livraison"] = "sous condition"
+                item["delivery"] = Item.DeliveryOptions.WITH_CONDITONS
                 item["online_payment"] = True
                 yield item
 

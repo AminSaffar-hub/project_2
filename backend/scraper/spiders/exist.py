@@ -4,6 +4,8 @@ from scrapy.exceptions import CloseSpider
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
 
+from backend.models import Item
+
 
 class ExistSpider(CrawlSpider):
     name = "exist"
@@ -32,7 +34,7 @@ class ExistSpider(CrawlSpider):
         ).extract()
         item["provider_name"] = "exist"
         item["link_to_provider"] = "https://www.exist.com.tn"
-        item["livraison"] = "sous condition"
+        item["delivery"] = Item.DeliveryOptions.WITH_CONDITONS
         item["online_payment"] = True
 
         yield item
