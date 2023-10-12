@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-15 15:12+0000\n"
+"POT-Creation-Date: 2023-10-12 19:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,34 +18,22 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: backend/models.py:11
-msgid "Food"
+#: backend/models.py:30
+msgid "available"
 msgstr ""
 
-#: backend/models.py:12
-msgid "Clothes"
+#: backend/models.py:31
+msgid "not available"
 msgstr ""
 
-#: backend/models.py:13
-msgid "Self-care"
-msgstr ""
-
-#: backend/models.py:14
-msgid "Appliances"
-msgstr ""
-
-#: backend/models.py:15
-msgid "Cosmetics"
-msgstr ""
-
-#: backend/models.py:16
-msgid "Other"
-msgstr ""
-
-#: backend/settings/base.py:92
-msgid "French"
+#: backend/models.py:32
+msgid "with conditions"
 msgstr ""
 
 #: backend/settings/base.py:93
+msgid "French"
+msgstr ""
+
+#: backend/settings/base.py:94
 msgid "English"
 msgstr ""
