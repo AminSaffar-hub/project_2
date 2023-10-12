@@ -24,10 +24,10 @@
                     {% if item.sale_percentage %}{{ item.sale_percentage }}%{% endif %}    
                 </p>
                 <p>
-                    {% if item.livraison %}
+                    {% if item.delivery %}
                         <span> 
                             <img src="{% static 'images/truck.png'%}" class="img-fluid" style="width: 25px; ">
-                        </span> {{ item.livraison }}
+                        </span> {{ item.delivery }}
                         {% endif %}
                         {% if item.online_payment %} |
                         <span>

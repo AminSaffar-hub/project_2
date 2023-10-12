@@ -4,6 +4,8 @@ from scrapy.exceptions import CloseSpider
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
 
+from backend.models import Item
+
 
 class BeautyStoreSpider(CrawlSpider):
     name = "beautystore"
@@ -33,7 +35,7 @@ class BeautyStoreSpider(CrawlSpider):
         ).extract()
         item["provider_name"] = "beautystore"
         item["link_to_provider"] = "https://beautystore.tn"
-        item["livraison"] = "sous condition"
+        item["delivery"] = Item.DeliveryOptions.WITH_CONDITONS
         item["online_payment"] = True
 
         yield item

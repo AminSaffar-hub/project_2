@@ -1,6 +1,7 @@
 import math
 
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 
 class Category(models.Model):
@@ -24,10 +25,17 @@ class Item(models.Model):
     )
 
     description = models.TextField(max_length=2500)
-    livraison = models.CharField(
+
+    class DeliveryOptions(models.TextChoices):
+        AVAILABLE = "available", _("available")
+        NOT_AVAILABLE = "not available", _("not available")
+        WITH_CONDITONS = "with conditions", _("with conditions")
+
+    delivery = models.CharField(
         null=True,
         max_length=20,
         blank=True,
+        choices=DeliveryOptions.choices,
         help_text="The item provider's delivery price",
     )
     price = models.DecimalField(

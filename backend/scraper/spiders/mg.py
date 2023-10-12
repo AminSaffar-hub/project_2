@@ -1,6 +1,8 @@
 import scrapy
 from scraper.items import ArticleItem
 
+from backend.models import Item
+
 
 class MgSpider(scrapy.Spider):
     name = "Magasin_general"
@@ -64,6 +66,6 @@ class MgSpider(scrapy.Spider):
             )
             item["provider_name"] = "Magasin General"
             item["link_to_provider"] = "https://mg.tn/"
-            item["livraison"] = "pas de livraison"
+            item["delivery"] = Item.DeliveryOptions.NOT_AVAILABLE
             item["online_payment"] = False
             yield item

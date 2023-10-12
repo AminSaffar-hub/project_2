@@ -36,10 +36,10 @@
                                     {% if item.price %}<span class="text-danger"><s>{{item.price }} TND</s></span>{% endif %}
                                 </div>
                                 <h6>                       
-                                    {% if item.livraison %}
+                                    {% if item.delivery %}
                                         <span> 
                                             <img src="{% static 'images/truck.png'%}" class="img-fluid" style="width: 25px; ">
-                                        </span> {{ item.livraison }}
+                                        </span> {{ item.delivery }}
                                     {% endif %}
                                 </h6>
                                 <h6>                        

@@ -4,6 +4,8 @@ import scrapy
 from scraper.items import ArticleItem
 from scrapy.http import Request
 
+from backend.models import Item
+
 
 class ZaraSpider(scrapy.Spider):
     name = "zara"
@@ -103,6 +105,6 @@ class ZaraSpider(scrapy.Spider):
         item["description"] = description
         item["provider_name"] = "zara"
         item["link_to_provider"] = "https://www.zara.com/tn/"
-        item["livraison"] = "sous condition"
+        item["delivery"] = Item.DeliveryOptions.WITH_CONDITONS
         item["online_payment"] = True
         yield item
