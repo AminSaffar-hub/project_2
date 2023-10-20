@@ -45,8 +45,7 @@ class TunisiaNetSpider(scrapy.Spider):
                 item["link_to_image"] = product["cover"]["large"]["url"]
                 item["category"] = "appliances"
                 item["description"] = re.sub(r"<.*?>", "", product["description_short"])
-                item["provider_name"] = "Tunisianet"
-                item["link_to_provider"] = "https://www.tunisianet.com.tn/"
+                item["provider"] = "Tunisianet"
                 item["delivery"] = Item.DeliveryOptions.WITH_CONDITONS
                 item["online_payment"] = True
                 yield item

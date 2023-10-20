@@ -32,8 +32,7 @@ class ExistSpider(CrawlSpider):
         item["description"] = response.css(
             '[id^="product-description-"] *::text'
         ).extract()
-        item["provider_name"] = "exist"
-        item["link_to_provider"] = "https://www.exist.com.tn"
+        item["provider"] = "Exist"
         item["delivery"] = Item.DeliveryOptions.WITH_CONDITONS
         item["online_payment"] = True
 

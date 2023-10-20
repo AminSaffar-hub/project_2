@@ -47,8 +47,7 @@ class TdiscountSpider(scrapy.Spider):
                 item["link_to_image"] = product["cover"]["large"]["url"]
                 item["category"] = "appliances"
                 item["description"] = re.sub(r"<.*?>", "", product["description_short"])
-                item["provider_name"] = "tdiscount"
-                item["link_to_provider"] = "https://tdiscount.tn/"
+                item["provider"] = "Tdiscount"
                 item["delivery"] = Item.DeliveryOptions.WITH_CONDITONS
                 item["online_payment"] = True
                 yield item

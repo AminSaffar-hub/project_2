@@ -1,0 +1,58 @@
+[
+    {
+        "model": "backend.shop",
+        "pk": 1,
+        "fields": {
+            "name": "Beauty Store",
+            "link": "https://beautystore.tn"
+        }
+    },
+    {
+        "model": "backend.shop",
+        "pk": 2,
+        "fields": {
+            "name": "Cosmetique",
+            "link": "https://cosmetique.tn"
+        }
+    },
+    {
+        "model": "backend.shop",
+        "pk": 3,
+        "fields": {
+            "name": "Exist",
+            "link": "https://www.exist.com.tn"
+        }
+    },
+    {
+        "model": "backend.shop",
+        "pk": 4,
+        "fields": {
+            "name": "Magasin General",
+            "link": "https://mg.tn/"
+        }
+    },
+    {
+        "model": "backend.shop",
+        "pk": 5,
+        "fields": {
+            "name": "Tdiscount",
+            "link": "https://tdiscount.tn/"
+        }
+    },
+    {
+        "model": "backend.shop",
+        "pk": 6,
+        "fields": {
+            "name": "Tunisianet",
+            "link": "https://www.tunisianet.com.tn/"
+        }
+    },
+    {
+        "model": "backend.shop",
+        "pk": 7,
+        "fields": {
+            "name": "Zara",
+            "link": "https://www.zara.com/tn/"
+        }
+    }
+]
