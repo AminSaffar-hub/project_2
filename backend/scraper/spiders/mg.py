@@ -64,8 +64,7 @@ class MgSpider(scrapy.Spider):
             item["description"] = (
                 product["description_short"].replace("<br />", "").replace("</b>", "")
             )
-            item["provider_name"] = "Magasin General"
-            item["link_to_provider"] = "https://mg.tn/"
+            item["provider"] = "Magasin General"
             item["delivery"] = Item.DeliveryOptions.NOT_AVAILABLE
             item["online_payment"] = False
             yield item

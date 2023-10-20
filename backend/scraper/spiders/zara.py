@@ -103,8 +103,7 @@ class ZaraSpider(scrapy.Spider):
         )
         item["category"] = "clothes"
         item["description"] = description
-        item["provider_name"] = "zara"
-        item["link_to_provider"] = "https://www.zara.com/tn/"
+        item["provider"] = "Zara"
         item["delivery"] = Item.DeliveryOptions.WITH_CONDITONS
         item["online_payment"] = True
         yield item

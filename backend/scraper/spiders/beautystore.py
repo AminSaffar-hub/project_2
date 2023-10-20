@@ -33,8 +33,7 @@ class BeautyStoreSpider(CrawlSpider):
         item["description"] = response.css(
             '[id^="product-description-"] p::text'
         ).extract()
-        item["provider_name"] = "beautystore"
-        item["link_to_provider"] = "https://beautystore.tn"
+        item["provider"] = "Beauty Store"
         item["delivery"] = Item.DeliveryOptions.WITH_CONDITONS
         item["online_payment"] = True
 

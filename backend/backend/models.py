@@ -12,6 +12,14 @@ class Category(models.Model):
         return self.name
 
 
+class Shop(models.Model):
+    name = models.CharField(
+        null=True, max_length=20, blank=True, help_text="The shop's name"
+    )
+    link = models.URLField(null=True, blank=True, help_text="Url to shop")
+    logo = models.ImageField(upload_to="static/images/", blank=True, null=True)
+
+
 class Item(models.Model):
     title = models.CharField(max_length=500)
 
@@ -56,13 +64,6 @@ class Item(models.Model):
         blank=True,
         help_text=("Date and time when the item promotion ended."),
     )
-
-    provider_name = models.CharField(
-        null=True, max_length=20, blank=True, help_text="The item provider's name"
-    )
-    link_to_provider = models.URLField(
-        null=True, blank=True, help_text="Url of item provider"
-    )
     link_to_post = models.URLField(
         null=True, blank=True, help_text="Url of the item in the provider website"
     )
@@ -72,6 +73,15 @@ class Item(models.Model):
         help_text="url to the product image, found in the provider website.",
     )
     last_updated_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+
+    provider = models.ForeignKey(
+        Shop,
+        on_delete=models.CASCADE,
+        related_name="items",
+        default=None,
+        blank=True,
+        null=True,
+    )
 
     @property
     def sale_percentage(self):
