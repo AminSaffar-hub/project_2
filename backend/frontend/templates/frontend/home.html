@@ -15,9 +15,11 @@
                     <h4 class="card-title text-center"> {% trans "Available shops" %} </h4>
                     <div class="d-flex flex-wrap justify-content-center">
                         {% for shop in shops %}
-                            <a href="?shop={{ shop.name }}">
-                                <img class="m-2 shadow rounded-circle" src="{{shop.logo.url}}" style="width: 3vw; height: 3vw "/>
-                            </a>
+                            {% if shop.logo %}
+                                <a href="?shop={{ shop.name }}">
+                                    <img class="m-2 shadow rounded-circle" src="{{shop.logo.url}}" style="width: 3vw; height: 3vw "/>
+                                </a>
+                            {% endif %}
                         {% endfor %}
                     </div>
                 </div>

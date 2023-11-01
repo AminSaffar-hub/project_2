@@ -19,7 +19,6 @@ class ViewsTests(TestCaseWithDataMixin, TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "Item 1")
         self.assertContains(response, "shoe")
-        self.assertContains(response, "makeup")
         self.assertContains(response, "panini machine")
         self.assertContains(response, "Item 2")
         self.assertContains(response, "Item 3")
@@ -82,6 +81,12 @@ class ViewsTests(TestCaseWithDataMixin, TestCase):
         self.assertContains(response, item2.title)
         self.assertNotContains(response, item3.title)
         self.assertNotContains(response, item4.title)
+
+    def test_get_shop(self):
+        response = self.client.get(f"/?shop={self.shop1.name}")
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, self.item1.title)
+        self.assertContains(response, self.item2.title)
 
 
 class InternationalizationTestCase(TestCaseWithDataMixin, TestCase):

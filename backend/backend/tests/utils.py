@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 
-from backend.models import Item, Category
+from backend.models import Item, Category, Shop
 
 
 class TestCaseWithDataMixin:
@@ -13,6 +13,10 @@ class TestCaseWithDataMixin:
         self.food = Category.objects.create(name="food")
         self.other = Category.objects.create(name="other")
 
+        self.shop1 = Shop.objects.create(name="disney")
+        self.shop2 = Shop.objects.create(name="zalando")
+        self.shop3 = Shop.objects.create(name="magic")
+
         self.item1 = Item.objects.create(
             title="shoe",
             price=150,
@@ -21,16 +25,7 @@ class TestCaseWithDataMixin:
             link_to_image="http://url/to/shoe.png",
             description="best shoe in the world",
             category=self.clothes,
-        )
-
-        self.item2 = Item.objects.create(
-            title="makeup",
-            price=20,
-            discounted_price=10,
-            link_to_post="http://url/to/makeup",
-            link_to_image="http://url/to/makeup.png",
-            description="best makeup in the world",
-            category=self.self_care,
+            provider=self.shop1,
         )
 
         self.item2 = Item.objects.create(
@@ -41,6 +36,7 @@ class TestCaseWithDataMixin:
             link_to_image="http://url/to/panini_machine.png",
             description="best panini machine in the world",
             category=self.appliances,
+            provider=self.shop1,
         )
 
         # Create 10 test items
@@ -53,6 +49,7 @@ class TestCaseWithDataMixin:
                 link_to_image=f"http://url/to/Item {i+1}.png",
                 description=f"best Item {i+1} machine in the world",
                 category=self.other,
+                provider=self.shop2,
             )
 
         self.username = "Testuser"
