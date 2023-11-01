@@ -12,11 +12,11 @@
         <div class="col-0 col-sm-0 col-md-2">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title"> {% trans "Available shops" %} </h4>
-                    <div class="d-flex flex-wrap">
+                    <h4 class="card-title text-center"> {% trans "Available shops" %} </h4>
+                    <div class="d-flex flex-wrap justify-content-center">
                         {% for shop in shops %}
                             <a href="?shop={{ shop.name }}">
-                                <img class="m-2 shadow-lg rounded-circle" src="{{shop.logo.url}}" style="width: 3vw; height: 3vw "/>
+                                <img class="m-2 shadow rounded-circle" src="{{shop.logo.url}}" style="width: 3vw; height: 3vw "/>
                             </a>
                         {% endfor %}
                     </div>
