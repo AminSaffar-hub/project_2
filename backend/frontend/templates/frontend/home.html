@@ -7,62 +7,77 @@
             <p>{% trans "Results for" %} "{{searched_item}}"</p>
         </div>
     {% endif %}
-    {% for item in items %}
-        <div class="row justify-content-center mb-3">
-            <div class="col-1 col-sm-1 col-md-2"></div>
-            <div class="col-10 col-sm-10 col-md-8">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-12 col-lg-2 col-xl-2 mb-4 mb-lg-0">
-                                <div class="bg-image">
-                                    <img src="{{ item.link_to_image }}" class="mw-100" />
+    <div class="row">
+        <div class="col-1 col-sm-1 col-md-1"></div>
+        <div class="col-0 col-sm-0 col-md-2">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title"> {% trans "Available shops" %} </h4>
+                    <div class="d-flex flex-wrap">
+                        {% for shop in shops %}
+                            <a href="?shop={{ shop.name }}">
+                                <img class="m-2 shadow-lg rounded-circle" src="{{shop.logo.url}}" style="width: 3vw; height: 3vw "/>
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-10 col-sm-10 col-md-6">
+            {% for item in items %}
+                <div class="row mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12 col-lg-2 col-xl-2 mb-4 mb-lg-0">
+                                    <div class="bg-image">
+                                        <img src="{{ item.link_to_image }}" class="mw-100" />
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6 col-lg-7 col-xl-7">
-                                <h5>{{ item.title }}</h5>
-                                <br>
-                                <div>
-                                    {% trans "Good deal" %} <a href="{{ item.provider.link }}">{{ item.provider.name }}</a>
+                                <div class="col-md-6 col-lg-7 col-xl-7">
+                                    <h5>{{ item.title }}</h5>
+                                    <br>
+                                    <div>
+                                        {% trans "Good deal" %} <a href="{{ item.provider.link }}">{{ item.provider.name }}</a>
+                                    </div>
+                                    <br>
+                                    <p class="mb-4 mb-md-0">
+                                        {{ item.description | truncatechars:200 }}
+                                    </p>
                                 </div>
-                                <br>
-                                <p class="mb-4 mb-md-0">
-                                    {{ item.description | truncatechars:200 }}
-                                </p>
-                            </div>
-                            <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
-                                <div class="d-flex flex-row align-items-center mb-1">
-                                    <h4 class="mb-1 me-1">{{ item.discounted_price }} TND</h4>
-                                    {% if item.price %}<span class="text-danger"><s>{{item.price }} TND</s></span>{% endif %}
-                                </div>
-                                <h6>                       
-                                    {% if item.delivery %}
-                                        <span> 
-                                            <img src="{% static 'images/truck.png'%}" class="img-fluid" style="width: 25px; ">
-                                        </span> {% trans item.delivery %}
-                                    {% endif %}
-                                </h6>
-                                <h6>                        
-                                    {% if item.online_payment %}
-                                        <span>
-                                            <img src="{% static 'images/carte.png' %}" class="img-fluid" style="width: 25px;">
-                                        </span> {% trans "available"%}
-                                    {% endif %}
-                                </h6>
-                                <div class="d-flex flex-column mt-4">
-                                    <a href="{% url 'product_details' pk=item.pk %}" class="col-auto btn btn-secondary item-a">{% trans "See item" %}</a>
+                                <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
+                                    <div class="d-flex flex-row align-items-center mb-1">
+                                        <h4 class="mb-1 me-1">{{ item.discounted_price }} TND</h4>
+                                        {% if item.price %}<span class="text-danger"><s>{{item.price }} TND</s></span>{% endif %}
+                                    </div>
+                                    <h6>                       
+                                        {% if item.delivery %}
+                                            <span> 
+                                                <img src="{% static 'images/truck.png'%}" class="img-fluid" style="width: 25px; ">
+                                            </span> {% trans item.delivery %}
+                                        {% endif %}
+                                    </h6>
+                                    <h6>                        
+                                        {% if item.online_payment %}
+                                            <span>
+                                                <img src="{% static 'images/carte.png' %}" class="img-fluid" style="width: 25px;">
+                                            </span> {% trans "available"%}
+                                        {% endif %}
+                                    </h6>
+                                    <div class="d-flex flex-column mt-4">
+                                        <a href="{% url 'product_details' pk=item.pk %}" class="col-auto btn btn-secondary item-a">{% trans "See item" %}</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-1 col-sm-1 col-md-2"></div>
+            {% empty %}
+                <p> Winhoum manedrouch, arja3 ghodwa </p>
+            {% endfor %}
         </div>
-    {% empty %}
-        <p> Winhoum manedrouch, arja3 ghodwa </p>
-    {% endfor %}
-
+        <div class="col-1 col-sm-1 col-md-2"></div>
+    </div>
     <nav class="pagination-nav">
         <ul class="pagination">
             {% for page_number in items.adjusted_elided_pages %}

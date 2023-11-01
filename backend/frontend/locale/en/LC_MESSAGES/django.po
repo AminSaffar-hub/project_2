@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-12 19:46+0000\n"
+"POT-Creation-Date: 2023-11-01 12:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -99,15 +99,19 @@ msgstr ""
 msgid "Results for"
 msgstr ""
 
-#: frontend/templates/frontend/home.html:26
+#: frontend/templates/frontend/home.html:15
+msgid "Available shops"
+msgstr ""
+
+#: frontend/templates/frontend/home.html:41
 msgid "Good deal"
 msgstr ""
 
-#: frontend/templates/frontend/home.html:49
+#: frontend/templates/frontend/home.html:64
 msgid "available"
 msgstr ""
 
-#: frontend/templates/frontend/home.html:53
+#: frontend/templates/frontend/home.html:68
 msgid "See item"
 msgstr ""
 

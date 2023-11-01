@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-12 19:46+0000\n"
+"POT-Creation-Date: 2023-11-01 12:51+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,15 +18,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: backend/models.py:30
+#: backend/models.py:38
 msgid "available"
 msgstr "disponible"
 
-#: backend/models.py:31
+#: backend/models.py:39
 msgid "not available"
 msgstr "indisponible"
 
-#: backend/models.py:32
+#: backend/models.py:40
 msgid "with conditions"
 msgstr "sous conditions"
 

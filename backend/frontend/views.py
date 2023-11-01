@@ -5,7 +5,7 @@ from django.db.models import ExpressionWrapper, F, FloatField, Q
 from django.shortcuts import render
 from django.views.generic import DetailView
 
-from backend.models import Item, Category
+from backend.models import Item, Category, Shop
 
 NUMBER_OF_ITEMS_IN_PAGE = 8
 NUMBER_OF_TOP_ITEMS = 24
@@ -25,6 +25,7 @@ def home(request):
     searched_item = request.GET.get("search")
     page_number = request.GET.get("page") or 1
     category = request.GET.get("category")
+    shop = request.GET.get("shop")
 
     items = Item.objects.annotate(
         percentage=ExpressionWrapper(
@@ -42,6 +43,8 @@ def home(request):
         display_items = sorted_items.filter(title__icontains=searched_item)
     elif category:
         display_items = sorted_items.filter(category__name=category)
+    elif shop:
+        display_items = sorted_items.filter(provider__name=shop)
     else:
         categories = Category.objects.all()
         items_by_category = sorted_items.filter(Q(category__in=categories))
@@ -57,6 +60,7 @@ def home(request):
     items_in_page = _generate_pages(display_items, page_number)
 
     categories = Category.objects.all()
+    shops = Shop.objects.all()
     return render(
         request,
         "frontend/home.html",
@@ -65,6 +69,7 @@ def home(request):
             "searched_item": searched_item,
             "categories": categories,
             "category": category,
+            "shops": shops,
         },
     )
 
