@@ -53,5 +53,16 @@
             "image": "/static/images/cosmetics.png",
             "score": 2
         }
+    },
+    {
+        "model": "backend.category",
+        "pk": 6,
+        "fields": {
+            "name": "electronics",
+            "name_en": "electronics",
+            "name_fr": "électronique",
+            "image": "/static/images/electronics.png",
+            "score": 2
+        }
     }
 ]
