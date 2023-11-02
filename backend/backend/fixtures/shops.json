@@ -5,7 +5,8 @@
         "fields": {
             "name": "Beauty Store",
             "link": "https://beautystore.tn",
-            "logo": "/static/images/beautystore.png"
+            "logo": "/static/images/beautystore.png",
+            "score": 1
         }
     },
     {
@@ -14,7 +15,8 @@
         "fields": {
             "name": "Cosmetique",
             "link": "https://cosmetique.tn",
-            "logo": "/static/images/cosmetique.webp"
+            "logo": "/static/images/cosmetique.webp",
+            "score": 1
         }
     },
     {
@@ -23,7 +25,8 @@
         "fields": {
             "name": "Exist",
             "link": "https://www.exist.com.tn",
-            "logo": "/static/images/exist.jpg"
+            "logo": "/static/images/exist.jpg",
+            "score": 0.5
         }
     },
     {
@@ -32,7 +35,8 @@
         "fields": {
             "name": "Magasin General",
             "link": "https://mg.tn/",
-            "logo": "/static/images/mg.png"
+            "logo": "/static/images/mg.png",
+            "score": 1
         }
     },
     {
@@ -41,7 +45,8 @@
         "fields": {
             "name": "Tdiscount",
             "link": "https://tdiscount.tn/",
-            "logo": "/static/images/tdiscount.png"
+            "logo": "/static/images/tdiscount.png",
+            "score": 1
         }
     },
     {
@@ -50,7 +55,8 @@
         "fields": {
             "name": "Tunisianet",
             "link": "https://www.tunisianet.com.tn/",
-            "logo": "/static/images/tunisianet.png"
+            "logo": "/static/images/tunisianet.png",
+            "score": 1
         }
     },
     {
@@ -59,8 +65,8 @@
         "fields": {
             "name": "Zara",
             "link": "https://www.zara.com/tn/",
-            "logo": "/static/images/zara.png"
-            
+            "logo": "/static/images/zara.png",
+            "score": 1
         }
     }
 ]

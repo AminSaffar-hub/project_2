@@ -1,7 +1,5 @@
-from itertools import zip_longest
-
 from django.core.paginator import Paginator
-from django.db.models import ExpressionWrapper, F, FloatField, Q
+from django.db.models import ExpressionWrapper, F, FloatField
 from django.shortcuts import render
 from django.views.generic import DetailView
 
@@ -29,7 +27,11 @@ def home(request):
 
     items = Item.objects.annotate(
         percentage=ExpressionWrapper(
-            100 * (F("price") - F("discounted_price")) / F("price"),
+            100
+            * (F("price") - F("discounted_price"))
+            * F("provider__score")
+            * F("category__score")
+            / F("price"),
             output_field=FloatField(),
         )
     ).filter(
@@ -46,16 +48,7 @@ def home(request):
     elif shop:
         display_items = sorted_items.filter(provider__name=shop)
     else:
-        categories = Category.objects.all()
-        items_by_category = sorted_items.filter(Q(category__in=categories))
-        display_items = []
-        for items_in_category in zip_longest(
-            *[items_by_category.filter(category=category) for category in categories]
-        ):
-            for item in items_in_category:
-                if item is not None:
-                    display_items.append(item)
-        # display_items = sorted_items
+        display_items = sorted_items
 
     items_in_page = _generate_pages(display_items, page_number)
 
