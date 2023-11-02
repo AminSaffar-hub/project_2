@@ -6,7 +6,8 @@
             "name": "food",
             "name_en": "food",
             "name_fr": "alimentation",
-            "image": "/static/images/food.png"
+            "image": "/static/images/food.png",
+            "score": 1
         }
     },
     {
@@ -16,7 +17,8 @@
             "name": "clothes",
             "name_en": "clothes",
             "name_fr": "habillement",
-            "image": "/static/images/clothes.png"
+            "image": "/static/images/clothes.png",
+            "score": 1
         }
     },
     {
@@ -26,7 +28,8 @@
             "name": "self-care",
             "name_en": "self-care",
             "name_fr": "soins",
-            "image": "/static/images/self-care.png"
+            "image": "/static/images/self-care.png",
+            "score": 2
         }
     },
     {
@@ -36,7 +39,8 @@
             "name": "appliances",
             "name_en": "appliances",
             "name_fr": "appareils ménagers",
-            "image": "/static/images/appliances.png"
+            "image": "/static/images/appliances.png",
+            "score": 3
         }
     },
     {
@@ -46,7 +50,19 @@
             "name": "cosmetics",
             "name_en": "cosmetics",
             "name_fr": "cosmétiques",
-            "image": "/static/images/cosmetics.png"
+            "image": "/static/images/cosmetics.png",
+            "score": 2
+        }
+    },
+    {
+        "model": "backend.category",
+        "pk": 6,
+        "fields": {
+            "name": "electronics",
+            "name_en": "electronics",
+            "name_fr": "électronique",
+            "image": "/static/images/electronics.png",
+            "score": 2
         }
     }
 ]

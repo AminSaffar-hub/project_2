@@ -7,6 +7,12 @@ from django.utils.translation import gettext_lazy as _
 class Category(models.Model):
     name = models.CharField(max_length=100)
     image = models.ImageField(upload_to="static/images/", blank=True, null=True)
+    score = models.FloatField(
+        null=True,
+        blank=True,
+        default=1,
+        help_text="Evaluation of category importance. Affects display order",
+    )
 
     def __str__(self):
         return self.name
@@ -18,6 +24,12 @@ class Shop(models.Model):
     )
     link = models.URLField(null=True, blank=True, help_text="Url to shop")
     logo = models.ImageField(upload_to="static/images/", blank=True, null=True)
+    score = models.FloatField(
+        null=True,
+        blank=True,
+        default=1,
+        help_text="Evaluation of offers on shop. Affects display order",
+    )
 
 
 class Item(models.Model):
