@@ -70,6 +70,7 @@ def home(request):
             "categories": categories,
             "category": category,
             "shops": shops,
+            "shop": shop,
         },
     )
 

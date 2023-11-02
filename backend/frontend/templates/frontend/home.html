@@ -89,7 +89,7 @@
                     <li class="page-item  {% if page_number == items.number %}active{% endif %}">
                         <a
                         class="page-link"
-                        href="?page={{page_number}}{% if searched_item %}&search={{searched_item}}{% elif category %}&category={{category}}{% endif %}"
+                        href="?page={{page_number}}{% if searched_item %}&search={{searched_item}}{% elif category %}&category={{category}}{% elif shop %}&shop={{shop}}{% endif %}"
                         >
                             {{page_number}}
                         </a>
