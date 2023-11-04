@@ -3,6 +3,7 @@ from backend.models import Like
 
 register = template.Library()
 
+
 @register.filter
 def has_liked(user, item):
     if user.is_authenticated:
