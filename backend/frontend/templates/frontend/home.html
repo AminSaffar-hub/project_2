@@ -37,7 +37,12 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-lg-7 col-xl-7">
-                                    <h5>{{ item.title }}</h5>
+                                    <div class="d-flex flex-row justify-content-between">
+                                        <h5>{{ item.title }}</h5>
+                                        <button class="like-button btn btn-default no-animation p-0" data-item-id="{{ item.id }}">
+                                            <i style="color: gray;" class="fa fa-heart-o fa-lg"></i>
+                                        </button>
+                                    </div>
                                     <br>
                                     <div>
                                         {% trans "Good deal" %} <a href="{{ item.provider.link }}">{{ item.provider.name }}</a>

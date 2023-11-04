@@ -3,6 +3,8 @@ import math
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+from django.contrib.auth.models import User
+
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
@@ -103,3 +105,14 @@ class Item(models.Model):
 
     def __str__(self):
         return self.title + " - " + self.provider_name
+
+
+class Like(models.Model):
+    item = models.ForeignKey(Item, on_delete=models.CASCADE, related_name="user_likes")
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="items_liked")
+
+    def __str__(self):
+        return f"{self.user} likes {self.item}"
+
+    class Meta:
+        unique_together = ("item", "user")

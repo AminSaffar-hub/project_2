@@ -2,8 +2,12 @@ from django.core.paginator import Paginator
 from django.db.models import ExpressionWrapper, F, FloatField
 from django.shortcuts import render
 from django.views.generic import DetailView
+from django.views.decorators.http import require_POST
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
 
-from backend.models import Item, Category, Shop
+from backend.models import Item, Category, Shop, Like
+
 
 NUMBER_OF_ITEMS_IN_PAGE = 8
 NUMBER_OF_TOP_ITEMS = 24
@@ -70,6 +74,21 @@ def home(request):
 
 def footer_info(request):
     return render(request, "frontend/footer_info.html")
+
+
+@require_POST
+@csrf_exempt
+def like_item(request, item_id):
+    item = Item.objects.get(pk=item_id)
+    user = request.user
+
+    like_exists = Like.objects.filter(item=item, user=user).exists()
+    if like_exists:
+        Like.objects.get(item=item, user=user).delete()
+        return JsonResponse({"like": True})
+    else:
+        Like.objects.create(item=item, user=user)
+        return JsonResponse({"like": False})
 
 
 class ProductDetails(DetailView):
