@@ -1,6 +1,7 @@
 {% extends 'frontend/base.html' %}
 {% load static %}
 {% load i18n %}
+{% load item_tags %}
 {% block 'body' %}
     {% if searched_item %}
         <div class="searched-item">
@@ -40,7 +41,11 @@
                                     <div class="d-flex flex-row justify-content-between">
                                         <h5>{{ item.title }}</h5>
                                         <button class="like-button btn btn-default no-animation p-0" data-item-id="{{ item.id }}">
-                                            <i style="color: gray;" class="fa fa-heart-o fa-lg"></i>
+                                            {% if request.user|has_liked:item %}
+                                                <i style="color: red;" class="fa fa-heart fa-lg"></i>
+                                            {% else %}
+                                                <i style="color: gray;" class="fa fa-heart-o fa-lg"></i>
+                                            {% endif %}
                                         </button>
                                     </div>
                                     <br>

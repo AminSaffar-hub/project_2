@@ -85,10 +85,10 @@ def like_item(request, item_id):
     like_exists = Like.objects.filter(item=item, user=user).exists()
     if like_exists:
         Like.objects.get(item=item, user=user).delete()
-        return JsonResponse({"like": True})
+        return JsonResponse({"like": False})
     else:
         Like.objects.create(item=item, user=user)
-        return JsonResponse({"like": False})
+        return JsonResponse({"like": True})
 
 
 class ProductDetails(DetailView):
