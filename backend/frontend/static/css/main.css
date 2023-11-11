@@ -122,3 +122,8 @@ footer {
     color: #888;
     text-decoration: none;
 }
+
+.btn.no-animation:focus, .btn.no-animation:active {
+    background-color: white; /* Set your desired background color */
+    box-shadow: none; /* Remove the box-shadow */
+}
