@@ -40,13 +40,19 @@
                                 <div class="col-md-6 col-lg-7 col-xl-7">
                                     <div class="d-flex flex-row justify-content-between">
                                         <h5>{{ item.title }}</h5>
-                                        <button class="like-button btn btn-default no-animation p-0" data-item-id="{{ item.id }}">
-                                            {% if request.user|has_liked:item %}
-                                                <i style="color: red;" class="fa fa-heart fa-lg"></i>
-                                            {% else %}
+                                        {% if user.is_authenticated %}
+                                            <button class="like-button btn btn-default no-animation p-0" data-item-id="{{ item.id }}">
+                                                {% if request.user|has_liked:item %}
+                                                    <i style="color: red;" class="fa fa-heart fa-lg"></i>
+                                                {% else %}
+                                                    <i style="color: gray;" class="fa fa-heart-o fa-lg"></i>
+                                                {% endif %}
+                                            </button>
+                                        {% else %}
+                                            <button class="btn btn-default no-animation p-0" data-bs-toggle="modal" data-bs-target="#LoginForm">
                                                 <i style="color: gray;" class="fa fa-heart-o fa-lg"></i>
-                                            {% endif %}
-                                        </button>
+                                            </button>
+                                        {% endif %}
                                     </div>
                                     <br>
                                     <div>
