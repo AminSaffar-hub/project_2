@@ -3,7 +3,7 @@ from django.test import RequestFactory, TestCase
 from django.urls import reverse
 from frontend.views import home
 
-from backend.models import Item
+from backend.models import Item, Like
 from backend.tests.utils import TestCaseWithDataMixin
 
 
@@ -87,6 +87,28 @@ class ViewsTests(TestCaseWithDataMixin, TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, self.item1.title)
         self.assertContains(response, self.item2.title)
+
+    def test_like_item(self):
+        self.client.login(username="Testuser", password="testpassword")
+
+        url = reverse("rate", args=[str(self.item1.id)])
+        response = self.client.post(url)
+
+        self.assertEqual(response.status_code, 200)
+
+        data = response.json()
+        self.assertEqual(data["like"], True)
+
+        self.assertTrue(Like.objects.filter(item=self.item1, user=self.user).exists())
+
+        response = self.client.post(url)
+
+        self.assertEqual(response.status_code, 200)
+
+        data = response.json()
+        self.assertEqual(data["like"], False)
+
+        self.assertFalse(Like.objects.filter(item=self.item1, user=self.user).exists())
 
 
 class InternationalizationTestCase(TestCaseWithDataMixin, TestCase):
