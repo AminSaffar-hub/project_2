@@ -43,7 +43,7 @@ class Item(models.Model):
         related_name="items",
         default=None,
         blank=True,
-        null=True,
+        null=False,
     )
 
     description = models.TextField(max_length=2500)
@@ -104,7 +104,7 @@ class Item(models.Model):
         return math.floor(((self.price - self.discounted_price) / self.price) * 100)
 
     def __str__(self):
-        return self.title + " - " + self.provider_name
+        return self.title + " - " + self.provider.name
 
 
 class Like(models.Model):

@@ -7,6 +7,9 @@ from scraper.spiders.mg import MgSpider
 from scraper.spiders.tdiscount import TdiscountSpider
 from scraper.spiders.tunisianet import TunisiaNetSpider
 from scraper.spiders.zara import ZaraSpider
+from scraper.spiders.monoprix import MonoprixSpider
+
+from scraper.spiders.chillandlit import chillandlit
 from scrapy.crawler import CrawlerProcess
 from scrapy.settings import Settings
 
@@ -18,7 +21,9 @@ class Command(BaseCommand):
         crawler_settings = Settings()
         crawler_settings.setmodule(settings)
         process = CrawlerProcess(settings=crawler_settings)
+        process.crawl(chillandlit)
         process.crawl(TdiscountSpider)
+        process.crawl(MonoprixSpider)
         process.crawl(MgSpider)
         process.crawl(ZaraSpider)
         process.crawl(TunisiaNetSpider)
