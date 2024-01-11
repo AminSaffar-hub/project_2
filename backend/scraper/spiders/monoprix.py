@@ -7,6 +7,7 @@ from backend.models import Item
 
 category_mapping = {
     "cosmetics": [
+        "colorations",
         "démaquillants",
         "beauté-et-santé",
         "maquillage-des-yeux",
@@ -39,7 +40,6 @@ category_mapping = {
         "pour-vaisselles-mains",
     ],
     "food": [
-        "colorations",
         "plats-cuisinés",
         "cornichonsolives-et-condiments",
         "huiles-vinaigrescondiments-et-sauces",

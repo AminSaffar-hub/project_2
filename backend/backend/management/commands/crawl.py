@@ -5,6 +5,7 @@ from scraper.spiders.cosmetique import CosmetiqueSpider
 from scraper.spiders.exist import ExistSpider
 from scraper.spiders.mg import MgSpider
 from scraper.spiders.tdiscount import TdiscountSpider
+from scraper.spiders.citywatch import CitywatchSpider
 from scraper.spiders.tunisianet import TunisiaNetSpider
 from scraper.spiders.zara import ZaraSpider
 from scraper.spiders.monoprix import MonoprixSpider
@@ -22,6 +23,7 @@ class Command(BaseCommand):
         crawler_settings = Settings()
         crawler_settings.setmodule(settings)
         process = CrawlerProcess(settings=crawler_settings)
+        process.crawl(CitywatchSpider)
         process.crawl(TunisiatechSpider)
         process.crawl(chillandlit)
         process.crawl(TdiscountSpider)
