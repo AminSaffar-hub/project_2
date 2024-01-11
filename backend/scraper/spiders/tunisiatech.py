@@ -71,7 +71,7 @@ class TunisiatechSpider(scrapy.Spider):
                 item["link_to_post"] = product["url"]
                 item["link_to_image"] = product["cover"]["large"]["url"]
                 item["description"] = re.sub(r"<.*?>", "", product["description_short"])
-                item["provider"] = "Tunisia Tech"
+                item["provider"] = self.name
                 item["delivery"] = Item.DeliveryOptions.WITH_CONDITONS
                 item["online_payment"] = True
                 reverse_mapping = {

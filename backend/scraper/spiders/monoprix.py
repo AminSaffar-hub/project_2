@@ -140,7 +140,7 @@ category_mapping = {
 
 
 class MonoprixSpider(scrapy.Spider):
-    name = "monoprix"
+    name = "Monoprix"
     allowed_domains = ["monoprix.tn"]
 
     custom_settings = {

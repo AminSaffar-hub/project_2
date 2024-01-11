@@ -64,5 +64,27 @@
             "image": "/static/images/electronics.png",
             "score": 2
         }
+    },
+    {
+        "model": "backend.category",
+        "pk": 7,
+        "fields": {
+            "name": "pets",
+            "name_en": "pets",
+            "name_fr": "animaux",
+            "image": "/static/images/pets.png",
+            "score": 1
+        }
+    },
+    {
+        "model": "backend.category",
+        "pk": 8,
+        "fields": {
+            "name": "other",
+            "name_en": "other",
+            "name_fr": "autres",
+            "image": "/static/images/other.png",
+            "score": 1
+        }
     }
 ]

@@ -4,7 +4,7 @@ from backend.models import Item
 
 
 class chillandlit(scrapy.Spider):
-    name = "chillandlit"
+    name = "Chillandlit"
     allowed_domains = ["chillandlit.tn"]
 
     custom_settings = {
@@ -50,7 +50,7 @@ class chillandlit(scrapy.Spider):
             item["description"] = (
                 product["description_short"].replace("<br />", "").replace("</b>", "")
             )
-            item["provider"] = "Chill and lit"
+            item["provider"] = self.name
             item["delivery"] = Item.DeliveryOptions.WITH_CONDITONS
             item["online_payment"] = False
             item["category"] = "clothes"
