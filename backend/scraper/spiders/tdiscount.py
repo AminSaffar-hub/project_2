@@ -14,23 +14,27 @@ class TdiscountSpider(scrapy.Spider):
         "DEFAULT_REQUEST_HEADERS": {
             "Accept": "application/json, text/javascript, */*; q=0.01",
             "Accept-Encoding": "gzip, deflate, br",
-            "Accept-Language": "fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7",
+            "Accept-Language": "fr-FR,fr;q=0.9,en-US;q=0.,en;q=0.7",
             "Cache-Control": "no-cache",
             "Pragma": "no-cache",
-            "Sec-Ch-Ua": '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
+            "Sec-Ch-Ua": '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',  # noqa: E501
             "Sec-Ch-Ua-Mobile": "?0",
             "Sec-Ch-Ua-Platform": '"Windows"',
             "Sec-Fetch-Dest": "empty",
             "Sec-Fetch-Mode": "cors",
             "Sec-Fetch-Site": "same-origin",
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36",  # noqa: E501
+            "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:120.0) Gecko/20100101 Firefox/120.0",  # noqa: E501
             "X-Requested-With": "XMLHttpRequest",
         }
     }
 
-    start_urls = ["https://tdiscount.tn/promotions?from-xhr"]
+    start_urls = ["https://tdiscount.tn/promotions?page=1&from-xhr"]
 
     def parse(self, response):
+        content_type = response.headers.get("Content-Type", b"").decode("utf-8").lower()
+        if "application/json" not in content_type:
+            self.logger.warning(f"Unexpected Content-Type: {content_type}")
+            return
         data = response.json()
 
         if not data.get("products"):

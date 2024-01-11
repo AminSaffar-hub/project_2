@@ -5,6 +5,50 @@ from scraper.items import ArticleItem
 
 from backend.models import Item
 
+category_mapping = {
+    "electronics": [
+        "webcam",
+        "cafetiere-tunisie",
+        "disques-ssd",
+        "seche-cheveux-tunisie",
+        "smartwatch",
+        "pc-tout-en-un",
+        "videoprojecteurs",
+        "serveur-stockage-tunisie",
+        "switch-routeurs-point-d-acces",
+        "imprimante-en-tunisie",
+        "tablette",
+        "imprimante-et-multifonction-laser",
+        "appareil-de-cuisson-convivial",
+        "imprimante-professionnelle",
+        "hachoir-tunisie-a-viande",
+        "robot-multifonction-tunisie",
+        "imprimante-point-de-vente",
+        "appareils-photos-numerique",
+        "lave-vaisselle-tunisie",
+        "ecran-pc-tunisie",
+        "pc-portable-tunisie",
+        "informatique",
+        "chauffage-tunisie",
+        "pc-portable-gamer",
+        "casque-ecouteurs",
+        "smartphone-tunisie",
+        "onduleur",
+        "telephonie-tablette",
+        "refrigerateur-tunisie",
+        "scooter-electriques",
+        "photocopieurs-a4-a3",
+        "mixeur-plongeant-tunisie",
+        "vente-tv-samsung-led-tunisie",
+        "four-electrique-tunisie-micro-onde",
+        "aspirateur-tunisie-vapeur",
+        "montre-homme-femme-tunisie",
+        "manettes-de-jeux",
+        "imprimante-a-reservoir-integre",
+        "pc-de-bureau",
+    ]
+}
+
 
 class TunisiaNetSpider(scrapy.Spider):
     name = "Tunisia_Net"
@@ -43,13 +87,22 @@ class TunisiaNetSpider(scrapy.Spider):
                 item["price"] = float(product["regular_price_amount"])
                 item["link_to_post"] = product["url"]
                 item["link_to_image"] = product["cover"]["large"]["url"]
-                item["category"] = "appliances"
                 item["description"] = re.sub(r"<.*?>", "", product["description_short"])
                 item["provider"] = "Tunisianet"
                 item["delivery"] = Item.DeliveryOptions.WITH_CONDITONS
                 item["online_payment"] = True
+                reverse_mapping = {
+                    value: key
+                    for key, values in category_mapping.items()
+                    for value in values
+                }
+                category_name = product["url"].split("/")[3]
+                associated_key = reverse_mapping.get(category_name)
+                if associated_key:
+                    item["category"] = associated_key
+                else:
+                    item["category"] = "other"
                 yield item
-
         current_page = response.meta.get("page", 1)
         self.logger.info(f"Currently on page: {current_page}")
         next_page = current_page + 1

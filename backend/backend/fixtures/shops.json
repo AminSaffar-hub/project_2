@@ -68,5 +68,45 @@
             "logo": "/static/images/zara.png",
             "score": 1
         }
+    },
+    {
+        "model": "backend.shop",
+        "pk": 8,
+        "fields": {
+            "name": "Chillandlit",
+            "link": "https://chillandlit.tn/",
+            "logo": "/static/images/chillandlit.png",
+            "score": 1
+        }
+    },
+    {
+        "model": "backend.shop",
+        "pk": 9,
+        "fields": {
+            "name": "Citywatch",
+            "link": "https://citywatch.com.tn/",
+            "logo": "/static/images/citywatch.png",
+            "score": 1
+        }
+    },
+    {
+        "model": "backend.shop",
+        "pk": 10,
+        "fields": {
+            "name": "Monoprix",
+            "link": "https://courses.monoprix.tn/",
+            "logo": "/static/images/monoprix.png",
+            "score": 1
+        }
+    },
+    {
+        "model": "backend.shop",
+        "pk": 11,
+        "fields": {
+            "name": "Tunisiatech",
+            "link": "https://tunisiatech.tn/",
+            "logo": "/static/images/tunisiatech.png",
+            "score": 1
+        }
     }
 ]

@@ -2,17 +2,10 @@ import scrapy
 from scraper.items import ArticleItem
 from backend.models import Item
 
-category_mapping = {
-    "electronics": ["Électroménager & High tech"],
-    "food": ["Alimentaire", "Marché frais"],
-    "appliances": ["Maison et jardin", "Produits d'entretien", "Cuisine"],
-    "self-care": ["Hygiène"],
-}
 
-
-class MgSpider(scrapy.Spider):
-    name = "Magasin_general"
-    allowed_domains = ["mg.tn"]
+class chillandlit(scrapy.Spider):
+    name = "Chillandlit"
+    allowed_domains = ["chillandlit.tn"]
 
     custom_settings = {
         "DEFAULT_REQUEST_HEADERS": {
@@ -22,7 +15,7 @@ class MgSpider(scrapy.Spider):
             "Cache-Control": "no-cache",
             "Connection": "keep-alive",
             "Cookie": "YOUR_COOKIE_HERE",
-            "Host": "mg.tn",
+            "Host": "chillandlit.tn",
             "Pragma": "no-cache",
             "Sec-Ch-Ua": '"Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"',
             "Sec-Ch-Ua-Mobile": "?0",
@@ -35,11 +28,7 @@ class MgSpider(scrapy.Spider):
         }
     }
 
-    start_urls = [
-        "https://mg.tn/61-promotion?page=1&from-xhr",
-        "https://mg.tn/64-promotion?page=1&from-xhr",
-        "https://mg.tn/67-promotion?page=1&from-xhr",
-    ]
+    start_urls = ["https://chillandlit.tn/222-promos?page=1&from-xhr"]
 
     def start_requests(self):
         for url in self.start_urls:
@@ -61,25 +50,15 @@ class MgSpider(scrapy.Spider):
             item["description"] = (
                 product["description_short"].replace("<br />", "").replace("</b>", "")
             )
-            item["provider"] = "Magasin General"
-            item["delivery"] = Item.DeliveryOptions.NOT_AVAILABLE
+            item["provider"] = self.name
+            item["delivery"] = Item.DeliveryOptions.WITH_CONDITONS
             item["online_payment"] = False
-            category_name = product["category_name"]
-            reverse_mapping = {
-                value: key
-                for key, values in category_mapping.items()
-                for value in values
-            }
-            associated_key = reverse_mapping.get(category_name)
-            if associated_key:
-                item["category"] = associated_key
-            else:
-                item["category"] = "other"
+            item["category"] = "clothes"
             yield item
-
         current_page = response.meta.get("page", 1)
+        self.logger.info(f"Currently on page: {current_page}")
         next_page = current_page + 1
-        next_page_url = f"{response.url.rsplit('=', 1)[0]}={next_page}&from-xhr"
+        next_page_url = f"https://chillandlit.tn/222-promos?page={next_page}&from-xhr"
         yield scrapy.Request(
             url=next_page_url, callback=self.parse, meta={"page": next_page}
         )
