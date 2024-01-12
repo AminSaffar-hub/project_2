@@ -1,4 +1,4 @@
-FROM modamine/promotions-scrapper-base:0.0.1
+FROM modamine/promotions-scrapper-base:latest
 
 ENV APP_ENV=prod
 

@@ -3,6 +3,22 @@ run-name: lint, test and deploy(only when merged to main) code uploaded by ${{ g
 on: [push]
 
 jobs:
+
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      build_base_image: ${{ steps.changes.outputs.base }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@v2
+      id: changes
+      with:
+        base: ${{ github.ref }}
+        filters: |
+          build_base_image:
+            - 'poetry.lock'
+            - 'pyproject.toml'
+
   lint:
     runs-on: ubuntu-latest
     steps:
@@ -66,10 +82,41 @@ jobs:
 
       - name: Run tests
         run: cd backend && poetry run python manage.py test
-  Deploy:
-    needs: [lint, test]
+
+  Deliver:
+    needs: [changes, lint, test]
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    if: |
+      needs.changes.outputs.build_base_image == 'true' &&
+      github.ref == 'refs/heads/main'
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v3
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+    - name: Login to Docker Hub
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+    - name: Build and push
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        push: true
+        tags: modamine/promotions-scrapper-base:latest
+        file: Dockerfile.base
+
+  Deploy:
+    needs: [lint, test, Deliver]
+    runs-on: ubuntu-latest
+    if: |
+      always() &&
+      (needs.Deliver.result == 'success' || needs.Deliver.result == 'skipped') &&
+      github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v3
       - name: Deploy in EC2
