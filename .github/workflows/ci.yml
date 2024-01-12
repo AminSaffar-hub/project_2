@@ -3,6 +3,22 @@ run-name: lint, test and deploy(only when merged to main) code uploaded by ${{ g
 on: [push]
 
 jobs:
+
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      build_base_image: ${{ steps.changes.outputs.base }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@v2
+      id: changes
+      with:
+        base: ${{ github.ref }}
+        filters: |
+          build_base_image:
+            - 'poetry.lock'
+            - 'pyproject.toml'
+
   lint:
     runs-on: ubuntu-latest
     steps:
@@ -68,8 +84,9 @@ jobs:
         run: cd backend && poetry run python manage.py test
 
   Deliver:
-    needs: [lint, test]
+    needs: [changes, lint, test]
     runs-on: ubuntu-latest
+    if: ${{ needs.changes.outputs.build_base_image == 'true' }}
 
     steps:
     - name: Checkout
@@ -83,7 +100,6 @@ jobs:
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
-
     - name: Build and push
       uses: docker/build-push-action@v5
       with:
