@@ -86,7 +86,9 @@ jobs:
   Deliver:
     needs: [changes, lint, test]
     runs-on: ubuntu-latest
-    if: ${{ needs.changes.outputs.build_base_image == 'true' }}
+    if: |
+      needs.changes.outputs.build_base_image == 'true' &&
+      github.ref == 'refs/heads/main'
 
     steps:
     - name: Checkout
@@ -111,7 +113,10 @@ jobs:
   Deploy:
     needs: [lint, test, Deliver]
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    if: |
+      always() &&
+      (needs.Deliver.result == 'success' || needs.Deliver.result == 'skipped') &&
+      github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v3
       - name: Deploy in EC2
