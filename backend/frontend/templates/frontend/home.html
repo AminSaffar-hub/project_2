@@ -28,8 +28,8 @@
         </div>
         <div class="col-10 col-sm-10 col-md-6">
             {% for item in items %}
-                <div class="row mb-3">
-                    <div class="card">
+                <div class="row mb-2">
+                    <div class="card" style="cursor: pointer;" onclick="!(event.srcElement.className.includes('fa-heart')) ? window.location = '{% url 'product_details' pk=item.pk %}' : null;">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-12 col-lg-2 col-xl-2 mb-4 mb-lg-0">
@@ -39,7 +39,9 @@
                                 </div>
                                 <div class="col-md-6 col-lg-7 col-xl-7">
                                     <div class="d-flex flex-row justify-content-between">
-                                        <h5>{{ item.title }}</h5>
+                                        <h5>
+                                            {{ item.title }}
+                                        </h5>
                                         {% if user.is_authenticated %}
                                             <button class="like-button btn btn-default no-animation p-0" data-item-id="{{ item.id }}">
                                                 {% if request.user|has_liked:item %}
@@ -49,7 +51,7 @@
                                                 {% endif %}
                                             </button>
                                         {% else %}
-                                            <button class="btn btn-default no-animation p-0" data-bs-toggle="modal" data-bs-target="#LoginForm">
+                                            <button type="button" class="btn btn-default no-animation p-0">
                                                 <i style="color: gray;" class="fa fa-heart-o fa-lg"></i>
                                             </button>
                                         {% endif %}
@@ -83,7 +85,7 @@
                                         {% endif %}
                                     </h6>
                                     <div class="d-flex flex-column mt-4">
-                                        <a href="{% url 'product_details' pk=item.pk %}" class="col-auto btn btn-secondary item-a">{% trans "See item" %}</a>
+                                        <a href="{{item.link_to_post}}" class="col-auto btn btn-secondary item-a">{% trans "Visit item" %}</a>
                                     </div>
                                 </div>
                             </div>
