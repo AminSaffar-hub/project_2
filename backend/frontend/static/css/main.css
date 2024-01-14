@@ -41,7 +41,7 @@ a.navbar-brand span {
     color: black;
 }
 
-nav.navbar {
+nav.main-navbar {
     background-color: #35373b
 }
 
@@ -49,9 +49,8 @@ nav.pagination-nav {
     margin: 20px;
 }
 
-.navbar-light {
+.category-navbar {
     background-color: #1D1F20 !important; 
-    height: 55px; 
 }
 
 .navbar-container {
