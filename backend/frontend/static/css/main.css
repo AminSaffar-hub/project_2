@@ -41,17 +41,16 @@ a.navbar-brand span {
     color: black;
 }
 
-nav.navbar {
-    background-color: #35373b
+nav.main-navbar {
+    background-color: rgb(53, 55, 59);
 }
 
 nav.pagination-nav {
     margin: 20px;
 }
 
-.navbar-light {
+.category-navbar {
     background-color: #1D1F20 !important; 
-    height: 55px; 
 }
 
 .navbar-container {
@@ -62,30 +61,23 @@ a.item-a {
     margin-right: 20px;
 }
 
-.nav-item {
-    margin-right: 20px; 
-}
-
-.btn-dark {
+.category-btn {
     color: white;
-    font-size: 0.8em;  
     padding: .2px 6px;
     transition: transform 0.3s;
     white-space: nowrap;
+    background-color: rgb(53, 55, 59);
+    border-radius: 10px;
 }
 
-.btn-dark:hover {
+.category-btn:hover {
     transform: scale(1.1);
 }
 
-.btn-dark img {
-    position: relative;
-    top: -2px; 
-    transition: transform 0.3s;
-}
-
-.btn-dark a {
-    color: white !important;  
+.category-btn a {
+    color: white !important;
+    font-size: medium;
+    font-weight: bold;
 }
 
 footer {

@@ -19,7 +19,7 @@
     <title>ERRADAR</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar main-navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}">E R R A D A R</a>
             <form class="form-inline order-2 order-md-1 mt-3 mt-md-0" style="margin: 0 auto;" action="{% url 'home' %}">
@@ -54,21 +54,21 @@
         </div>
     </nav>
     {% if categories %}
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar category-navbar">
         <div class="container justify-content-center">
-            <div class="navbar-container d-flex" style="overflow-x: auto;">
+            <div class="navbar-container d-flex my-2" style="overflow-x: auto;">
                 <ul class="navbar-nav d-flex flex-row">
                     {% for category in categories|dictsortreversed:"score" %}
-                    <li class="nav-item">
-                        <button type="button" class="btn btn-dark d-flex align-items-center">
-                            <a class="nav-link align-items-center" href="?category={{ category.name_en }}">
-                                {% if category.image %}
-                                    <img src="{{ category.image.url }}" alt="{{ category.name }}" width="20" height="20" class="mr-2">
-                                {% endif %}
-                                <i class="icon-class"></i> {{ category.name }}
-                            </a>
-                        </button>
-                    </li>
+                        <li class="mx-2">
+                            <button type="button" class="btn category-btn  d-flex align-items-center">
+                                <a class="nav-link align-items-center" href="?category={{ category.name_en }}">
+                                    {% if category.image %}
+                                        <img src="{{ category.image.url }}" alt="{{ category.name }}" width="20" height="20" class="mr-2">
+                                    {% endif %}
+                                    <i class="icon-class"></i> {{ category.name }}
+                                </a>
+                            </button>
+                        </li>
                     {% endfor %}
                 </ul>
             </div>
