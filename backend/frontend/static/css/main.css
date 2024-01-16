@@ -77,6 +77,7 @@ a.item-a {
 .category-btn a {
     color: white !important;
     font-size: medium;
+    font-weight: bold;
 }
 
 footer {
