@@ -59,6 +59,7 @@ services:
       - static_volume:/www/
       - ~/certbot/www:/var/www/certbot/:ro
       - ~/certbot/conf/:/etc/nginx/ssl/:ro
+      - ~/ads.txt:/var/www/ads.txt
 
   certbot:
     image: certbot/certbot:latest
