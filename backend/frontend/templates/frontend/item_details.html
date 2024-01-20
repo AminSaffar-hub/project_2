@@ -22,29 +22,38 @@
                         </span>    
                     </p>
                     <p>
-                        {% if object.delivery %}
-                            <span> 
-                                <img src="{% static 'images/truck.png'%}" class="img-fluid" style="width: 25px; ">
-                            </span> {{ object.delivery }}
-                            {% endif %}
-                            {% if object.online_payment %} |
-                            <span>
-                                <img src="{% static 'images/carte.png' %}" class="img-fluid" style="width: 25px;">
-                            </span> 
-                        {% endif %}
+                        <span class="deal">{% trans "Good deal" %}</span> <a class="provider" href="{{ item.provider.link }}">{{ item.provider.name }}</a>
                     </p> 
-                    <a href="{{object.link_to_post}}" class="btn btn-primary btn-lg btn-block item-a">{% trans "Visit item" %}</a>
+                    <a href="{{object.link_to_post}}" class="btn btn-primary btn-lg item-a">{% trans "Visit item" %}</a>
                 </div>
             </div>
             </div>
     </div>
+
     <div class="card my-3">
-        <div class="row wow fadeIn">
-            <div class="col-md-12 mb-4">
-                <div class="p-4">
-                    <p class="lead font-weight-bold">{% trans "Description" %}</p>
-                    <p>{{ object.description | safe }}</p>
-                </div>
+        <div class="d-flex">
+            <div class="p-4">
+                <p class="lead font-weight-bold">{% trans "Description" %}</p>
+                <p>{{ object.description | safe }}</p>
+            </div>
+        </div>
+        <div class="d-flex">
+            <div class="p-4">
+                <p class="lead font-weight-bold">{% trans "Useful information" %}</p>
+                <p class="">
+                    {% if object.delivery %}
+                    <span>
+                        <img src="{% static 'images/truck.png'%}" class="img-fluid" style="width: 25px;">
+                    </span> {% trans object.delivery %}
+                    {% endif %}
+                </p>
+                <p class="">
+                    {% if object.online_payment %}
+                    <span>
+                        <img src="{% static 'images/carte.png' %}" class="img-fluid" style="width: 25px;">
+                    </span> {% trans "available"%}
+                    {% endif %}
+                </p>
             </div>
         </div>
     </div>
