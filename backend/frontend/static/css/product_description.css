@@ -53,7 +53,7 @@ span.discount-amount {
 }
 
 @media (min-width: 1200px) {
-    .container{
+    .container.product-container{
         max-width: 970px;
     }
 }
