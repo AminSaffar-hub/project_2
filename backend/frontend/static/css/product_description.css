@@ -1,6 +1,7 @@
 /* title */
 h1.product-title {
     font-size: 28px;
+    word-wrap: break-word
 }
 
 span.category-badge {
