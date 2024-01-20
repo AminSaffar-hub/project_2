@@ -5,19 +5,21 @@
 
 <div class="container dark-grey-text">
     <div class="card">
-        <div class="row justify-content-md-center">
+        <div class="row justify-content-around">
             <div class="col-md-3 product_image" >
                 <img src="{{ object.link_to_image }}" class="img-fluid"  >
             </div>
-            <div class="col-md-5">
+            <div class="col-md-7">
                 <div class="p-5">
                     <h1 class="product-title">{{ object.title }} <span class="badge bg-success category-badge">{{ object.category.name }}</span></h1>
                     <p>
                         <span class="mr-1">
                             <span class="discounted-price">{{ object.discounted_price }} TND</span>
                             <del class="original-price">{{ object.price }} TND</del>
-                        </span>
-                        {% if object.sale_percentage %}{{ object.sale_percentage }}%{% endif %}    
+                            <span class="discount-amount">
+                                {% if object.sale_percentage %}-{{ object.sale_percentage }}%{% endif %}
+                            </span>
+                        </span>    
                     </p>
                     <p>
                         {% if object.delivery %}

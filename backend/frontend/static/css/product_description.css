@@ -14,8 +14,13 @@ del.original-price {
 }
 
 span.discounted-price {
-    font-size: 18px;
+    font-size: 28px;
     color: red;
+    font-weight: bold;
+}
+
+span.discount-amount {
+    font-size: 28px;
     font-weight: bold;
 }
 
