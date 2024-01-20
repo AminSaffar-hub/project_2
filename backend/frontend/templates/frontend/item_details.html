@@ -2,54 +2,46 @@
 {% load static %}
 {% load i18n %}
 {% block 'body' %}
-<div class="container dark-grey-text mt-5">
+
+<div class="container dark-grey-text">
     <div class="card">
-        <div class="row wow fadeIn">
-            <div class="col-md-6 mb-4 product_image" >
-                <img src="{{ object.link_to_image }}" class="img-fluid"  alt="">
+        <div class="row justify-content-md-center">
+            <div class="col-md-3 product_image" >
+                <img src="{{ object.link_to_image }}" class="img-fluid"  >
             </div>
-            <div class="col-md-6 mb-4">
-            <div class="p-4 item-description">
-                <h1 style="font-size: 28px;">{{ object.title }}</h1>
-                <div class="mb-3">
-                    <a href="">
-                        <span class="badge badge-secondary">{{ item.category }}</span>
-                    </a>
-                </div>
-                <p class="lead">
-                    <span class="mr-1">
-                        <del style="color: rgb(126, 126, 126)">{{ object.price }} TND</del>
-                        <span style="color: red">{{ object.discounted_price }} TND</span>
-                    </span>
-                    {% if item.sale_percentage %}{{ item.sale_percentage }}%{% endif %}    
-                </p>
-                <p>
-                    {% if item.delivery %}
-                        <span> 
-                            <img src="{% static 'images/truck.png'%}" class="img-fluid" style="width: 25px; ">
-                        </span> {{ item.delivery }}
+            <div class="col-md-auto">
+                <div class="p-5">
+                    <h1 class="product-title">{{ object.title }} <span class="badge bg-success category-badge">{{ object.category.name }}</span></h1>
+                    <p>
+                        <span class="mr-1">
+                            <span class="discounted-price">{{ object.discounted_price }} TND</span>
+                            <del class="original-price">{{ object.price }} TND</del>
+                        </span>
+                        {% if object.sale_percentage %}{{ object.sale_percentage }}%{% endif %}    
+                    </p>
+                    <p>
+                        {% if object.delivery %}
+                            <span> 
+                                <img src="{% static 'images/truck.png'%}" class="img-fluid" style="width: 25px; ">
+                            </span> {{ object.delivery }}
+                            {% endif %}
+                            {% if object.online_payment %} |
+                            <span>
+                                <img src="{% static 'images/carte.png' %}" class="img-fluid" style="width: 25px;">
+                            </span> 
                         {% endif %}
-                        {% if item.online_payment %} |
-                        <span>
-                            <img src="{% static 'images/carte.png' %}" class="img-fluid" style="width: 25px;">
-                        </span> 
-                    {% endif %}
                     </p> 
-                    <a href="{{object.link_to_post}}" class="btn btn-secondary item-a">{% trans "Visit item" %}</a>
-            </div>
+                    <a href="{{object.link_to_post}}" class="btn btn-primary btn-lg btn-block item-a">{% trans "Visit item" %}</a>
+                </div>
             </div>
             </div>
     </div>
-    <div class="card mt-3 mb-5">
+    <div class="card my-3">
         <div class="row wow fadeIn">
             <div class="col-md-12 mb-4">
                 <div class="p-4">
                     <p class="lead font-weight-bold">{% trans "Description" %}</p>
-                    <p id="fullDescription" style="display: none;">{{ object.description }}</p>
-                    <p id="shortDescription">{{ object.description|truncatechars_html:100 }}</p>
-                    <div class="text-center">
-                        <a id="toggleButton" href="#" style="display: inline-block; margin-top: 10px;">{% trans "Display more" %}</a>
-                    </div>
+                    <p>{{ object.description | safe }}</p>
                 </div>
             </div>
         </div>

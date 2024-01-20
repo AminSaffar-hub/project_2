@@ -1,6 +1,21 @@
 /* title */
-h1 {
-    padding-bottom: 10px;
+h1.product-title {
+    font-size: 28px;
+}
+
+span.category-badge {
+    font-size: 8px;
+}
+
+del.original-price {
+    font-size: 15px;
+    color: rgb(126, 126, 126);
+}
+
+span.discounted-price {
+    font-size: 18px;
+    color: red;
+    font-weight: bold;
 }
 
 /* carousel */
@@ -18,4 +33,10 @@ h1 {
 
 .product_image {
     padding: 1.5rem!important;
+}
+
+@media (min-width: 1200px) {
+    .container{
+        max-width: 970px;
+    }
 }
