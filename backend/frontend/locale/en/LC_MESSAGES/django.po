@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-20 08:49+0000\n"
+"POT-Creation-Date: 2024-01-20 11:13+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -115,7 +115,7 @@ msgstr ""
 
 #: frontend/templates/frontend/home.html:88
 #: frontend/templates/frontend/item_details.html:27
-msgid "Visit item"
+msgid "Go to deal"
 msgstr ""
 
 #: frontend/templates/frontend/item_details.html:36
