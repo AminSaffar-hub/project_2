@@ -77,11 +77,14 @@
                                             </span> {% trans item.delivery %}
                                         {% endif %}
                                     </h6>
-                                    <h6>                        
+                                    <h6>
+                                        <span>
+                                            <img src="{% static 'images/carte.png' %}" class="img-fluid" style="width: 25px;">
+                                        </span>               
                                         {% if item.online_payment %}
-                                            <span>
-                                                <img src="{% static 'images/carte.png' %}" class="img-fluid" style="width: 25px;">
-                                            </span> {% trans "available"%}
+                                            {% trans "available"%}
+                                        {% else %}
+                                            {% trans "not available"%}
                                         {% endif %}
                                     </h6>
                                     <div class="d-flex flex-column mt-4">

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-20 11:13+0000\n"
+"POT-Creation-Date: 2024-01-21 20:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,52 +18,52 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: frontend/templates/frontend/base.html:41
+#: frontend/templates/frontend/base.html:43
 msgid "My profile"
 msgstr "Mon profil"
 
-#: frontend/templates/frontend/base.html:43
+#: frontend/templates/frontend/base.html:45
 msgid "Log out"
 msgstr "se déconnecter"
 
-#: frontend/templates/frontend/base.html:49
+#: frontend/templates/frontend/base.html:51
 msgid "Log in"
 msgstr "Connexion"
 
-#: frontend/templates/frontend/base.html:112
+#: frontend/templates/frontend/base.html:114
 #: frontend/templates/frontend/footer_info.html:7
 msgid "Who are we ?"
 msgstr "Qui sommes-nous ?"
 
-#: frontend/templates/frontend/base.html:113
+#: frontend/templates/frontend/base.html:115
 #: frontend/templates/frontend/footer_info.html:14
 msgid "Become a partner"
 msgstr "Devenir un partenaire"
 
-#: frontend/templates/frontend/base.html:114
+#: frontend/templates/frontend/base.html:116
 #: frontend/templates/frontend/footer_info.html:21
 msgid "Contact"
 msgstr ""
 
-#: frontend/templates/frontend/base.html:119
+#: frontend/templates/frontend/base.html:121
 msgid "Connect"
 msgstr ""
 
-#: frontend/templates/frontend/base.html:134
+#: frontend/templates/frontend/base.html:136
 msgid "More Info"
 msgstr "Plus d'information"
 
-#: frontend/templates/frontend/base.html:136
+#: frontend/templates/frontend/base.html:138
 #: frontend/templates/frontend/footer_info.html:28
 msgid "Confidentiality & Conditions"
 msgstr "Confidentiality & Conditions"
 
-#: frontend/templates/frontend/base.html:137
+#: frontend/templates/frontend/base.html:139
 #: frontend/templates/frontend/footer_info.html:35
 msgid "Site organisation"
 msgstr "Plan du site"
 
-#: frontend/templates/frontend/base.html:138
+#: frontend/templates/frontend/base.html:140
 #: frontend/templates/frontend/footer_info.html:42
 msgid "Legal information"
 msgstr "Mentions légales"
@@ -127,12 +127,17 @@ msgstr "Boutique disponible"
 msgid "Good deal"
 msgstr "Bon plan"
 
-#: frontend/templates/frontend/home.html:84
+#: frontend/templates/frontend/home.html:85
 #: frontend/templates/frontend/item_details.html:54
 msgid "available"
 msgstr "disponible"
 
-#: frontend/templates/frontend/home.html:88
+#: frontend/templates/frontend/home.html:87
+#, fuzzy
+msgid "not available"
+msgstr "indisponible"
+
+#: frontend/templates/frontend/home.html:91
 #: frontend/templates/frontend/item_details.html:27
 msgid "Go to deal"
 msgstr "Visiter l'offre"
