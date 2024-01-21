@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-01 12:53+0000\n"
+"POT-Creation-Date: 2024-01-21 20:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,15 +18,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: frontend/templates/frontend/base.html:42
+#: frontend/templates/frontend/base.html:43
 msgid "My profile"
 msgstr ""
 
-#: frontend/templates/frontend/base.html:44
+#: frontend/templates/frontend/base.html:45
 msgid "Log out"
 msgstr ""
 
-#: frontend/templates/frontend/base.html:50
+#: frontend/templates/frontend/base.html:51
 msgid "Log in"
 msgstr ""
 
@@ -95,34 +95,37 @@ msgid ""
 "follow us on social media to stay updated on the latest deals and promotions."
 msgstr ""
 
-#: frontend/templates/frontend/home.html:7
+#: frontend/templates/frontend/home.html:8
 msgid "Results for"
 msgstr ""
 
-#: frontend/templates/frontend/home.html:15
+#: frontend/templates/frontend/home.html:16
 msgid "Available shops"
 msgstr ""
 
-#: frontend/templates/frontend/home.html:41
+#: frontend/templates/frontend/home.html:61
+#: frontend/templates/frontend/item_details.html:25
 msgid "Good deal"
 msgstr ""
 
-#: frontend/templates/frontend/home.html:64
+#: frontend/templates/frontend/home.html:85
+#: frontend/templates/frontend/item_details.html:54
 msgid "available"
 msgstr ""
 
-#: frontend/templates/frontend/home.html:68
-msgid "See item"
+#: frontend/templates/frontend/home.html:87
+msgid "not available"
 msgstr ""
 
-#: frontend/templates/frontend/item_details.html:38
-msgid "Visit item"
+#: frontend/templates/frontend/home.html:91
+#: frontend/templates/frontend/item_details.html:27
+msgid "Go to deal"
 msgstr ""
 
-#: frontend/templates/frontend/item_details.html:47
+#: frontend/templates/frontend/item_details.html:36
 msgid "Description"
 msgstr ""
 
-#: frontend/templates/frontend/item_details.html:51
-msgid "Display more"
+#: frontend/templates/frontend/item_details.html:42
+msgid "Useful information"
 msgstr ""
