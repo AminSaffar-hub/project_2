@@ -24,7 +24,9 @@
                     <p>
                         <span class="deal">{% trans "Good deal" %}</span> <a class="provider" href="{{ item.provider.link }}">{{ item.provider.name }}</a>
                     </p> 
-                    <a href="{{object.link_to_post}}" class="btn btn-primary btn-lg item-a">{% trans "Go to deal" %}</a>
+                    <a href="{{object.link_to_post}}" class="btn btn-primary btn-lg item-a">
+                        {% trans "Go to deal" %} <i class="fa fa-external-link"></i>
+                    </a>
                 </div>
             </div>
             </div>
