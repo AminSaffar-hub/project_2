@@ -48,10 +48,13 @@
                     {% endif %}
                 </p>
                 <p class="">
-                    {% if object.online_payment %}
                     <span>
                         <img src="{% static 'images/carte.png' %}" class="img-fluid" style="width: 25px;">
-                    </span> {% trans "available"%}
+                    </span>               
+                    {% if item.online_payment %}
+                        {% trans "available"%}
+                    {% else %}
+                        {% trans "not available"%}
                     {% endif %}
                 </p>
             </div>
