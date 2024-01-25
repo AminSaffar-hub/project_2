@@ -26,18 +26,16 @@
                 </div>
             </div>
         </div>
-        <div class="col-10 col-sm-10 col-md-7">
+        <div class="col-10 col-md-6">
             {% for item in items %}
                 <div class="row mb-2">
                     <div class="card" style="cursor: pointer;" onclick="!(event.srcElement.className.includes('fa-heart')) ? window.location = '{% url 'product_details' pk=item.pk %}' : null;">
                         <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-12 col-lg-2 col-xl-2 mb-4 mb-lg-0">
-                                    <div class="bg-image">
-                                        <img src="{{ item.link_to_image }}" class="mw-100" />
-                                    </div>
+                            <div class="row gy-2 gy-md-0 justify-content-between">
+                                <div class="col-3 col-md-2 order-0 ">
+                                    <img src="{{ item.link_to_image }}" class="mw-100" />
                                 </div>
-                                <div class="col-md-6 col-lg-7 col-xl-7">
+                                <div class="col-12 col-md-6 order-2 order-md-1">
                                     <div class="d-flex flex-row justify-content-between">
                                         <h5 class="item-title">
                                             {{ item.title }}
@@ -56,16 +54,14 @@
                                             </button>
                                         {% endif %}
                                     </div>
-                                    <br>
                                     <div class="">
                                         <span class="deal">{% trans "Good deal" %}</span> <a class="provider" href="{{ item.provider.link }}">{{ item.provider.name }}</a>
                                     </div>
-                                    <br>
-                                    <p class="mb-4 mb-md-0">
+                                    <div class="d-none d-md-block">
                                         {{ item.description  | safe | truncatechars:200 }}
-                                    </p>
+                                    </div>
                                 </div>
-                                <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
+                                <div class="col-7 col-md-4 order-1 order-md-2 d-flex flex-column align-items">
                                     <div class="d-flex flex-row align-items-center mb-1">
                                         <h4 class="mb-1 me-1">{{ item.discounted_price }} TND</h4>
                                         {% if item.price %}<span class="text-danger"><s>{{item.price }} TND</s></span>{% endif %}
@@ -87,11 +83,16 @@
                                             {% trans "not available"%}
                                         {% endif %}
                                     </h6>
-                                    <div class="d-flex flex-column mt-4">
-                                        <a href="{{item.link_to_post}}" class="col-auto btn btn-outline-primary item-a">
-                                            {% trans "Go to deal" %} <i class="fa fa-external-link"></i>
-                                        </a>
-                                    </div>
+                                    <a href="{{item.link_to_post}}" class="mt-auto d-none d-md-block btn btn-outline-primary item-a">
+                                        {% trans "Go to deal" %} <i class="fa fa-external-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="d-flex d-md-none flex-column mt-4">
+                                    <a href="{{item.link_to_post}}" class="col-auto btn btn-outline-primary item-a">
+                                        {% trans "Go to deal" %} <i class="fa fa-external-link"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>

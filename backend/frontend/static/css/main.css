@@ -32,11 +32,6 @@ div.searched-item p {
     font-size: xx-large;
 }
 
-img.item-img {
-    margin: 10px;
-    border-radius: 10px;
-}
-
 a.navbar-brand span {
     color: black;
 }
