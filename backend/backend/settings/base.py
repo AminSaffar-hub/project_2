@@ -119,3 +119,19 @@ LOGIN_REDIRECT_URL = "/"
 PASSWORD_RESET_TIMEOUT = 60 * 60 * 2
 
 FIXTURES = ["backend/fixtures"]
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "null": {
+            "class": "logging.NullHandler",
+        },
+    },
+    "loggers": {
+        "django.security.DisallowedHost": {
+            "handlers": ["null"],
+            "propagate": False,
+        },
+    },
+}
