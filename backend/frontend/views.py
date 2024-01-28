@@ -94,3 +94,7 @@ def like_item(request, item_id):
 class ProductDetails(DetailView):
     model = Item
     template_name = "frontend/item_details.html"
+
+
+def error_404_view(request, exception):
+    return render(request, "frontend/404.html")
