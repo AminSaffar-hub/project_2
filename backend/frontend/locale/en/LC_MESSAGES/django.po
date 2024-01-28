@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-21 20:31+0000\n"
+"POT-Creation-Date: 2024-01-28 09:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: frontend/templates/frontend/4x4.html:8
+#, python-format
+msgid ""
+"\n"
+"            <h1>😮</h1>\n"
+"                <h2>Oops! Page Not Be Found</h2>\n"
+"                <p>Sorry but the page you are looking for does not exist.</"
+"p>\n"
+"                <a href=\"%(home_url)s\">Back to homepage</a>\n"
+"            "
+msgstr ""
 
 #: frontend/templates/frontend/base.html:43
 msgid "My profile"
@@ -99,33 +111,35 @@ msgstr ""
 msgid "Results for"
 msgstr ""
 
-#: frontend/templates/frontend/home.html:16
+#: frontend/templates/frontend/home.html:15
 msgid "Available shops"
 msgstr ""
 
-#: frontend/templates/frontend/home.html:61
+#: frontend/templates/frontend/home.html:57
 #: frontend/templates/frontend/item_details.html:25
 msgid "Good deal"
 msgstr ""
 
-#: frontend/templates/frontend/home.html:85
-#: frontend/templates/frontend/item_details.html:54
+#: frontend/templates/frontend/home.html:80
+#: frontend/templates/frontend/item_details.html:57
 msgid "available"
 msgstr ""
 
-#: frontend/templates/frontend/home.html:87
+#: frontend/templates/frontend/home.html:82
+#: frontend/templates/frontend/item_details.html:59
 msgid "not available"
 msgstr ""
 
-#: frontend/templates/frontend/home.html:91
-#: frontend/templates/frontend/item_details.html:27
+#: frontend/templates/frontend/home.html:86
+#: frontend/templates/frontend/home.html:93
+#: frontend/templates/frontend/item_details.html:28
 msgid "Go to deal"
 msgstr ""
 
-#: frontend/templates/frontend/item_details.html:36
+#: frontend/templates/frontend/item_details.html:38
 msgid "Description"
 msgstr ""
 
-#: frontend/templates/frontend/item_details.html:42
+#: frontend/templates/frontend/item_details.html:44
 msgid "Useful information"
 msgstr ""
