@@ -2,9 +2,9 @@ import re
 import json
 import scrapy
 from scraper.items import ArticleItem
-
+import sys
 from backend.models import Item
-test = {'Accueil', 'Portefeuilles BHPC', 'Montre Femme', 'Colliers Homme', 'Sac a Main ', 'Bracelets Homme', 'Lee Cooper', 'Ceinture en acier', 'Slazenger', 'Dream', 'ENZO DIGITAL', 'Raymond Daniel', 'Sac à Main US Polo Assn', 'Ceinture En Acier', 'ENZO COLLECTION', "Boucles d'oreilles", 'Bracelets Femme', 'Colliers Femme', 'Montre Homme', 'Ceinture en cuir', 'Portefeuilles Us Polo Assn', 'BABY-G ', 'Enzo Collection ', 'Raymond Daniel ', 'Pierre Cardin', 'Enzo Collection', 'Beverly Hills Polo Club', 'SMARTWATCH', 'Ceinture En Cuir'}
+import requests
 
 category_mapping = {
     "electronics": [
@@ -30,9 +30,9 @@ category_mapping = {
 
 
 
-class CitywatchSpider(scrapy.Spider):
-    name = "Citywatch"
-    allowed_domains = ["citywatch.com.tn"]
+class PeakSpider(scrapy.Spider):
+    name = "Peak"
+    allowed_domains = ["peaksports.tn"]
 
     custom_settings = {
         "DOWNLOAD_DELAY": 2,
@@ -42,22 +42,26 @@ class CitywatchSpider(scrapy.Spider):
             "Accept": "application/json, text/plain, */*",
             "Accept-Encoding": "gzip, deflate, br",
             "Accept-Language": "en-US,en;q=0.5",
-            "ROBOTSTXT_OBEY": False,
-            "Authorization": "Bearer null",
-            "Connection": "keep-alive",
-            "Content-Type": "application/json",
             "DNT": "1",
             "Sec-Fetch-Dest": "empty",
             "Sec-Fetch-Mode": "cors",
             "Sec-Fetch-Site": "same-site",
-            "User": "anonymous",
+            "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:121.0) Gecko/20100101 Firefox/121.0",
+            "X-Requested-With": "XMLHttpRequest",
         },
     }
     l=[]
-    start_urls = ["https://citywatch.com.tn/promotions?from-xhr"]
+    start_urls = ["https://www.peaksports.tn/promotions?page=2&from-xhr="]
 
     def parse(self, response):
+        response_json = requests.get("https://www.peaksports.tn/promotions?page=2&from-xhr=") 
+
+        # only proceed if I have a 200 response which is saved in status_code
+        if (response_json.status_code == 200):  
+            response = response_json.json()
+        print(response)
         data = response.json()
+
         if not data.get("products"):
             self.logger.info("No products found. Stopping spider.")
             return  # Stop if there's no product
@@ -89,7 +93,7 @@ class CitywatchSpider(scrapy.Spider):
         current_page = response.meta.get("page", 1)
         self.logger.info(f"Currently on page: {current_page}")
         next_page = current_page + 1
-        next_page_url = f"https://citywatch.com.tn/promotions?page={next_page}&from-xhr"  # noqa: E501
+        next_page_url = f"https://www.peaksports.tn/promotions?page={next_page}&from-xhr"  # noqa: E501
         yield scrapy.Request(
             url=next_page_url, callback=self.parse, meta={"page": next_page}
         )
