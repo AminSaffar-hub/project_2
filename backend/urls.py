@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import include, path
-from django.conf.urls import handler404, handler500
+from django.conf.urls import handler404
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -9,5 +9,3 @@ urlpatterns = [
 ]
 
 handler404 = "frontend.views.error_404_view"  # noqa
-handler500 = "frontend.views.error_404_view"  # noqa
-
