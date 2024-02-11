@@ -1,8 +1,6 @@
 import re
-import json
 import scrapy
 from scraper.items import ArticleItem
-import sys
 from backend.models import Item
 import requests
 
@@ -29,7 +27,6 @@ category_mapping = {
 }
 
 
-
 class PeakSpider(scrapy.Spider):
     name = "Peak"
     allowed_domains = ["peaksports.tn"]
@@ -46,18 +43,19 @@ class PeakSpider(scrapy.Spider):
             "Sec-Fetch-Dest": "empty",
             "Sec-Fetch-Mode": "cors",
             "Sec-Fetch-Site": "same-site",
-            "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:121.0) Gecko/20100101 Firefox/121.0",
+            "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:121.0) Gecko/20100101 Firefox/121.0",  # noqa: E501
             "X-Requested-With": "XMLHttpRequest",
         },
     }
-    l=[]
     start_urls = ["https://www.peaksports.tn/promotions?page=2&from-xhr="]
 
     def parse(self, response):
-        response_json = requests.get("https://www.peaksports.tn/promotions?page=2&from-xhr=") 
+        response_json = requests.get(
+            "https://www.peaksports.tn/promotions?page=2&from-xhr="
+        )
 
         # only proceed if I have a 200 response which is saved in status_code
-        if (response_json.status_code == 200):  
+        if response_json.status_code == 200:
             response = response_json.json()
         print(response)
         data = response.json()

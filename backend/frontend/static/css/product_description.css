@@ -19,6 +19,12 @@ span.discounted-price {
     font-weight: bold;
 }
 
+span.smaller-discounted-price {
+    font-size: 20px; 
+    color: red;
+    font-weight: bold;
+}
+
 a.provider {
     color: #03a5c1;
     text-decoration:none;
@@ -32,6 +38,11 @@ span.deal {
 
 span.discount-amount {
     font-size: 28px;
+    font-weight: bold;
+}
+
+span.small-discount-amount {
+    font-size: 22px;
     font-weight: bold;
 }
 
