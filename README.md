@@ -23,3 +23,17 @@ api docs should be available on: http://localhost:8080/api/docs
 admin should be available on: http://localhost:8080/admin
 
 contact staff members for password.
+
+## Running scrapy spiders
+
+to run all spiders:
+```bash
+cd backend;
+./manage.py crawl
+```
+
+to run a specific spider:
+```bash
+cd backend;
+./manage.py crawl --spider <spider-name>
+```
