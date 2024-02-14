@@ -19,12 +19,6 @@ span.discounted-price {
     font-weight: bold;
 }
 
-span.smaller-discounted-price {
-    font-size: 20px; 
-    color: red;
-    font-weight: bold;
-}
-
 a.provider {
     color: #03a5c1;
     text-decoration:none;
@@ -38,11 +32,6 @@ span.deal {
 
 span.discount-amount {
     font-size: 28px;
-    font-weight: bold;
-}
-
-span.small-discount-amount {
-    font-size: 22px;
     font-weight: bold;
 }
 
@@ -62,6 +51,90 @@ span.small-discount-amount {
 .product_image {
     padding: 1.5rem!important;
 }
+
+.similar-products-container {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: space-evenly; 
+}
+
+.similar-products .product {
+    flex: 1 1 200px; 
+    margin: 0 8px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.similar-products .product-img {
+    width: 100%;
+    height: auto;
+}
+
+.similar-products .product-link {
+    text-decoration: none; 
+}
+
+.similar-products .product-link:hover {
+    text-decoration: underline; 
+}
+
+.similar-products .product-info {
+    text-align: center;
+    margin-top: 8px;
+}
+
+.similar-products .product-title {
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.similar-products .product-price {
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+.similar-products .discounted-price {
+    font-weight: bold;
+    color: red;
+    font-size: 14px; 
+}
+
+.similar-products .original-price {
+    margin-left: 5px;
+    color: #565959; 
+    text-decoration: line-through;
+}
+
+.similar-products .discount-amount {
+    font-size: 0.8em;
+    color: #B12704; 
+    margin-bottom: 8px;
+}
+
+.btn-go-to-deal {
+    background-color: rgb(13, 110, 253); 
+    border-color: #ffffff #ffffff #ffffff;
+    color: #ffffff;
+    padding: 6px 10px;
+    border-radius: 3px;
+    border: 1px solid;
+    text-decoration: none;
+    font-size: 0.75em;
+}
+
+.btn-go-to-deal:hover {
+    color: #ffffff;
+    background-color: #1d65c5;
+}
+
+@media (max-width: 600px) {
+    .similar-products .product {
+        flex: 0 1 48%; /* Adjust the flex-basis to take up nearly half the container width */
+        margin: 0 1%; /* Adjust margin for spacing */
+    }
+}
+
 
 @media (min-width: 1200px) {
     .container.product-container{
