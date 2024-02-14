@@ -80,21 +80,21 @@
         "model": "backend.category",
         "pk": 8,
         "fields": {
-            "name": "other",
-            "name_en": "other",
-            "name_fr": "autres",
-            "image": "/static/images/other.png",
-            "score": 1
+            "name": "accessory",
+            "name_en": "accessory",
+            "name_fr": "accessoires",
+            "image": "/static/images/accessory.png",
+            "score": 2
         }
     },
     {
         "model": "backend.category",
         "pk": 9,
         "fields": {
-            "name": "accessory",
-            "name_en": "accessory",
-            "name_fr": "accessoires",
-            "image": "/static/images/accessory.png",
+            "name": "other",
+            "name_en": "other",
+            "name_fr": "autres",
+            "image": "/static/images/other.png",
             "score": 1
         }
     }

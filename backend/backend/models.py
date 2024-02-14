@@ -132,7 +132,7 @@ class Item(models.Model):
             similar_items.append(
                 list_of_items_same.pop(random.randint(0, len(list_of_items_same) - 1))
             )
-        return similar_items[:5]
+        return similar_items[:4]
 
     @staticmethod
     def similar(a, b):
