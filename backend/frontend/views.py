@@ -43,7 +43,7 @@ def home(request):
         discounted_price__isnull=False,
     )
 
-    sorted_items = items.order_by("-percentage")
+    sorted_items = items.order_by("-percentage", "-started_at")
 
     if searched_item:
         display_items = sorted_items.filter(title__icontains=searched_item)
