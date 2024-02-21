@@ -1,4 +1,4 @@
-from unittest.mock import patch
+from unittest.mock import call, patch
 
 from django.core.management import call_command
 from django.test import TestCase
@@ -11,20 +11,38 @@ from backend.tests.utils import TestCaseWithDataMixin
 
 
 class CrawlCommandTests(TestCase):
-    @patch("scraper.spiders.cosmetique.CosmetiqueSpider")
+    def setUp(self) -> None:
+        self.crawler_settings = Settings()
+        self.crawler_settings.setmodule(settings)
+
+        return super().setUp()
+
     @patch("scrapy.crawler.CrawlerProcess")
-    def test_spider_release(self, mock_crawler_process, mock_cosmetique_spider):
-        # Call the management command
+    def test_crawl_all_spiders(self, mock_crawler_process):
+        mock_crawler_process.return_value.spider_loader.list.return_value = [
+            "spider_1",
+            "spider_2",
+            "spider_3",
+        ]
+
         call_command("crawl")
 
-        crawler_settings = Settings()
-        crawler_settings.setmodule(settings)
-
-        # Assertions
         self.assertTrue(mock_crawler_process.called)
-        mock_crawler_process.assert_called_with(settings=crawler_settings)
+        mock_crawler_process.assert_called_with(settings=self.crawler_settings)
 
-        mock_crawler_process().crawl.assert_called_with(mock_cosmetique_spider)
+        mock_crawler_process().crawl.assert_any_call("spider_1")
+        mock_crawler_process().crawl.assert_any_call("spider_2")
+        mock_crawler_process().crawl.assert_any_call("spider_3")
+        mock_crawler_process().start.assert_called()
+
+        call_command("crawl", "--spider=spider_1")
+
+        self.assertTrue(mock_crawler_process.called)
+        mock_crawler_process.assert_called_with(settings=self.crawler_settings)
+
+        mock_crawler_process().crawl.assert_has_calls(
+            [call("spider_1"), call("spider_2"), call("spider_3"), call("spider_1")]
+        )
         mock_crawler_process().start.assert_called()
 
 

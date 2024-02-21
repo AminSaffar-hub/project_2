@@ -17,13 +17,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{% static 'js/expend_description.js' %}"></script>
     <script src="{% static 'js/like_item.js' %}"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2045983764055629" crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4339509524160281" crossorigin="anonymous"></script>
+    <link rel="icon" href="{% static 'images/logo_ic.png' %}" type="image/x-icon">
     <title>ERRADAR</title>
+    <meta name="description" content="Your concise and engaging description goes here. This will appear in search engine results beneath your website title.">
 </head>
 <body>
     <nav class="navbar main-navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}">E R R A D A R</a>
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'images/logo.png' %}" alt="ERRADAR Logo" height="40" class="d-inline-block align-text-top">
+            </a>
             <form class="form-inline order-2 order-md-1 mt-3 mt-md-0" style="margin: 0 auto;" action="{% url 'home' %}">
                 <div class="d-flex g-0 bg-light rounded-pill">
                         <input type="text" name="search" class="form-control shadow-none border-0 rounded-pill pr-5" placeholder="Recherche.." type="search" value="{{request.GET.title}}">

@@ -30,8 +30,7 @@
                 </div>
             </div>
             </div>
-    </div>
-
+    </div>                      
     <div class="card my-3">
         <div class="d-flex">
             <div class="p-4">
@@ -61,7 +60,33 @@
                 </p>
             </div>
         </div>
-    </div>
-    
+        <div class="p-4">
+            <p class="lead font-weight-bold">{% trans "Similar Products" %}</p>
+        </div>
+        <div class="similar-products-container">
+            <div class="d-flex flex-wrap justify-content-start similar-products">
+                {% for similar_item in object.similar_items %}
+                    <div class="product mr-3 mb-3">
+                        <img class="product-img" src="{{ similar_item.link_to_image }}" alt="{{ similar_item.title }}">
+                        <div class="product-info">
+                            <h5 class="product-title">
+                                <a href="{% url 'product_details' pk=similar_item.pk %}" class="product-link">
+                                    {{ similar_item.title }}
+                                </a>
+                            </h5>                        
+                            <p class="product-price">
+                                <span class="discounted-price">{{ similar_item.discounted_price }} TND</span>
+                                <del class="original-price">{{ similar_item.price }} TND</del>
+                            </p>
+                            {% if similar_item.sale_percentage %}
+                            <div class="discount-amount">-{{ similar_item.sale_percentage }}%</div>
+                            {% endif %}
+                        </div>
+                        <a href="{{ similar_item.link_to_post }}" class="btn-go-to-deal">Go to deal</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>    
 </div>
 {% endblock %}

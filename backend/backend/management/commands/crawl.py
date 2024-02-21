@@ -1,17 +1,5 @@
-from django.core.management.base import BaseCommand
+from django.core.management.base import BaseCommand, CommandError
 from scraper import settings
-from scraper.spiders.beautystore import BeautyStoreSpider
-from scraper.spiders.cosmetique import CosmetiqueSpider
-from scraper.spiders.exist import ExistSpider
-from scraper.spiders.mg import MgSpider
-from scraper.spiders.tdiscount import TdiscountSpider
-from scraper.spiders.citywatch import CitywatchSpider
-from scraper.spiders.tunisianet import TunisiaNetSpider
-from scraper.spiders.zara import ZaraSpider
-from scraper.spiders.monoprix import MonoprixSpider
-from scraper.spiders.tunisiatech import TunisiatechSpider
-
-from scraper.spiders.chillandlit import chillandlit
 from scrapy.crawler import CrawlerProcess
 from scrapy.settings import Settings
 
@@ -19,19 +7,24 @@ from scrapy.settings import Settings
 class Command(BaseCommand):
     help = "Release the spiders"
 
+    def add_arguments(self, parser):
+        parser.add_argument("-s", "--spider", type=str, help="Provide a spider name")
+
     def handle(self, *args, **options):
-        crawler_settings = Settings()
-        crawler_settings.setmodule(settings)
-        process = CrawlerProcess(settings=crawler_settings)
-        process.crawl(CitywatchSpider)
-        process.crawl(TunisiatechSpider)
-        process.crawl(chillandlit)
-        process.crawl(TdiscountSpider)
-        process.crawl(MonoprixSpider)
-        process.crawl(MgSpider)
-        process.crawl(ZaraSpider)
-        process.crawl(TunisiaNetSpider)
-        process.crawl(ExistSpider)
-        process.crawl(BeautyStoreSpider)
-        process.crawl(CosmetiqueSpider)
+        scraper_settings = Settings()
+        scraper_settings.setmodule(settings)
+        process = CrawlerProcess(settings=scraper_settings)
+        all_spiders = process.spider_loader.list()
+        spider_by_user = options["spider"]
+
+        if spider_by_user and spider_by_user not in all_spiders:
+            raise CommandError("Please provide a valid value for your_argument.")
+
+        if spider_by_user:
+            spiders_to_run = [spider_by_user]
+        else:
+            spiders_to_run = all_spiders
+
+        for spider_name in spiders_to_run:
+            process.crawl(spider_name)
         process.start()

@@ -2,8 +2,9 @@ import math
 
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-
+import jellyfish
 from django.contrib.auth.models import User
+import random
 
 
 class Category(models.Model):
@@ -105,6 +106,40 @@ class Item(models.Model):
 
     def __str__(self):
         return self.title + " - " + self.provider.name
+
+    def similar_items(self, threshold=0.8):
+        """
+        Return a list of items with similarity scores higher than
+        the specified threshold, sorted by similarity score.
+        """
+        list_of_items = Item.objects.exclude(id=self.pk)
+        similarity_scores = {
+            item: self.similar(item.title, self.title) for item in list_of_items
+        }
+        similar_items = [
+            item
+            for item, score in sorted(
+                similarity_scores.items(), key=lambda x: x[1], reverse=True
+            )
+            if score > threshold
+        ]
+        list_of_items_same = list(
+            Item.objects.exclude(id=self.pk)
+            .filter(category=self.category, provider=self.provider)
+            .distinct()
+        )
+        while len(similar_items) < 10 and list_of_items_same:
+            similar_items.append(
+                list_of_items_same.pop(random.randint(0, len(list_of_items_same) - 1))
+            )
+        return similar_items[:4]
+
+    @staticmethod
+    def similar(a, b):
+        """
+        Calculate similarity ratio between two strings using SequenceMatcher.
+        """
+        return jellyfish.jaro_similarity(a, b)
 
 
 class Like(models.Model):
