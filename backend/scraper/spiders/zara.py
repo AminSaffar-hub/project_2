@@ -33,8 +33,15 @@ class ZaraSpider(scrapy.Spider):
     }
 
     start_urls = [
-        "https://www.zara.com/tn/fr/category/2291858/products?ajax=true",
-        "https://www.zara.com/tn/fr/category/2299309/products?ajax=true",
+        "https://www.zara.com/tn/fr/category/2105807/products?ajax=true",
+        "https://www.zara.com/tn/fr/category/2305708/products?ajax=true",
+        "https://www.zara.com/tn/fr/category/2105310/products?ajax=true",
+        "https://www.zara.com/tn/fr/category/2354324/products?ajax=true",
+        "https://www.zara.com/tn/fr/category/2354519/products?ajax=true",
+        "https://www.zara.com/tn/fr/category/2354608/products?ajax=true",
+        "https://www.zara.com/tn/fr/category/2354679/products?ajax=true",
+        "https://www.zara.com/tn/fr/category/2354718/products?ajax=true",
+        "https://www.zara.com/tn/fr/category/2139274/products?ajax=true",
         "https://www.zara.com/tn/fr/category/2137886/products?ajax=true",
     ]
 

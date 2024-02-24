@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.test import RequestFactory, TestCase
 from django.urls import reverse
+from django.core.paginator import EmptyPage
 from frontend.views import home
 
 from backend.models import Item, Like
@@ -121,3 +122,18 @@ class InternationalizationTestCase(TestCaseWithDataMixin, TestCase):
         self.client.cookies.load({settings.LANGUAGE_COOKIE_NAME: "en"})
         response = self.client.get(reverse("home"))
         self.assertContains(response, "login")
+
+
+class ErrorViewsTest(TestCaseWithDataMixin, TestCase):
+    def test_404_handler(self):
+        response = self.client.get(reverse("product_details", kwargs={"pk": 7846000}))
+        self.assertEqual(response.status_code, 404)
+        self.assertTemplateUsed(response, "frontend/404.html")
+
+    def test_500_handler(self):
+        with self.assertRaises(EmptyPage):
+            response = self.client.get("/?page=500")
+            self.assertEqual(response.status_code, 500)
+            self.assertTemplateUsed(
+                response, "frontend/404.html"
+            )  # Assuming this is correct, update as needed
