@@ -53,7 +53,7 @@ class TunisiatechSpider(scrapy.Spider):
         },
     }
 
-    start_urls = ["https://tunisiatech.tn/177-ventes-flash-et-meilleur-promo?from-xhr"]
+    start_urls = ["https://tunisiatech.tn/177-ventes-flash-et-meilleur-promo?from-xhr",'https://tunisiatech.tn/promotions?page=2']
 
     def parse(self, response):
         data = response.json()
