@@ -1,4 +1,7 @@
 $(document).ready(function () {
+    $('#myModal').on('shown.bs.modal', function () {
+        $('#myInput').trigger('focus')
+    })
     $(document).on('click', '.like-button', function () {
         const button = $(this);
         const itemId = button.data('item-id');

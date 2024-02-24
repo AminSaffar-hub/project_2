@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-28 09:54+0000\n"
+"POT-Creation-Date: 2024-02-24 20:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: frontend/templates/frontend/4x4.html:8
+#: frontend/templates/frontend/404.html:8
 #, python-format
 msgid ""
 "\n"
@@ -30,52 +30,53 @@ msgid ""
 "            "
 msgstr ""
 
-#: frontend/templates/frontend/base.html:43
+#: frontend/templates/frontend/base.html:47
 msgid "My profile"
 msgstr ""
 
-#: frontend/templates/frontend/base.html:45
+#: frontend/templates/frontend/base.html:49
 msgid "Log out"
 msgstr ""
 
-#: frontend/templates/frontend/base.html:51
+#: frontend/templates/frontend/base.html:55
+#: frontend/templates/frontend/home.html:144
 msgid "Log in"
 msgstr ""
 
-#: frontend/templates/frontend/base.html:114
+#: frontend/templates/frontend/base.html:118
 #: frontend/templates/frontend/footer_info.html:7
 msgid "Who are we ?"
 msgstr ""
 
-#: frontend/templates/frontend/base.html:115
+#: frontend/templates/frontend/base.html:119
 #: frontend/templates/frontend/footer_info.html:14
 msgid "Become a partner"
 msgstr ""
 
-#: frontend/templates/frontend/base.html:116
+#: frontend/templates/frontend/base.html:120
 #: frontend/templates/frontend/footer_info.html:21
 msgid "Contact"
 msgstr ""
 
-#: frontend/templates/frontend/base.html:121
+#: frontend/templates/frontend/base.html:125
 msgid "Connect"
 msgstr ""
 
-#: frontend/templates/frontend/base.html:136
+#: frontend/templates/frontend/base.html:140
 msgid "More Info"
 msgstr ""
 
-#: frontend/templates/frontend/base.html:138
+#: frontend/templates/frontend/base.html:142
 #: frontend/templates/frontend/footer_info.html:28
 msgid "Confidentiality & Conditions"
 msgstr ""
 
-#: frontend/templates/frontend/base.html:139
+#: frontend/templates/frontend/base.html:143
 #: frontend/templates/frontend/footer_info.html:35
 msgid "Site organisation"
 msgstr ""
 
-#: frontend/templates/frontend/base.html:140
+#: frontend/templates/frontend/base.html:144
 #: frontend/templates/frontend/footer_info.html:42
 msgid "Legal information"
 msgstr ""
@@ -121,12 +122,12 @@ msgid "Good deal"
 msgstr ""
 
 #: frontend/templates/frontend/home.html:80
-#: frontend/templates/frontend/item_details.html:57
+#: frontend/templates/frontend/item_details.html:56
 msgid "available"
 msgstr ""
 
 #: frontend/templates/frontend/home.html:82
-#: frontend/templates/frontend/item_details.html:59
+#: frontend/templates/frontend/item_details.html:58
 msgid "not available"
 msgstr ""
 
@@ -136,10 +137,34 @@ msgstr ""
 msgid "Go to deal"
 msgstr ""
 
-#: frontend/templates/frontend/item_details.html:38
+#: frontend/templates/frontend/home.html:131
+msgid "Log in to enjoy the full Erradar experience "
+msgstr ""
+
+#: frontend/templates/frontend/home.html:134
+msgid "Save your favorite deals"
+msgstr ""
+
+#: frontend/templates/frontend/home.html:136
+msgid "Review deals"
+msgstr ""
+
+#: frontend/templates/frontend/home.html:138
+msgid "And much more"
+msgstr ""
+
+#: frontend/templates/frontend/home.html:142
+msgid "Close"
+msgstr ""
+
+#: frontend/templates/frontend/item_details.html:37
 msgid "Description"
 msgstr ""
 
-#: frontend/templates/frontend/item_details.html:44
+#: frontend/templates/frontend/item_details.html:43
 msgid "Useful information"
+msgstr ""
+
+#: frontend/templates/frontend/item_details.html:64
+msgid "Similar Products"
 msgstr ""
