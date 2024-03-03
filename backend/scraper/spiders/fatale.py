@@ -14,6 +14,7 @@ class fatale(scrapy.Spider):
 
         for article in articles:
             item = ArticleItem()
+            print('this is the good one', article.xpath('.//a[@class="product-name"]//text()').get())
 
             item["title"] = article.xpath('.//a[@class="product-name"]//text()').get()
             item["discounted_price"] = float(
@@ -46,7 +47,7 @@ class fatale(scrapy.Spider):
         current_page = response.meta.get("page", 1)
         self.logger.info(f"Currently on page: {current_page}")
         next_page = current_page + 1
-        next_page_url = f"https://tdiscount.tn/promotions?page={next_page}&from-xhr"
+        next_page_url = f"https://www.fatales.tn/promotions?page={next_page}"
         yield scrapy.Request(
             url=next_page_url,
             callback=self.parse,
