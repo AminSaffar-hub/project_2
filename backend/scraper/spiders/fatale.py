@@ -14,7 +14,10 @@ class fatale(scrapy.Spider):
 
         for article in articles:
             item = ArticleItem()
-            print('this is the good one', article.xpath('.//a[@class="product-name"]//text()').get())
+            print(
+                "this is the good one",
+                article.xpath('.//a[@class="product-name"]//text()').get(),
+            )
 
             item["title"] = article.xpath('.//a[@class="product-name"]//text()').get()
             item["discounted_price"] = float(
