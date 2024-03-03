@@ -9,7 +9,7 @@ class fatale(scrapy.Spider):
     allowed_domains = ["www.fatales.tn"]
     start_urls = ["https://www.fatales.tn/promotions?page=1"]
 
-    def parse_categories_pages(self, response):
+    def parse(self, response):
         articles = response.xpath('//div[@class="product-container"]//article')
 
         for article in articles:
@@ -49,6 +49,6 @@ class fatale(scrapy.Spider):
         next_page_url = f"https://tdiscount.tn/promotions?page={next_page}&from-xhr"
         yield scrapy.Request(
             url=next_page_url,
-            callback=self.parse_categories_pages,
+            callback=self.parse,
             meta={"page": next_page},
         )
