@@ -38,26 +38,28 @@
             </form>
             <div class="order-1 order-md-2">
                 {% if user.is_authenticated %}
-                <!-- if user is authenticated, this part is shown -->
-                <a class="btn btn-dark rounded-pill" type="button" data-bs-toggle="offcanvas" data-bs-target="#userCanvas" aria-controls="offcanvasRight">
-                    <i class="fa fa-user fa-2x"></i>
-                </a>
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="userCanvas" aria-labelledby="userCanvasLabel">
-                    <div class="offcanvas-header">
-                        <div class="container">
-                            <div class="d-flex justify-content-center">
-                                <h5>{{ user.username }}</h1>
-                            </div>
-                        </div>                          
-                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <!-- if user is authenticated, this part is shown -->
+                    <a data-bs-toggle="offcanvas" data-bs-target="#userCanvas" aria-controls="offcanvasRight">
+                        <div class="btn text-center bg-success"  style="width: 40px;height: 40px;border-radius: 40px">
+                            <p class="text-white font-weight-bold" >{{ user.username.0|upper }}</p>
+                        </div>
+                    </a>
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="userCanvas" aria-labelledby="userCanvasLabel">
+                        <div class="offcanvas-header">
+                            <div class="container">
+                                <div class="d-flex justify-content-center">
+                                    <h5>{{ user.username }}</h1>
+                                </div>
+                            </div>                          
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="list-group list-group-flush">
+                                <a class="list-group-item" href="{% url 'profile' %}"><i class="fa fa-user fa-lg"></i> {% trans "My profile" %}</a>
+                                <a class="list-group-item" href="{% url 'logout' %}"><i class="fa fa-sign-out fa-lg"></i> {% trans "Log out" %}</a>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="offcanvas-body">
-                        <ul class="list-group list-group-flush">
-                            <a class="list-group-item" href="{% url 'profile' %}"><i class="fa fa-user fa-lg"></i> {% trans "My profile" %}</a>
-                            <a class="list-group-item" href="{% url 'logout' %}"><i class="fa fa-sign-out fa-lg"></i> {% trans "Log out" %}</a>
-                        </ul>
-                    </div>
-                </div>
 
                 {% else %}    
                 <li class="nav-item">
