@@ -30,19 +30,8 @@
     .requiredField {
         font-weight: bold;
     }
-    .register {
-        padding-top: 50px;
-    }
     .register a {
         text-decoration: none;
-    }
-
-    /* transition */
-    .register a, .register a:hover {
-        transition: .2s;
-        -moz-transition: .2s;
-        -webkit-transition: .2s;
-        -o-transition: .2s
     }
 </style>
 {% url 'password_reset' as password_reset_url %}
@@ -55,7 +44,7 @@
         <button type="submit" class="btn btn-success">{% trans "Login" %}</button>
     </form>
     <!-- footnotes -->
-    <p class="register">{% blocktrans %} Did you forget your password? Click this <a href="{{password_reset_url}}">link</a> {% endblocktrans %}</p>
+    <p class="register pt-5">{% blocktrans %} Did you forget your password? Click this <a href="{{password_reset_url}}">link</a> {% endblocktrans %}</p>
     <p class="register">{% blocktrans %} Not a member? <a href="{{register_url}}">Register</a> for free now. {% endblocktrans %}</p>
 </div>
 
