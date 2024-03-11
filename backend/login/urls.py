@@ -6,6 +6,8 @@ from django.contrib.auth.views import (
 )
 from django.urls import path
 
+from login.forms import CustomAuthenticationForm, CustomPasswordResetForm
+
 # import both app modules
 from login import views as user_views
 
@@ -16,7 +18,9 @@ urlpatterns = [
     path(
         "login/",
         LoginView.as_view(
-            template_name="login/login.html", redirect_authenticated_user=True
+            template_name="login/login.html",
+            redirect_authenticated_user=True,
+            authentication_form=CustomAuthenticationForm,
         ),
         name="login",
     ),
@@ -33,6 +37,7 @@ urlpatterns = [
         PasswordResetView.as_view(
             template_name="login/resetpassword.html",
             email_template_name="login/reset_password_email.html",
+            form_class=CustomPasswordResetForm,
         ),
         name="password_reset",
     ),
