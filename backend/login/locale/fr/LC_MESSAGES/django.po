@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-19 21:13+0000\n"
+"POT-Creation-Date: 2024-03-11 20:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,8 +18,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#: login/forms.py:26 login/forms.py:51
+msgid "Register"
+msgstr "Inscription"
+
+#: login/forms.py:96
+msgid "Reset password"
+msgstr "Réinitialiser votre mot de passe"
+
+#: login/forms.py:113 login/forms.py:128
+msgid "Login"
+msgstr "Se connecter"
+
 #: login/templates/login/change_password.html:40
-msgid "Edit Password"
+msgid "Edit password"
 msgstr "Modifier le mot de passe"
 
 #: login/templates/login/change_password.html:47
@@ -52,26 +64,6 @@ msgstr ""
 msgid "Save Edits"
 msgstr "Enregistrer"
 
-#: login/templates/login/login.html:51 login/templates/login/login.html:55
-msgid "Login"
-msgstr "Se connecter"
-
-#: login/templates/login/login.html:58
-#, python-format
-msgid ""
-" Did you forget your password? Click this <a "
-"href=\"%(password_reset_url)s\">link</a> "
-msgstr ""
-" Vous avez oublié votre mot de passe? Clickez sur <a "
-"href=\"%(password_reset_url)s\">ce lien</a>."
-
-#: login/templates/login/login.html:59
-#, python-format
-msgid " Not a member? <a href=\"%(register_url)s\">Register</a> for free now. "
-msgstr ""
-" Vous n'êtes pas encore membre ?  <a href=\"%(register_url)s\">Inscrivez-"
-"vous</a> gratuitement dès maintenant. "
-
 #: login/templates/login/profile.html:32
 msgid "Profile:"
 msgstr "Profil :"
@@ -91,11 +83,6 @@ msgstr "Nom :"
 #: login/templates/login/profile.html:37
 msgid "Edit profile"
 msgstr "Modifier le profil"
-
-#: login/templates/login/register.html:36
-#: login/templates/login/register.html:40
-msgid "Register"
-msgstr "Inscription"
 
 #: login/templates/login/reset_password_email.html:5
 #, python-format
@@ -130,14 +117,6 @@ msgstr "Merci de rouler avec erradar, "
 msgid "Erradar team"
 msgstr "L'équipe d'Erradar"
 
-#: login/templates/login/resetpassword.html:39
-msgid "Reset Password"
-msgstr "Réinitialiser votre mot de passe"
-
-#: login/templates/login/resetpassword.html:43
-msgid "Send Email"
-msgstr "Envoyer"
-
 #: login/templates/login/text.html:40
 msgid "Password Reset Sent"
 msgstr "Email de réinitialisation envoyé"
@@ -165,3 +144,21 @@ msgstr "Votre profile a été modifier avec succès."
 #: login/views.py:91 login/views.py:108
 msgid "Password modified successfully."
 msgstr "Votre mot de passe a été modifier avec succés."
+
+#, python-format
+#~ msgid ""
+#~ " Did you forget your password? Click this <a "
+#~ "href=\"%(password_reset_url)s\">link</a> "
+#~ msgstr ""
+#~ " Vous avez oublié votre mot de passe? Clickez sur <a "
+#~ "href=\"%(password_reset_url)s\">ce lien</a>."
+
+#, python-format
+#~ msgid ""
+#~ " Not a member? <a href=\"%(register_url)s\">Register</a> for free now. "
+#~ msgstr ""
+#~ " Vous n'êtes pas encore membre ?  <a href=\"%(register_url)s\">Inscrivez-"
+#~ "vous</a> gratuitement dès maintenant. "
+
+#~ msgid "Send Email"
+#~ msgstr "Envoyer"

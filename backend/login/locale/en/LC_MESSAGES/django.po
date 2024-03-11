@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-19 21:13+0000\n"
+"POT-Creation-Date: 2024-03-11 20:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,8 +18,24 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: login/forms.py:26 login/forms.py:51
+msgid "Register"
+msgstr ""
+
+#: login/forms.py:96
+msgid "Reset password"
+msgstr ""
+
+#: login/forms.py:102
+msgid "Reset Password"
+msgstr ""
+
+#: login/forms.py:113 login/forms.py:128
+msgid "Login"
+msgstr ""
+
 #: login/templates/login/change_password.html:40
-msgid "Edit Password"
+msgid "Edit password"
 msgstr ""
 
 #: login/templates/login/change_password.html:47
@@ -47,22 +63,6 @@ msgstr ""
 msgid "Save Edits"
 msgstr ""
 
-#: login/templates/login/login.html:51 login/templates/login/login.html:55
-msgid "Login"
-msgstr ""
-
-#: login/templates/login/login.html:58
-#, python-format
-msgid ""
-" Did you forget your password? Click this <a "
-"href=\"%(password_reset_url)s\">link</a> "
-msgstr ""
-
-#: login/templates/login/login.html:59
-#, python-format
-msgid " Not a member? <a href=\"%(register_url)s\">Register</a> for free now. "
-msgstr ""
-
 #: login/templates/login/profile.html:32
 msgid "Profile:"
 msgstr ""
@@ -81,11 +81,6 @@ msgstr ""
 
 #: login/templates/login/profile.html:37
 msgid "Edit profile"
-msgstr ""
-
-#: login/templates/login/register.html:36
-#: login/templates/login/register.html:40
-msgid "Register"
 msgstr ""
 
 #: login/templates/login/reset_password_email.html:5
@@ -113,14 +108,6 @@ msgstr ""
 
 #: login/templates/login/reset_password_email.html:16
 msgid "Erradar team"
-msgstr ""
-
-#: login/templates/login/resetpassword.html:39
-msgid "Reset Password"
-msgstr ""
-
-#: login/templates/login/resetpassword.html:43
-msgid "Send Email"
 msgstr ""
 
 #: login/templates/login/text.html:40
