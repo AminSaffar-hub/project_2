@@ -10,7 +10,9 @@ from django.contrib.auth.forms import (
     UserCreationForm,
     AuthenticationForm,
     PasswordResetForm,
+    PasswordChangeForm,
 )
+
 from django.contrib.auth.models import User
 
 
@@ -141,5 +143,32 @@ class CustomAuthenticationForm(AuthenticationForm):
             HTML(
                 '<button class="btn btn-primary w-100" type="submit">'
                 "{login}</button>".format(login=_("Login"))
+            ),
+        )
+
+
+class CustomPasswordChangeForm(PasswordChangeForm):
+    def __init__(self, *args, **kwargs):
+        super(CustomPasswordChangeForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper(self)
+
+        self.helper.layout = Layout(
+            HTML(
+                '<h4 class="text-center pb-5">{edit_password}</h4>'.format(
+                    edit_password=_("Edit password")
+                )
+            ),
+            Field(
+                "old_password",
+            ),
+            Field(
+                "new_password1",
+            ),
+            Field(
+                "new_password2",
+            ),
+            HTML(
+                '<button class="btn btn-primary w-100" type="submit">'
+                "{edit_password}</button>".format(edit_password=_("Edit password"))
             ),
         )

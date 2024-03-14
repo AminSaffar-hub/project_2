@@ -1,12 +1,11 @@
 from django.contrib import messages
 from django.contrib.auth import logout, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth.views import PasswordResetCompleteView
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.utils.translation import gettext as _
-from login.forms import EditProfileForm, RegistrationForm
+from login.forms import CustomPasswordChangeForm, EditProfileForm, RegistrationForm
 
 
 def logout_view(request):
@@ -84,7 +83,7 @@ def change_password(request):
     """request change in password if user is logged in"""
 
     if request.method == "POST":
-        form = PasswordChangeForm(data=request.POST, user=request.user)
+        form = CustomPasswordChangeForm(data=request.POST, user=request.user)
         if form.is_valid():
             form.save()
             update_session_auth_hash(request, form.user)
@@ -97,7 +96,7 @@ def change_password(request):
 
     else:
         # give user change password form
-        form = PasswordChangeForm(user=request.user)
+        form = CustomPasswordChangeForm(user=request.user)
         args = {"form": form}
         return render(request, "login/change_password.html", args)
 
