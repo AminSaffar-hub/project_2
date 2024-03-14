@@ -141,7 +141,7 @@ class CustomPasswordResetForm(PasswordResetForm):
             ),
             HTML(
                 '<button class="btn btn-primary w-100" type="submit">'
-                "{reset_password}</button>".format(reset_password=_("Reset Password"))
+                "{reset_password}</button>".format(reset_password=_("Reset password"))
             ),
         )
 
