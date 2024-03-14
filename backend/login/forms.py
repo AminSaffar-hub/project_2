@@ -1,19 +1,15 @@
 from captcha.fields import ReCaptchaField
-
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import HTML
-from crispy_forms.layout import Layout, Field
-
-from django.utils.translation import gettext as _
+from crispy_forms.layout import HTML, Field, Layout
 from django import forms
 from django.contrib.auth.forms import (
-    UserCreationForm,
     AuthenticationForm,
-    PasswordResetForm,
     PasswordChangeForm,
+    PasswordResetForm,
+    UserCreationForm,
 )
-
 from django.contrib.auth.models import User
+from django.utils.translation import gettext as _
 
 
 class RegistrationForm(UserCreationForm):
@@ -86,6 +82,40 @@ class RegistrationForm(UserCreationForm):
 class EditProfileForm(forms.ModelForm):
     """editting a profile"""
 
+    def __init__(self, *args, **kwargs):
+        super(EditProfileForm, self).__init__(*args, **kwargs)
+
+        self.helper = FormHelper(self)
+
+        self.helper.layout = Layout(
+            HTML(
+                '<h4 class="text-center pb-5">{edit_profile}</h4>'.format(
+                    edit_profile=_("Edit Profile")
+                )
+            ),
+            Field(
+                "email",
+            ),
+            Field(
+                "first_name",
+            ),
+            Field(
+                "last_name",
+            ),
+            HTML(
+                "<small>{change_password}</small><br><br>".format(
+                    change_password=_(
+                        "You can change your password using "
+                        '<a href="{{change_password_url}}">this form</a>.'
+                    )
+                )
+            ),
+            HTML(
+                '<button class="btn btn-primary w-100" type="submit">'
+                "{save_edits}</button>".format(save_edits=_("Save Edits"))
+            ),
+        )
+
     class Meta:
         """you can only change your email, first and last name when editing your profile"""
 
@@ -130,14 +160,18 @@ class CustomAuthenticationForm(AuthenticationForm):
             ),
             HTML(
                 '<p class="register">{forget_password_text}</p>'.format(
-                    forget_password_text="Did you forget your password? Click this "
-                    '<a href="{{password_reset_url}}">link</a>'
+                    forget_password_text=_(
+                        "Did you forget your password? Click this "
+                        '<a href="{{password_reset_url}}">link</a>'
+                    )
                 )
             ),
             HTML(
                 '<p class="register">{registration_text}</p>'.format(
-                    registration_text='Not a member? <a href="{{register_url}}">'
-                    "Register</a> for free now."
+                    registration_text=_(
+                        'Not a member? <a href="{{register_url}}">'
+                        "Register</a> for free now."
+                    )
                 )
             ),
             HTML(
