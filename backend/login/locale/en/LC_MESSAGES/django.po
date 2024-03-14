@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-19 21:13+0000\n"
+"POT-Creation-Date: 2024-03-14 22:13+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,49 +18,54 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: login/templates/login/change_password.html:40
-msgid "Edit Password"
+#: login/forms.py:30 login/forms.py:54
+msgid "Register"
 msgstr ""
 
-#: login/templates/login/change_password.html:47
-msgid "Password reset failed"
-msgstr ""
-
-#: login/templates/login/change_password.html:48
-msgid ""
-"The password reset link is invalid, possibly because it has been used. "
-"Please request a new password reset."
-msgstr ""
-
-#: login/templates/login/edit_profile.html:41
+#: login/forms.py:94
 msgid "Edit Profile"
 msgstr ""
 
-#: login/templates/login/edit_profile.html:45
-#, python-format
+#: login/forms.py:109
 msgid ""
-"You can change your password using <a href=\"%(change_password_url)s\">this "
+"You can change your password using <a href=\"{{change_password_url}}\">this "
 "form</a>."
 msgstr ""
 
-#: login/templates/login/edit_profile.html:46
+#: login/forms.py:116
 msgid "Save Edits"
 msgstr ""
 
-#: login/templates/login/login.html:51 login/templates/login/login.html:55
+#: login/forms.py:136 login/forms.py:144
+msgid "Reset password"
+msgstr ""
+
+#: login/forms.py:155 login/forms.py:180
 msgid "Login"
 msgstr ""
 
-#: login/templates/login/login.html:58
-#, python-format
+#: login/forms.py:165
 msgid ""
-" Did you forget your password? Click this <a "
-"href=\"%(password_reset_url)s\">link</a> "
+"Did you forget your password? Click this <a "
+"href=\"{{password_reset_url}}\">link</a>"
 msgstr ""
 
-#: login/templates/login/login.html:59
-#, python-format
-msgid " Not a member? <a href=\"%(register_url)s\">Register</a> for free now. "
+#: login/forms.py:173
+msgid "Not a member? <a href=\"{{register_url}}\">Register</a> for free now."
+msgstr ""
+
+#: login/forms.py:193 login/forms.py:207 login/forms.py:220 login/forms.py:231
+msgid "Edit password"
+msgstr ""
+
+#: login/templates/login/change_password.html:37
+msgid "Password reset failed"
+msgstr ""
+
+#: login/templates/login/change_password.html:38
+msgid ""
+"The password reset link is invalid, possibly because it has been used. "
+"Please request a new password reset."
 msgstr ""
 
 #: login/templates/login/profile.html:32
@@ -81,11 +86,6 @@ msgstr ""
 
 #: login/templates/login/profile.html:37
 msgid "Edit profile"
-msgstr ""
-
-#: login/templates/login/register.html:36
-#: login/templates/login/register.html:40
-msgid "Register"
 msgstr ""
 
 #: login/templates/login/reset_password_email.html:5
@@ -115,14 +115,6 @@ msgstr ""
 msgid "Erradar team"
 msgstr ""
 
-#: login/templates/login/resetpassword.html:39
-msgid "Reset Password"
-msgstr ""
-
-#: login/templates/login/resetpassword.html:43
-msgid "Send Email"
-msgstr ""
-
 #: login/templates/login/text.html:40
 msgid "Password Reset Sent"
 msgstr ""
@@ -133,18 +125,18 @@ msgid ""
 "you registered with, and check your spam folder."
 msgstr ""
 
-#: login/views.py:15
+#: login/views.py:14
 msgid "Disconnected successfully."
 msgstr ""
 
-#: login/views.py:36
+#: login/views.py:35
 msgid "Account created successfully."
 msgstr ""
 
-#: login/views.py:68
+#: login/views.py:67
 msgid "Profile modified successfully."
 msgstr ""
 
-#: login/views.py:91 login/views.py:108
+#: login/views.py:90 login/views.py:107
 msgid "Password modified successfully."
 msgstr ""

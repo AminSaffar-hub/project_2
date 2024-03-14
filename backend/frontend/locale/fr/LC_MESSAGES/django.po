@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-24 20:37+0000\n"
+"POT-Creation-Date: 2024-03-11 20:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,53 +36,53 @@ msgstr ""
 "                <a href=\"%(home_url)s\">Revenir à la page d'accueil</a>\n"
 "            "
 
-#: frontend/templates/frontend/base.html:47
+#: frontend/templates/frontend/base.html:58
 msgid "My profile"
 msgstr "Mon profil"
 
-#: frontend/templates/frontend/base.html:49
+#: frontend/templates/frontend/base.html:59
 msgid "Log out"
 msgstr "se déconnecter"
 
-#: frontend/templates/frontend/base.html:55
-#: frontend/templates/frontend/home.html:144
+#: frontend/templates/frontend/base.html:67
+#: frontend/templates/frontend/home.html:151
 msgid "Log in"
 msgstr "Connexion"
 
-#: frontend/templates/frontend/base.html:118
+#: frontend/templates/frontend/base.html:130
 #: frontend/templates/frontend/footer_info.html:7
 msgid "Who are we ?"
 msgstr "Qui sommes-nous ?"
 
-#: frontend/templates/frontend/base.html:119
+#: frontend/templates/frontend/base.html:131
 #: frontend/templates/frontend/footer_info.html:14
 msgid "Become a partner"
 msgstr "Devenir un partenaire"
 
-#: frontend/templates/frontend/base.html:120
+#: frontend/templates/frontend/base.html:132
 #: frontend/templates/frontend/footer_info.html:21
 msgid "Contact"
 msgstr ""
 
-#: frontend/templates/frontend/base.html:125
+#: frontend/templates/frontend/base.html:137
 msgid "Connect"
 msgstr ""
 
-#: frontend/templates/frontend/base.html:140
+#: frontend/templates/frontend/base.html:152
 msgid "More Info"
 msgstr "Plus d'information"
 
-#: frontend/templates/frontend/base.html:142
+#: frontend/templates/frontend/base.html:154
 #: frontend/templates/frontend/footer_info.html:28
 msgid "Confidentiality & Conditions"
 msgstr "Confidentiality & Conditions"
 
-#: frontend/templates/frontend/base.html:143
+#: frontend/templates/frontend/base.html:155
 #: frontend/templates/frontend/footer_info.html:35
 msgid "Site organisation"
 msgstr "Plan du site"
 
-#: frontend/templates/frontend/base.html:144
+#: frontend/templates/frontend/base.html:156
 #: frontend/templates/frontend/footer_info.html:42
 msgid "Legal information"
 msgstr "Mentions légales"
@@ -167,19 +167,19 @@ msgstr "Visiter l'offre"
 msgid "Log in to enjoy the full Erradar experience "
 msgstr "Connectez-vous pour profiter pleinement de l'expérience ERRADAR:"
 
-#: frontend/templates/frontend/home.html:134
+#: frontend/templates/frontend/home.html:136
 msgid "Save your favorite deals"
 msgstr "Sauvegardez vos bon plans préférés"
 
-#: frontend/templates/frontend/home.html:136
+#: frontend/templates/frontend/home.html:138
 msgid "Review deals"
 msgstr "Évaluez les bon plans"
 
-#: frontend/templates/frontend/home.html:138
+#: frontend/templates/frontend/home.html:140
 msgid "And much more"
 msgstr "Et bien plus encore ..."
 
-#: frontend/templates/frontend/home.html:142
+#: frontend/templates/frontend/home.html:149
 msgid "Close"
 msgstr "Fermer"
 

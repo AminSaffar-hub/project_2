@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-19 21:13+0000\n"
+"POT-Creation-Date: 2024-03-14 22:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,15 +18,57 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: login/templates/login/change_password.html:40
-msgid "Edit Password"
+#: login/forms.py:30 login/forms.py:54
+msgid "Register"
+msgstr "Inscription"
+
+#: login/forms.py:94
+msgid "Edit Profile"
+msgstr "Modifier le profil"
+
+#: login/forms.py:109
+msgid ""
+"You can change your password using <a href=\"{{change_password_url}}\">this "
+"form</a>."
+msgstr ""
+"Vous pouvez modifier votre mot de passe en utilisant <a "
+"href=\"%(change_password_url)s\">ce formulaire</a>."
+
+#: login/forms.py:116
+msgid "Save Edits"
+msgstr "Enregistrer"
+
+#: login/forms.py:136 login/forms.py:144
+msgid "Reset password"
+msgstr "Réinitialiser votre mot de passe"
+
+#: login/forms.py:155 login/forms.py:180
+msgid "Login"
+msgstr "Se connecter"
+
+#: login/forms.py:165
+msgid ""
+"Did you forget your password? Click this <a "
+"href=\"{{password_reset_url}}\">link</a>"
+msgstr ""
+" Vous avez oublié votre mot de passe? Clickez sur <a "
+"href=\"%(password_reset_url)s\">ce lien</a>."
+
+#: login/forms.py:173
+msgid "Not a member? <a href=\"{{register_url}}\">Register</a> for free now."
+msgstr ""
+" Vous n'êtes pas encore membre ?  <a href=\"%(register_url)s\">Inscrivez-"
+"vous</a> gratuitement dès maintenant. "
+
+#: login/forms.py:193 login/forms.py:207 login/forms.py:220 login/forms.py:231
+msgid "Edit password"
 msgstr "Modifier le mot de passe"
 
-#: login/templates/login/change_password.html:47
+#: login/templates/login/change_password.html:37
 msgid "Password reset failed"
 msgstr "La réinitialisation du mot de passe a échoué"
 
-#: login/templates/login/change_password.html:48
+#: login/templates/login/change_password.html:38
 msgid ""
 "The password reset link is invalid, possibly because it has been used. "
 "Please request a new password reset."
@@ -34,43 +76,6 @@ msgstr ""
 "Le lien de réinitialisation du mot de passe n'est pas valide, il est "
 "possible que ce lien soit déjà utilisé.Veuillez effectuer une nouvelle "
 "demande de réinitialisation du mot de passe."
-
-#: login/templates/login/edit_profile.html:41
-msgid "Edit Profile"
-msgstr "Modifier le profil"
-
-#: login/templates/login/edit_profile.html:45
-#, python-format
-msgid ""
-"You can change your password using <a href=\"%(change_password_url)s\">this "
-"form</a>."
-msgstr ""
-"Vous pouvez modifier votre mot de passe en utilisant <a "
-"href=\"%(change_password_url)s\">ce formulaire</a>."
-
-#: login/templates/login/edit_profile.html:46
-msgid "Save Edits"
-msgstr "Enregistrer"
-
-#: login/templates/login/login.html:51 login/templates/login/login.html:55
-msgid "Login"
-msgstr "Se connecter"
-
-#: login/templates/login/login.html:58
-#, python-format
-msgid ""
-" Did you forget your password? Click this <a "
-"href=\"%(password_reset_url)s\">link</a> "
-msgstr ""
-" Vous avez oublié votre mot de passe? Clickez sur <a "
-"href=\"%(password_reset_url)s\">ce lien</a>."
-
-#: login/templates/login/login.html:59
-#, python-format
-msgid " Not a member? <a href=\"%(register_url)s\">Register</a> for free now. "
-msgstr ""
-" Vous n'êtes pas encore membre ?  <a href=\"%(register_url)s\">Inscrivez-"
-"vous</a> gratuitement dès maintenant. "
 
 #: login/templates/login/profile.html:32
 msgid "Profile:"
@@ -91,11 +96,6 @@ msgstr "Nom :"
 #: login/templates/login/profile.html:37
 msgid "Edit profile"
 msgstr "Modifier le profil"
-
-#: login/templates/login/register.html:36
-#: login/templates/login/register.html:40
-msgid "Register"
-msgstr "Inscription"
 
 #: login/templates/login/reset_password_email.html:5
 #, python-format
@@ -130,14 +130,6 @@ msgstr "Merci de rouler avec erradar, "
 msgid "Erradar team"
 msgstr "L'équipe d'Erradar"
 
-#: login/templates/login/resetpassword.html:39
-msgid "Reset Password"
-msgstr "Réinitialiser votre mot de passe"
-
-#: login/templates/login/resetpassword.html:43
-msgid "Send Email"
-msgstr "Envoyer"
-
 #: login/templates/login/text.html:40
 msgid "Password Reset Sent"
 msgstr "Email de réinitialisation envoyé"
@@ -150,18 +142,21 @@ msgstr ""
 "Si vous ne recevez pas d'e-mail, vérifiez que vous avez bien saisi votre "
 "adresse email et vérifiez le dossier de courrier indésirable."
 
-#: login/views.py:15
+#: login/views.py:14
 msgid "Disconnected successfully."
 msgstr "Vous avez été déconnecté avec succès."
 
-#: login/views.py:36
+#: login/views.py:35
 msgid "Account created successfully."
 msgstr "Votre compte a été créer avec succès."
 
-#: login/views.py:68
+#: login/views.py:67
 msgid "Profile modified successfully."
 msgstr "Votre profile a été modifier avec succès."
 
-#: login/views.py:91 login/views.py:108
+#: login/views.py:90 login/views.py:107
 msgid "Password modified successfully."
 msgstr "Votre mot de passe a été modifier avec succés."
+
+#~ msgid "Send Email"
+#~ msgstr "Envoyer"
