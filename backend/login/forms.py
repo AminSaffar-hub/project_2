@@ -7,6 +7,7 @@ from django.contrib.auth.forms import (
     PasswordChangeForm,
     PasswordResetForm,
     UserCreationForm,
+    SetPasswordForm,
 )
 from django.contrib.auth.models import User
 from django.utils.translation import gettext as _
@@ -194,6 +195,30 @@ class CustomPasswordChangeForm(PasswordChangeForm):
             ),
             Field(
                 "old_password",
+            ),
+            Field(
+                "new_password1",
+            ),
+            Field(
+                "new_password2",
+            ),
+            HTML(
+                '<button class="btn btn-primary w-100" type="submit">'
+                "{edit_password}</button>".format(edit_password=_("Edit password"))
+            ),
+        )
+
+
+class CustomSetPasswordForm(SetPasswordForm):
+    def __init__(self, *args, **kwargs):
+        super(CustomSetPasswordForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper(self)
+
+        self.helper.layout = Layout(
+            HTML(
+                '<h4 class="text-center pb-5">{edit_password}</h4>'.format(
+                    edit_password=_("Edit password")
+                )
             ),
             Field(
                 "new_password1",
