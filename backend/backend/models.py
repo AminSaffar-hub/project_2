@@ -116,23 +116,37 @@ class Item(models.Model):
         similarity_scores = {
             item: self.similar(item.title, self.title) for item in list_of_items
         }
-        similar_items = [
-            item
-            for item, score in sorted(
-                similarity_scores.items(), key=lambda x: x[1], reverse=True
-            )
-            if score > threshold
-        ]
+        sorted_dict = dict(
+            sorted(similarity_scores.items(), key=lambda x: x[1], reverse=True)
+        )
+        same_items = []
+        similar_items = []
+        for item in list(sorted_dict.keys())[:100]:
+            if (
+                item.provider == self.provider
+                and item.category == self.category
+                and item.discounted_price == self.discounted_price
+                and item.price == self.price
+                and sorted_dict[item] > 0.93
+            ):
+                same_items.append(item)
+        for item in list(sorted_dict.keys()):
+            if (
+                sorted_dict[item] > 0.7
+                and item not in same_items
+                and item.category == self.category
+            ):
+                similar_items.append(item)
         list_of_items_same = list(
             Item.objects.exclude(id=self.pk)
             .filter(category=self.category, provider=self.provider)
             .distinct()
         )
-        while len(similar_items) < 10 and list_of_items_same:
+        while len(similar_items) < 6 and list_of_items_same:
             similar_items.append(
                 list_of_items_same.pop(random.randint(0, len(list_of_items_same) - 1))
             )
-        return similar_items[:4]
+        return {"same_items": same_items, "similar_items": similar_items[:6]}
 
     @staticmethod
     def similar(a, b):
