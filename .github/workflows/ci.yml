@@ -87,6 +87,7 @@ jobs:
     needs: [changes, lint, test]
     runs-on: ubuntu-latest
     if: |
+      always() &&
       needs.changes.outputs.build_base_image == 'true' &&
       github.ref == 'refs/heads/main'
 
