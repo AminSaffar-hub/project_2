@@ -5,6 +5,8 @@ from django.utils.translation import gettext_lazy as _
 import jellyfish
 from django.contrib.auth.models import User
 import random
+from django.utils import timezone
+from datetime import timedelta
 
 
 class Category(models.Model):
@@ -106,6 +108,17 @@ class Item(models.Model):
 
     def __str__(self):
         return self.title + " - " + self.provider.name
+
+    def time_since_update(self):
+        now = timezone.now()
+        difference = now - self.last_updated_at
+
+        if difference >= timedelta(days=1):
+            days = difference.days
+            return f"Publié il y a {days} jours"
+        else:
+            hours = int(difference.seconds / 3600)
+            return f"Publié il y a {hours} heures"
 
     def similar_items(self, threshold=0.8):
         """
