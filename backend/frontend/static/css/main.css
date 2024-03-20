@@ -59,14 +59,17 @@ a.item-a {
 .category-btn {
     color: white;
     padding: .2px 6px;
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s; 
     white-space: nowrap;
     background-color: rgb(53, 55, 59);
     border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .category-btn:hover {
-    transform: scale(1.1);
+    transform: scale(1.1); 
+    background-color: #5a5d62;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5); 
 }
 
 .category-btn a {
@@ -111,8 +114,8 @@ footer {
 }
 
 .btn.no-animation:focus, .btn.no-animation:active {
-    background-color: white; /* Set your desired background color */
-    box-shadow: none; /* Remove the box-shadow */
+    background-color: white; 
+    box-shadow: none; 
 }
 
 h5.item-title {
