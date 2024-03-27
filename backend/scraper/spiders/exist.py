@@ -6,48 +6,6 @@ from scrapy.spiders import CrawlSpider, Rule
 
 from backend.models import Item
 
-category_mapping = {
-    "clothes": [
-        "casquettes",
-        "lunettes",
-        "ceintures",
-        "gilets",
-        "t-shirts",
-        "pantalons",
-        "pulls-polos",
-        "shorts",
-        "bermudas",
-        "pantalons-de-ville",
-        "parapluies",
-        "sweats",
-        "bracelets",
-        "portefeuilles",
-        "mocassins",
-        "echarpes",
-        "boots",
-        "manteaux",
-        "blazers",
-        "derbies",
-        "jeans",
-        "baskets",
-        "chemises",
-        "pantacourts",
-        "polos",
-        "pullovers",
-        "sacs",
-        "cravates",
-        "montres",
-        "shorts-bermudas",
-        "joggers",
-        "costumes-blazers",
-        "pulls",
-        "slacks",
-        "mules",
-        "blousons",
-        "shorts-maillots",
-    ]
-}
-
 
 class ExistSpider(CrawlSpider):
     name = "exist"
@@ -76,15 +34,7 @@ class ExistSpider(CrawlSpider):
         item["provider"] = "Exist"
         item["delivery"] = Item.DeliveryOptions.WITH_CONDITONS
         item["online_payment"] = True
-        reverse_mapping = {
-            value: key for key, values in category_mapping.items() for value in values
-        }
-        category_name = response.url.split("/")[3]
-        associated_key = reverse_mapping.get(category_name)
-        if associated_key:
-            item["category"] = associated_key
-        else:
-            item["category"] = "other"
+
         yield item
 
     def fetch_items(self, response):

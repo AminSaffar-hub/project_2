@@ -2,14 +2,6 @@ import scrapy
 from scraper.items import ArticleItem
 from backend.models import Item
 
-category_mapping = {
-    "electronics": ["Électroménager & High tech"],
-    "food": ["Alimentaire", "Marché frais"],
-    "appliances": ["Maison et jardin", "Produits d'entretien", "Cuisine"],
-    "self-care": ["Hygiène"],
-}
-
-
 class MgSpider(scrapy.Spider):
     name = "Magasin_general"
     allowed_domains = ["mg.tn"]
@@ -64,17 +56,6 @@ class MgSpider(scrapy.Spider):
             item["provider"] = "Magasin General"
             item["delivery"] = Item.DeliveryOptions.NOT_AVAILABLE
             item["online_payment"] = False
-            category_name = product["category_name"]
-            reverse_mapping = {
-                value: key
-                for key, values in category_mapping.items()
-                for value in values
-            }
-            associated_key = reverse_mapping.get(category_name)
-            if associated_key:
-                item["category"] = associated_key
-            else:
-                item["category"] = "other"
             yield item
 
         current_page = response.meta.get("page", 1)

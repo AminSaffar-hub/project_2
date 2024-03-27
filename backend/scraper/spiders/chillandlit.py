@@ -53,7 +53,6 @@ class chillandlit(scrapy.Spider):
             item["provider"] = self.name
             item["delivery"] = Item.DeliveryOptions.WITH_CONDITONS
             item["online_payment"] = False
-            item["category"] = "clothes"
             yield item
         current_page = response.meta.get("page", 1)
         self.logger.info(f"Currently on page: {current_page}")

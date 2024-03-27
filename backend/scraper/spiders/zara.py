@@ -101,7 +101,6 @@ class ZaraSpider(scrapy.Spider):
             + ".jpg?ts="
             + image.group(3)
         )
-        item["category"] = "clothes"
         item["description"] = description
         item["provider"] = "Zara"
         item["delivery"] = Item.DeliveryOptions.WITH_CONDITONS

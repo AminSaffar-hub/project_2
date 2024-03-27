@@ -42,16 +42,12 @@ class BeautyStoreSpider(scrapy.Spider):
         item["price"] = response.css(".cart-price-discount::text").get()
         item["link_to_post"] = response.url
         item["link_to_image"] = response.css(".js-qv-product-cover::attr(src)").get()
-        item["category"] = "cosmetics"
         item["description"] = response.css(
             '[id^="product-description-"] p::text'
         ).extract()
         item["provider"] = "Beauty Store"
         item["delivery"] = Item.DeliveryOptions.WITH_CONDITONS
         item["online_payment"] = True
-        category_name = response.url
-        print(category_name)
-        self.category_names.append(category_name)  # Append category name to the list
         yield item
 
     def closed(self, reason):
