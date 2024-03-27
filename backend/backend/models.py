@@ -18,6 +18,14 @@ class Category(models.Model):
         default=1,
         help_text="Evaluation of category importance. Affects display order",
     )
+    parent = models.ForeignKey(
+        "self",
+        related_name="sub_categories",
+        null=True,
+        blank=True,
+        default=None,
+        on_delete=models.CASCADE,
+    )
 
     def __str__(self):
         return self.name
