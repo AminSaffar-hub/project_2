@@ -1,6 +1,7 @@
 {% extends 'frontend/base.html' %}
 {% load static %}
 {% load i18n %}
+{% load item_tags %}
 {% block 'body' %}
 
 <div class="container product-container dark-grey-text">
@@ -14,7 +15,25 @@
             </div>
             <div class="col-md-7">
                 <div class="p-5">
-                    <h1 class="product-title">{{ object.title }} <span class="badge bg-success category-badge">{{ object.category.name }}</span></h1>
+                    <h1 class="product-title">
+                        {{ object.title }} 
+                        {% if user.is_authenticated %}
+                            <button class="like-button btn btn-default no-animation p-0" data-item-id="{{ object.id }}">
+                                {% if request.user|has_liked:object %}
+                                    <i style="color: red;" class="fa fa-heart fa-lg p-2"></i>
+                                {% else %}
+                                    <i style="color: gray;" class="fa fa-heart-o fa-lg p-2"></i>
+                                {% endif %}
+                            </button>
+                        {% else %}
+                            <button type="button" class="btn btn-default no-animation p-0" data-bs-toggle="modal" data-bs-target="#PromptLoginModal">
+                                <i style="color: gray;" class="fa fa-heart-o fa-lg p-2"></i>
+                            </button>
+                        {% endif %}
+                    </h1>
+                    <p class="badge bg-success category-badge">
+                        {{ object.category.name }}
+                    </p>
                     <p>
                         <span class="mr-1">
                             <span class="discounted-price">{{ object.discounted_price }} TND</span>
@@ -112,5 +131,5 @@
         <img id="fullSizeImage" src="" class="full-size-image" alt="Product Image">
     </div>
 </div>
-
+{% include "include/prompt_login.html" %}
 {% endblock %}

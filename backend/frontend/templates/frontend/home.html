@@ -122,36 +122,5 @@
         </ul>
     </nav>
 
-    <!-- Login modal -->
-    <div class="modal fade" id="PromptLoginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered"">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <h5>
-                        {% trans "Log in to enjoy the full Erradar experience " %}
-                    </h5>
-                    <div class="row">
-                        <div class="col-6">
-                            <p>
-                                <i class="fa fa-heart-o"></i> {% trans "Save your favorite deals" %}
-                                <br>
-                                <i class="fa fa-comments-o"></i> {% trans "Review deals" %}
-                                <br>
-                                <i class="fa fa-spinner"></i> {% trans "And much more" %}
-                            </p>
-                        </div>
-                        <div class="col-6">
-                            <img src="{% static 'images/login.png' %}" class="w-100"></img>
-                        </div> 
-                    </div>      
-                </div>
-                <div class="modal-footer d-flex justify-content-center">
-                    <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">{%trans "Close"%}</button>
-                    <a class="btn btn-primary rounded-pill" href="{% url 'login' %}">
-                        {% trans "Log in" %}
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
+    {% include "include/prompt_login.html" %}
 {% endblock %}
