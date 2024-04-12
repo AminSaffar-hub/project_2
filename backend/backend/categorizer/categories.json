@@ -1,234 +1,968 @@
 {
-    "0": {
-        "main_category": "Automobile",
-        "subcategory": "Vehicle Parts & Accessories"
-    },
-    "1": {
-        "main_category": "Automobile",
-        "subcategory": "Vehicle Maintenance & Care"
-    },
-    "2": {
-        "main_category": "Automobile",
-        "subcategory": "Vehicle Electronics & Accessories"
-    },
-    "3": {
-        "main_category": "Baby Products",
-        "subcategory": "Maternity and Gifts"
-    },
-    "4": {
-        "main_category": "Baby Products",
-        "subcategory": "Baby and Toddler Development"
-    },
-    "5": {
-        "main_category": "Baby Products",
-        "subcategory": "Baby Care Essentials"
-    },
-    "6": {
-        "main_category": "Baby Products",
-        "subcategory": "Baby Feeding and Nutrition"
-    },
-    "7": {
-        "main_category": "Baby Products",
-        "subcategory": "Baby Mobility and Transport"
-    },
-    "8": {
-        "main_category": "Electronics",
-        "subcategory": "Accessories and Supplies"
-    },
-    "9": {
-        "main_category": "Phones & Tablets",
-        "subcategory": "Phones & Tablets"
-    },
-    "10": {
-        "main_category": "Gaming",
-        "subcategory": "Console Gaming"
-    },
-    "11": {
-        "main_category": "Gaming",
-        "subcategory": "PC Gaming"
-    },
-    "12": {
-        "main_category": "Gaming",
-        "subcategory": "Miscellaneous Gaming Systems"
-    },
-    "13": {
-        "main_category": "Gaming",
-        "subcategory": "Digital and Online Gaming"
-    },
-    "14": {
-        "main_category": "Computing",
-        "subcategory": "Computer Accessories"
-    },
-    "15": {
-        "main_category": "Garden & Outdoors",
-        "subcategory": "Outdoor D\u00e9cor"
-    },
-    "16": {
-        "main_category": "Home & Office",
-        "subcategory": "Tools & Home Improvement"
-    },
-    "17": {
-        "main_category": "Home & Office",
-        "subcategory": "Home & Furniture"
-    },
-    "18": {
-        "main_category": "Home & Office",
-        "subcategory": "Home & Kitchen"
-    },
-    "19": {
-        "main_category": "Electronics",
-        "subcategory": "Office and Business Equipment"
-    },
-    "20": {
-        "main_category": "Home & Office",
-        "subcategory": "Office Products"
-    },
-    "21": {
-        "main_category": "Industrial & Scientific",
-        "subcategory": "Test, Measure & Inspect"
-    },
-    "22": {
-        "main_category": "Electronics",
-        "subcategory": "Photography and Imaging"
-    },
-    "23": {
-        "main_category": "Electronics",
-        "subcategory": "Security and Surveillance"
-    },
-    "24": {
-        "main_category": "Electronics",
-        "subcategory": "Audio and Video Equipment"
-    },
-    "25": {
-        "main_category": "Toys & Games",
-        "subcategory": "Play and Imagination"
-    },
-    "26": {
-        "main_category": "Sporting Goods",
-        "subcategory": "Outdoor Activities"
-    },
-    "27": {
-        "main_category": "Musical Instruments",
-        "subcategory": "Microphones & Accessories"
-    },
-    "28": {
-        "main_category": "Musical Instruments",
-        "subcategory": "Electronic Music, DJ & Karaoke"
-    },
-    "29": {
-        "main_category": "Musical Instruments",
-        "subcategory": "Instrument Accessories"
-    },
-    "30": {
-        "main_category": "Pet Supplies",
-        "subcategory": "Cats"
-    },
-    "31": {
-        "main_category": "Pet Supplies",
-        "subcategory": "Dogs"
-    },
-    "32": {
-        "main_category": "Pet Supplies",
-        "subcategory": "Other Pets"
-    },
-    "33": {
-        "main_category": "Toys & Games",
-        "subcategory": "Creative and Educational"
-    },
-    "34": {
-        "main_category": "Toys & Games",
-        "subcategory": "Physical and Outdoor"
-    },
-    "35": {
-        "main_category": "Toys & Games",
-        "subcategory": "Electronic and Interactive"
-    },
-    "36": {
-        "main_category": "Toys & Games",
-        "subcategory": "Home and Storage"
-    },
-    "37": {
-        "main_category": "Books, Movies and Music",
-        "subcategory": "Educational and Learning Resources"
-    },
-    "38": {
-        "main_category": "Books, Movies and Music",
-        "subcategory": "Stationery and Office Supplies"
-    },
-    "39": {
-        "main_category": "Books, Movies and Music",
-        "subcategory": "Entertainment and Media"
-    },
-    "40": {
-        "main_category": "Books, Movies and Music",
-        "subcategory": "Literature and Humanities"
-    },
-    "41": {
-        "main_category": "Fashion",
-        "subcategory": "Luggage & Travel Gear"
-    },
-    "42": {
-        "main_category": "Fashion",
-        "subcategory": "Men's Fashion"
-    },
-    "43": {
-        "main_category": "Fashion",
-        "subcategory": "Women's Fashion"
-    },
-    "44": {
-        "main_category": "Fashion",
-        "subcategory": "Kid's Fashion"
-    },
-    "45": {
-        "main_category": "Fashion",
-        "subcategory": "Shoe, Jewelry & Watch Accessories"
-    },
-    "46": {
-        "main_category": "Fashion",
-        "subcategory": "Uniforms, Work & Safety"
-    },
-    "47": {
-        "main_category": "Home & Office",
-        "subcategory": "Appliances"
-    },
-    "48": {
-        "main_category": "Home & Office",
-        "subcategory": "Arts, Crafts & Sewing"
-    },
-    "49": {
-        "main_category": "Health & Beauty",
-        "subcategory": "Personal Care and Grooming"
-    },
-    "50": {
-        "main_category": "Health & Beauty",
-        "subcategory": "Health and Wellness"
-    },
-    "51": {
-        "main_category": "Computing",
-        "subcategory": "Computers & Accessories"
-    },
-    "52": {
-        "main_category": "Computing",
-        "subcategory": "Software"
-    },
-    "53": {
-        "main_category": "Grocery",
-        "subcategory": "Food and Beverages"
-    },
-    "54": {
-        "main_category": "Grocery",
-        "subcategory": "Household Items"
-    },
-    "55": {
-        "main_category": "Grocery",
-        "subcategory": "Miscellaneous"
-    },
-    "56": {
-        "main_category": "Electronics",
-        "subcategory": "Wearable and Personal Technology"
-    },
-    "57": {
-        "main_category": "Sporting Goods",
-        "subcategory": "Sports & Fitness"
-    }
+    "categories_relations": [
+        {
+            "main_category": "Automobile",
+            "subcategory": "Vehicle Parts & Accessories",
+            "category_predictor_id": "0"
+        },
+        {
+            "main_category": "Automobile",
+            "subcategory": "Vehicle Maintenance & Care",
+            "category_predictor_id": "1"
+        },
+        {
+            "main_category": "Automobile",
+            "subcategory": "Vehicle Electronics & Accessories",
+            "category_predictor_id": "2"
+        },
+        {
+            "main_category": "Baby Products",
+            "subcategory": "Maternity and Gifts",
+            "category_predictor_id": "3"
+        },
+        {
+            "main_category": "Baby Products",
+            "subcategory": "Baby and Toddler Development",
+            "category_predictor_id": "4"
+        },
+        {
+            "main_category": "Baby Products",
+            "subcategory": "Baby Care Essentials",
+            "category_predictor_id": "5"
+        },
+        {
+            "main_category": "Baby Products",
+            "subcategory": "Baby Feeding and Nutrition",
+            "category_predictor_id": "6"
+        },
+        {
+            "main_category": "Baby Products",
+            "subcategory": "Baby Mobility and Transport",
+            "category_predictor_id": "7"
+        },
+        {
+            "main_category": "Electronics",
+            "subcategory": "Accessories and Supplies",
+            "category_predictor_id": "8"
+        },
+        {
+            "main_category": "Phones & Tablets",
+            "subcategory": "Phones & Tablets",
+            "category_predictor_id": "9"
+        },
+        {
+            "main_category": "Gaming",
+            "subcategory": "Console Gaming",
+            "category_predictor_id": "10"
+        },
+        {
+            "main_category": "Gaming",
+            "subcategory": "PC Gaming",
+            "category_predictor_id": "11"
+        },
+        {
+            "main_category": "Gaming",
+            "subcategory": "Miscellaneous Gaming Systems",
+            "category_predictor_id": "12"
+        },
+        {
+            "main_category": "Gaming",
+            "subcategory": "Digital and Online Gaming",
+            "category_predictor_id": "13"
+        },
+        {
+            "main_category": "Computing",
+            "subcategory": "Computer Accessories",
+            "category_predictor_id": "14"
+        },
+        {
+            "main_category": "Garden & Outdoors",
+            "subcategory": "Outdoor D\u00e9cor",
+            "category_predictor_id": "15"
+        },
+        {
+            "main_category": "Home & Office",
+            "subcategory": "Tools & Home Improvement",
+            "category_predictor_id": "16"
+        },
+        {
+            "main_category": "Home & Office",
+            "subcategory": "Home & Furniture",
+            "category_predictor_id": "17"
+        },
+        {
+            "main_category": "Home & Office",
+            "subcategory": "Home & Kitchen",
+            "category_predictor_id": "18"
+        },
+        {
+            "main_category": "Electronics",
+            "subcategory": "Office and Business Equipment",
+            "category_predictor_id": "19"
+        },
+        {
+            "main_category": "Home & Office",
+            "subcategory": "Office Products",
+            "category_predictor_id": "20"
+        },
+        {
+            "main_category": "Industrial & Scientific",
+            "subcategory": "Test, Measure & Inspect",
+            "category_predictor_id": "21"
+        },
+        {
+            "main_category": "Electronics",
+            "subcategory": "Photography and Imaging",
+            "category_predictor_id": "22"
+        },
+        {
+            "main_category": "Electronics",
+            "subcategory": "Security and Surveillance",
+            "category_predictor_id": "23"
+        },
+        {
+            "main_category": "Electronics",
+            "subcategory": "Audio and Video Equipment",
+            "category_predictor_id": "24"
+        },
+        {
+            "main_category": "Toys & Games",
+            "subcategory": "Play and Imagination",
+            "category_predictor_id": "25"
+        },
+        {
+            "main_category": "Sporting Goods",
+            "subcategory": "Outdoor Activities",
+            "category_predictor_id": "26"
+        },
+        {
+            "main_category": "Musical Instruments",
+            "subcategory": "Microphones & Accessories",
+            "category_predictor_id": "27"
+        },
+        {
+            "main_category": "Musical Instruments",
+            "subcategory": "Electronic Music, DJ & Karaoke",
+            "category_predictor_id": "28"
+        },
+        {
+            "main_category": "Musical Instruments",
+            "subcategory": "Instrument Accessories",
+            "category_predictor_id": "29"
+        },
+        {
+            "main_category": "Pet Supplies",
+            "subcategory": "Cats",
+            "category_predictor_id": "30"
+        },
+        {
+            "main_category": "Pet Supplies",
+            "subcategory": "Dogs",
+            "category_predictor_id": "31"
+        },
+        {
+            "main_category": "Pet Supplies",
+            "subcategory": "Other Pets",
+            "category_predictor_id": "32"
+        },
+        {
+            "main_category": "Toys & Games",
+            "subcategory": "Creative and Educational",
+            "category_predictor_id": "33"
+        },
+        {
+            "main_category": "Toys & Games",
+            "subcategory": "Physical and Outdoor",
+            "category_predictor_id": "34"
+        },
+        {
+            "main_category": "Toys & Games",
+            "subcategory": "Electronic and Interactive",
+            "category_predictor_id": "35"
+        },
+        {
+            "main_category": "Toys & Games",
+            "subcategory": "Home and Storage",
+            "category_predictor_id": "36"
+        },
+        {
+            "main_category": "Books, Movies and Music",
+            "subcategory": "Educational and Learning Resources",
+            "category_predictor_id": "37"
+        },
+        {
+            "main_category": "Books, Movies and Music",
+            "subcategory": "Stationery and Office Supplies",
+            "category_predictor_id": "38"
+        },
+        {
+            "main_category": "Books, Movies and Music",
+            "subcategory": "Entertainment and Media",
+            "category_predictor_id": "39"
+        },
+        {
+            "main_category": "Books, Movies and Music",
+            "subcategory": "Literature and Humanities",
+            "category_predictor_id": "40"
+        },
+        {
+            "main_category": "Fashion",
+            "subcategory": "Luggage & Travel Gear",
+            "category_predictor_id": "41"
+        },
+        {
+            "main_category": "Fashion",
+            "subcategory": "Men's Fashion",
+            "category_predictor_id": "42"
+        },
+        {
+            "main_category": "Fashion",
+            "subcategory": "Women's Fashion",
+            "category_predictor_id": "43"
+        },
+        {
+            "main_category": "Fashion",
+            "subcategory": "Kid's Fashion",
+            "category_predictor_id": "44"
+        },
+        {
+            "main_category": "Fashion",
+            "subcategory": "Shoe, Jewelry & Watch Accessories",
+            "category_predictor_id": "45"
+        },
+        {
+            "main_category": "Fashion",
+            "subcategory": "Uniforms, Work & Safety",
+            "category_predictor_id": "46"
+        },
+        {
+            "main_category": "Home & Office",
+            "subcategory": "Appliances",
+            "category_predictor_id": "47"
+        },
+        {
+            "main_category": "Home & Office",
+            "subcategory": "Arts, Crafts & Sewing",
+            "category_predictor_id": "48"
+        },
+        {
+            "main_category": "Health & Beauty",
+            "subcategory": "Personal Care and Grooming",
+            "category_predictor_id": "49"
+        },
+        {
+            "main_category": "Health & Beauty",
+            "subcategory": "Health and Wellness",
+            "category_predictor_id": "50"
+        },
+        {
+            "main_category": "Computing",
+            "subcategory": "Computers & Accessories",
+            "category_predictor_id": "51"
+        },
+        {
+            "main_category": "Computing",
+            "subcategory": "Software",
+            "category_predictor_id": "52"
+        },
+        {
+            "main_category": "Grocery",
+            "subcategory": "Food and Beverages",
+            "category_predictor_id": "53"
+        },
+        {
+            "main_category": "Grocery",
+            "subcategory": "Household Items",
+            "category_predictor_id": "54"
+        },
+        {
+            "main_category": "Grocery",
+            "subcategory": "Miscellaneous",
+            "category_predictor_id": "55"
+        },
+        {
+            "main_category": "Electronics",
+            "subcategory": "Wearable and Personal Technology",
+            "category_predictor_id": "56"
+        },
+        {
+            "main_category": "Sporting Goods",
+            "subcategory": "Sports & Fitness",
+            "category_predictor_id": "57"
+        }
+    ],
+    "categories_translations": [
+        {
+            "category": "Baby Products",
+            "fr": "Produits pour bébés",
+            "en": "Baby Products"
+        },
+        {
+            "category": "Pet Supplies",
+            "fr": "Fournitures pour animaux de compagnie",
+            "en": "Pet Supplies"
+        },
+        {
+            "category": "Books, Movies and Music",
+            "fr": "Livres, Films et Musique",
+            "en": "Books, Movies and Music"
+        },
+        {
+            "category": "Musical Instruments",
+            "fr": "Instruments de musique",
+            "en": "Musical Instruments"
+        },
+        {
+            "category": "Gaming",
+            "fr": "Jeux vidéo",
+            "en": "Gaming"
+        },
+        {
+            "category": "Electronics",
+            "fr": "Électronique",
+            "en": "Electronics"
+        },
+        {
+            "category": "Home & Office",
+            "fr": "Maison et Bureau",
+            "en": "Home & Office"
+        },
+        {
+            "category": "Computing",
+            "fr": "Informatique",
+            "en": "Computing"
+        },
+        {
+            "category": "Health & Beauty",
+            "fr": "Santé et Beauté",
+            "en": "Health & Beauty"
+        },
+        {
+            "category": "Phones & Tablets",
+            "fr": "Téléphones et Tablettes",
+            "en": "Phones & Tablets"
+        },
+        {
+            "category": "Industrial & Scientific",
+            "fr": "Industriel et Scientifique",
+            "en": "Industrial & Scientific"
+        },
+        {
+            "category": "Toys & Games",
+            "fr": "Jouets et Jeux",
+            "en": "Toys & Games"
+        },
+        {
+            "category": "Garden & Outdoors",
+            "fr": "Jardin et Plein air",
+            "en": "Garden & Outdoors"
+        },
+        {
+            "category": "Fashion",
+            "fr": "Mode",
+            "en": "Fashion"
+        },
+        {
+            "category": "Automobile",
+            "fr": "Automobile",
+            "en": "Automobile"
+        },
+        {
+            "category": "Sporting Goods",
+            "fr": "Articles de sport",
+            "en": "Sporting Goods"
+        },
+        {
+            "category": "Grocery",
+            "fr": "Épicerie",
+            "en": "Grocery"
+        },
+        {
+            "category": "Vehicle Parts & Accessories",
+            "fr": "Pièces et Accessoires Auto",
+            "en": "Vehicle Parts & Accessories"
+        },
+        {
+            "category": "Vehicle Maintenance & Care",
+            "fr": "Entretien et Soin Automobile",
+            "en": "Vehicle Maintenance & Care"
+        },
+        {
+            "category": "Vehicle Electronics & Accessories",
+            "fr": "Électronique et Accessoires Auto",
+            "en": "Vehicle Electronics & Accessories"
+        },
+        {
+            "category": "Maternity and Gifts",
+            "fr": "Maternité et Cadeaux",
+            "en": "Maternity and Gifts"
+        },
+        {
+            "category": "Baby and Toddler Development",
+            "fr": "Développement Bébé et Tout-petit",
+            "en": "Baby and Toddler Development"
+        },
+        {
+            "category": "Baby Care Essentials",
+            "fr": "Articles Essentiels pour Bébé",
+            "en": "Baby Care Essentials"
+        },
+        {
+            "category": "Baby Feeding and Nutrition",
+            "fr": "Alimentation et Nutrition Bébé",
+            "en": "Baby Feeding and Nutrition"
+        },
+        {
+            "category": "Baby Mobility and Transport",
+            "fr": "Mobilité et Transport Bébé",
+            "en": "Baby Mobility and Transport"
+        },
+        {
+            "category": "Accessories and Supplies",
+            "fr": "Accessoires et Fournitures",
+            "en": "Accessories and Supplies"
+        },
+        {
+            "category": "Console Gaming",
+            "fr": "Jeux vidéo sur Console",
+            "en": "Console Gaming"
+        },
+        {
+            "category": "PC Gaming",
+            "fr": "Jeux vidéo sur PC",
+            "en": "PC Gaming"
+        },
+        {
+            "category": "Miscellaneous Gaming Systems",
+            "fr": "Systèmes de Jeux Vidéo Divers",
+            "en": "Miscellaneous Gaming Systems"
+        },
+        {
+            "category": "Digital and Online Gaming",
+            "fr": "Jeux Vidéo Numériques et en Ligne",
+            "en": "Digital and Online Gaming"
+        },
+        {
+            "category": "Computer Accessories",
+            "fr": "Accessoires pour Ordinateur",
+            "en": "Computer Accessories"
+        },
+        {
+            "category": "Outdoor D\u00e9cor",
+            "fr": "Décoration Extérieure",
+            "en": "Outdoor D\u00e9cor"
+        },
+        {
+            "category": "Tools & Home Improvement",
+            "fr": "Outils et Amélioration de l'Habitat",
+            "en": "Tools & Home Improvement"
+        },
+        {
+            "category": "Home & Furniture",
+            "fr": "Maison et Meubles",
+            "en": "Home & Furniture"
+        },
+        {
+            "category": "Home & Kitchen",
+            "fr": "Maison et Cuisine",
+            "en": "Home & Kitchen"
+        },
+        {
+            "category": "Office and Business Equipment",
+            "fr": "Équipement de Bureau et Professionnel",
+            "en": "Office and Business Equipment"
+        },
+        {
+            "category": "Office Products",
+            "fr": "Produits de Bureau",
+            "en": "Office Products"
+        },
+        {
+            "category": "Test, Measure & Inspect",
+            "fr": "Test, Mesure et Inspection",
+            "en": "Test, Measure & Inspect"
+        },
+        {
+            "category": "Photography and Imaging",
+            "fr": "Photographie et Imagerie",
+            "en": "Photography and Imaging"
+        },
+        {
+            "category": "Security and Surveillance",
+            "fr": "Sécurité et Surveillance",
+            "en": "Security and Surveillance"
+        },
+        {
+            "category": "Audio and Video Equipment",
+            "fr": "Équipement Audio et Vidéo",
+            "en": "Audio and Video Equipment"
+        },
+        {
+            "category": "Play and Imagination",
+            "fr": "Jeux et Imagination",
+            "en": "Play and Imagination"
+        },
+        {
+            "category": "Outdoor Activities",
+            "fr": "Activités en Plein air",
+            "en": "Outdoor Activities"
+        },
+        {
+            "category": "Microphones & Accessories",
+            "fr": "Microphones et Accessoires",
+            "en": "Microphones & Accessories"
+        },
+        {
+            "category": "Electronic Music, DJ & Karaoke",
+            "fr": "Musique Électronique, DJ & Karaoké",
+            "en": "Electronic Music, DJ & Karaoke"
+        },
+        {
+            "category": "Instrument Accessories",
+            "fr": "Accessoires pour Instruments",
+            "en": "Instrument Accessories"
+        },
+        {
+            "category": "Cats",
+            "fr": "Chats",
+            "en": "Cats"
+        },
+        {
+            "category": "Dogs",
+            "fr": "Chiens",
+            "en": "Dogs"
+        },
+        {
+            "category": "Other Pets",
+            "fr": "Autres Animaux de Compagnie",
+            "en": "Other Pets"
+        },
+        {
+            "category": "Creative and Educational",
+            "fr": "Créatif et Éducatif",
+            "en": "Creative and Educational"
+        },
+        {
+            "category": "Physical and Outdoor",
+            "fr": "Physique et Extérieur",
+            "en": "Physical and Outdoor"
+        },
+        {
+            "category": "Electronic and Interactive",
+            "fr": "Électronique et Interactif",
+            "en": "Electronic and Interactive"
+        },
+        {
+            "category": "Home and Storage",
+            "fr": "Maison et Rangement",
+            "en": "Home and Storage"
+        },
+        {
+            "category": "Educational and Learning Resources",
+            "fr": "Ressources Éducatives et d'Apprentissage",
+            "en": "Educational and Learning Resources"
+        },
+        {
+            "category": "Stationery and Office Supplies",
+            "fr": "Papeterie et Fournitures de Bureau",
+            "en": "Stationery and Office Supplies"
+        },
+        {
+            "category": "Entertainment and Media",
+            "fr": "Divertissement et Médias",
+            "en": "Entertainment and Media"
+        },
+        {
+            "category": "Literature and Humanities",
+            "fr": "Littérature et Sciences Humaines",
+            "en": "Literature and Humanities"
+        },
+        {
+            "category": "Luggage & Travel Gear",
+            "fr": "Bagages et Équipement de Voyage",
+            "en": "Luggage & Travel Gear"
+        },
+        {
+            "category": "Men's Fashion",
+            "fr": "Mode Homme",
+            "en": "Men's Fashion"
+        },
+        {
+            "category": "Women's Fashion",
+            "fr": "Mode Femme",
+            "en": "Women's Fashion"
+        },
+        {
+            "category": "Kid's Fashion",
+            "fr": "Mode Enfant",
+            "en": "Kid's Fashion"
+        },
+        {
+            "category": "Shoe, Jewelry & Watch Accessories",
+            "fr": "Accessoires Chaussures, Bijoux et Montres",
+            "en": "Shoe, Jewelry & Watch Accessories"
+        },
+        {
+            "category": "Uniforms, Work & Safety",
+            "fr": "Uniformes, Travail et Sécurité",
+            "en": "Uniforms, Work & Safety"
+        },
+        {
+            "category": "Appliances",
+            "fr": "Appareils Électroménagers",
+            "en": "Appliances"
+        },
+        {
+            "category": "Arts, Crafts & Sewing",
+            "fr": "Arts, Artisanat et Couture",
+            "en": "Arts, Crafts & Sewing"
+        },
+        {
+            "category": "Personal Care and Grooming",
+            "fr": "Soins Personnels et Toilettage",
+            "en": "Personal Care and Grooming"
+        },
+        {
+            "category": "Health and Wellness",
+            "fr": "Santé et Bien-être",
+            "en": "Health and Wellness"
+        },
+        {
+            "category": "Computers & Accessories",
+            "fr": "Ordinateurs et Accessoires",
+            "en": "Computers & Accessories"
+        },
+        {
+            "category": "Software",
+            "fr": "Logiciels",
+            "en": "Software"
+        },
+        {
+            "category": "Food and Beverages",
+            "fr": "Aliments et Boissons",
+            "en": "Food and Beverages"
+        },
+        {
+            "category": "Household Items",
+            "fr": "Articles Ménagers",
+            "en": "Household Items"
+        },
+        {
+            "category": "Miscellaneous",
+            "fr": "Divers",
+            "en": "Miscellaneous"
+        },
+        {
+            "category": "Wearable and Personal Technology",
+            "fr": "Technologie Portable et Personnelle",
+            "en": "Wearable and Personal Technology"
+        },
+        {
+            "category": "Sports & Fitness",
+            "fr": "Sports et Fitness",
+            "en": "Sports & Fitness"
+        }        
+    ],
+    "categories_scores": [
+        {
+            "category": "Baby Products",
+            "score": 1
+        },
+        {
+            "category": "Pet Supplies",
+            "score": 1
+        },
+        {
+            "category": "Books, Movies and Music",
+            "score": 1
+        },
+        {
+            "category": "Musical Instruments",
+            "score": 1
+        },
+        {
+            "category": "Gaming",
+            "score": 1
+        },
+        {
+            "category": "Electronics",
+            "score": 1
+        },
+        {
+            "category": "Home & Office",
+            "score": 1
+        },
+        {
+            "category": "Computing",
+            "score": 1
+        },
+        {
+            "category": "Health & Beauty",
+            "score": 1
+        },
+        {
+            "category": "Phones & Tablets",
+            "score": 1
+        },
+        {
+            "category": "Industrial & Scientific",
+            "score": 1
+        },
+        {
+            "category": "Toys & Games",
+            "score": 1
+        },
+        {
+            "category": "Garden & Outdoors",
+            "score": 1
+        },
+        {
+            "category": "Fashion",
+            "score": 1
+        },
+        {
+            "category": "Automobile",
+            "score": 1
+        },
+        {
+            "category": "Sporting Goods",
+            "score": 1
+        },
+        {
+            "category": "Grocery",
+            "score": 1
+        },
+        {
+            "category": "Vehicle Parts & Accessories",
+            "score": 1
+        },
+        {
+            "category": "Vehicle Maintenance & Care",
+            "score": 1
+        },
+        {
+            "category": "Vehicle Electronics & Accessories",
+            "score": 1
+        },
+        {
+            "category": "Maternity and Gifts",
+            "score": 1
+        },
+        {
+            "category": "Baby and Toddler Development",
+            "score": 1
+        },
+        {
+            "category": "Baby Care Essentials",
+            "score": 1
+        },
+        {
+            "category": "Baby Feeding and Nutrition",
+            "score": 1
+        },
+        {
+            "category": "Baby Mobility and Transport",
+            "score": 1
+        },
+        {
+            "category": "Accessories and Supplies",
+            "score": 1
+        },
+        {
+            "category": "Phones & Tablets",
+            "score": 1
+        },
+        {
+            "category": "Console Gaming",
+            "score": 1
+        },
+        {
+            "category": "PC Gaming",
+            "score": 1
+        },
+        {
+            "category": "Miscellaneous Gaming Systems",
+            "score": 1
+        },
+        {
+            "category": "Digital and Online Gaming",
+            "score": 1
+        },
+        {
+            "category": "Computer Accessories",
+            "score": 1
+        },
+        {
+            "category": "Outdoor D\u00e9cor",
+            "score": 1
+        },
+        {
+            "category": "Tools & Home Improvement",
+            "score": 1
+        },
+        {
+            "category": "Home & Furniture",
+            "score": 1
+        },
+        {
+            "category": "Home & Kitchen",
+            "score": 1
+        },
+        {
+            "category": "Office and Business Equipment",
+            "score": 1
+        },
+        {
+            "category": "Office Products",
+            "score": 1
+        },
+        {
+            "category": "Test, Measure & Inspect",
+            "score": 1
+        },
+        {
+            "category": "Photography and Imaging",
+            "score": 1
+        },
+        {
+            "category": "Security and Surveillance",
+            "score": 1
+        },
+        {
+            "category": "Audio and Video Equipment",
+            "score": 1
+        },
+        {
+            "category": "Play and Imagination",
+            "score": 1
+        },
+        {
+            "category": "Outdoor Activities",
+            "score": 1
+        },
+        {
+            "category": "Microphones & Accessories",
+            "score": 1
+        },
+        {
+            "category": "Electronic Music, DJ & Karaoke",
+            "score": 1
+        },
+        {
+            "category": "Instrument Accessories",
+            "score": 1
+        },
+        {
+            "category": "Cats",
+            "score": 1
+        },
+        {
+            "category": "Dogs",
+            "score": 1
+        },
+        {
+            "category": "Other Pets",
+            "score": 1
+        },
+        {
+            "category": "Creative and Educational",
+            "score": 1
+        },
+        {
+            "category": "Physical and Outdoor",
+            "score": 1
+        },
+        {
+            "category": "Electronic and Interactive",
+            "score": 1
+        },
+        {
+            "category": "Home and Storage",
+            "score": 1
+        },
+        {
+            "category": "Educational and Learning Resources",
+            "score": 1
+        },
+        {
+            "category": "Stationery and Office Supplies",
+            "score": 1
+        },
+        {
+            "category": "Entertainment and Media",
+            "score": 1
+        },
+        {
+            "category": "Literature and Humanities",
+            "score": 1
+        },
+        {
+            "category": "Luggage & Travel Gear",
+            "score": 1
+        },
+        {
+            "category": "Men's Fashion",
+            "score": 1
+        },
+        {
+            "category": "Women's Fashion",
+            "score": 1
+        },
+        {
+            "category": "Kid's Fashion",
+            "score": 1
+        },
+        {
+            "category": "Shoe, Jewelry & Watch Accessories",
+            "score": 1
+        },
+        {
+            "category": "Uniforms, Work & Safety",
+            "score": 1
+        },
+        {
+            "category": "Appliances",
+            "score": 1
+        },
+        {
+            "category": "Arts, Crafts & Sewing",
+            "score": 1
+        },
+        {
+            "category": "Personal Care and Grooming",
+            "score": 1
+        },
+        {
+            "category": "Health and Wellness",
+            "score": 1
+        },
+        {
+            "category": "Computers & Accessories",
+            "score": 1
+        },
+        {
+            "category": "Software",
+            "score": 1
+        },
+        {
+            "category": "Food and Beverages",
+            "score": 1
+        },
+        {
+            "category": "Household Items",
+            "score": 1
+        },
+        {
+            "category": "Miscellaneous",
+            "score": 1
+        },
+        {
+            "category": "Wearable and Personal Technology",
+            "score": 1
+        },
+        {
+            "category": "Sports & Fitness",
+            "score": 1
+        }
+    ]
 }

@@ -26,6 +26,13 @@ class Category(models.Model):
         default=None,
         on_delete=models.CASCADE,
     )
+    category_predictor_id = models.CharField(
+        null=True,
+        blank=True,
+        default=None,
+        help_text="The category id returned by the predictor",
+        max_length=20
+    )
 
     def __str__(self):
         return self.name
