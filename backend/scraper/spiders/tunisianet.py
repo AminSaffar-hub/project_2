@@ -1,9 +1,9 @@
 import re
 
 import scrapy
-from scraper.items import ArticleItem
 
 from backend.models import Item
+from scraper.items import ArticleItem
 
 category_mapping = {
     "electronics": [

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from backend.models import Item, Category, Shop, Like
+from backend.models import Category, Item, Like, Shop
 
 # Register your models here.
 admin.site.register(Item)

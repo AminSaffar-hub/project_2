@@ -1,4 +1,5 @@
 from modeltranslation.translator import TranslationOptions, translator
+
 from backend.models import Category
 
 

@@ -6,14 +6,13 @@ from django.contrib.auth.views import (
 )
 from django.urls import path
 
-from login.forms import (
-    CustomAuthenticationForm,
-    CustomPasswordResetForm,
-    CustomPasswordChangeWithoutLoginForm,
-)
-
 # import both app modules
 from login import views as user_views
+from login.forms import (
+    CustomAuthenticationForm,
+    CustomPasswordChangeWithoutLoginForm,
+    CustomPasswordResetForm,
+)
 
 from . import views
 

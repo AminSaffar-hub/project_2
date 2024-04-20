@@ -1,8 +1,8 @@
 import scrapy
-from scraper.items import ArticleItem
 from scrapy.exceptions import CloseSpider
 
 from backend.models import Item
+from scraper.items import ArticleItem
 
 
 class BeautyStoreSpider(scrapy.Spider):

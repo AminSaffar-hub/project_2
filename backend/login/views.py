@@ -5,6 +5,7 @@ from django.contrib.auth.views import PasswordResetCompleteView
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.utils.translation import gettext as _
+
 from login.forms import (
     CustomPasswordChangeForm,
     EditProfileForm,

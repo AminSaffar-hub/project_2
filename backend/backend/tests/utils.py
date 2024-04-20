@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 
-from backend.models import Item, Category, Shop
+from backend.models import Category, Item, Shop
 
 
 class TestCaseWithDataMixin:
