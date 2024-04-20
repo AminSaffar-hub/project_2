@@ -206,9 +206,9 @@ class CustomPasswordChangeForm(PasswordChangeForm):
         )
 
 
-class CustomPasswordChangeWithoutLoginForm(PasswordChangeForm):
+class CustomPasswordChangeWithoutLoginForm(SetPasswordForm):
     def __init__(self, *args, **kwargs):
-        super(CustomPasswordChangeForm, self).__init__(*args, **kwargs)
+        super(CustomPasswordChangeWithoutLoginForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper(self)
 
         self.helper.layout = Layout(
@@ -216,9 +216,6 @@ class CustomPasswordChangeWithoutLoginForm(PasswordChangeForm):
                 '<h4 class="text-center pb-5">{edit_password}</h4>'.format(
                     edit_password=_("Edit password")
                 )
-            ),
-            Field(
-                "old_password",
             ),
             Field(
                 "new_password1",
