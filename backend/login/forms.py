@@ -89,31 +89,20 @@ class EditProfileForm(forms.ModelForm):
         self.helper = FormHelper(self)
 
         self.helper.layout = Layout(
+            Field("email", wrapper_class="w-100"),
+            Field("first_name", wrapper_class="col-12 col-md-6"),
+            Field("last_name", wrapper_class="col-12 col-md-6"),
             HTML(
-                '<h4 class="text-center pb-5">{edit_profile}</h4>'.format(
-                    edit_profile=_("Edit Profile")
+                """
+                <div class="col-sm-12 text-center">
+                    <button class="btn btn-primary" type="submit">
+                        <i class="fa fa-save me-2"></i>
+                        {save_edits}
+                    </button>
+                </div>
+                """.format(
+                    save_edits=_("Save Edits")
                 )
-            ),
-            Field(
-                "email",
-            ),
-            Field(
-                "first_name",
-            ),
-            Field(
-                "last_name",
-            ),
-            HTML(
-                "<small>{change_password}</small><br><br>".format(
-                    change_password=_(
-                        "You can change your password using "
-                        '<a href="{{change_password_url}}">this form</a>.'
-                    )
-                )
-            ),
-            HTML(
-                '<button class="btn btn-primary w-100" type="submit">'
-                "{save_edits}</button>".format(save_edits=_("Save Edits"))
             ),
         )
 
@@ -122,6 +111,15 @@ class EditProfileForm(forms.ModelForm):
 
         model = User
         fields = ("email", "first_name", "last_name")
+
+
+class EditProfileFormReadOnly(EditProfileForm):
+    def __init__(self, *args, **kwargs):
+        super(EditProfileFormReadOnly, self).__init__(*args, **kwargs)
+
+        for field in self.fields.values():
+            field.disabled = True
+        self.helper.layout.pop()
 
 
 class CustomPasswordResetForm(PasswordResetForm):
@@ -183,6 +181,32 @@ class CustomAuthenticationForm(AuthenticationForm):
 
 
 class CustomPasswordChangeForm(PasswordChangeForm):
+    def __init__(self, *args, **kwargs):
+        super(CustomPasswordChangeForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper(self)
+
+        self.helper.layout = Layout(
+            Field(
+                "old_password",
+            ),
+            Field("new_password1", wrapper_class="col-12 col-md-6"),
+            Field("new_password2", wrapper_class="col-12 col-md-6"),
+            HTML(
+                """
+                <div class="col-sm-12 text-center">
+                    <button class="btn btn-primary" type="submit">
+                        <i class="fa fa-save me-2"></i>
+                        {edit_password}
+                    </button>
+                </div>
+                """.format(
+                    edit_password=_("Save password")
+                )
+            ),
+        )
+
+
+class CustomPasswordChangeWithoutLoginForm(PasswordChangeForm):
     def __init__(self, *args, **kwargs):
         super(CustomPasswordChangeForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper(self)

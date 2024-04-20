@@ -1,6 +1,7 @@
 {% extends 'frontend/base.html' %}
 
 {% load static %}
+{% load crispy_forms_tags %}
 {% load i18n %}
 
 {% block 'body' %}
@@ -26,25 +27,48 @@
         margin-top: 20px;
     }
 </style>
+<!-- Theme stylesheet-->
+<link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/hub/2-0/css/style.default.3a2bbeae.css" id="theme-stylesheet">
+<!-- Custom stylesheet - for your changes-->
+<link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/hub/2-0/css/custom.0a822280.css">
 
-<!-- viewing user info -->
-<div class="container form-container shadow-lg">
-    <h1>{% trans "Profile:" %} {{ user|title }}</h1>
-    <p>{% trans "Email:" %} {{ user.email }}</p>
-    <p>{% trans "First Name:" %} {{ user.first_name }}</p>
-    <p>{% trans "Last Name:" %} {{ user.last_name }}</p>
+<!-- Hero Section-->
+<section class="py-5">
+    <div class="container py-4">
+      <div class="row gx-5 gy-5">
+        <div class="col-xl-3 col-lg-4">
+          <div class="bg-light text-center p-4 rounded-top-lg border border-bottom-0"><a class="d-inline-block" href="customer-account.html#"><img class="img-fluid rounded-circle img-thumbnail p-2 mb-3" src="https://d19m59y37dris4.cloudfront.net/hub/2-0/img/person-3.28271a04.jpg" width="150" alt="..."></a>
+            <h5>{{ user|title }}</h5>
+          </div>
+          <nav class="list-group">
+                <a class="active list-group-item list-group-item-action d-flex justify-content-between align-items-center rounded-0" href="{% url 'profile' %}" aria-current="true">
+                    <span class="fw-normal text-sm py-1">
+                        Profile
+                    </span>
+                </a>
+                <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" href="{% url 'change_password' %}">
+                    <span class="fw-normal text-sm text-dark py-1">
+                        Password
+                    </span>
+                </a>
+          </nav>
+        </div>
+        <div class="col-lg-8 col-xl-9">
+          <div class="bg-light rounded-pill px-4 py-3 mb-5">
+            <h5 class="mb-0">Personal details</h5>
+          </div>
+          <form method="GET" class="px-5">
+            <div class="row gy-3">
+                {% csrf_token %}
+                {% crispy form %}
+                <div class="col-sm-12 text-center">
+                    <a href="{% url 'edit_profile' %}" class="btn btn-primary"><i class="fa fa-edit me-2"></i>{% trans "Edit profile" %}</a>
+                </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+</section>
 
-    <p><a href="{% url 'edit_profile' %}" class="btn form-btn btn-success">{% trans "Edit profile" %}</a></p>
-</div>
-<script>
-    // when document loads, slide alert down
-    $(document).ready(function() {
-        $(".alert").slideDown();
-    });
-
-    // once close is clicked, slide up the alert
-    $(".close").click(function(){
-        $(".alert").slideUp();
-    });
-</script>
 {% endblock %}

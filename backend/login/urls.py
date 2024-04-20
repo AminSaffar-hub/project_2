@@ -9,7 +9,7 @@ from django.urls import path
 from login.forms import (
     CustomAuthenticationForm,
     CustomPasswordResetForm,
-    CustomSetPasswordForm,
+    CustomPasswordChangeWithoutLoginForm,
 )
 
 # import both app modules
@@ -53,7 +53,8 @@ urlpatterns = [
     path(
         "reset_password/<uidb64>/<token>/",
         PasswordResetConfirmView.as_view(
-            template_name="login/change_password.html", form_class=CustomSetPasswordForm
+            template_name="login/change_password_without_login.html",
+            form_class=CustomPasswordChangeWithoutLoginForm,
         ),
         name="password_reset_confirm",
     ),
