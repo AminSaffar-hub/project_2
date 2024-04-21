@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="{% static 'css/product_description.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="{% static 'js/expend_description.js' %}"></script>
     <script src="{% static 'js/like_item.js' %}"></script>
     <script src="{% static 'js/script.js' %}"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4339509524160281" crossorigin="anonymous"></script>
@@ -40,9 +39,9 @@
             <div class="order-1 order-md-2">
                 {% if user.is_authenticated %}
                     <!-- if user is authenticated, this part is shown -->
-                    <a data-bs-toggle="offcanvas" data-bs-target="#userCanvas" aria-controls="offcanvasRight">
-                        <div class="btn text-center bg-success"  style="width: 40px;height: 40px;border-radius: 40px">
-                            <p class="text-white" ><b>{{ user.username.0|upper }}</b></p>
+                    <a class="text-decoration-none" data-bs-toggle="offcanvas" data-bs-target="#userCanvas" aria-controls="offcanvasRight" href="">
+                        <div class="bg-success d-flex align-items-center justify-content-center text-center"  style="width: 40px;height: 40px;border-radius: 40px">
+                            <p class="text-white pt-3 fs-5" ><b>{{ user.username.0|upper }}</b></p>
                         </div>
                     </a>
                     <div class="offcanvas offcanvas-end" tabindex="-1" id="userCanvas" aria-labelledby="userCanvasLabel">

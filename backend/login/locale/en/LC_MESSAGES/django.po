@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-14 22:13+0000\n"
+"POT-Creation-Date: 2024-04-21 17:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,69 +22,65 @@ msgstr ""
 msgid "Register"
 msgstr ""
 
-#: login/forms.py:94
-msgid "Edit Profile"
-msgstr ""
-
-#: login/forms.py:109
-msgid ""
-"You can change your password using <a href=\"{{change_password_url}}\">this "
-"form</a>."
-msgstr ""
-
-#: login/forms.py:116
+#: login/forms.py:104
 msgid "Save Edits"
 msgstr ""
 
-#: login/forms.py:136 login/forms.py:144
+#: login/forms.py:134 login/forms.py:142
 msgid "Reset password"
 msgstr ""
 
-#: login/forms.py:155 login/forms.py:180
+#: login/forms.py:153 login/forms.py:178
 msgid "Login"
 msgstr ""
 
-#: login/forms.py:165
+#: login/forms.py:163
 msgid ""
 "Did you forget your password? Click this <a "
 "href=\"{{password_reset_url}}\">link</a>"
 msgstr ""
 
-#: login/forms.py:173
+#: login/forms.py:171
 msgid "Not a member? <a href=\"{{register_url}}\">Register</a> for free now."
 msgstr ""
 
-#: login/forms.py:193 login/forms.py:207 login/forms.py:220 login/forms.py:231
+#: login/forms.py:203
+msgid "Save password"
+msgstr ""
+
+#: login/forms.py:217 login/forms.py:228
+#: login/templates/login/change_password.html:50
 msgid "Edit password"
 msgstr ""
 
-#: login/templates/login/change_password.html:37
+#: login/templates/login/change_password.html:38
+#: login/templates/login/edit_profile.html:41
+#: login/templates/login/profile.html:38
+msgid "Profile"
+msgstr ""
+
+#: login/templates/login/change_password.html:43
+#: login/templates/login/edit_profile.html:46
+#: login/templates/login/profile.html:43
+msgid "Password"
+msgstr ""
+
+#: login/templates/login/change_password_without_login.html:37
 msgid "Password reset failed"
 msgstr ""
 
-#: login/templates/login/change_password.html:38
+#: login/templates/login/change_password_without_login.html:38
 msgid ""
 "The password reset link is invalid, possibly because it has been used. "
 "Please request a new password reset."
 msgstr ""
 
-#: login/templates/login/profile.html:32
-msgid "Profile:"
-msgstr ""
+#: login/templates/login/edit_profile.html:53
+#: login/templates/login/profile.html:50
+msgid "Personal details"
+msgstr "Détails personnels"
 
-#: login/templates/login/profile.html:33
-msgid "Email:"
-msgstr ""
-
-#: login/templates/login/profile.html:34
-msgid "First Name:"
-msgstr ""
-
-#: login/templates/login/profile.html:35
-msgid "Last Name:"
-msgstr ""
-
-#: login/templates/login/profile.html:37
+#: login/templates/login/profile.html:57
 msgid "Edit profile"
 msgstr ""
 
@@ -125,18 +121,18 @@ msgid ""
 "you registered with, and check your spam folder."
 msgstr ""
 
-#: login/views.py:14
+#: login/views.py:20
 msgid "Disconnected successfully."
 msgstr ""
 
-#: login/views.py:35
+#: login/views.py:41
 msgid "Account created successfully."
 msgstr ""
 
-#: login/views.py:67
+#: login/views.py:73
 msgid "Profile modified successfully."
 msgstr ""
 
-#: login/views.py:90 login/views.py:107
+#: login/views.py:96 login/views.py:113
 msgid "Password modified successfully."
 msgstr ""

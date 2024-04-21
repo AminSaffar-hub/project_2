@@ -1,7 +1,8 @@
 from django.core.management.base import BaseCommand, CommandError
-from scraper import settings
 from scrapy.crawler import CrawlerProcess
 from scrapy.settings import Settings
+
+from scraper import settings
 
 
 class Command(BaseCommand):

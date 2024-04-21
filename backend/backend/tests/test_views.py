@@ -1,10 +1,10 @@
 from django.conf import settings
 from django.test import RequestFactory, TestCase
 from django.urls import reverse
-from frontend.views import home
 
 from backend.models import Item, Like
 from backend.tests.utils import TestCaseWithDataMixin
+from frontend.views import home
 
 
 class ViewsTests(TestCaseWithDataMixin, TestCase):

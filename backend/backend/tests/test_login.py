@@ -50,8 +50,8 @@ class LoginViewsTests(TestCaseWithDataMixin, TestCase):
             "last_name": "Name",
         }
         response = self.client.post(edit_profile_url, data)
-        self.assertEqual(response.status_code, 200)
-        self.assertContains(response, "Profile modified successfully.")
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, "/profile/")
 
         self.user.refresh_from_db()
         self.assertEqual(self.user.first_name, "New")
@@ -66,9 +66,8 @@ class LoginViewsTests(TestCaseWithDataMixin, TestCase):
             "new_password2": "newpassword123",
         }
         response = self.client.post(change_password_url, data)
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, "login/profile.html")
-        self.assertContains(response, "Password modified successfully.")
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, "/profile/")
         self.user.refresh_from_db()
         self.assertTrue(self.user.check_password("newpassword123"))
 

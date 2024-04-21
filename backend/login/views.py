@@ -5,7 +5,13 @@ from django.contrib.auth.views import PasswordResetCompleteView
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.utils.translation import gettext as _
-from login.forms import CustomPasswordChangeForm, EditProfileForm, RegistrationForm
+
+from login.forms import (
+    CustomPasswordChangeForm,
+    EditProfileForm,
+    EditProfileFormReadOnly,
+    RegistrationForm,
+)
 
 
 def logout_view(request):
@@ -49,8 +55,8 @@ def register(request):
 @login_required
 def profile(request):
     """view profile if logged in"""
-
-    args = {"user": request.user}
+    form = EditProfileFormReadOnly(instance=request.user)
+    args = {"form": form}
     return render(request, "login/profile.html", args)
 
 
@@ -65,7 +71,7 @@ def edit_profile(request):
 
             # renders success message
             messages.success(request, _("Profile modified successfully."))
-            return render(request, "login/profile.html")
+            return redirect(reverse("profile"))
         else:
             # form for in valid error
             args = {"form": form}
@@ -88,7 +94,7 @@ def change_password(request):
             form.save()
             update_session_auth_hash(request, form.user)
             messages.success(request, _("Password modified successfully."))
-            return render(request, "login/profile.html")
+            return redirect(reverse("profile"))
         else:
             # form for in valid error
             args = {"form": form}

@@ -1,13 +1,12 @@
 from django.core.paginator import Paginator
 from django.db.models import ExpressionWrapper, F, FloatField
-from django.shortcuts import render
-from django.views.generic import DetailView
-from django.views.decorators.http import require_POST
-from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
+from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_POST
+from django.views.generic import DetailView
 
-from backend.models import Item, Category, Shop, Like
-
+from backend.models import Category, Item, Like, Shop
 
 NUMBER_OF_ITEMS_IN_PAGE = 8
 NUMBER_OF_TOP_ITEMS = 24
