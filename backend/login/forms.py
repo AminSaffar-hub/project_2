@@ -50,7 +50,7 @@ class RegistrationForm(UserCreationForm):
                 "captcha",
             ),
             HTML(
-                '<button class="btn btn-primary w-100" type="submit">'
+                '<button class="btn btn-primary btn-submit w-100" type="submit">'
                 "{register}</button>".format(register=_("Register"))
             ),
         )
@@ -95,7 +95,7 @@ class EditProfileForm(forms.ModelForm):
             HTML(
                 """
                 <div class="col-sm-12 text-center">
-                    <button class="btn btn-primary" type="submit">
+                    <button class="btn btn-primary btn-submit" type="submit">
                         <i class="fa fa-save me-2"></i>
                         {save_edits}
                     </button>
@@ -138,7 +138,7 @@ class CustomPasswordResetForm(PasswordResetForm):
                 "email",
             ),
             HTML(
-                '<button class="btn btn-primary w-100" type="submit">'
+                '<button class="btn btn-primary btn-submit w-100" type="submit">'
                 "{reset_password}</button>".format(reset_password=_("Reset password"))
             ),
         )
@@ -174,7 +174,7 @@ class CustomAuthenticationForm(AuthenticationForm):
                 )
             ),
             HTML(
-                '<button class="btn btn-primary w-100" type="submit">'
+                '<button class="btn btn-primary btn-submit w-100" type="submit">'
                 "{login}</button>".format(login=_("Login"))
             ),
         )
@@ -194,7 +194,7 @@ class CustomPasswordChangeForm(PasswordChangeForm):
             HTML(
                 """
                 <div class="col-sm-12 text-center">
-                    <button class="btn btn-primary" type="submit">
+                    <button class="btn btn-primary btn-submit" type="submit">
                         <i class="fa fa-save me-2"></i>
                         {edit_password}
                     </button>
@@ -209,30 +209,6 @@ class CustomPasswordChangeForm(PasswordChangeForm):
 class CustomPasswordChangeWithoutLoginForm(SetPasswordForm):
     def __init__(self, *args, **kwargs):
         super(CustomPasswordChangeWithoutLoginForm, self).__init__(*args, **kwargs)
-        self.helper = FormHelper(self)
-
-        self.helper.layout = Layout(
-            HTML(
-                '<h4 class="text-center pb-5">{edit_password}</h4>'.format(
-                    edit_password=_("Edit password")
-                )
-            ),
-            Field(
-                "new_password1",
-            ),
-            Field(
-                "new_password2",
-            ),
-            HTML(
-                '<button class="btn btn-primary w-100" type="submit">'
-                "{edit_password}</button>".format(edit_password=_("Edit password"))
-            ),
-        )
-
-
-class CustomSetPasswordForm(SetPasswordForm):
-    def __init__(self, *args, **kwargs):
-        super(CustomSetPasswordForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper(self)
 
         self.helper.layout = Layout(

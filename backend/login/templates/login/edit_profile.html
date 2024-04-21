@@ -7,33 +7,22 @@
 {% block 'body' %}
 
 <style>
-    .form-container {
-        max-width: 28em;
-        background-color: #f7f7f7;
-        border-radius: 30px;
-        border: 1px solid #dadce0;
-        padding-top: 50px;
-        padding-bottom: 50px;
+    h5, .h5 {
+      margin-top: 0;
+      margin-bottom: .5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      font-size: 1.25rem;
+      font-family: sans-serif;
     }
-
-    input {
-        max-width: 18em
-    };
-
-    .requiredField {
-        font-weight: bold;
-    }
-    .register a {
-        text-decoration: none;
+  
+    .rounded-top-lg {
+      border-top-left-radius: 1rem !important;
+      border-top-right-radius: 1rem !important
     }
 </style>
 
 {% url 'edit_profile' as edit_profile_url %}
-
-<!-- Theme stylesheet-->
-<link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/hub/2-0/css/style.default.3a2bbeae.css" id="theme-stylesheet">
-<!-- Custom stylesheet - for your changes-->
-<link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/hub/2-0/css/custom.0a822280.css">
 
 <!-- Hero Section-->
 <section class="py-5">

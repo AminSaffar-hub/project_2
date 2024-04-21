@@ -6,31 +6,20 @@
 
 {% block 'body' %}
 <style>
-    /* body */
-    .form-container {
-        padding-bottom: 180px;
+    h5, .h5 {
+      margin-top: 0;
+      margin-bottom: .5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      font-size: 1.25rem;
+      font-family: sans-serif;
     }
-    
-    /* text */
-    h1 {
-        padding-top: 50px;
-        padding-bottom: 20px;
-    }
-    h2 {
-        padding-top: 50px;
-        padding-bottom: 20px;
-        font-size: 3em;
-    }
-    
-    /* forms */
-    .form-btn {
-        margin-top: 20px;
+  
+    .rounded-top-lg {
+      border-top-left-radius: 1rem !important;
+      border-top-right-radius: 1rem !important
     }
 </style>
-<!-- Theme stylesheet-->
-<link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/hub/2-0/css/style.default.3a2bbeae.css" id="theme-stylesheet">
-<!-- Custom stylesheet - for your changes-->
-<link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/hub/2-0/css/custom.0a822280.css">
 
 <!-- Hero Section-->
 <section class="py-5">
@@ -65,7 +54,7 @@
                 {% csrf_token %}
                 {% crispy form %}
                 <div class="col-sm-12 text-center">
-                    <a href="{% url 'edit_profile' %}" class="btn btn-primary"><i class="fa fa-edit me-2"></i>{% trans "Edit profile" %}</a>
+                    <a href="{% url 'edit_profile' %}" class="btn btn-primary btn-submit"><i class="fa fa-edit me-2"></i>{% trans "Edit profile" %}</a>
                 </div>
             </div>
           </form>
