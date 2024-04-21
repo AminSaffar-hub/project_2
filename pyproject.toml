@@ -29,6 +29,8 @@ pillow = "^10.0.1"
 django-modeltranslation = "^0.18.11"
 jellyfish = "^1.0.3"
 crispy-bootstrap5 = "^2024.2"
+transformers = "^4.39.0"
+optimum = {extras = ["onnxruntime"], version = "^1.17.1"}
 
 
 [build-system]

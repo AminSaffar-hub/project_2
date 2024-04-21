@@ -49,7 +49,6 @@ class TdiscountSpider(scrapy.Spider):
                 item["price"] = float(product["regular_price_amount"])
                 item["link_to_post"] = product["url"]
                 item["link_to_image"] = product["cover"]["large"]["url"]
-                item["category"] = "appliances"
                 item["description"] = re.sub(r"<.*?>", "", product["description_short"])
                 item["provider"] = "Tdiscount"
                 item["delivery"] = Item.DeliveryOptions.WITH_CONDITONS

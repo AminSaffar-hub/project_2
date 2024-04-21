@@ -6,29 +6,6 @@ from scraper.items import ArticleItem
 from backend.models import Item
 
 
-category_mapping = {
-    "electronics": [
-        "Sécurité ",
-        "Univers Telephonie",
-        "Smartphones",
-        "Tablette",
-        "Univers Informatique",
-        "Smartwatch Tunisie",
-        "Box android",
-        "TV",
-        "Tv |Audio , Vidéo et Photo",
-        "Univers Maison",
-    ],
-    "appliances": ["GAZ Plaque", "Robot De Cuisine", "Cafetière", "Lave Vaisselle "],
-    "other": [
-        "Frontale",
-        "Accessoires Téléphonies ",
-        "Ventes Flash et Meilleur Promo",
-        "Accueil",
-    ],
-}
-
-
 class TunisiatechSpider(scrapy.Spider):
     name = "Tunisiatech"
     allowed_domains = ["tunisiatech.tn"]
@@ -74,17 +51,7 @@ class TunisiatechSpider(scrapy.Spider):
                 item["provider"] = self.name
                 item["delivery"] = Item.DeliveryOptions.WITH_CONDITONS
                 item["online_payment"] = True
-                reverse_mapping = {
-                    value: key
-                    for key, values in category_mapping.items()
-                    for value in values
-                }
-                category_name = product["category_name"]
-                associated_key = reverse_mapping.get(category_name)
-                if associated_key:
-                    item["category"] = associated_key
-                else:
-                    item["category"] = "other"
+
                 yield item
         current_page = response.meta.get("page", 1)
         self.logger.info(f"Currently on page: {current_page}")

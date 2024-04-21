@@ -161,15 +161,6 @@ class CosmetiqueSpider(CrawlSpider):
         item["provider"] = "Cosmetique"
         item["delivery"] = Item.DeliveryOptions.WITH_CONDITONS
         item["online_payment"] = True
-        category_name = response.url.split("/")[3]
-        reverse_mapping = {
-            value: key for key, values in category_mapping.items() for value in values
-        }
-        associated_key = reverse_mapping.get(category_name)
-        if associated_key:
-            item["category"] = associated_key
-        else:
-            item["category"] = "other"
         yield item
 
     def fetch_items(self, response):

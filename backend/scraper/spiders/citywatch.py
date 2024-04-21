@@ -5,47 +5,6 @@ from scraper.items import ArticleItem
 from backend.models import Item
 
 
-category_mapping = {
-    "accessory": [
-        "Boucles d'oreilles",
-        "Bagues Femme",
-        "Montre Homme",
-        "BABY-G ",
-        "Montre Femme",
-        "Casio",
-        "Montre Enfant",
-        "Bracelets Guess",
-        "CASIO",
-        "G-SHOCK",
-        "Raymond Daniel",
-        "Colliers Enzo Collection",
-        "Colliers Guess",
-        "Bracelets Enzo Collection",
-        "Raymond Daniel ",
-        "Edifice",
-        "Portefeuilles BHPC",
-        "Ceinture en Cuir",
-        "Ceinture En Cuir",
-        "Ceinture en cuir",
-        "Ceinture en acier",
-        "Ceinture En Acier",
-        "Ceinture en Acier ",
-        "Sac a Main ",
-        "Portefeuilles Us Polo Assn",
-        "Dream",
-        "Beverly Hills Polo Club",
-        "Pierre Cardin",
-        "Lee Cooper",
-        "Enzo Collection",
-        "Enzo Collection ",
-        "ENZO COLLECTION",
-        "Accueil",
-        "Slazenger",
-    ],
-    "electronics": ["SMARTWATCH", "ENZO DIGITAL"],
-}
-
-
 class CitywatchSpider(scrapy.Spider):
     name = "Citywatch"
     allowed_domains = ["citywatch.com.tn"]
@@ -88,17 +47,6 @@ class CitywatchSpider(scrapy.Spider):
                 item["provider"] = self.name
                 item["delivery"] = Item.DeliveryOptions.WITH_CONDITONS
                 item["online_payment"] = True
-                reverse_mapping = {
-                    value: key
-                    for key, values in category_mapping.items()
-                    for value in values
-                }
-                category_name = product["category_name"]
-                associated_key = reverse_mapping.get(category_name)
-                if associated_key:
-                    item["category"] = associated_key
-                else:
-                    item["category"] = "other"
                 yield item
         current_page = response.meta.get("page", 1)
         self.logger.info(f"Currently on page: {current_page}")

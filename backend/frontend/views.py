@@ -48,7 +48,7 @@ def home(request):
     if searched_item:
         display_items = sorted_items.filter(title__icontains=searched_item)
     elif category:
-        display_items = sorted_items.filter(category__name=category)
+        display_items = sorted_items.filter(category__parent__name=category)
     elif shop:
         display_items = sorted_items.filter(provider__name=shop)
     else:
@@ -56,7 +56,7 @@ def home(request):
 
     items_in_page = _generate_pages(display_items, page_number)
 
-    categories = Category.objects.all()
+    main_categories = Category.objects.filter(parent=None, sub_categories__items=None).distinct()
     shops = Shop.objects.all()
     return render(
         request,
@@ -64,7 +64,7 @@ def home(request):
         {
             "items": items_in_page,
             "searched_item": searched_item,
-            "categories": categories,
+            "categories": main_categories,
             "category": category,
             "shops": shops,
             "shop": shop,
