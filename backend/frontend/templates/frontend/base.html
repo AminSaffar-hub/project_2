@@ -3,7 +3,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -39,7 +38,6 @@
             </form>
             <div class="order-1 order-md-2">
                 {% if user.is_authenticated %}
-                    <!-- if user is authenticated, this part is shown -->
                     <a data-bs-toggle="offcanvas" data-bs-target="#userCanvas" aria-controls="offcanvasRight">
                         <div class="btn text-center bg-success"  style="width: 40px;height: 40px;border-radius: 40px">
                             <p class="text-white" ><b>{{ user.username.0|upper }}</b></p>
