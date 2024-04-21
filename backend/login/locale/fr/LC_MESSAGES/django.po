@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-14 22:12+0000\n"
+"POT-Creation-Date: 2024-04-21 17:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,31 +22,19 @@ msgstr ""
 msgid "Register"
 msgstr "Inscription"
 
-#: login/forms.py:94
-msgid "Edit Profile"
-msgstr "Modifier le profil"
-
-#: login/forms.py:109
-msgid ""
-"You can change your password using <a href=\"{{change_password_url}}\">this "
-"form</a>."
-msgstr ""
-"Vous pouvez modifier votre mot de passe en utilisant <a "
-"href=\"%(change_password_url)s\">ce formulaire</a>."
-
-#: login/forms.py:116
+#: login/forms.py:104
 msgid "Save Edits"
 msgstr "Enregistrer"
 
-#: login/forms.py:136 login/forms.py:144
+#: login/forms.py:134 login/forms.py:142
 msgid "Reset password"
 msgstr "Réinitialiser votre mot de passe"
 
-#: login/forms.py:155 login/forms.py:180
+#: login/forms.py:153 login/forms.py:178
 msgid "Login"
 msgstr "Se connecter"
 
-#: login/forms.py:165
+#: login/forms.py:163
 msgid ""
 "Did you forget your password? Click this <a "
 "href=\"{{password_reset_url}}\">link</a>"
@@ -54,21 +42,44 @@ msgstr ""
 " Vous avez oublié votre mot de passe? Clickez sur <a "
 "href=\"%(password_reset_url)s\">ce lien</a>."
 
-#: login/forms.py:173
+#: login/forms.py:171
 msgid "Not a member? <a href=\"{{register_url}}\">Register</a> for free now."
 msgstr ""
 " Vous n'êtes pas encore membre ?  <a href=\"%(register_url)s\">Inscrivez-"
 "vous</a> gratuitement dès maintenant. "
 
-#: login/forms.py:193 login/forms.py:207 login/forms.py:220 login/forms.py:231
+#: login/forms.py:203
+#, fuzzy
+#| msgid "Reset password"
+msgid "Save password"
+msgstr "Réinitialiser votre mot de passe"
+
+#: login/forms.py:217 login/forms.py:228
+#: login/templates/login/change_password.html:50
 msgid "Edit password"
 msgstr "Modifier le mot de passe"
 
-#: login/templates/login/change_password.html:37
+#: login/templates/login/change_password.html:38
+#: login/templates/login/edit_profile.html:41
+#: login/templates/login/profile.html:38
+#, fuzzy
+#| msgid "Profile:"
+msgid "Profile"
+msgstr "Profil :"
+
+#: login/templates/login/change_password.html:43
+#: login/templates/login/edit_profile.html:46
+#: login/templates/login/profile.html:43
+#, fuzzy
+#| msgid "Edit password"
+msgid "Password"
+msgstr "Modifier le mot de passe"
+
+#: login/templates/login/change_password_without_login.html:37
 msgid "Password reset failed"
 msgstr "La réinitialisation du mot de passe a échoué"
 
-#: login/templates/login/change_password.html:38
+#: login/templates/login/change_password_without_login.html:38
 msgid ""
 "The password reset link is invalid, possibly because it has been used. "
 "Please request a new password reset."
@@ -77,23 +88,12 @@ msgstr ""
 "possible que ce lien soit déjà utilisé.Veuillez effectuer une nouvelle "
 "demande de réinitialisation du mot de passe."
 
-#: login/templates/login/profile.html:32
-msgid "Profile:"
-msgstr "Profil :"
+#: login/templates/login/edit_profile.html:53
+#: login/templates/login/profile.html:50
+msgid "Personal details"
+msgstr ""
 
-#: login/templates/login/profile.html:33
-msgid "Email:"
-msgstr "Email :"
-
-#: login/templates/login/profile.html:34
-msgid "First Name:"
-msgstr "Prénom :"
-
-#: login/templates/login/profile.html:35
-msgid "Last Name:"
-msgstr "Nom :"
-
-#: login/templates/login/profile.html:37
+#: login/templates/login/profile.html:57
 msgid "Edit profile"
 msgstr "Modifier le profil"
 
@@ -142,21 +142,40 @@ msgstr ""
 "Si vous ne recevez pas d'e-mail, vérifiez que vous avez bien saisi votre "
 "adresse email et vérifiez le dossier de courrier indésirable."
 
-#: login/views.py:14
+#: login/views.py:20
 msgid "Disconnected successfully."
 msgstr "Vous avez été déconnecté avec succès."
 
-#: login/views.py:35
+#: login/views.py:41
 msgid "Account created successfully."
 msgstr "Votre compte a été créer avec succès."
 
-#: login/views.py:67
+#: login/views.py:73
 msgid "Profile modified successfully."
 msgstr "Votre profile a été modifier avec succès."
 
-#: login/views.py:90 login/views.py:107
+#: login/views.py:96 login/views.py:113
 msgid "Password modified successfully."
 msgstr "Votre mot de passe a été modifier avec succés."
+
+#~ msgid "Edit Profile"
+#~ msgstr "Modifier le profil"
+
+#~ msgid ""
+#~ "You can change your password using <a "
+#~ "href=\"{{change_password_url}}\">this form</a>."
+#~ msgstr ""
+#~ "Vous pouvez modifier votre mot de passe en utilisant <a "
+#~ "href=\"%(change_password_url)s\">ce formulaire</a>."
+
+#~ msgid "Email:"
+#~ msgstr "Email :"
+
+#~ msgid "First Name:"
+#~ msgstr "Prénom :"
+
+#~ msgid "Last Name:"
+#~ msgstr "Nom :"
 
 #~ msgid "Send Email"
 #~ msgstr "Envoyer"

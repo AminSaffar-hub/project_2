@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-11 20:41+0000\n"
+"POT-Creation-Date: 2024-04-21 17:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,7 +45,7 @@ msgid "Log out"
 msgstr "se déconnecter"
 
 #: frontend/templates/frontend/base.html:67
-#: frontend/templates/frontend/home.html:151
+#: frontend/templates/include/prompt_login.html:30
 msgid "Log in"
 msgstr "Connexion"
 
@@ -122,7 +122,7 @@ msgid ""
 "At ERRADAR, we are always delighted to hear from our users. If you have any "
 "questions, comments, or concerns, or if you would like to learn more about "
 "our partnership opportunities, please don't hesitate to contact us. You can "
-"send us an email at erradar-help@gmail.com or call us at +0699999999. Also, "
+"send us an email at help.erradar@gmail.com or call us at +0699999999. Also, "
 "follow us on social media to stay updated on the latest deals and promotions."
 msgstr ""
 "Chez ERRADAR, nous sommes toujours ravis d'entendre parler de nos "
@@ -142,55 +142,55 @@ msgid "Available shops"
 msgstr "Boutique disponible"
 
 #: frontend/templates/frontend/home.html:57
-#: frontend/templates/frontend/item_details.html:25
+#: frontend/templates/frontend/item_details.html:47
 msgid "Good deal"
 msgstr "Bon plan"
 
 #: frontend/templates/frontend/home.html:80
-#: frontend/templates/frontend/item_details.html:56
+#: frontend/templates/frontend/item_details.html:91
 msgid "available"
 msgstr "disponible"
 
 #: frontend/templates/frontend/home.html:82
-#: frontend/templates/frontend/item_details.html:58
+#: frontend/templates/frontend/item_details.html:93
 #, fuzzy
 msgid "not available"
 msgstr "indisponible"
 
 #: frontend/templates/frontend/home.html:86
 #: frontend/templates/frontend/home.html:93
-#: frontend/templates/frontend/item_details.html:28
+#: frontend/templates/frontend/item_details.html:63
 msgid "Go to deal"
 msgstr "Visiter l'offre"
 
-#: frontend/templates/frontend/home.html:131
-msgid "Log in to enjoy the full Erradar experience "
-msgstr "Connectez-vous pour profiter pleinement de l'expérience ERRADAR:"
-
-#: frontend/templates/frontend/home.html:136
-msgid "Save your favorite deals"
-msgstr "Sauvegardez vos bon plans préférés"
-
-#: frontend/templates/frontend/home.html:138
-msgid "Review deals"
-msgstr "Évaluez les bon plans"
-
-#: frontend/templates/frontend/home.html:140
-msgid "And much more"
-msgstr "Et bien plus encore ..."
-
-#: frontend/templates/frontend/home.html:149
-msgid "Close"
-msgstr "Fermer"
-
-#: frontend/templates/frontend/item_details.html:37
+#: frontend/templates/frontend/item_details.html:72
 msgid "Description"
 msgstr "Description"
 
-#: frontend/templates/frontend/item_details.html:43
+#: frontend/templates/frontend/item_details.html:78
 msgid "Useful information"
 msgstr "Informations utiles"
 
-#: frontend/templates/frontend/item_details.html:64
-msgid "Similar Products"
-msgstr ""
+#: frontend/templates/frontend/item_details.html:99
+msgid "Similar products"
+msgstr "Produits similaires"
+
+#: frontend/templates/include/prompt_login.html:10
+msgid "Log in to enjoy the full Erradar experience "
+msgstr "Connectez-vous pour profiter pleinement de l'expérience ERRADAR:"
+
+#: frontend/templates/include/prompt_login.html:15
+msgid "Save your favorite deals"
+msgstr "Sauvegardez vos bon plans préférés"
+
+#: frontend/templates/include/prompt_login.html:17
+msgid "Review deals"
+msgstr "Évaluez les bon plans"
+
+#: frontend/templates/include/prompt_login.html:19
+msgid "And much more"
+msgstr "Et bien plus encore ..."
+
+#: frontend/templates/include/prompt_login.html:28
+msgid "Close"
+msgstr "Fermer"
