@@ -4,7 +4,7 @@ import numpy as np
 
 class CategoryPredictor:
     def __init__(self):
-        path = "categorization/"
+        path = "/home/modamine/project_2/backend/backend/categorizer/"
         self.category_model = CamembertForSequenceClassification.from_pretrained(
             path + "category", num_labels=17
         )
