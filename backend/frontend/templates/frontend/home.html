@@ -10,22 +10,51 @@
     {% endif %}
     <div class="row">
         <div class="d-none d-md-block col-md-2 offset-md-1">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title text-center"> {% trans "Available shops" %} </h4>
-                    <div class="d-flex flex-wrap justify-content-center">
-                        {% for shop in shops %}
-                            {% if shop.logo %}
-                                <a href="?shop={{ shop.name }}">
-                                    <img class="m-2 shadow rounded-circle" src="{{shop.logo.url}}" style="width: 3vw; height: 3vw "/>
-                                </a>
-                            {% endif %}
-                        {% endfor %}
+                {% if sub_categories %}
+                <div class="card">
+                    <div class="card-body">
+                        <h5>{{ selected_category }}</h5>
+                        <ul class="list-unstyled text-muted mb-5">
+                            {% for sub_category in sub_categories %}
+                                <li class="mb-2 d-flex align-items-center justify-content-between">
+                                    <a class="reset-anchor {% if sub_category.name == selected_sub_category %} selected-sub-category {% endif %}" href="?{% url_replace 'sub_category' sub_category.name %}">
+                                        {{ sub_category.name }}
+                                    </a>
+                                    <span class="badge bg-light text-dark">
+                                        {{sub_category.items.count}}
+                                    </span></li>
+                            {% endfor %}
+                        </ul>
                     </div>
                 </div>
-            </div>
+                {% endif %}
         </div>
         <div class="col-10 col-md-6 offset-1 offset-md-0">
+            <div class="row mb-2">
+                {% if not selected_category %}
+                    <form method="post" class="d-flex flex-row ">
+                        {% csrf_token %}
+                        <div class="dropdown">
+                            <button class="btn btn-outline-dark dropdown-toggle" type="button" id="shopDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                Shops
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="shopDropdown">
+                                {% for shop in shops %}    
+                                    <li>
+                                        <label class="dropdown-item">
+                                            <input type="checkbox" onChange="this.form.submit()" class="form-check-input me-1" name="shop" value="{{ shop.name }}" {% if shop.name in shops_filtered %} checked {% endif %}> 
+                                            {{ shop.name }}
+                                        </label>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <!-- Hidden input to detect clear action -->
+                        <input type="hidden" name="action" value="filter">
+                        <button type="submit" class="btn btn-outline-dark mx-2" name="action" value="clear">Clear</button>
+                    </form>
+                {% endif %}
+            </div>
             {% for item in items %}
                 <div class="row mb-2">
                     <div class="card" style="cursor: pointer;" onclick="!(event.srcElement.className.includes('fa-heart')) ? window.location = '{% url 'product_details' pk=item.pk %}' : null;">
@@ -112,7 +141,7 @@
                     <li class="page-item  {% if page_number == items.number %}active{% endif %}">
                         <a
                         class="page-link"
-                        href="?page={{page_number}}{% if searched_item %}&search={{searched_item}}{% elif category %}&category={{category}}{% elif shop %}&shop={{shop}}{% endif %}"
+                        href="?{% url_replace 'page' page_number %}"
                         >
                             {{page_number}}
                         </a>

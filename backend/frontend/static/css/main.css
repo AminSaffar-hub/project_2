@@ -121,3 +121,29 @@ footer {
 h5.item-title {
     font-weight: bold;
 }
+
+.reset-anchor {
+    color: inherit;
+    transition: all 0.3s;
+    text-decoration: none !important;
+}
+
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+.text-muted {
+    color: #6c757d !important;
+}
+
+.selected-sub-category {
+    font-weight: bold;
+    color: #000; /* Darker color, you can adjust this to your desired color */
+}
+
+.selected-category {
+    transform: scale(1.1); 
+    background-color: #5a5d62;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5); 
+}

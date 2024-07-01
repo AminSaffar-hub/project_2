@@ -1,4 +1,5 @@
 from django import template
+
 from backend.models import Like
 
 register = template.Library()
@@ -13,3 +14,16 @@ def has_liked(user, item):
         except Like.DoesNotExist:
             return False
     return False
+
+
+@register.simple_tag(takes_context=True)
+def url_replace(context, field, value):
+    request = context["request"]
+    query = request.GET.copy()
+
+    query[field] = value
+
+    if request.method == "POST" and request.POST.getlist("shop"):
+        query["page"] = "1"
+
+    return query.urlencode()

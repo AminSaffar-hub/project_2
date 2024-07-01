@@ -1,13 +1,13 @@
 from django.core.paginator import Paginator
 from django.db.models import ExpressionWrapper, F, FloatField
+from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import render
-from django.views.generic import DetailView
-from django.views.decorators.http import require_POST
+from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
-from django.http import JsonResponse
+from django.views.decorators.http import require_POST
+from django.views.generic import DetailView
 
-from backend.models import Item, Category, Shop, Like
-
+from backend.models import Category, Item, Like, Shop
 
 NUMBER_OF_ITEMS_IN_PAGE = 8
 NUMBER_OF_TOP_ITEMS = 24
@@ -22,12 +22,33 @@ def _generate_pages(ordered_items, page_number):
     return items_in_page
 
 
-# Create your views here.
 def home(request):
+    if request.method == "POST":
+        action = request.POST.get("action")
+        if action == "clear":
+            post = request.POST.copy()
+            post["shop"] = []
+            request.POST = post
+            request.session["shops"] = []
+        else:
+            request.session["shops"] = request.POST.getlist("shop")
+        base_url = reverse("home")
+        query_params = request.GET.copy()
+        query_params["page"] = 1
+        query_string = query_params.urlencode()
+        url = f"{base_url}?{query_string}"
+        return HttpResponseRedirect(url)
+
+    shops_filter = request.session.get("shops", [])
+
     searched_item = request.GET.get("search")
     page_number = request.GET.get("page") or 1
+
     category = request.GET.get("category")
-    shop = request.GET.get("shop")
+    sub_category = request.GET.get("sub_category")
+
+    if category:
+        request.session["shops"] = []
 
     items = Item.objects.annotate(
         percentage=ExpressionWrapper(
@@ -44,20 +65,29 @@ def home(request):
     )
 
     sorted_items = items.order_by("-percentage", "-started_at")
+    sub_categories = None
 
     if searched_item:
         display_items = sorted_items.filter(title__icontains=searched_item)
     elif category:
         display_items = sorted_items.filter(category__parent__name=category)
-    elif shop:
-        display_items = sorted_items.filter(provider__name=shop)
+        sub_categories = Category.objects.filter(
+            parent__name=category, items__isnull=False
+        ).distinct()
+        if sub_category:
+            display_items = sorted_items.filter(category__name=sub_category)
+    elif shops_filter:
+        display_items = sorted_items.filter(provider__name__in=shops_filter)
     else:
         display_items = sorted_items
 
     items_in_page = _generate_pages(display_items, page_number)
 
-    main_categories = Category.objects.filter(parent=None, sub_categories__items=None).distinct()
+    main_categories = Category.objects.filter(
+        parent=None, sub_categories__items__isnull=False
+    ).distinct()
     shops = Shop.objects.all()
+
     return render(
         request,
         "frontend/home.html",
@@ -65,9 +95,11 @@ def home(request):
             "items": items_in_page,
             "searched_item": searched_item,
             "categories": main_categories,
-            "category": category,
+            "selected_category": category,
+            "sub_categories": sub_categories,
+            "selected_sub_category": sub_category,
             "shops": shops,
-            "shop": shop,
+            "shops_filtered": shops_filter,
         },
     )
 

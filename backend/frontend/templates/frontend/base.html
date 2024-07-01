@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="{% static 'css/product_description.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="{% static 'js/expend_description.js' %}"></script>
     <script src="{% static 'js/like_item.js' %}"></script>
     <script src="{% static 'js/script.js' %}"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4339509524160281" crossorigin="anonymous"></script>
@@ -77,7 +76,7 @@
                 <ul class="navbar-nav d-flex flex-row">
                     {% for category in categories|dictsortreversed:"score" %}
                         <li class="mx-2">
-                            <button type="button" class="btn category-btn  d-flex align-items-center">
+                            <button type="button" class="btn category-btn {% if category.name == selected_category %} selected-category {% endif %} d-flex align-items-center">
                                 <a class="nav-link align-items-center" href="?category={{ category.name_en }}">
                                     {% if category.image %}
                                         <img src="{{ category.image.url }}" alt="{{ category.name }}" width="20" height="20" class="mr-2">
