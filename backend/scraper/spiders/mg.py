@@ -2,6 +2,7 @@ import scrapy
 from scraper.items import ArticleItem
 from backend.models import Item
 
+
 class MgSpider(scrapy.Spider):
     name = "Magasin_general"
     allowed_domains = ["mg.tn"]

@@ -4,6 +4,7 @@ from scraper.items import ArticleItem
 from backend.models import Item
 import requests
 
+
 class PeakSpider(scrapy.Spider):
     name = "Peak"
     allowed_domains = ["peaksports.tn"]

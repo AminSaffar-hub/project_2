@@ -31,7 +31,7 @@ class Category(models.Model):
         blank=True,
         default=None,
         help_text="The category id returned by the predictor",
-        max_length=20
+        max_length=20,
     )
 
     def __str__(self):

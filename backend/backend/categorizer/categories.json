@@ -2,12 +2,12 @@
     "categories_relations": [
         {
             "main_category": "Automobile",
-            "subcategory": "Motorcycle & Powersports",
+            "subcategory": "Motorcycle and Powersports",
             "category_predictor_id": "0"
         },
         {
             "main_category": "Automobile",
-            "subcategory": "Tools & Equipment",
+            "subcategory": "Tools and Equipment",
             "category_predictor_id": "1"
         },
         {
@@ -22,12 +22,12 @@
         },
         {
             "main_category": "Automobile",
-            "subcategory": "Lights & Lighting Accessories",
+            "subcategory": "Lights and Lighting Accessories",
             "category_predictor_id": "4"
         },
         {
             "main_category": "Automobile",
-            "subcategory": "Car Electronics & Accessories",
+            "subcategory": "Car Electronics and Accessories",
             "category_predictor_id": "5"
         },
         {
@@ -37,17 +37,17 @@
         },
         {
             "main_category": "Automobile",
-            "subcategory": "Paint & Paint Supplies",
+            "subcategory": "Paint and Paint Supplies",
             "category_predictor_id": "7"
         },
         {
             "main_category": "Automobile",
-            "subcategory": "Oils & Fluids",
+            "subcategory": "Oils and Fluids",
             "category_predictor_id": "8"
         },
         {
             "main_category": "Automobile",
-            "subcategory": "Power & Battery",
+            "subcategory": "Power and Battery",
             "category_predictor_id": "9"
         },
         {
@@ -57,12 +57,12 @@
         },
         {
             "main_category": "Automobile",
-            "subcategory": "Tyre & Rim",
+            "subcategory": "Tyre and Rim",
             "category_predictor_id": "11"
         },
         {
             "main_category": "Baby Products",
-            "subcategory": "Apparel & Accessories",
+            "subcategory": "Apparel and Accessories",
             "category_predictor_id": "12"
         },
         {
@@ -77,12 +77,12 @@
         },
         {
             "main_category": "Baby Products",
-            "subcategory": "Pregnancy & Maternity",
+            "subcategory": "Pregnancy and Maternity",
             "category_predictor_id": "15"
         },
         {
             "main_category": "Baby Products",
-            "subcategory": "Bathing & Skin Care",
+            "subcategory": "Bathing and Skin Care",
             "category_predictor_id": "16"
         },
         {
@@ -97,12 +97,12 @@
         },
         {
             "main_category": "Baby Products",
-            "subcategory": "Health & Baby Care",
+            "subcategory": "Health and Baby Care",
             "category_predictor_id": "19"
         },
         {
             "main_category": "Baby Products",
-            "subcategory": "Baby & Toddler Toys",
+            "subcategory": "Baby and Toddler Toys",
             "category_predictor_id": "20"
         },
         {
@@ -117,7 +117,7 @@
         },
         {
             "main_category": "Baby Products",
-            "subcategory": "Strollers & Accessories",
+            "subcategory": "Strollers and Accessories",
             "category_predictor_id": "23"
         },
         {
@@ -127,7 +127,7 @@
         },
         {
             "main_category": "Baby Products",
-            "subcategory": "Car Seats & Accessories",
+            "subcategory": "Car Seats and Accessories",
             "category_predictor_id": "25"
         },
         {
@@ -136,33 +136,33 @@
             "category_predictor_id": "26"
         },
         {
-            "main_category": "Phones & Tablets",
-            "subcategory": "Telephones & Accessories",
+            "main_category": "Phones and Tablets",
+            "subcategory": "Telephones and Accessories",
             "category_predictor_id": "32"
         },
         {
-            "main_category": "Phones & Tablets",
+            "main_category": "Phones and Tablets",
             "subcategory": "Accessories",
             "category_predictor_id": "27"
         },
         {
-            "main_category": "Phones & Tablets",
+            "main_category": "Phones and Tablets",
             "subcategory": "Mobile Phones",
             "category_predictor_id": "28"
         },
         {
-            "main_category": "Phones & Tablets",
+            "main_category": "Phones and Tablets",
             "subcategory": "Tablets",
             "category_predictor_id": "29"
         },
         {
-            "main_category": "Phones & Tablets",
+            "main_category": "Phones and Tablets",
             "subcategory": "Tablet Accessories",
             "category_predictor_id": "30"
         },
         {
-            "main_category": "Phones & Tablets",
-            "subcategory": "Phone & Fax",
+            "main_category": "Phones and Tablets",
+            "subcategory": "Phone and Fax",
             "category_predictor_id": "31"
         },
         {
@@ -197,7 +197,7 @@
         },
         {
             "main_category": "Computing",
-            "subcategory": "Computers & Accessories",
+            "subcategory": "Computers and Accessories",
             "category_predictor_id": "105"
         },
         {
@@ -211,37 +211,37 @@
             "category_predictor_id": "39"
         },
         {
-            "main_category": "Garden & Outdoors",
+            "main_category": "Garden and Outdoors",
             "subcategory": "Outdoor D\u00e9cor",
             "category_predictor_id": "40"
         },
         {
-            "main_category": "Home & Office",
-            "subcategory": "Tools & Home Improvement",
+            "main_category": "Home and Office",
+            "subcategory": "Tools and Home Improvement",
             "category_predictor_id": "41"
         },
         {
-            "main_category": "Home & Office",
-            "subcategory": "Home & Furniture",
+            "main_category": "Home and Office",
+            "subcategory": "Home and Furniture",
             "category_predictor_id": "42"
         },
         {
-            "main_category": "Home & Office",
-            "subcategory": "Home & Kitchen",
+            "main_category": "Home and Office",
+            "subcategory": "Home and Kitchen",
             "category_predictor_id": "43"
         },
         {
-            "main_category": "Home & Office",
+            "main_category": "Home and Office",
             "subcategory": "Appliances",
             "category_predictor_id": "92"
         },
         {
-            "main_category": "Home & Office",
-            "subcategory": "Arts, Crafts & Sewing",
+            "main_category": "Home and Office",
+            "subcategory": "Arts, Crafts and Sewing",
             "category_predictor_id": "93"
         },
         {
-            "main_category": "Home & Office",
+            "main_category": "Home and Office",
             "subcategory": "Office Products",
             "category_predictor_id": "46"
         },
@@ -252,7 +252,7 @@
         },
         {
             "main_category": "Electronics",
-            "subcategory": "Radios & Transceivers",
+            "subcategory": "Radios and Transceivers",
             "category_predictor_id": "129"
         },
         {
@@ -267,7 +267,7 @@
         },
         {
             "main_category": "Electronics",
-            "subcategory": "Portable Audio & Video",
+            "subcategory": "Portable Audio and Video",
             "category_predictor_id": "132"
         },
         {
@@ -277,17 +277,17 @@
         },
         {
             "main_category": "Electronics",
-            "subcategory": "Accessories & Supplies",
+            "subcategory": "Accessories and Supplies",
             "category_predictor_id": "45"
         },
         {
             "main_category": "Electronics",
-            "subcategory": "Camera & Photo",
+            "subcategory": "Camera and Photo",
             "category_predictor_id": "48"
         },
         {
             "main_category": "Electronics",
-            "subcategory": "Security & Surveillance",
+            "subcategory": "Security and Surveillance",
             "category_predictor_id": "49"
         },
         {
@@ -297,7 +297,7 @@
         },
         {
             "main_category": "Electronics",
-            "subcategory": "Television & Video",
+            "subcategory": "Television and Video",
             "category_predictor_id": "52"
         },
         {
@@ -306,103 +306,103 @@
             "category_predictor_id": "53"
         },
         {
-            "main_category": "Industrial & Scientific",
-            "subcategory": "Test, Measure & Inspect",
+            "main_category": "Industrial and Scientific",
+            "subcategory": "Test, Measure and Inspect",
             "category_predictor_id": "47"
         },
         {
-            "main_category": "Toys & Games",
-            "subcategory": "Learning & Education",
+            "main_category": "Toys and Games",
+            "subcategory": "Learning and Education",
             "category_predictor_id": "64"
         },
         {
-            "main_category": "Toys & Games",
+            "main_category": "Toys and Games",
             "subcategory": "Kids' Electronics",
             "category_predictor_id": "65"
         },
         {
-            "main_category": "Toys & Games",
-            "subcategory": "Stuffed Animals & Plush Toys",
+            "main_category": "Toys and Games",
+            "subcategory": "Stuffed Animals and Plush Toys",
             "category_predictor_id": "66"
         },
         {
-            "main_category": "Toys & Games",
+            "main_category": "Toys and Games",
             "subcategory": "Hobbies",
             "category_predictor_id": "67"
         },
         {
-            "main_category": "Toys & Games",
+            "main_category": "Toys and Games",
             "subcategory": "Party Supplies",
             "category_predictor_id": "68"
         },
         {
-            "main_category": "Toys & Games",
-            "subcategory": "Dress Up & Pretend Play",
+            "main_category": "Toys and Games",
+            "subcategory": "Dress Up and Pretend Play",
             "category_predictor_id": "69"
         },
         {
-            "main_category": "Toys & Games",
+            "main_category": "Toys and Games",
             "subcategory": "Building Toys",
             "category_predictor_id": "70"
         },
         {
-            "main_category": "Toys & Games",
+            "main_category": "Toys and Games",
             "subcategory": "Puzzles",
             "category_predictor_id": "71"
         },
         {
-            "main_category": "Toys & Games",
-            "subcategory": "Novelty & Gag Toys",
+            "main_category": "Toys and Games",
+            "subcategory": "Novelty and Gag Toys",
             "category_predictor_id": "72"
         },
         {
-            "main_category": "Toys & Games",
-            "subcategory": "Dolls & Accessories",
+            "main_category": "Toys and Games",
+            "subcategory": "Dolls and Accessories",
             "category_predictor_id": "73"
         },
         {
-            "main_category": "Toys & Games",
-            "subcategory": "Action Figures & Statues",
+            "main_category": "Toys and Games",
+            "subcategory": "Action Figures and Statues",
             "category_predictor_id": "74"
         },
         {
-            "main_category": "Toys & Games",
-            "subcategory": "Kids' Furniture, D\u00e9cor & Storage",
+            "main_category": "Toys and Games",
+            "subcategory": "Kids' Furniture, D\u00e9cor and Storage",
             "category_predictor_id": "75"
         },
         {
-            "main_category": "Toys & Games",
-            "subcategory": "Toy Remote Control & Play Vehicles",
+            "main_category": "Toys and Games",
+            "subcategory": "Toy Remote Control and Play Vehicles",
             "category_predictor_id": "76"
         },
         {
-            "main_category": "Toys & Games",
-            "subcategory": "Tricycles, Scooters & Wagons",
+            "main_category": "Toys and Games",
+            "subcategory": "Tricycles, Scooters and Wagons",
             "category_predictor_id": "78"
         },
         {
-            "main_category": "Toys & Games",
+            "main_category": "Toys and Games",
             "subcategory": "Games",
             "category_predictor_id": "51"
         },
         {
-            "main_category": "Toys & Games",
-            "subcategory": "Arts & Crafts",
+            "main_category": "Toys and Games",
+            "subcategory": "Arts and Crafts",
             "category_predictor_id": "62"
         },
         {
-            "main_category": "Toys & Games",
-            "subcategory": "Sports & Outdoor Play",
+            "main_category": "Toys and Games",
+            "subcategory": "Sports and Outdoor Play",
             "category_predictor_id": "63"
         },
         {
             "main_category": "Sporting Goods",
-            "subcategory": "Outdoor & Adventure",
+            "subcategory": "Outdoor and Adventure",
             "category_predictor_id": "134"
         },
         {
             "main_category": "Sporting Goods",
-            "subcategory": "Sports & Fitness",
+            "subcategory": "Sports and Fitness",
             "category_predictor_id": "133"
         },
         {
@@ -412,7 +412,7 @@
         },
         {
             "main_category": "Musical Instruments",
-            "subcategory": "Electronic Music, DJ & Karaoke",
+            "subcategory": "Electronic Music, DJ and Karaoke",
             "category_predictor_id": "56"
         },
         {
@@ -422,7 +422,7 @@
         },
         {
             "main_category": "Musical Instruments",
-            "subcategory": "Microphones & Accessories",
+            "subcategory": "Microphones and Accessories",
             "category_predictor_id": "55"
         },
         {
@@ -442,7 +442,7 @@
         },
         {
             "main_category": "Pet Supplies",
-            "subcategory": "Fish & Aquatic Pets",
+            "subcategory": "Fish and Aquatic Pets",
             "category_predictor_id": "61"
         },
         {
@@ -462,12 +462,12 @@
         },
         {
             "main_category": "Books, Movies and Music",
-            "subcategory": "Art & Humanities",
+            "subcategory": "Art and Humanities",
             "category_predictor_id": "83"
         },
         {
             "main_category": "Books, Movies and Music",
-            "subcategory": "Education & Learning",
+            "subcategory": "Education and Learning",
             "category_predictor_id": "77"
         },
         {
@@ -477,7 +477,7 @@
         },
         {
             "main_category": "Fashion",
-            "subcategory": "Luggage & Travel Gear",
+            "subcategory": "Luggage and Travel Gear",
             "category_predictor_id": "84"
         },
         {
@@ -497,12 +497,12 @@
         },
         {
             "main_category": "Fashion",
-            "subcategory": "Watches & Sunglasses",
+            "subcategory": "Watches and Sunglasses",
             "category_predictor_id": "88"
         },
         {
             "main_category": "Fashion",
-            "subcategory": "Shoe, Jewelry & Watch Accessories",
+            "subcategory": "Shoe, Jewelry and Watch Accessories",
             "category_predictor_id": "89"
         },
         {
@@ -512,72 +512,72 @@
         },
         {
             "main_category": "Fashion",
-            "subcategory": "Uniforms, Work & Safety",
+            "subcategory": "Uniforms, Work and Safety",
             "category_predictor_id": "91"
         },
         {
-            "main_category": "Health & Beauty",
+            "main_category": "Health and Beauty",
             "subcategory": "Fragrances",
             "category_predictor_id": "96"
         },
         {
-            "main_category": "Health & Beauty",
+            "main_category": "Health and Beauty",
             "subcategory": "Health Care",
             "category_predictor_id": "97"
         },
         {
-            "main_category": "Health & Beauty",
+            "main_category": "Health and Beauty",
             "subcategory": "Dermocosmetics",
             "category_predictor_id": "98"
         },
         {
-            "main_category": "Health & Beauty",
-            "subcategory": "Wellness & Relaxation",
+            "main_category": "Health and Beauty",
+            "subcategory": "Wellness and Relaxation",
             "category_predictor_id": "99"
         },
         {
-            "main_category": "Health & Beauty",
+            "main_category": "Health and Beauty",
             "subcategory": "Sexual Wellness",
             "category_predictor_id": "100"
         },
         {
-            "main_category": "Health & Beauty",
-            "subcategory": "Medical Supplies & Equipment",
+            "main_category": "Health and Beauty",
+            "subcategory": "Medical Supplies and Equipment",
             "category_predictor_id": "101"
         },
         {
-            "main_category": "Health & Beauty",
-            "subcategory": "Vitamins & Dietary Supplements",
+            "main_category": "Health and Beauty",
+            "subcategory": "Vitamins and Dietary Supplements",
             "category_predictor_id": "102"
         },
         {
-            "main_category": "Health & Beauty",
+            "main_category": "Health and Beauty",
             "subcategory": "Oral Care",
             "category_predictor_id": "103"
         },
         {
-            "main_category": "Health & Beauty",
+            "main_category": "Health and Beauty",
             "subcategory": "Sports Nutrition",
             "category_predictor_id": "104"
         },
         {
-            "main_category": "Health & Beauty",
+            "main_category": "Health and Beauty",
             "subcategory": "Personal Care",
             "category_predictor_id": "94"
         },
         {
-            "main_category": "Health & Beauty",
-            "subcategory": "Beauty & Personal Care",
+            "main_category": "Health and Beauty",
+            "subcategory": "Beauty and Personal Care",
             "category_predictor_id": "95"
         },
         {
             "main_category": "Grocery",
-            "subcategory": "Cooking & Baking",
+            "subcategory": "Cooking and Baking",
             "category_predictor_id": "107"
         },
         {
             "main_category": "Grocery",
-            "subcategory": "Canned, Jarred & Packaged Foods",
+            "subcategory": "Canned, Jarred and Packaged Foods",
             "category_predictor_id": "108"
         },
         {
@@ -612,7 +612,7 @@
         },
         {
             "main_category": "Grocery",
-            "subcategory": "Paper & Plastic",
+            "subcategory": "Paper and Plastic",
             "category_predictor_id": "115"
         },
         {
@@ -627,12 +627,12 @@
         },
         {
             "main_category": "Grocery",
-            "subcategory": "Herbs, Spices & Seasonings",
+            "subcategory": "Herbs, Spices and Seasonings",
             "category_predictor_id": "118"
         },
         {
             "main_category": "Grocery",
-            "subcategory": "Candy & Chocolate",
+            "subcategory": "Candy and Chocolate",
             "category_predictor_id": "119"
         },
         {
@@ -652,12 +652,12 @@
         },
         {
             "main_category": "Grocery",
-            "subcategory": "Gift Items, Hamper Gifts & Party Supplies",
+            "subcategory": "Gift Items, Hamper Gifts and Party Supplies",
             "category_predictor_id": "123"
         },
         {
             "main_category": "Grocery",
-            "subcategory": "Dried Beans, Grains & Rice",
+            "subcategory": "Dried Beans, Grains and Rice",
             "category_predictor_id": "124"
         },
         {
@@ -667,7 +667,7 @@
         },
         {
             "main_category": "Grocery",
-            "subcategory": "Jams, Jellies & Sweet Spreads",
+            "subcategory": "Jams, Jellies and Sweet Spreads",
             "category_predictor_id": "126"
         },
         {
@@ -688,9 +688,9 @@
             "en": "Baby Products"
         },
         {
-            "category": "Phones & Tablets",
+            "category": "Phones and Tablets",
             "fr": "Téléphones et tablettes",
-            "en": "Phones & Tablets"
+            "en": "Phones and Tablets"
         },
         {
             "category": "Gaming",
@@ -703,14 +703,14 @@
             "en": "Computing"
         },
         {
-            "category": "Garden & Outdoors",
+            "category": "Garden and Outdoors",
             "fr": "Jardin et extérieur",
-            "en": "Garden & Outdoors"
+            "en": "Garden and Outdoors"
         },
         {
-            "category": "Home & Office",
+            "category": "Home and Office",
             "fr": "Maison et bureau",
-            "en": "Home & Office"
+            "en": "Home and Office"
         },
         {
             "category": "Electronics",
@@ -718,14 +718,14 @@
             "en": "Electronics"
         },
         {
-            "category": "Industrial & Scientific",
+            "category": "Industrial and Scientific",
             "fr": "Industriel et scientifique",
-            "en": "Industrial & Scientific"
+            "en": "Industrial and Scientific"
         },
         {
-            "category": "Toys & Games",
+            "category": "Toys and Games",
             "fr": "Jouets et jeux",
-            "en": "Toys & Games"
+            "en": "Toys and Games"
         },
         {
             "category": "Sporting Goods",
@@ -753,9 +753,9 @@
             "en": "Fashion"
         },
         {
-            "category": "Health & Beauty",
+            "category": "Health and Beauty",
             "fr": "Santé et beauté",
-            "en": "Health & Beauty"
+            "en": "Health and Beauty"
         },
         {
             "category": "Grocery",
@@ -763,14 +763,14 @@
             "en": "Grocery"
         },
         {
-            "category": "Motorcycle & Powersports",
+            "category": "Motorcycle and Powersports",
             "fr": "Moto et sports motorisés",
-            "en": "Motorcycle & Powersports"
+            "en": "Motorcycle and Powersports"
         },
         {
-            "category": "Tools & Equipment",
+            "category": "Tools and Equipment",
             "fr": "Outils et équipement",
-            "en": "Tools & Equipment"
+            "en": "Tools and Equipment"
         },
         {
             "category": "Car Care",
@@ -783,14 +783,14 @@
             "en": "Interior Accessories"
         },
         {
-            "category": "Lights & Lighting Accessories",
+            "category": "Lights and Lighting Accessories",
             "fr": "Lumières et accessoires d'éclairage",
-            "en": "Lights & Lighting Accessories"
+            "en": "Lights and Lighting Accessories"
         },
         {
-            "category": "Car Electronics & Accessories",
+            "category": "Car Electronics and Accessories",
             "fr": "Électronique automobile et accessoires",
-            "en": "Car Electronics & Accessories"
+            "en": "Car Electronics and Accessories"
         },
         {
             "category": "Exterior Accessories",
@@ -798,19 +798,19 @@
             "en": "Exterior Accessories"
         },
         {
-            "category": "Paint & Paint Supplies",
+            "category": "Paint and Paint Supplies",
             "fr": "Peinture et fournitures de peinture",
-            "en": "Paint & Paint Supplies"
+            "en": "Paint and Paint Supplies"
         },
         {
-            "category": "Oils & Fluids",
+            "category": "Oils and Fluids",
             "fr": "Huiles et fluides",
-            "en": "Oils & Fluids"
+            "en": "Oils and Fluids"
         },
         {
-            "category": "Power & Battery",
+            "category": "Power and Battery",
             "fr": "Alimentation et batterie",
-            "en": "Power & Battery"
+            "en": "Power and Battery"
         },
         {
             "category": "Replacement Parts",
@@ -818,14 +818,14 @@
             "en": "Replacement Parts"
         },
         {
-            "category": "Tyre & Rim",
+            "category": "Tyre and Rim",
             "fr": "Pneu et jante",
-            "en": "Tyre & Rim"
+            "en": "Tyre and Rim"
         },
         {
-            "category": "Apparel & Accessories",
+            "category": "Apparel and Accessories",
             "fr": "Vêtements et accessoires",
-            "en": "Apparel & Accessories"
+            "en": "Apparel and Accessories"
         },
         {
             "category": "Nursery",
@@ -838,14 +838,14 @@
             "en": "Safety"
         },
         {
-            "category": "Pregnancy & Maternity",
+            "category": "Pregnancy and Maternity",
             "fr": "Grossesse et maternité",
-            "en": "Pregnancy & Maternity"
+            "en": "Pregnancy and Maternity"
         },
         {
-            "category": "Bathing & Skin Care",
+            "category": "Bathing and Skin Care",
             "fr": "Bain et soins de la peau",
-            "en": "Bathing & Skin Care"
+            "en": "Bathing and Skin Care"
         },
         {
             "category": "Potty Training",
@@ -858,14 +858,14 @@
             "en": "Feeding"
         },
         {
-            "category": "Health & Baby Care",
+            "category": "Health and Baby Care",
             "fr": "Santé et soins pour bébé",
-            "en": "Health & Baby Care"
+            "en": "Health and Baby Care"
         },
         {
-            "category": "Baby & Toddler Toys",
+            "category": "Baby and Toddler Toys",
             "fr": "Jouets pour bébés et tout-petits",
-            "en": "Baby & Toddler Toys"
+            "en": "Baby and Toddler Toys"
         },
         {
             "category": "Diapering",
@@ -878,9 +878,9 @@
             "en": "Gear"
         },
         {
-            "category": "Strollers & Accessories",
+            "category": "Strollers and Accessories",
             "fr": "Poussettes et accessoires",
-            "en": "Strollers & Accessories"
+            "en": "Strollers and Accessories"
         },
         {
             "category": "Baby Stationery",
@@ -888,9 +888,9 @@
             "en": "Baby Stationery"
         },
         {
-            "category": "Car Seats & Accessories",
+            "category": "Car Seats and Accessories",
             "fr": "Sièges d'auto et accessoires",
-            "en": "Car Seats & Accessories"
+            "en": "Car Seats and Accessories"
         },
         {
             "category": "Gifts",
@@ -918,14 +918,14 @@
             "en": "Tablet Accessories"
         },
         {
-            "category": "Phone & Fax",
+            "category": "Phone and Fax",
             "fr": "Téléphone et télécopie",
-            "en": "Phone & Fax"
+            "en": "Phone and Fax"
         },
         {
-            "category": "Telephones & Accessories",
+            "category": "Telephones and Accessories",
             "fr": "Téléphones et accessoires",
-            "en": "Telephones & Accessories"
+            "en": "Telephones and Accessories"
         },
         {
             "category": "Playstation",
@@ -968,19 +968,19 @@
             "en": "Outdoor Décor"
         },
         {
-            "category": "Tools & Home Improvement",
+            "category": "Tools and Home Improvement",
             "fr": "Outils et amélioration de l'habitat",
-            "en": "Tools & Home Improvement"
+            "en": "Tools and Home Improvement"
         },
         {
-            "category": "Home & Furniture",
+            "category": "Home and Furniture",
             "fr": "Maison et meubles",
-            "en": "Home & Furniture"
+            "en": "Home and Furniture"
         },
         {
-            "category": "Home & Kitchen",
+            "category": "Home and Kitchen",
             "fr": "Maison et cuisine",
-            "en": "Home & Kitchen"
+            "en": "Home and Kitchen"
         },
         {
             "category": "Office Electronic Equipment",
@@ -988,9 +988,9 @@
             "en": "Office Electronic Equipment"
         },
         {
-            "category": "Accessories & Supplies",
+            "category": "Accessories and Supplies",
             "fr": "Accessoires et fournitures",
-            "en": "Accessories & Supplies"
+            "en": "Accessories and Supplies"
         },
         {
             "category": "Office Products",
@@ -998,19 +998,19 @@
             "en": "Office Products"
         },
         {
-            "category": "Test, Measure & Inspect",
+            "category": "Test, Measure and Inspect",
             "fr": "Test, mesure et inspection",
-            "en": "Test, Measure & Inspect"
+            "en": "Test, Measure and Inspect"
         },
         {
-            "category": "Camera & Photo",
+            "category": "Camera and Photo",
             "fr": "Appareil photo et photo",
-            "en": "Camera & Photo"
+            "en": "Camera and Photo"
         },
         {
-            "category": "Security & Surveillance",
+            "category": "Security and Surveillance",
             "fr": "Sécurité et surveillance",
-            "en": "Security & Surveillance"
+            "en": "Security and Surveillance"
         },
         {
             "category": "Audio",
@@ -1023,9 +1023,9 @@
             "en": "Games"
         },
         {
-            "category": "Television & Video",
+            "category": "Television and Video",
             "fr": "Télévision et vidéo",
-            "en": "Television & Video"
+            "en": "Television and Video"
         },
         {
             "category": "Cameras",
@@ -1038,14 +1038,14 @@
             "en": "Outdoor Recreation"
         },
         {
-            "category": "Microphones & Accessories",
+            "category": "Microphones and Accessories",
             "fr": "Microphones et accessoires",
-            "en": "Microphones & Accessories"
+            "en": "Microphones and Accessories"
         },
         {
-            "category": "Electronic Music, DJ & Karaoke",
+            "category": "Electronic Music, DJ and Karaoke",
             "fr": "Musique électronique, DJ et karaoké",
-            "en": "Electronic Music, DJ & Karaoke"
+            "en": "Electronic Music, DJ and Karaoke"
         },
         {
             "category": "Instrument Accessories",
@@ -1068,24 +1068,24 @@
             "en": "Birds"
         },
         {
-            "category": "Fish & Aquatic Pets",
+            "category": "Fish and Aquatic Pets",
             "fr": "Poissons et animaux aquatiques",
-            "en": "Fish & Aquatic Pets"
+            "en": "Fish and Aquatic Pets"
         },
         {
-            "category": "Arts & Crafts",
+            "category": "Arts and Crafts",
             "fr": "Arts et artisanat",
-            "en": "Arts & Crafts"
+            "en": "Arts and Crafts"
         },
         {
-            "category": "Sports & Outdoor Play",
+            "category": "Sports and Outdoor Play",
             "fr": "Sports et jeux d'extérieur",
-            "en": "Sports & Outdoor Play"
+            "en": "Sports and Outdoor Play"
         },
         {
-            "category": "Learning & Education",
+            "category": "Learning and Education",
             "fr": "Apprentissage et éducation",
-            "en": "Learning & Education"
+            "en": "Learning and Education"
         },
         {
             "category": "Kids' Electronics",
@@ -1093,9 +1093,9 @@
             "en": "Kids' Electronics"
         },
         {
-            "category": "Stuffed Animals & Plush Toys",
+            "category": "Stuffed Animals and Plush Toys",
             "fr": "Animaux en peluche",
-            "en": "Stuffed Animals & Plush Toys"
+            "en": "Stuffed Animals and Plush Toys"
         },
         {
             "category": "Hobbies",
@@ -1108,9 +1108,9 @@
             "en": "Party Supplies"
         },
         {
-            "category": "Dress Up & Pretend Play",
+            "category": "Dress Up and Pretend Play",
             "fr": "Déguisements et jeux de rôle",
-            "en": "Dress Up & Pretend Play"
+            "en": "Dress Up and Pretend Play"
         },
         {
             "category": "Building Toys",
@@ -1123,39 +1123,39 @@
             "en": "Puzzles"
         },
         {
-            "category": "Novelty & Gag Toys",
+            "category": "Novelty and Gag Toys",
             "fr": "Jouets de nouveauté et gags",
-            "en": "Novelty & Gag Toys"
+            "en": "Novelty and Gag Toys"
         },
         {
-            "category": "Dolls & Accessories",
+            "category": "Dolls and Accessories",
             "fr": "Poupées et accessoires",
-            "en": "Dolls & Accessories"
+            "en": "Dolls and Accessories"
         },
         {
-            "category": "Action Figures & Statues",
+            "category": "Action Figures and Statues",
             "fr": "Figurines d'action et statues",
-            "en": "Action Figures & Statues"
+            "en": "Action Figures and Statues"
         },
         {
-            "category": "Kids' Furniture, Décor & Storage",
+            "category": "Kids' Furniture, Décor and Storage",
             "fr": "Mobilier, décoration et rangement pour enfants",
-            "en": "Kids' Furniture, Décor & Storage"
+            "en": "Kids' Furniture, Décor and Storage"
         },
         {
-            "category": "Toy Remote Control & Play Vehicles",
+            "category": "Toy Remote Control and Play Vehicles",
             "fr": "Véhicules télécommandés et jouets",
-            "en": "Toy Remote Control & Play Vehicles"
+            "en": "Toy Remote Control and Play Vehicles"
         },
         {
-            "category": "Education & Learning",
+            "category": "Education and Learning",
             "fr": "Éducation et apprentissage",
-            "en": "Education & Learning"
+            "en": "Education and Learning"
         },
         {
-            "category": "Tricycles, Scooters & Wagons",
+            "category": "Tricycles, Scooters and Wagons",
             "fr": "Tricycles, trottinettes et wagons",
-            "en": "Tricycles, Scooters & Wagons"
+            "en": "Tricycles, Scooters and Wagons"
         },
         {
             "category": "Stationery",
@@ -1178,14 +1178,14 @@
             "en": "Bestselling Books"
         },
         {
-            "category": "Art & Humanities",
+            "category": "Art and Humanities",
             "fr": "Art et sciences humaines",
-            "en": "Art & Humanities"
+            "en": "Art and Humanities"
         },
         {
-            "category": "Luggage & Travel Gear",
+            "category": "Luggage and Travel Gear",
             "fr": "Bagages et équipement de voyage",
-            "en": "Luggage & Travel Gear"
+            "en": "Luggage and Travel Gear"
         },
         {
             "category": "Men's Fashion",
@@ -1203,14 +1203,14 @@
             "en": "Kid's Fashion"
         },
         {
-            "category": "Watches & Sunglasses",
+            "category": "Watches and Sunglasses",
             "fr": "Montres et lunettes de soleil",
-            "en": "Watches & Sunglasses"
+            "en": "Watches and Sunglasses"
         },
         {
-            "category": "Shoe, Jewelry & Watch Accessories",
+            "category": "Shoe, Jewelry and Watch Accessories",
             "fr": "Accessoires pour chaussures, bijoux et montres",
-            "en": "Shoe, Jewelry & Watch Accessories"
+            "en": "Shoe, Jewelry and Watch Accessories"
         },
         {
             "category": "Babys Fashion",
@@ -1218,9 +1218,9 @@
             "en": "Babys Fashion"
         },
         {
-            "category": "Uniforms, Work & Safety",
+            "category": "Uniforms, Work and Safety",
             "fr": "Uniformes, travail et sécurité",
-            "en": "Uniforms, Work & Safety"
+            "en": "Uniforms, Work and Safety"
         },
         {
             "category": "Appliances",
@@ -1228,9 +1228,9 @@
             "en": "Appliances"
         },
         {
-            "category": "Arts, Crafts & Sewing",
+            "category": "Arts, Crafts and Sewing",
             "fr": "Arts, artisanat et couture",
-            "en": "Arts, Crafts & Sewing"
+            "en": "Arts, Crafts and Sewing"
         },
         {
             "category": "Personal Care",
@@ -1238,9 +1238,9 @@
             "en": "Personal Care"
         },
         {
-            "category": "Beauty & Personal Care",
+            "category": "Beauty and Personal Care",
             "fr": "Beauté et soins personnels",
-            "en": "Beauty & Personal Care"
+            "en": "Beauty and Personal Care"
         },
         {
             "category": "Fragrances",
@@ -1258,9 +1258,9 @@
             "en": "Dermocosmetics"
         },
         {
-            "category": "Wellness & Relaxation",
+            "category": "Wellness and Relaxation",
             "fr": "Bien-être et relaxation",
-            "en": "Wellness & Relaxation"
+            "en": "Wellness and Relaxation"
         },
         {
             "category": "Sexual Wellness",
@@ -1268,14 +1268,14 @@
             "en": "Sexual Wellness"
         },
         {
-            "category": "Medical Supplies & Equipment",
+            "category": "Medical Supplies and Equipment",
             "fr": "Fournitures et équipement médicaux",
-            "en": "Medical Supplies & Equipment"
+            "en": "Medical Supplies and Equipment"
         },
         {
-            "category": "Vitamins & Dietary Supplements",
+            "category": "Vitamins and Dietary Supplements",
             "fr": "Vitamines et compléments alimentaires",
-            "en": "Vitamins & Dietary Supplements"
+            "en": "Vitamins and Dietary Supplements"
         },
         {
             "category": "Oral Care",
@@ -1288,9 +1288,9 @@
             "en": "Sports Nutrition"
         },
         {
-            "category": "Computers & Accessories",
+            "category": "Computers and Accessories",
             "fr": "Ordinateurs et accessoires",
-            "en": "Computers & Accessories"
+            "en": "Computers and Accessories"
         },
         {
             "category": "Software",
@@ -1298,14 +1298,14 @@
             "en": "Software"
         },
         {
-            "category": "Cooking & Baking",
+            "category": "Cooking and Baking",
             "fr": "Cuisine et pâtisserie",
-            "en": "Cooking & Baking"
+            "en": "Cooking and Baking"
         },
         {
-            "category": "Canned, Jarred & Packaged Foods",
+            "category": "Canned, Jarred and Packaged Foods",
             "fr": "Aliments en conserve, en bocal et emballés",
-            "en": "Canned, Jarred & Packaged Foods"
+            "en": "Canned, Jarred and Packaged Foods"
         },
         {
             "category": "Breakfast Foods",
@@ -1338,9 +1338,9 @@
             "en": "Air Fresheners"
         },
         {
-            "category": "Paper & Plastic",
+            "category": "Paper and Plastic",
             "fr": "Papier et plastique",
-            "en": "Paper & Plastic"
+            "en": "Paper and Plastic"
         },
         {
             "category": "Household Supplies",
@@ -1353,14 +1353,14 @@
             "en": "Beverages"
         },
         {
-            "category": "Herbs, Spices & Seasonings",
+            "category": "Herbs, Spices and Seasonings",
             "fr": "Herbes, épices et assaisonnements",
-            "en": "Herbs, Spices & Seasonings"
+            "en": "Herbs, Spices and Seasonings"
         },
         {
-            "category": "Candy & Chocolate",
+            "category": "Candy and Chocolate",
             "fr": "Bonbons et chocolat",
-            "en": "Candy & Chocolate"
+            "en": "Candy and Chocolate"
         },
         {
             "category": "Tobacco-Related Products",
@@ -1378,14 +1378,14 @@
             "en": "Cleaning Tools"
         },
         {
-            "category": "Gift Items, Hamper Gifts & Party Supplies",
+            "category": "Gift Items, Hamper Gifts and Party Supplies",
             "fr": "Articles cadeaux, paniers-cadeaux et fournitures de fête",
-            "en": "Gift Items, Hamper Gifts & Party Supplies"
+            "en": "Gift Items, Hamper Gifts and Party Supplies"
         },
         {
-            "category": "Dried Beans, Grains & Rice",
+            "category": "Dried Beans, Grains and Rice",
             "fr": "Haricots secs, grains et riz",
-            "en": "Dried Beans, Grains & Rice"
+            "en": "Dried Beans, Grains and Rice"
         },
         {
             "category": "Toiletries",
@@ -1393,9 +1393,9 @@
             "en": "Toiletries"
         },
         {
-            "category": "Jams, Jellies & Sweet Spreads",
+            "category": "Jams, Jellies and Sweet Spreads",
             "fr": "Confitures, gelées et tartinades sucrées",
-            "en": "Jams, Jellies & Sweet Spreads"
+            "en": "Jams, Jellies and Sweet Spreads"
         },
         {
             "category": "Household Batteries",
@@ -1408,9 +1408,9 @@
             "en": "Wearable Technology"
         },
         {
-            "category": "Radios & Transceivers",
+            "category": "Radios and Transceivers",
             "fr": "Radios et émetteurs-récepteurs",
-            "en": "Radios & Transceivers"
+            "en": "Radios and Transceivers"
         },
         {
             "category": "Home Audio",
@@ -1423,19 +1423,19 @@
             "en": "Electronics Accessories"
         },
         {
-            "category": "Portable Audio & Video",
+            "category": "Portable Audio and Video",
             "fr": "Audio et vidéo portables",
-            "en": "Portable Audio & Video"
+            "en": "Portable Audio and Video"
         },
         {
-            "category": "Sports & Fitness",
+            "category": "Sports and Fitness",
             "fr": "Sports et fitness",
-            "en": "Sports & Fitness"
+            "en": "Sports and Fitness"
         },
         {
-            "category": "Outdoor & Adventure",
+            "category": "Outdoor and Adventure",
             "fr": "Extérieur et aventure",
-            "en": "Outdoor & Adventure"
+            "en": "Outdoor and Adventure"
         }
     ],
     "categories_scores": [
@@ -1448,7 +1448,7 @@
             "score": 1
         },
         {
-            "category": "Phones & Tablets",
+            "category": "Phones and Tablets",
             "score": 1
         },
         {
@@ -1460,11 +1460,11 @@
             "score": 1
         },
         {
-            "category": "Garden & Outdoors",
+            "category": "Garden and Outdoors",
             "score": 1
         },
         {
-            "category": "Home & Office",
+            "category": "Home and Office",
             "score": 1
         },
         {
@@ -1472,11 +1472,11 @@
             "score": 1
         },
         {
-            "category": "Industrial & Scientific",
+            "category": "Industrial and Scientific",
             "score": 1
         },
         {
-            "category": "Toys & Games",
+            "category": "Toys and Games",
             "score": 1
         },
         {
@@ -1500,7 +1500,7 @@
             "score": 1
         },
         {
-            "category": "Health & Beauty",
+            "category": "Health and Beauty",
             "score": 1
         },
         {
@@ -1508,11 +1508,11 @@
             "score": 1
         },
         {
-            "category": "Motorcycle & Powersports",
+            "category": "Motorcycle and Powersports",
             "score": 1
         },
         {
-            "category": "Tools & Equipment",
+            "category": "Tools and Equipment",
             "score": 1
         },
         {
@@ -1524,11 +1524,11 @@
             "score": 1
         },
         {
-            "category": "Lights & Lighting Accessories",
+            "category": "Lights and Lighting Accessories",
             "score": 1
         },
         {
-            "category": "Car Electronics & Accessories",
+            "category": "Car Electronics and Accessories",
             "score": 1
         },
         {
@@ -1536,15 +1536,15 @@
             "score": 1
         },
         {
-            "category": "Paint & Paint Supplies",
+            "category": "Paint and Paint Supplies",
             "score": 1
         },
         {
-            "category": "Oils & Fluids",
+            "category": "Oils and Fluids",
             "score": 1
         },
         {
-            "category": "Power & Battery",
+            "category": "Power and Battery",
             "score": 1
         },
         {
@@ -1552,11 +1552,11 @@
             "score": 1
         },
         {
-            "category": "Tyre & Rim",
+            "category": "Tyre and Rim",
             "score": 1
         },
         {
-            "category": "Apparel & Accessories",
+            "category": "Apparel and Accessories",
             "score": 1
         },
         {
@@ -1568,11 +1568,11 @@
             "score": 1
         },
         {
-            "category": "Pregnancy & Maternity",
+            "category": "Pregnancy and Maternity",
             "score": 1
         },
         {
-            "category": "Bathing & Skin Care",
+            "category": "Bathing and Skin Care",
             "score": 1
         },
         {
@@ -1584,11 +1584,11 @@
             "score": 1
         },
         {
-            "category": "Health & Baby Care",
+            "category": "Health and Baby Care",
             "score": 1
         },
         {
-            "category": "Baby & Toddler Toys",
+            "category": "Baby and Toddler Toys",
             "score": 1
         },
         {
@@ -1600,7 +1600,7 @@
             "score": 1
         },
         {
-            "category": "Strollers & Accessories",
+            "category": "Strollers and Accessories",
             "score": 1
         },
         {
@@ -2048,4 +2048,4 @@
             "score": 1
         }
     ]
-}    
+}
