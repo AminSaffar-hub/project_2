@@ -1,3 +1,6 @@
 backend/backend/__pycache__/*
 *.pyc
 .env
+
+backend/backend/categorizer/category/**
+backend/backend/categorizer/subcategory/**

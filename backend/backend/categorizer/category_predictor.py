@@ -1,12 +1,13 @@
-from transformers import AutoTokenizer, CamembertForSequenceClassification
 import numpy as np
+from optimum.onnxruntime import ORTModelForSequenceClassification
+from transformers import AutoTokenizer, CamembertForSequenceClassification
 
 
 class CategoryPredictor:
     def __init__(self):
         path = "/home/modamine/project_2/backend/backend/categorizer/"
-        self.category_model = CamembertForSequenceClassification.from_pretrained(
-            path + "category", num_labels=17
+        self.category_model = ORTModelForSequenceClassification.from_pretrained(
+            path + "category"
         )
         self.category_tokenizer = AutoTokenizer.from_pretrained(path + "category")
         self.sub_category_model = CamembertForSequenceClassification.from_pretrained(

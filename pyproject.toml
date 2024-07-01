@@ -29,8 +29,10 @@ pillow = "^10.0.1"
 django-modeltranslation = "^0.18.11"
 jellyfish = "^1.0.3"
 crispy-bootstrap5 = "^2024.2"
-transformers = "^4.39.0"
+transformers = {extras = ["torch"], version = "^4.40.0"}
 optimum = {extras = ["onnxruntime"], version = "^1.17.1"}
+accelerate = "^0.29.3"
+datasets = "^2.19.0"
 
 
 [build-system]

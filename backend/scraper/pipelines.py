@@ -3,8 +3,8 @@ import re
 from asgiref.sync import sync_to_async
 from django.utils import timezone
 
-from backend.models import Item, Category, Shop
-from backend.categorizer.category_predictor import CategoryPredictor 
+from backend.categorizer.category_predictor import CategoryPredictor
+from backend.models import Category, Item, Shop
 
 
 class SaveItemPipeline:
@@ -13,8 +13,12 @@ class SaveItemPipeline:
 
     @sync_to_async
     def process_item(self, item, spider):
-        predicted_category_id = self.category_predictor.predict_category(item["title"]) 
-        item["category"] = Category.objects.get(category_predictor_id=predicted_category_id)
+        predicted_category_id = self.category_predictor.predict_category(
+            item["title"] + " " + item["description"]
+        )
+        item["category"] = Category.objects.get(
+            category_predictor_id=predicted_category_id
+        )
         item["provider"] = Shop.objects.get(name=item["provider"])
         try:
             item_in_database = Item.objects.get(
